@@ -8,15 +8,7 @@ const PORT = process.env['PORT']
 
 
 
-const environments = {
-  development: "development",
-  production: "production"
-}
-
-const SIGNAL = {
-  INTERRUPTION: 'SIGINT',
-  TERMINATION: 'SIGTERM'
-}
+const { ENV, SIG } = require('./data/types/types_1')
 
 
 
@@ -98,9 +90,9 @@ const closeServer = () => {
 };
 
 const CLOSE_SIGNAL = (
-  process.env.NODE_ENV === environments.development ? SIGNAL.INTERRUPTION
-  : process.env.NODE_ENV === environments.production ? SIGNAL.TERMINATION :
-  SIGNAL.INTERRUPTION
+  process.env.NODE_ENV === ENV.DEV ? SIG.INT
+  : process.env.NODE_ENV === ENV.PROD ? SIG.TERM :
+  SIG.INT
 );
 
 process.on(CLOSE_SIGNAL, async () => {
