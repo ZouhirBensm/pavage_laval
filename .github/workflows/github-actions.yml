@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  earnanswerscom_Automated_Deployment_Process:
+  drywallkingstoncom_Automated_Deployment_Process:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,6 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         script: |
           cd drywall_kingston
-          git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/earnanswers.git master
+          git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/drywall_kingston.git master
           npm install
           pm2 restart drywall_kingston
