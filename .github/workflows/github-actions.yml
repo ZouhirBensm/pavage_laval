@@ -26,6 +26,7 @@ jobs:
           cd drywall_kingston
           git pull https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_PASSWORD }}@github.com/${{ secrets.GITHUB_USERNAME }}/drywall_kingston.git master
           npm install
+          sequelize-auto -o "./models" -d $DB_NAME -h $DB_HOST -u $DB_USERNAME -p $DB_PORT -x $DB_USERPASSWORD -e mysql
           pm2 restart drywall_kingston
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
