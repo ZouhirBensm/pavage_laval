@@ -5,7 +5,8 @@
   "main": "drywall_kingston.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon drywall_kingston.js"
+    "start": "nodemon drywall_kingston.js",
+    "generate-models": "sequelize-auto -o \"./models\" -d drywall_kingston -h localhost -u zouhir -p 3306 -x zouhir123123 -e mysql"
   },
   "author": "",
   "license": "ISC",
