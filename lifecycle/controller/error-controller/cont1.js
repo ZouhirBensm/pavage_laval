@@ -1,12 +1,9 @@
 function error_cont1(error, req ,res, next) {
-  // console.error(err.stack)
+  // console.error('Response status:', res.statusCode);
+
   console.error('\n\n\x1b[31;5mOn error-controller:\x1b[0m\n\n\x1b[37;41;1m', error, '\x1b[0m')
 
-  res.status(200).json({
-    name: error.constructor.name,
-    real_status: 500,
-    message: error.message
-  })
+  res.status(500).end()
   
 }
 
