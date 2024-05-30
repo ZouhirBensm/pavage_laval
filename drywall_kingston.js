@@ -3,24 +3,21 @@ const express = require('express')
 
 require('dotenv').config()
 
+const { Sequelize } = require('sequelize');
+const { initModels } = require(`./models/init-models`);
 
 
+const dialect = 'mysql'
 
-
-
-
-
-
-
-
-
-
-
+const sequelize = new Sequelize(process.env['DB_NAME'], process.env['DB_USERNAME'], process.env['DB_USERPASSWORD'], {
+  host: process.env['DB_HOST'],
+  dialect: dialect
+});
 
 
 const PORT = process.env['PORT']
 
-const { ENVIRONMENT, SIGNAL } = require('./data/types/types_1')
+const { ENVIRONMENT, SIGNAL } = require('./miscellaneous/const/env')
 
 
 const app = express()
@@ -41,6 +38,9 @@ app.use((req, res, next) => {
 });
 
 // Middlewares
+
+
+require('./miscellaneous/db/db')
 
 
 // Controllers
@@ -75,6 +75,13 @@ app.use(data_error_handler_controller.error_cont1)
 
 const server = app.listen(PORT, async ()=>{
   // sequelize
+  try {
+    await sequelize.authenticate();
+    console.log('\n\nAuthentication using sequelize succeeded');
+  } catch (err) {
+    console.error('Database authentication failed:', err);
+  }
+
   console.log('\n')
   console.log(`Congrats, your Node.JS Express.JS application is running on localhost:${PORT}.\napp.listen() callback function`)
   console.log('\n')
@@ -84,6 +91,9 @@ const server = app.listen(PORT, async ()=>{
 // When CTRL + C closes the app
 server.on('close', () => {
   // sequelize
+  sequelize.close();
+  console.log("Closed sequelize.\n")
+  // express
   console.log('Express web server is closing\n');
 });
 
