@@ -1,24 +1,54 @@
 const express = require('express')
-const app = express()
+
 
 require('dotenv').config()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const PORT = process.env['PORT']
 
+const { ENVIRONMENT, SIGNAL } = require('./data/types/types_1')
+
+
+const app = express()
 
 
 
-const { ENV, SIG } = require('./data/types/types_1')
+app.set('view engine', 'ejs');
+app.set('etag', 'strong');
 
 
 
 app.use(express.static('public'));
-app.set('view engine', 'ejs');
 
 
 app.use((req, res, next) => {
+
   return next()
 });
+
+// Middlewares
+
+
+// Controllers
+const get_catch_controller = require('./lifecycle/controller/get-catch-controller/cont1')
+const data_error_handler_controller = require('./lifecycle/controller/error-controller/cont1');
+
+
+
 
 
 app.get('/', (req, res, next) => {
@@ -31,41 +61,19 @@ app.get('/', (req, res, next) => {
 
 
 
-// Try accessing this URL localhost:3005/no_existant and that will trigger this middleware
-app.use((req, res, next) => {
-  if (req.method === "GET") {
-    return res.status(200).render('url_not_present')
-  }
-
-  return next();
-})
 
 
+
+
+app.use(get_catch_controller.cont1)
 
 // Error thrown on server, return 200 and respond with json object describing server error
-app.use((error, req, res, next) => {
-  // console.error(err.stack)
-  console.error('\n\n')
-
-  console.error('\x1b[31;5m')
-  console.error('Last middleware to process an error if any:')
-  console.error('\x1b[0m')
-
-  console.error('\x1b[37;41;1m')
-  console.error(error)
-  console.error('\x1b[0m')
-
-  return res.status(200).json({
-    name: error.constructor.name,
-    real_status: 500,
-    message: error.message
-  })
-
-})
+app.use(data_error_handler_controller.error_cont1)
 
 
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async ()=>{
+  // sequelize
   console.log('\n')
   console.log(`Congrats, your Node.JS Express.JS application is running on localhost:${PORT}.\napp.listen() callback function`)
   console.log('\n')
@@ -74,8 +82,17 @@ const server = app.listen(PORT, () => {
 
 // When CTRL + C closes the app
 server.on('close', () => {
+  // sequelize
   console.log('Express web server is closing\n');
 });
+
+
+const CLOSE_SIGNAL = (
+  process.env.NODE_ENV === ENVIRONMENT.DEVELOPMENT ? SIGNAL.INTERRUPTION
+  : process.env.NODE_ENV === ENVIRONMENT.PRODUCTION ? SIGNAL.TERMINATION :
+  SIGNAL.INTERRUPTION
+);
+
 
 const closeServer = () => {
   return new Promise((resolve, reject) => {
@@ -89,11 +106,7 @@ const closeServer = () => {
   });
 };
 
-const CLOSE_SIGNAL = (
-  process.env.NODE_ENV === ENV.DEV ? SIG.INT
-  : process.env.NODE_ENV === ENV.PROD ? SIG.TERM :
-  SIG.INT
-);
+
 
 process.on(CLOSE_SIGNAL, async () => {
   console.log(`\n\nReceived ${CLOSE_SIGNAL} signal...\n`);

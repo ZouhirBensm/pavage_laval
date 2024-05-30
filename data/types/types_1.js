@@ -1,15 +1,14 @@
-const ENV = {
-  DEV: "development",
-  PROD: "production"
+const ENVIRONMENT = {
+  DEVELOPMENT: "development",
+  PRODUCTION: "production"
 }
 
-const SIG = {
-  INT: 'SIGINT',
-  TERM: 'SIGTERM'
+const SIGNAL = {
+  INTERRUPTION: 'SIGINT',
+  TERMINATION: 'SIGTERM'
 }
-
 
 module.exports = {
-  ENV,
-  SIG
+  ENVIRONMENT,
+  SIGNAL
 }
