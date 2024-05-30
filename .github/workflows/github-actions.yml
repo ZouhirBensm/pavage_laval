@@ -25,5 +25,6 @@ jobs:
         script: |
           cd drywall_kingston
           git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/drywall_kingston.git master
+          npm run generate-models
           npm install
           pm2 restart drywall_kingston
