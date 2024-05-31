@@ -1,19 +1,33 @@
 const localbusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Ace Drywall Services",
-  "description": "We provide top-notch drywall installation and repair services for residential and commercial properties in the Kingston area.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Maple Street",
-    "addressLocality": "Kingston",
-    "addressRegion": "ON",
-    "postalCode": "M5H 2N2",
-    "addressCountry": "Canada"
+    "addressLocality": "Mexico Beach",
+    "addressRegion": "FL",
+    "streetAddress": "3102 Highway 98"
   },
-  "telephone": "+1 (819) 555-2555",
-  "email": "info@acedrywall.com"
+  "description": "A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.",
+  "name": "Beachwalk Beachwear & Giftware",
+  "telephone": "850-648-4200"
 }
+
+// {
+//   "@context": "https://schema.org",
+//   "@type": "LocalBusiness",
+//   "name": "Ace Drywall Services",
+//   "description": "We provide top-notch drywall installation and repair services for residential and commercial properties in the Kingston area.",
+//   "address": {
+//     "@type": "PostalAddress",
+//     "streetAddress": "123 Maple Street",
+//     "addressLocality": "Kingston",
+//     "addressRegion": "ON",
+//     "postalCode": "M5H 2N2",
+//     "addressCountry": "Canada"
+//   },
+//   "telephone": "+1 (819) 555-2555",
+//   "email": "info@acedrywall.com"
+// }
 
 // "openingHoursSpecification": [
 //   {
