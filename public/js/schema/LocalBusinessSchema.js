@@ -133,9 +133,13 @@ const localbusinessSchema =
       },
       "reviewBody": "Top-notch drywall repair. Friendly team, quick service, and perfect results. Will definitely hire again."
     }
-  ]
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "3"
+  }
 }
-
 
 
 const script2 = document.createElement('script');
