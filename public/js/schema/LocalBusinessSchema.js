@@ -109,11 +109,11 @@ const localbusinessSchema = {
 // }
 
 
-const script = document.createElement('script');
-script.type = 'application/ld+json';
-const text = JSON.stringify(websiteSchema)
-console.log("localbusinessSchema:" ,text)
-script.text = text
-document.head.appendChild(script);
+const script2 = document.createElement('script');
+script2.type = 'application/ld+json';
+const text2 = JSON.stringify(websiteSchema)
+console.log("localbusinessSchema:" ,text2)
+script.text = text2
+document.head.appendChild(script2);
 
 
