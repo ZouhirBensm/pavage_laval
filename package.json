@@ -8,7 +8,8 @@
     "start": "nodemon drywall_kingston.js",
     "generate-models": "sequelize-auto -o \"./models\" -d drywall_kingston -h localhost -u zouhir -p 3306 -x zouhir123123 -e mysql",
     "generate-models2": "node -r dotenv/config -e \"const { execSync } = require('child_process'); execSync('sequelize-auto -o ./models -d ' + process.env.DB_NAME + ' -h ' + process.env.DB_HOST + ' -u ' + process.env.DB_USER + ' -p ' + process.env.DB_PORT + ' -x ' + process.env.DB_PASS + ' -e mysql', { stdio: 'inherit' })\"",
-    "generate-models3": "eval $(grep -E 'DB_NAME|DB_HOST|DB_USER|DB_PASS|DB_PORT' .env | xargs) && sequelize-auto -o \"./models\" -d $DB_NAME -h $DB_HOST -u $DB_USER -p $DB_PORT -x $DB_PASS -e mysql"
+    "generate-models3": "eval $(grep -E 'DB_NAME|DB_HOST|DB_USER|DB_PASS|DB_PORT' .env | xargs) && sequelize-auto -o \"./models\" -d $DB_NAME -h $DB_HOST -u $DB_USER -p $DB_PORT -x $DB_PASS -e mysql",
+    "generate-models4": "dotenv -e .env -- sequelize-auto -o \"./models\" -d $DB_NAME -h $DB_HOST -u $DB_USER -p $DB_PORT -x $DB_PASS -e mysql"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "axios": "^1.7.2",
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
