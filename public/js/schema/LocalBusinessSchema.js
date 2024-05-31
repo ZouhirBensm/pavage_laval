@@ -111,7 +111,7 @@ const localbusinessSchema = {
 
 const script2 = document.createElement('script');
 script2.type = 'application/ld+json';
-const text2 = JSON.stringify(websiteSchema)
+const text2 = JSON.stringify(localbusinessSchema)
 console.log("localbusinessSchema:" ,text2)
 script2.text = text2
 document.head.appendChild(script2);
