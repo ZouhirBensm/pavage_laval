@@ -35,63 +35,64 @@ const localbusinessSchema = {
   //   "longitude": -79.3832
   // },
 
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Service Catalog",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "serviceType": "Drywall Installation",
-          "name": "Drywall Installation",
-          "description": "Expert Drywall Installation Services for Residential and Commercial Projects",
-          "image": "https://example.com/drywall-installation.jpg",
-          "url": "https://example.com/service/drywall-installation",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "Ace Drywall Services"
-          }
-        },
-        "priceCurrency": "CAD",
-        // "price": "50.00"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "serviceType": "Drywall Repair and Patching",
-          "name": "Drywall Repair and Patching",
-          "description": "Reliable Drywall Repair and Patching Services for Homes and Businesses",
-          "image": "https://example.com/drywall-repair-and-patching.jpg",
-          "url": "https://example.com/service/drywall-repair-and-patching",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "Ace Drywall Services"
-          }
-        },
-        "priceCurrency": "CAD",
-        // "price": "30.00"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "serviceType": "Drywall Finishing and Texturing",
-          "name": "Drywall Finishing and Texturing",
-          "description": "Professional Drywall Finishing and Texturing for a Perfect Finish",
-          "image": "https://example.com/drywall-finishing-and-texturing.jpg",
-          "url": "https://example.com/service/drywall-finishing-and-texturing",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "Ace Drywall Services"
-          }
-        },
-        "priceCurrency": "CAD",
-        // "price": "40.00"
-      }
-    ]
-  }
+  // "hasOfferCatalog": {
+  //   "@type": "OfferCatalog",
+  //   "name": "Service Catalog",
+  //   "itemListElement": [
+  //     {
+  //       "@type": "Offer",
+  //       "itemOffered": {
+  //         "@type": "Service",
+  //         "serviceType": "Drywall Installation",
+  //         "name": "Drywall Installation",
+  //         "description": "Expert Drywall Installation Services for Residential and Commercial Projects",
+  //         "image": "https://example.com/drywall-installation.jpg",
+  //         "url": "https://example.com/service/drywall-installation",
+  //         "provider": {
+  //           "@type": "LocalBusiness",
+  //           "name": "Ace Drywall Services"
+  //         }
+  //       },
+  //       "priceCurrency": "CAD",
+  //       // "price": "50.00"
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       "itemOffered": {
+  //         "@type": "Service",
+  //         "serviceType": "Drywall Repair and Patching",
+  //         "name": "Drywall Repair and Patching",
+  //         "description": "Reliable Drywall Repair and Patching Services for Homes and Businesses",
+  //         "image": "https://example.com/drywall-repair-and-patching.jpg",
+  //         "url": "https://example.com/service/drywall-repair-and-patching",
+  //         "provider": {
+  //           "@type": "LocalBusiness",
+  //           "name": "Ace Drywall Services"
+  //         }
+  //       },
+  //       "priceCurrency": "CAD",
+  //       // "price": "30.00"
+  //     },
+  //     {
+  //       "@type": "Offer",
+  //       "itemOffered": {
+  //         "@type": "Service",
+  //         "serviceType": "Drywall Finishing and Texturing",
+  //         "name": "Drywall Finishing and Texturing",
+  //         "description": "Professional Drywall Finishing and Texturing for a Perfect Finish",
+  //         "image": "https://example.com/drywall-finishing-and-texturing.jpg",
+  //         "url": "https://example.com/service/drywall-finishing-and-texturing",
+  //         "provider": {
+  //           "@type": "LocalBusiness",
+  //           "name": "Ace Drywall Services"
+  //         }
+  //       },
+  //       "priceCurrency": "CAD",
+  //       // "price": "40.00"
+  //     }
+  //   ]
+  // }
+  
 }
 
 const script = document.createElement('script');
