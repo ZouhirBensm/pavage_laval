@@ -7,5 +7,7 @@ const websiteSchema = {
 
 const script = document.createElement('script');
 script.type = 'application/ld+json';
-script.text = JSON.stringify(websiteSchema);
+const text = JSON.stringify(websiteSchema)
+console.log("websiteSchema:" ,text)
+script.text = text
 document.head.appendChild(script);
