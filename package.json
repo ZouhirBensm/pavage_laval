@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon drywall_kingston.js",
-    "generate-models": "sequelize-auto -o \"./models\" -d drywall_kingston -h localhost -u zouhir -p 3306 -x zouhir123123 -e mysql"
+    "generate-models": "cross-env DB_NAME=${DB_NAME} DB_HOST=${DB_HOST} DB_USERNAME=${DB_USERNAME} DB_USERPASSWORD=${DB_USERPASSWORD} sequelize-auto -o \"./models\" -d $DB_NAME -h $DB_HOST -u $DB_USERNAME -p 3306 -x $DB_USERPASSWORD -e mysql"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.2"
   },
   "dependencies": {
