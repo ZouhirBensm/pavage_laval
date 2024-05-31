@@ -1,6 +1,6 @@
 // 12
 const express = require('express')
-
+const path = require('path');
 
 require('dotenv').config()
 
@@ -52,17 +52,20 @@ const data_error_handler_controller = require('./lifecycle/controller/error-cont
 
 
 
-app.get('/', (req, res, next) => {
+// Serve index.html for the root path
+app.get('/', (req, res) => {
   // Throw an error for testing the error handling middleware.
   // let error = new Error("new error")
   // return next(error)
 
-  return res.sendFile('public/index.html');
+  return res.sendFile('index.html', { root: 'public' });
   // return res.render('index')
-})
+});
 
-
-
+// Serve request-a-quote.html for the /request-a-quote path
+app.get('/request-a-quote', (req, res) => {
+  return res.sendFile('request-a-quote.html', { root: 'public' });
+});
 
 
 
