@@ -1,16 +1,16 @@
-const localbusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Mexico Beach",
-    "addressRegion": "FL",
-    "streetAddress": "3102 Highway 98"
-  },
-  "description": "A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.",
-  "name": "Beachwalk Beachwear & Giftware",
-  "telephone": "850-648-4200"
-}
+// const localbusinessSchema = {
+//   "@context": "https://schema.org",
+//   "@type": "LocalBusiness",
+//   "address": {
+//     "@type": "PostalAddress",
+//     "addressLocality": "Mexico Beach",
+//     "addressRegion": "FL",
+//     "streetAddress": "3102 Highway 98"
+//   },
+//   "description": "A superb collection of fine gifts and clothing to accent your stay in Mexico Beach.",
+//   "name": "Beachwalk Beachwear & Giftware",
+//   "telephone": "850-648-4200"
+// }
 
 // {
 //   "@context": "https://schema.org",
@@ -109,7 +109,21 @@ const localbusinessSchema = {
 // }
 
 
+// const script = document.createElement('script');
+// script.type = 'application/ld+json';
+// script.text = JSON.stringify(localbusinessSchema);
+// document.head.appendChild(script);
+
+
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.example.com", // Place real website URL here
+  "name": "Your Business Name" // Place business name here
+};
+
 const script = document.createElement('script');
 script.type = 'application/ld+json';
-script.text = JSON.stringify(localbusinessSchema);
+script.text = JSON.stringify(websiteSchema);
 document.head.appendChild(script);
