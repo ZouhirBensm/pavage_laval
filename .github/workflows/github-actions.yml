@@ -30,5 +30,6 @@ jobs:
           rm -r models
           git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/drywall_kingston.git master
           npm install
+          mysql -u zouhir -pzouhir123123 drywall_kingston < ./miscellaneous/db/dump.txt
           npm run generate-models
           pm2 restart drywall_kingston
