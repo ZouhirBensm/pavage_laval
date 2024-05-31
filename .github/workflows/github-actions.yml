@@ -31,3 +31,35 @@ jobs:
           npm install
           npm run generate-models
           pm2 restart drywall_kingston
+
+    - name: Dump local MySQL database 📦
+      run: mysqldump -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_USERPASSWORD }} -h localhost ${{ secrets.DB_NAME }} > database_dump.sql
+      env:
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_USERPASSWORD: ${{ secrets.DB_USERPASSWORD }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+
+    - name: Transfer database dump to server 📤
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SERVER_HOSTNAME }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        source: "database_dump.sql"
+        target: "~/drywall_kingston/database_dump.sql"
+
+    - name: Restore database on server 🔄
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOSTNAME }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        port: ${{ secrets.SERVER_PORT }}
+        script: |
+          cd ~/drywall_kingston
+          mysql -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_USERPASSWORD }} -h localhost ${{ secrets.DB_NAME }} < database_dump.sql
+      env:
+        DB_USERNAME: ${{ secrets.DB_USER }}
+        DB_USERPASSWORD: ${{ secrets.DB_PASS }}
+        DB_NAME: ${{ secrets.DB_NAME }}
