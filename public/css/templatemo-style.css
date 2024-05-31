@@ -28,9 +28,16 @@ html {
 } */
 
 body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  /* font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 18px;
+  font-weight: 400; */
+
+  font-family: "Freeman", sans-serif;
   font-weight: 400;
+  font-style: normal;
+  letter-spacing: .5px;
+
+
   color: #6b6b6b;
   overflow-x: hidden;
 }
@@ -100,6 +107,11 @@ a:hover {
 
 .tm-brand-container {
   padding: 75px 110px;
+  letter-spacing: 1.2px;
+  background-image: url('../img/svg/wave_footer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .tm-brand-name {
@@ -120,6 +132,13 @@ a:hover {
 }
 
 .tm-welcome-container {
+
+  background-image: url('../img/svg/wave_footer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+
   min-height: 400px;
   position: absolute;
   bottom: 0;
@@ -134,6 +153,7 @@ a:hover {
 }
 
 .tm-welcome-left {
+  letter-spacing: 1.5px;
   padding-right: 30px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -196,6 +216,7 @@ a:hover {
 
 .tm-text-blue {
   color: #007bff;
+  letter-spacing: 1px;
 }
 
 .tm-text-dark-gray {
@@ -226,6 +247,10 @@ p {
   margin-right: 35px;
   background-color: white;
   padding: 54px 34px 44px;
+}
+
+.tm-contact-item > p:nth-of-type(2) {
+  letter-spacing: 2px;
 }
 
 .tm-contact-item:last-child {
@@ -281,6 +306,7 @@ p {
 .tm-copyright-text {
   margin: 30px 0;
   color: black;
+  letter-spacing: 1px;
 }
 
 .tm-link {
