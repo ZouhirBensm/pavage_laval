@@ -1,4 +1,4 @@
-const localbusinessSchema = 
+const localbusinessSchema =
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -14,7 +14,7 @@ const localbusinessSchema =
   },
   "telephone": "+1 (819) 555-2555",
   "email": "info@acedrywall.com",
-  
+
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -29,13 +29,13 @@ const localbusinessSchema =
       "closes": "17:00"
     }
   ],
-  
+
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 43.6532,
     "longitude": -79.3832
   },
-  
+
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Service Catalog",
@@ -92,17 +92,56 @@ const localbusinessSchema =
         // "price": "40.00"
       }
     ]
-  }
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Doug Leo"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Exceptional drywall service! Efficient, professional, and great results. Highly recommend them for any job."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Alan Schmidts"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Great experience with this Kingston drywall company. Prompt, skilled, and the finish was flawless. Very impressed."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Hal 'Haly' Lowie"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Top-notch drywall repair. Friendly team, quick service, and perfect results. Will definitely hire again."
+    }
+  ]
 }
-
-
 
 
 
 const script2 = document.createElement('script');
 script2.type = 'application/ld+json';
 const text2 = JSON.stringify(localbusinessSchema)
-console.log("localbusinessSchema:" ,text2)
+console.log("localbusinessSchema:", text2)
 script2.text = text2
 document.head.appendChild(script2);
 
