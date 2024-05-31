@@ -1,0 +1,71 @@
+nav#top {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  /* background-color: #4773ba; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgb(0, 123, 255, 0.7);
+  border-bottom: 2px solid #fdfdfd;
+
+  background-image: url('../img/svg/wave_nav.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+nav#top>* {
+  white-space: nowrap;
+  width: fit-content;
+  margin: 0 auto;
+  padding: .5rem 0;
+  text-decoration: none;
+  letter-spacing: 2.0px;
+}
+
+nav#top>*>img {
+  padding: 0;
+}
+
+nav#top>*:not(:first-of-type)>img {
+  width: 30px;
+  height: 30px;
+}
+
+nav#top>a:not(:first-of-type)>img:hover {
+  /* content: url('/img/icons/second_red.svg'); */
+}
+
+nav#top>a:link {
+  color: white;
+}
+
+
+nav#top>a:visited {
+  color: white;
+}
+
+
+nav#top>a:link:active,
+nav#top>a:visited:active {
+  color: rgb(224, 4, 4);
+}
+
+nav#top>a:hover {
+  color: red;
+}
+
+
+
+
+
+@media screen and (max-width: 850px) {
+  nav#top {
+    flex-direction: column !important;
+  }
+}

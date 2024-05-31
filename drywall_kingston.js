@@ -57,8 +57,8 @@ app.get('/', (req, res, next) => {
   // let error = new Error("new error")
   // return next(error)
 
-
-  return res.render('index')
+  return res.sendFile('public/index.html');
+  // return res.render('index')
 })
 
 

@@ -1,0 +1,100 @@
+body>footer>div>div#social-media>a[href='#social1']>img:hover {
+  content: url('../img/icons/youtube_red.svg');
+}
+
+body>footer>div>div#social-media>a[href='#social2']>img:hover {
+  content: url('../img/icons/twitter_red.svg');
+}
+
+body>footer>div>div#social-media>a[href='#social3']>img:hover {
+  content: url('../img/icons/pinterest_red.svg');
+}
+
+body>footer>div>div#social-media>a[href='#social4']>img:hover {
+  content: url('../img/icons/quora_red.svg');
+}
+
+/* mailto:admin@earnanswers.com */
+body>footer>div>div#social-media>a[href='#social5']>img:hover {
+  content: url('../img/icons/email_red.svg');
+}
+
+body>footer>div>div#social-media>a[href='#social6']>img:hover {
+  content: url('../img/icons/reddit_red.svg');
+}
+
+
+
+body > footer {
+  padding: 20px 0;
+  background-image: url('../img/svg/wave_footer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 0 10px 10px;
+  border-top: 2px solid #fdfdfd;
+  background-color: rgb(0, 123, 255, 0.7);
+  /* font-size: var(--font-size-footer); */
+  /* background-color: #76bd9fbd; */
+}
+
+body > footer > div > div#social-media {
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+body > footer > div  > div#social-media > a {
+  padding: 20px;
+}
+
+
+body > footer > div > nav#bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+
+body > footer > div  > *{
+  padding: 50px;
+}
+
+body > footer > div {
+  overflow: hidden;
+}
+
+body > footer nav#bottom > a{
+  text-decoration: none;
+  width: fit-content;
+  letter-spacing: 2.0px;
+  padding: 0.5rem 0;
+  /* line-height: 2rem; */
+}
+
+body > footer nav#bottom > a:link {
+  color: white;
+}
+
+body > footer nav#bottom > a:visited {
+  color: white;
+}
+
+
+body > footer nav#bottom > a:link:active,
+body > footer nav#bottom > a:visited:active {
+  color: rgb(224, 4, 4);
+}
+
+body > footer nav#bottom > a:hover {
+  color: red;
+}
+
+
+@media screen and (max-width: 850px) {
+  body > footer > div > nav,
+  body > footer > div > div#social-media {
+    flex-direction: column !important;
+  }
+}
