@@ -6,7 +6,19 @@ const organizationSchema = {
   "logo": "https://drywallkingston.com/img/logo_head2.png",
   "contactPoint": {
     "@type": "ContactPoint",
+    "telephone": "+1-819-555-2555",
+    "contactType": "Customer Service",
+    "areaServed": "CA",
+    "availableLanguage": "English",
     "url": "https://drywallkingston.com/request-free-quote"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Maple Street",
+    "addressLocality": "Kingston",
+    "addressRegion": "ON",
+    "postalCode": "M5H 2N2",
+    "addressCountry": "CA"
   }
   // "sameAs": [
   //   "https://www.youtube.com/channel/yourchannel",
@@ -14,7 +26,7 @@ const organizationSchema = {
   //   "https://www.pinterest.com/yourprofile",
   //   "https://www.quora.com/profile/yourprofile"
   // ]
-};
+}
 
 const script1 = document.createElement('script');
 script1.type = 'application/ld+json';
