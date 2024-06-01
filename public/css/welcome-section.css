@@ -65,7 +65,7 @@ section#tmWelcome .animated-text.blue {
 
 
 /* Address text under the home page banner  */
-a[itemprop="url"] {
+div.tm-welcome-left-col a {
   white-space: pre-line;
   display: block;
 }

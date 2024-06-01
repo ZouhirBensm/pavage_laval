@@ -83,6 +83,12 @@ app.get('/organization', (req, res) => {
 
 
 
+app.get('/about', (req, res) => {
+  return res.sendFile('about.html', { root: 'public' });
+});
+
+
+
 app.use(get_catch_controller.cont1)
 
 // Error thrown on server, return 200 and respond with json object describing server error
