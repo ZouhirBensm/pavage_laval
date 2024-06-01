@@ -62,10 +62,17 @@ app.get('/', (req, res) => {
   // return res.render('index')
 });
 
-// Serve request-a-quote.html for the /request-a-quote path
-app.get('/request-a-quote', (req, res) => {
-  return res.sendFile('request-a-quote.html', { root: 'public' });
+// Serve request-free-quote.html for the /request-free-quote path
+app.get('/request-free-quote', (req, res) => {
+  return res.sendFile('request-free-quote.html', { root: 'public' });
 });
+
+
+// Serve request-free-quote.html for the /request-free-quote path
+// app.post('/retrieve-request-free-quote-data', (req, res) => {
+//   console.log('retrieve-request-free-quote-data!')
+//   return res.end()
+// });
 
 
 
