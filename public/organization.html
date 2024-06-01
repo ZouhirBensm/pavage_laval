@@ -25,11 +25,13 @@
   <link rel="stylesheet" href="css/request-free-quote.css" />
 
 
-  <script src="/js/schema/ContactPageSchema.js"></script>
+  <script src="/js/schema/OrganizatonSchema.js"></script>
 
 
 
-  <title>Request free quote</title>
+
+
+  <title>Organization</title>
 
 </head>
 
@@ -66,7 +68,7 @@
           <!-- Black transparent bg -->
           <div class="ml-auto mr-0 tm-bg-black-transparent text-white tm-brand-container-inner">
             <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name">Request free quote</h1>
+              <h1 class="tm-brand-name">Organization</h1>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
               <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/earnanswers2/30min">
                 Book a call
@@ -86,13 +88,11 @@
             <div class="tm-welcome-left">
               <h2 class="tm-welcome-title">Address</h2>
               <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-                <a rel="nofollow" href="/organization" itemprop="url">123 Maple Street
-                  Kingston, ON M5H 2N2
-                  Canada</a>
-                <!-- This is Bootstrap v4.3.1 parallax layout for you. Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> for 2 background images. In
-                odio sapien, commodo id ullamcorper ac, dignissim at sapien.
-                Nullam leo massa, vaius ac massa et, tincidunt imperdiet
-              turpis.  -->
+                <a rel="nofollow" href="/organization" itemprop="url">
+                  <span itemprop="streetAddress">123 Maple Street</span>
+                  <span itemprop="addressLocality">Kingston</span>, <span itemprop="addressRegion">ON</span> <span itemprop="postalCode">M5H 2N2</span>
+                  <span itemprop="addressCountry">Canada</span>
+                </a>
               </p>
 
 
@@ -132,14 +132,11 @@
   <section id="tmPortfolio">
     <div class="container-fluid">
 
-      <div class="row">
+
+
+      <!-- <div class="row">
         <div class="col-12">
 
-
-          <!-- Using Node -->
-          <!-- <form action="/retrieve-request-free-quote-data" method="post" id="tmContactForm" class="tm-bg-white-transparent"> -->
-
-          <!-- Using browser capabilities -->
           <form id="tmContactForm" class="tm-bg-white-transparent">
           <div class="form-group">
             <input type="text" id="contact_name" name="contact_name"
@@ -169,11 +166,8 @@
 
           </form>
 
-
-
-
         </div>
-      </div>
+      </div> -->
 
 
     </div>
@@ -241,8 +235,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/parallax.min.js"></script>
 
-
-  <script src="/js/request-free-quote.js"></script>
 
 
 

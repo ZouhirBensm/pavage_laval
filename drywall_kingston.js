@@ -68,12 +68,18 @@ app.get('/request-free-quote', (req, res) => {
 });
 
 
+// Using Node
 // Serve request-free-quote.html for the /request-free-quote path
 // app.post('/retrieve-request-free-quote-data', (req, res) => {
 //   console.log('retrieve-request-free-quote-data!')
 //   return res.end()
 // });
 
+
+
+app.get('/organization', (req, res) => {
+  return res.sendFile('organization.html', { root: 'public' });
+});
 
 
 
