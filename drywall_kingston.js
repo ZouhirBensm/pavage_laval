@@ -88,6 +88,22 @@ app.get('/about', (req, res) => {
 });
 
 
+app.get('/service/drywall-installation', (req, res) => {
+  return res.sendFile('drywall-installation.html', { root: 'public' });
+});
+
+
+app.get('/service/drywall-repair-and-patching', (req, res) => {
+  return res.sendFile('drywall-repair-and-patching.html', { root: 'public' });
+});
+
+
+
+app.get('/service/drywall-finishing-and-texturing', (req, res) => {
+  return res.sendFile('drywall-finishing-and-texturing.html', { root: 'public' });
+});
+
+
 
 app.use(get_catch_controller.cont1)
 
