@@ -129,12 +129,12 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div itemscope itemtype="https://schema.org/BlogPosting">
-            <h1 class="title-template" itemprop="headline"></h1>
-            <span class="category-template" itemprop="about"></span>
+          <div>
+            <h1 class="title-template"></h1>
+            <span class="category-template"></span>
 
 
-            <div id="content-template" itemprop="articleBody"></div>
+            <div id="content-template"></div>
 
             <!-- <meta itemprop="datePublished" content="2024-06-02">
             <meta itemprop="dateModified" content="2024-06-02"> -->
@@ -237,23 +237,23 @@
       const blogData = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "Drywall Contractors Kingston",
-        "about": "Drywall",
-        "articleBody": "Looking for reliable drywall contractors in Kingston? Our team of experienced professionals specializes in all aspects of drywall installation and repair. We offer quality workmanship, timely project completion, and competitive pricing. Whether it's a residential renovation or a commercial build, we've got you covered. Contact us today for a free quote and see why we are the trusted choice for drywall services in Kingston.",
-        "datePublished": "2024-06-02",
-        "dateModified": "2024-06-02",
-        "author": {
-          "@type": "Organization",
-          "name": "Your Company Name"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Your Company Name",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://yourwebsite.com/logo.png"
-          }
-        }
+        "headline": window.blogData.title,
+        "about": window.blogData.category,
+        "articleBody": window.blogData.htmlContent,
+        // "datePublished": "2024-06-02",
+        // "dateModified": "2024-06-02",
+        // "author": {
+        //   "@type": "Organization",
+        //   "name": "Your Company Name"
+        // },
+        // "publisher": {
+        //   "@type": "Organization",
+        //   "name": "Your Company Name",
+        //   "logo": {
+        //     "@type": "ImageObject",
+        //     "url": "https://yourwebsite.com/logo.png"
+        //   }
+        // }
       };
 
       // Create a script element for JSON-LD
