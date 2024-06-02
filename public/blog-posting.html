@@ -64,7 +64,7 @@
           <!-- Black transparent bg -->
           <div class="ml-auto mr-0 tm-bg-blue-transparent text-white tm-brand-container-inner">
             <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name title-template"></h1>
+              <h2 class="tm-brand-name title-template"></h2>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
               <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/earnanswers2/30min">
                 Book a call
@@ -129,12 +129,16 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div>
-            <h2 class="title-template"></h2>
-            <span class="category-template"></span>
+          <div itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="title-template" itemprop="headline"></h1>
+            <span class="category-template" itemprop="about"></span>
 
 
-            <div id="content-template"></div>
+            <div id="content-template" itemprop="articleBody"></div>
+
+            <!-- <meta itemprop="datePublished" content="2024-06-02">
+            <meta itemprop="dateModified" content="2024-06-02"> -->
+
           </div>
         </div>
       </div>
