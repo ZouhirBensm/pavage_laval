@@ -207,7 +207,7 @@
   <script src="/js/parallax.min.js"></script>
 
 
- 
+
 
 
   <script>
@@ -221,7 +221,7 @@
           const category = window.blogData.category;
           element.textContent = category;
         });
-        
+
         const titleElements = document.querySelectorAll('.title-template');
         console.log(titleElements)
         titleElements.forEach(element => {
@@ -233,7 +233,36 @@
       } else {
 
       }
+
+      const blogData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Drywall Contractors Kingston",
+        "about": "Drywall",
+        "articleBody": "Looking for reliable drywall contractors in Kingston? Our team of experienced professionals specializes in all aspects of drywall installation and repair. We offer quality workmanship, timely project completion, and competitive pricing. Whether it's a residential renovation or a commercial build, we've got you covered. Contact us today for a free quote and see why we are the trusted choice for drywall services in Kingston.",
+        "datePublished": "2024-06-02",
+        "dateModified": "2024-06-02",
+        "author": {
+          "@type": "Organization",
+          "name": "Your Company Name"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Your Company Name",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://yourwebsite.com/logo.png"
+          }
+        }
+      };
+
+      // Create a script element for JSON-LD
+      const scriptElement = document.createElement('script');
+      scriptElement.type = 'application/ld+json';
+      scriptElement.text = JSON.stringify(blogData);
+      document.head.appendChild(scriptElement);
     });
+
   </script>
 
 
