@@ -56,13 +56,21 @@ a:hover {
 }
 
 .tm-bg-black-transparent {
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  background-color: rgb(0, 123, 255, 0.35);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgb(0, 123, 255, 0.35); */
+}
+
+.tm-bg-black-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .tm-bg-blue-transparent {
   /* background-color: rgba(0, 0, 0, 0.5); */
   background-color: rgba(0, 104, 214, 0.471);
+}
+
+.tm-bg-darker-blue-transparent {
+  background-color: rgba(0, 83, 172, 0.616);
 }
 
 

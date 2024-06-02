@@ -1,0 +1,16 @@
+div#FAQ {
+  color: white;
+  letter-spacing: 1.3px;
+}
+
+
+div#FAQ > div {
+  padding-bottom: 30px;
+}
+
+
+
+div#FAQ > div > div {
+  border-radius: 10px;
+  padding: 20px;
+}
