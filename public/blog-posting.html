@@ -232,6 +232,14 @@
         document.getElementById('content-template').innerHTML = window.blogData.htmlContent;
       } else {
 
+
+      }
+
+      // Function to strip HTML tags
+      function stripHTML(html) {
+        var tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
       }
 
       const blogData = {
@@ -239,7 +247,7 @@
         "@type": "BlogPosting",
         "headline": window.blogData.title,
         "about": window.blogData.category,
-        "articleBody": window.blogData.htmlContent,
+        "articleBody": stripHTML(window.blogData.htmlContent),
         // "datePublished": "2024-06-02",
         // "dateModified": "2024-06-02",
         // "author": {
