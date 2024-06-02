@@ -1,3 +1,5 @@
+const json = require('../db/json')
+
 // Input
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript
 function parseURL(url){
@@ -30,9 +32,46 @@ function parsePath (path) {
   // ["en-US", "docs", "Web", "JavaScript"]
 }
 
+// Function to get the JSON data (replace this with your actual data source)
+function getJsonData(title, category) {
+  
+  title =  title.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
+  category =  category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
+
+
+  console.log(title)
+  const matchingObject = getJsonObjectByTitle(title);
+  
+  if (!matchingObject) {
+    content = ''
+  }
+
+  // Example JSON data
+  return {
+    title: title,
+    category: category,
+    htmlContent: matchingObject.htmlContent,
+  };
+}
+
+
+// Function to get the JSON object by title
+function getJsonObjectByTitle(title) {
+  // Iterate over the JSON data to find the object with the matching title
+  for (let key in json) {
+    if (json[key].title === title) {
+      return json[key];
+    }
+  }
+  return null; // Return null if no matching title is found
+}
+
+
+
 const utils1 = {
   parseURL,
-  parsePath
+  parsePath,
+  getJsonData
 }
 
 module.exports = utils1

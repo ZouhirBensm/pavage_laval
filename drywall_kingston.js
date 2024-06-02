@@ -2,10 +2,15 @@
 const express = require('express')
 const path = require('path');
 
+const fs = require('fs');
+
 require('dotenv').config()
 
 const { Sequelize } = require('sequelize');
-const { initModels } = require(`./models/init-models`);
+// const { initModels } = require(`./models/init-models`);
+
+const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
+const { getJsonData } = require('./miscellaneous/utils/utils1')
 
 
 const dialect = 'mysql'
@@ -104,6 +109,244 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 });
 
 
+app.get('/sitemap', (req, res) => {
+  return res.sendFile('sitemap.html', { root: 'public' });
+});
+
+
+app.get('/blog', (req, res) => {
+  return res.sendFile('blog.html', { root: 'public' });
+});
+
+
+app.get('/blog/:category', (req, res) => {
+
+  const category = req.params.category;
+
+  console.log(category);
+
+  const options = {
+    root: path.join(__dirname, 'public'),
+  };
+
+  res.sendFile('category.html', options, (err) => {
+    if (err) {
+      console.error('Error sending file:', err);
+      res.status(err.status).end();
+    } else {
+      console.log('Sent:', 'category.html');
+    }
+  });
+
+});
+
+
+
+
+
+
+
+
+// app.get('/blog/:category/blog-posting/:title', (req, res) => {
+
+//   const category = req.params.category;
+//   const title = req.params.title;
+
+
+
+//   console.log(category, title);
+
+//   const options = {
+//     root: path.join(__dirname, 'public'),
+//   };
+
+//   res.sendFile('blog-posting.html', options, (err) => {
+//     if (err) {
+//       console.error('Error sending file:', err);
+//       res.status(err.status).end();
+//     } else {
+//       console.log('Sent:', 'blog-posting.html');
+//     }
+//   });
+
+// });
+
+
+
+
+
+app.get('/blog/:category/blog-posting/:title', (req, res) => {
+  const { title, category } = req.params;
+
+  console.log(title)
+
+  const jsonData = getJsonData(title, category);
+
+  const htmlFilePath = path.join(__dirname, 'public', 'blog-posting.html');
+
+  let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
+
+  // Embed the JSON data in a script tag
+  const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
+  htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
+
+  res.send(htmlContent);
+});
+
+
+
+
+
+
+
+
+app.get('/sitemap/xml-sitemap', (req, res) => {
+  // return res.sendFile('sitemap.html', { root: 'public' });
+
+  const now = new Date()
+  console.log(now)
+
+  let last_modified_1 = '2024-06-02T15:07:49.699Z'
+  let last_modified_1_date = new Date(last_modified_1);
+
+
+  const urls = [
+    {
+      URL: '/',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/request-free-quote',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/organization',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/about',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/service/drywall-installation',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/service/drywall-repair-and-patching',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/service/drywall-finishing-and-texturing"',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/sitemap',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-contractors-kingston',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 1
+    },
+    {
+      URL: '/blog/drywall/blog-posting/residential-drywall-contractors-kingston',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-contractors-kingston-ontario',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-companies-in-kingston-ontario',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-companies-in-kingston',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-kingston-ltd',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-kingston-prices',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-kingston-cost',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    },
+    {
+      URL: '/blog/drywall/blog-posting/best-drywall-kingston',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.5
+    }
+  ];
+
+
+
+
+  const xml = createSiteMap(urls)
+
+  fs.writeFileSync(`./public/sitemap/sitemap.xml`, xml, 'utf-8');
+
+  return res.sendFile('sitemap.html', { root: 'public' });
+});
+
+
+
+
+
+
 
 app.use(get_catch_controller.cont1)
 
@@ -112,7 +355,7 @@ app.use(data_error_handler_controller.error_cont1)
 
 
 
-const server = app.listen(PORT, async ()=>{
+const server = app.listen(PORT, async () => {
   // sequelize
   try {
     await sequelize.authenticate();
@@ -139,8 +382,8 @@ server.on('close', () => {
 
 const CLOSE_SIGNAL = (
   process.env.NODE_ENV === ENVIRONMENT.DEVELOPMENT ? SIGNAL.INTERRUPTION
-  : process.env.NODE_ENV === ENVIRONMENT.PRODUCTION ? SIGNAL.TERMINATION :
-  SIGNAL.INTERRUPTION
+    : process.env.NODE_ENV === ENVIRONMENT.PRODUCTION ? SIGNAL.TERMINATION :
+      SIGNAL.INTERRUPTION
 );
 
 

@@ -25,10 +25,8 @@
   <link rel="stylesheet" href="/css/request-free-quote.css" />
 
 
-  <script src="/js/schema/AboutWebPageSchema.js"></script>
+  <title class="category-template"></title>
 
-
-  <title>About Us</title>
 
 </head>
 
@@ -54,7 +52,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif" alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
+    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
 
 
     <div class="container-fluid tm-brand-container-outer">
@@ -65,7 +64,7 @@
           <!-- Black transparent bg -->
           <div class="ml-auto mr-0 tm-bg-blue-transparent text-white tm-brand-container-inner">
             <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name">About Us</h1>
+              <h1 class="tm-brand-name title-template"></h1>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
               <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/earnanswers2/30min">
                 Book a call
@@ -84,7 +83,7 @@
           <div class="col-md-7 tm-welcome-left-col">
             <div class="tm-welcome-left">
               <h2 class="tm-welcome-title">Address</h2>
-             <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
+              <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
                 <a rel="nofollow" href="/organization" itemprop="url">123 Maple Street
                   Kingston, ON M5H 2N2
                   Canada</a>
@@ -106,8 +105,10 @@
 
           <!-- Brown bg -->
           <div class="col-md-5">
-                        <div class="tm-welcome-right" aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-              <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario." style="display:none;">
+            <div class="tm-welcome-right"
+              aria-label="Map showing the local drywall business location in Kingston, Ontario.">
+              <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
+                style="display:none;">
               <!-- Map is here -->
             </div>
           </div>
@@ -123,52 +124,22 @@
 
 
 
-
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
-
-
-
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-12">
+          <div>
+            <h2 class="title-template"></h2>
+            <span class="category-template"></span>
 
-          <form id="tmContactForm" class="tm-bg-white-transparent">
-          <div class="form-group">
-            <input type="text" id="contact_name" name="contact_name"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Name" required />
+
+            <div id="content-template"></div>
           </div>
-          <div class="form-group">
-              <input type="email" id="contact_email" name="contact_email"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Email" required />
-            </div>
-            <div class="form-group">
-              <input type="tel" id="contact_phone" name="contact_phone"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Phone" 
-              pattern="^\+?1?\d{10,15}$" required />
-              <div class="side-note-form">(valid formats: 9991234444, +19991234444)</span>
-              
-            </div>
-            <div class="form-group">
-              <textarea rows="4" id="contact_message" name="contact_message"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="The message goes here. Please provide details on what needs to be done, and we will get back to you as soon as possible."
-                required></textarea>
-            </div>
-          <div class="text-center">
-            <button type="submit" class="btn tm-btn-submit rounded-0">
-              Submit
-            </button>
-          </div>
-
-          </form>
-
         </div>
-      </div> -->
-
-
+      </div>
     </div>
   </section>
-  <!-- End portfolio section -->
 
 
 
@@ -231,6 +202,35 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/parallax.min.js"></script>
 
+
+ 
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve the JSON data from the embedded script variable
+      if (window.blogData) {
+
+        const categoryElements = document.querySelectorAll('.category-template');
+        console.log(categoryElements)
+        categoryElements.forEach(element => {
+          const category = window.blogData.category;
+          element.textContent = category;
+        });
+        
+        const titleElements = document.querySelectorAll('.title-template');
+        console.log(titleElements)
+        titleElements.forEach(element => {
+          const title = window.blogData.title;
+          element.textContent = title;
+        });
+
+        document.getElementById('content-template').innerHTML = window.blogData.htmlContent;
+      } else {
+
+      }
+    });
+  </script>
 
 
 
