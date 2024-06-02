@@ -51,6 +51,8 @@ function getJsonData(title, category) {
     title: title,
     category: category,
     htmlContent: matchingObject.htmlContent,
+    datePublished: matchingObject.datePublished,
+    dateModified: matchingObject.dateModified
   };
 }
 
