@@ -57,6 +57,28 @@ function getJsonData(title, category) {
 }
 
 
+// Function to get the JSON data (replace this with your actual data source)
+function getJsonData2(title) {
+  
+  title =  title.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
+
+
+  console.log(title)
+
+  const matchingObject = getJsonObjectByTitle(title);
+  
+  if (!matchingObject) {
+    content = ''
+  }
+
+  // Example JSON data
+  return {
+    title: title,
+    htmlContent: matchingObject.htmlContent
+  };
+}
+
+
 // Function to get the JSON object by title
 function getJsonObjectByTitle(title) {
   // Iterate over the JSON data to find the object with the matching title
@@ -73,7 +95,8 @@ function getJsonObjectByTitle(title) {
 const utils1 = {
   parseURL,
   parsePath,
-  getJsonData
+  getJsonData,
+  getJsonData2
 }
 
 module.exports = utils1

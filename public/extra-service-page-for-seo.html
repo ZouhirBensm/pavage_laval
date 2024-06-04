@@ -130,8 +130,8 @@
       <div class="row">
         <div class="col-12">
           <div>
-            <!-- <h2 class="title-template"></h2> -->
-            <span class="category-template"></span>
+            <h3 class="tm-text-blue title-template"></h3>
+            <!-- <span class="category-template"></span> -->
 
 
             <div id="content-template"></div>
@@ -211,12 +211,12 @@
       // Retrieve the JSON data from the embedded script variable
       if (window.blogData) {
 
-        const categoryElements = document.querySelectorAll('.category-template');
-        console.log(categoryElements)
-        categoryElements.forEach(element => {
-          const category = window.blogData.category;
-          element.textContent = category;
-        });
+        // const categoryElements = document.querySelectorAll('.category-template');
+        // console.log(categoryElements)
+        // categoryElements.forEach(element => {
+        //   const category = window.blogData.category;
+        //   element.textContent = category;
+        // });
 
         const titleElements = document.querySelectorAll('.title-template');
         console.log(titleElements)
@@ -231,40 +231,40 @@
 
       }
 
-      // Function to strip HTML tags
-      function stripHTML(html) {
-        var tmp = document.createElement("DIV");
-        tmp.innerHTML = html;
-        return tmp.textContent || tmp.innerText || "";
-      }
+      // // Function to strip HTML tags
+      // function stripHTML(html) {
+      //   var tmp = document.createElement("DIV");
+      //   tmp.innerHTML = html;
+      //   return tmp.textContent || tmp.innerText || "";
+      // }
 
-      const blogData = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": window.blogData.title,
-        "about": window.blogData.category,
-        "articleBody": stripHTML(window.blogData.htmlContent),
-        "datePublished": window.blogData.datePublished,
-        "dateModified": window.blogData.dateModified,
-        // "author": {
-        //   "@type": "Organization",
-        //   "url": "https://drywallkingston.com/organization"
-        // },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Drywall Kingston",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://drywallkingston.com/img/logo_head2.png"
-          }
-        }
-      };
+      // const blogData = {
+      //   "@context": "https://schema.org",
+      //   "@type": "BlogPosting",
+      //   "headline": window.blogData.title,
+      //   "about": window.blogData.category,
+      //   "articleBody": stripHTML(window.blogData.htmlContent),
+      //   "datePublished": window.blogData.datePublished,
+      //   "dateModified": window.blogData.dateModified,
+      //   // "author": {
+      //   //   "@type": "Organization",
+      //   //   "url": "https://drywallkingston.com/organization"
+      //   // },
+      //   "publisher": {
+      //     "@type": "Organization",
+      //     "name": "Drywall Kingston",
+      //     "logo": {
+      //       "@type": "ImageObject",
+      //       "url": "https://drywallkingston.com/img/logo_head2.png"
+      //     }
+      //   }
+      // };
 
-      // Create a script element for JSON-LD
-      const scriptElement = document.createElement('script');
-      scriptElement.type = 'application/ld+json';
-      scriptElement.text = JSON.stringify(blogData);
-      document.head.appendChild(scriptElement);
+      // // Create a script element for JSON-LD
+      // const scriptElement = document.createElement('script');
+      // scriptElement.type = 'application/ld+json';
+      // scriptElement.text = JSON.stringify(blogData);
+      // document.head.appendChild(scriptElement);
     });
 
   </script>

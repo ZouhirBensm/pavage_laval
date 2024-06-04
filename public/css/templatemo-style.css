@@ -187,6 +187,9 @@ a:hover {
 
 #tmPortfolio {
   padding-top: 80px;
+  /* Here@ */
+  background: white; 
+
 }
 
 .tm-portfolio-item {
@@ -312,9 +315,15 @@ p {
 } */
 
 .tm-copyright-text {
-  margin: 30px 0;
+  /* Here@ deleted */
+  /* margin: 30px 0; */
   color: black;
   letter-spacing: 1px;
+
+  /* Here@ added */
+  background-color: white;
+  margin: 0;
+  padding: 30px 0;
 }
 
 .tm-link {

@@ -10,7 +10,7 @@ const { Sequelize } = require('sequelize');
 // const { initModels } = require(`./models/init-models`);
 
 const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
-const { getJsonData } = require('./miscellaneous/utils/utils1')
+const { getJsonData, getJsonData2 } = require('./miscellaneous/utils/utils1')
 
 
 const dialect = 'mysql'
@@ -109,6 +109,27 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 });
 
 
+
+
+app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+  const { extra_service_page_title_for_seo } = req.params;
+
+  console.log(extra_service_page_title_for_seo)
+
+  const jsonData = getJsonData2(extra_service_page_title_for_seo);
+
+  const htmlFilePath = path.join(__dirname, 'public', 'extra-service-page-for-seo.html');
+
+  let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
+
+  // Embed the JSON data in a script tag
+  const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
+  htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
+
+  res.send(htmlContent);
+});
+
+
 app.get('/sitemap', (req, res) => {
   return res.sendFile('sitemap.html', { root: 'public' });
 });
@@ -117,6 +138,9 @@ app.get('/sitemap', (req, res) => {
 app.get('/blog', (req, res) => {
   return res.sendFile('blog.html', { root: 'public' });
 });
+
+
+
 
 
 app.get('/blog/:category', (req, res) => {
@@ -268,63 +292,63 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       priority: 1
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-contractors-kingston',
+      URL: '/service/drywall-contractors-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 1
     },
     {
-      URL: '/blog/drywall/blog-posting/residential-drywall-contractors-kingston',
+      URL: '/service/residential-drywall-contractors-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-contractors-kingston-ontario',
+      URL: '/service/drywall-contractors-kingston-ontario',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-companies-in-kingston-ontario',
+      URL: '/service/drywall-companies-in-kingston-ontario',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-companies-in-kingston',
+      URL: '/service/drywall-companies-in-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-kingston-ltd',
+      URL: '/service/drywall-kingston-ltd',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-kingston-prices',
+      URL: '/service/drywall-kingston-prices',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/drywall-kingston-cost',
+      URL: '/service/drywall-kingston-cost',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/blog/drywall/blog-posting/best-drywall-kingston',
+      URL: '/service/best-drywall-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",

@@ -30,3 +30,9 @@ section#tmPortfolio .tm-portfolio-item:nth-of-type(2) .tm-portfolio-name {
 section#tmPortfolio .tm-portfolio-item:nth-of-type(3) .tm-portfolio-name {
   background-image: url('../img/drywall-texturing.avif');
 }
+
+
+/* Select the third occurrence of the matched div */
+section#tmPortfolio .tm-portfolio-item:nth-of-type(4) .tm-portfolio-name {
+  background-image: url('../img/drywall_more_services.avif');
+}

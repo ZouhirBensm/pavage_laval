@@ -7,7 +7,11 @@ nav#top {
   border-radius: 10px 10px 0 0;
   /* background-color: #4773ba; */
   /* background-color: rgba(0, 0, 0, 0.5); */
-  background-color: rgb(0, 123, 255, 0.7);
+  
+  /* Here@ */
+  /* background-color: rgb(0, 123, 255, 0.7); */
+  background-color: rgb(85, 164, 255);
+  
   border-bottom: 2px solid #fdfdfd;
 
   background-image: url('../img/svg/wave_nav.svg');
