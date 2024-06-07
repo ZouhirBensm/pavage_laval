@@ -14,10 +14,10 @@ const organizationSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Maple Street",
+    "streetAddress": "1786 Bath Rd #18",
     "addressLocality": "Kingston",
     "addressRegion": "ON",
-    "postalCode": "M5H 2N2",
+    "postalCode": "K7M 4Y2",
     "addressCountry": "CA"
   },
   // "sameAs": [

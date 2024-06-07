@@ -8,10 +8,10 @@ const serviceSchema = {
     "description": "We provide top-notch drywall installation and repair services for residential and commercial properties in the Kingston area.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Maple Street",
+      "streetAddress": "1786 Bath Rd #18",
       "addressLocality": "Kingston",
       "addressRegion": "ON",
-      "postalCode": "M5H 2N2",
+      "postalCode": "K7M 4Y2",
       "addressCountry": "Canada"
     },
     "telephone": "+1 (343) 477 1480",
@@ -155,10 +155,10 @@ const serviceSchema = {
 //   "description": "We provide top-notch drywall installation and repair services for residential and commercial properties in the Kingston area.",
 //   "address": {
 //     "@type": "PostalAddress",
-//     "streetAddress": "123 Maple Street",
+//     "streetAddress": "1786 Bath Rd #18",
 //     "addressLocality": "Kingston",
 //     "addressRegion": "ON",
-//     "postalCode": "M5H 2N2",
+//     "postalCode": "K7M 4Y2",
 //     "addressCountry": "Canada"
 //   },
 //   "telephone": "+1 (343) 477 1480",
