@@ -14,7 +14,7 @@ const serviceSchema = {
       "postalCode": "M5H 2N2",
       "addressCountry": "Canada"
     },
-    "telephone": "+1 (819) 555-2555",
+    "telephone": "+1 (343) 477 1480",
     "email": "info@acedrywall.com",
 
     "openingHoursSpecification": [
@@ -161,7 +161,7 @@ const serviceSchema = {
 //     "postalCode": "M5H 2N2",
 //     "addressCountry": "Canada"
 //   },
-//   "telephone": "+1 (819) 555-2555",
+//   "telephone": "+1 (343) 477 1480",
 //   "email": "info@acedrywall.com",
 
 //   "openingHoursSpecification": [
