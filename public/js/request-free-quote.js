@@ -28,7 +28,7 @@
 function sendEmail(event) {
   event.preventDefault(); // Prevent the form from submitting normally
 
-  const site_rentee_email = 'earnanswers2@outlook.com'
+  const site_rentee_email = 'drywallkingston@outlook.com'
 
   // Get form data
   var name = document.getElementById('contact_name').value;
