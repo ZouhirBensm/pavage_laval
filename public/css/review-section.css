@@ -28,7 +28,7 @@ div#tmContact div.tm-contact-item {
   right: 10px;
   width: 40px;
   height: 40px;
-  /* background: url('../img/svg/google.svg') no-repeat center center; */
+  background: url('../img/svg/google.svg') no-repeat center center;
   background-size: contain;
 }
 

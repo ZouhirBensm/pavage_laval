@@ -63,12 +63,18 @@ app.get('/', (req, res) => {
   // let error = new Error("new error")
   // return next(error)
 
+
   return res.sendFile('index.html', { root: 'public' });
   // return res.render('index')
 });
 
 // Serve request-free-quote.html for the /request-free-quote path
 app.get('/request-free-quote', (req, res) => {
+
+  const now = new Date()
+  console.log('123', now)
+
+  
   return res.sendFile('request-free-quote.html', { root: 'public' });
 });
 
