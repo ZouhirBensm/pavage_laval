@@ -12,6 +12,8 @@ const { Sequelize } = require('sequelize');
 const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
 const { getJsonData, getJsonData2 } = require('./miscellaneous/utils/utils1')
 
+const json = require('./miscellaneous/db/json')
+
 
 const dialect = 'mysql'
 
@@ -362,7 +364,34 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     }
   ];
 
+  // console.log(json)
 
+
+  for (const key in json) {
+    if (json.hasOwnProperty(key)) {
+      
+      const title = json[key].title;
+      console.log(title)
+      if (!json[key].dateModified) continue
+      
+      const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      const url = `/blog/drywall/blog-posting/${formattedTitle}`;
+      const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
+      
+  
+      urls.push({
+        URL: url,
+        lastmod: lastmod,
+        changefreq: "monthly",
+        priority: 0.8
+      });
+    }
+  }
+
+
+  // console.log(urls)
+
+  // return res.end();
 
 
   const xml = createSiteMap(urls)

@@ -101,9 +101,38 @@ const breadcrumbListSchema = {
       "name": "Best Drywall Kingston",
       "item": "https://drywallkingston.com/service/best-drywall-kingston"
     },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "Best Drywall Kingston",
+      "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-taping-tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 18,
+      "name": "Best Drywall Kingston",
+      "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-alternatives-for-garage"
+    },
+    {
+      "@type": "ListItem",
+      "position": 19,
+      "name": "Best Drywall Kingston",
+      "item": "https://drywallkingston.com/blog/drywall/blog-posting/types-of-drywall"
+    },
+    {
+      "@type": "ListItem",
+      "position": 20,
+      "name": "Best Drywall Kingston",
+      "item": "/blog/drywall/blog-posting/how-to-tape-drywall"
+    },
+    {
+      "@type": "ListItem",
+      "position": 21,
+      "name": "Best Drywall Kingston",
+      "item": "https://drywallkingston.com/blog/drywall/blog-posting/all-about-popcorn-ceilings"
+    }
   ]
 }
-
 
 const script3 = document.createElement('script');
 script3.type = 'application/ld+json';
