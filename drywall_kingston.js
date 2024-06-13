@@ -14,6 +14,10 @@ const { getJsonData, getJsonData2 } = require('./miscellaneous/utils/utils1')
 
 const json = require('./miscellaneous/db/json')
 
+const Compression = require('./miscellaneous/services/compression/compression-middleware')
+
+
+
 
 const dialect = 'mysql'
 
@@ -29,6 +33,8 @@ const { ENVIRONMENT, SIGNAL } = require('./miscellaneous/const/env')
 
 
 const app = express()
+
+app.use(Compression);
 
 
 
