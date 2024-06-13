@@ -73,7 +73,7 @@ app.get('/', (req, res) => {
   // return next(error)
 
 
-  return res.render('index');
+  return res.render('index2');
   // return res.sendFile('index.html', { root: 'public' });
   // return res.render('index')
 });

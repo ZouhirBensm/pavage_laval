@@ -137,6 +137,6 @@ const breadcrumbListSchema = {
 const script3 = document.createElement('script');
 script3.type = 'application/ld+json';
 const text3 = JSON.stringify(breadcrumbListSchema)
-console.log("websiteSchema:" ,text3)
+// console.log("websiteSchema:" ,text3)
 script3.text = text3
 document.head.appendChild(script3);
