@@ -47,7 +47,8 @@ app.use(express.static('public'));
 
 
 app.use((req, res, next) => {
-
+  res.locals.env = process.env.NODE_ENV;
+  res.locals.production = ENVIRONMENT.PRODUCTION;
   return next()
 });
 
@@ -72,9 +73,13 @@ app.get('/', (req, res) => {
   // return next(error)
 
 
-  return res.sendFile('index.html', { root: 'public' });
+  return res.render('index');
+  // return res.sendFile('index.html', { root: 'public' });
   // return res.render('index')
 });
+
+
+
 
 // Serve request-free-quote.html for the /request-free-quote path
 app.get('/request-free-quote', (req, res) => {
@@ -82,8 +87,8 @@ app.get('/request-free-quote', (req, res) => {
   const now = new Date()
   console.log('123', now)
 
-  
-  return res.sendFile('request-free-quote.html', { root: 'public' });
+  return res.render('request-free-quote');
+  // return res.sendFile('request-free-quote.html', { root: 'public' });
 });
 
 
@@ -97,87 +102,114 @@ app.get('/request-free-quote', (req, res) => {
 
 
 app.get('/organization', (req, res) => {
-  return res.sendFile('organization.html', { root: 'public' });
+  return res.render('organization');
+  // return res.sendFile('organization.html', { root: 'public' });
 });
 
 
 
 app.get('/about', (req, res) => {
-  return res.sendFile('about.html', { root: 'public' });
+  return res.render('about');
+  // return res.sendFile('about.html', { root: 'public' });
 });
 
 
 app.get('/service/drywall-installation', (req, res) => {
-  return res.sendFile('drywall-installation.html', { root: 'public' });
+  return res.render('drywall-installation');
+  // return res.sendFile('drywall-installation.html', { root: 'public' });
 });
 
 
 app.get('/service/drywall-repair-and-patching', (req, res) => {
-  return res.sendFile('drywall-repair-and-patching.html', { root: 'public' });
+  return res.render('drywall-repair-and-patching');
+  // return res.sendFile('drywall-repair-and-patching.html', { root: 'public' });
 });
 
 
 
 app.get('/service/drywall-finishing-and-texturing', (req, res) => {
-  return res.sendFile('drywall-finishing-and-texturing.html', { root: 'public' });
+  return res.render('drywall-finishing-and-texturing');
+  // return res.sendFile('drywall-finishing-and-texturing.html', { root: 'public' });
 });
 
 
 
 
+// app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+//   const { extra_service_page_title_for_seo } = req.params;
+
+//   console.log(extra_service_page_title_for_seo)
+
+//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
+
+//   const htmlFilePath = path.join(__dirname, 'public', 'extra-service-page-for-seo.html');
+
+//   let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
+
+//   // Embed the JSON data in a script tag
+//   const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
+//   htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
+
+//   res.send(htmlContent);
+// });
+
+
+// Your route
 app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   const { extra_service_page_title_for_seo } = req.params;
-
-  console.log(extra_service_page_title_for_seo)
+  console.log(extra_service_page_title_for_seo);
 
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
-  const htmlFilePath = path.join(__dirname, 'public', 'extra-service-page-for-seo.html');
-
-  let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
-
-  // Embed the JSON data in a script tag
-  const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
-  htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
-
-  res.send(htmlContent);
+  res.render('extra-service-page-for-seo', {
+    blogData: jsonData,
+    // env: process.env.NODE_ENV
+  });
 });
 
 
 app.get('/sitemap', (req, res) => {
-  return res.sendFile('sitemap.html', { root: 'public' });
+  return res.render('sitemap');
+  // return res.sendFile('sitemap.html', { root: 'public' });
 });
 
 
 app.get('/blog', (req, res) => {
-  return res.sendFile('blog.html', { root: 'public' });
+  return res.render('blog');
+  // return res.sendFile('blog.html', { root: 'public' });
 });
 
 
+
+
+
+// app.get('/blog/:category', (req, res) => {
+
+//   const category = req.params.category;
+
+//   console.log(category);
+
+//   const options = {
+//     root: path.join(__dirname, 'public'),
+//   };
+
+//   res.sendFile('category.html', options, (err) => {
+//     if (err) {
+//       console.error('Error sending file:', err);
+//       res.status(err.status).end();
+//     } else {
+//       console.log('Sent:', 'category.html');
+//     }
+//   });
+
+// });
 
 
 
 app.get('/blog/:category', (req, res) => {
-
   const category = req.params.category;
-
-  console.log(category);
-
-  const options = {
-    root: path.join(__dirname, 'public'),
-  };
-
-  res.sendFile('category.html', options, (err) => {
-    if (err) {
-      console.error('Error sending file:', err);
-      res.status(err.status).end();
-    } else {
-      console.log('Sent:', 'category.html');
-    }
-  });
-
+  res.render('category', { category });
 });
-
 
 
 
@@ -213,24 +245,37 @@ app.get('/blog/:category', (req, res) => {
 
 
 
+// app.get('/blog/:category/blog-posting/:title', (req, res) => {
+//   const { title, category } = req.params;
+
+//   console.log(title)
+
+//   const jsonData = getJsonData(title, category);
+
+//   const htmlFilePath = path.join(__dirname, 'public', 'blog-posting.html');
+
+//   let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
+
+//   // Embed the JSON data in a script tag
+//   const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
+//   htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
+
+//   res.send(htmlContent);
+// });
+
+
+// Your route
 app.get('/blog/:category/blog-posting/:title', (req, res) => {
   const { title, category } = req.params;
-
-  console.log(title)
-
+  
   const jsonData = getJsonData(title, category);
 
-  const htmlFilePath = path.join(__dirname, 'public', 'blog-posting.html');
 
-  let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
-
-  // Embed the JSON data in a script tag
-  const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
-  htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
-
-  res.send(htmlContent);
+  res.render('blog-posting', {
+    blogData: jsonData,
+    // env: process.env.NODE_ENV
+  });
 });
-
 
 
 
@@ -404,7 +449,8 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
   fs.writeFileSync(`./public/sitemap/sitemap.xml`, xml, 'utf-8');
 
-  return res.sendFile('sitemap.html', { root: 'public' });
+  return res.render('sitemap');
+  // return res.sendFile('sitemap.html', { root: 'public' });
 });
 
 
