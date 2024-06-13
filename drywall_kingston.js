@@ -42,8 +42,8 @@ app.set('view engine', 'ejs');
 app.set('etag', 'strong');
 
 
-
 app.use(express.static('public'));
+
 
 
 app.use((req, res, next) => {
