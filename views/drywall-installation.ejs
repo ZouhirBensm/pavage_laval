@@ -31,7 +31,7 @@
   <meta name="title" content="Drywall Installation">
   <meta name="description" content="Trust Drywall Kingston for professional drywall installation services. We offer high-quality, efficient, and reliable installation for residential and commercial projects.">
 
-  <% if (env === production) { %>
+  console.log('Production:', '<%= locals.production %>');
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
@@ -42,7 +42,7 @@
       gtag('config', 'G-PVQMQ78LBR');
     </script>
   <% } %>
-  
+
 </head>
 
 <body>

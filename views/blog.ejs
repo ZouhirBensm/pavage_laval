@@ -30,7 +30,7 @@
   <meta name="title" content="Blog">
   <meta name="description" content="Visit the Drywall Kingston blog for expert tips, industry insights, and the latest news in drywall installation, repair, and finishing. Stay informed and inspired.">
 
-  <% if (env === production) { %>
+  console.log('Production:', '<%= locals.production %>');
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
@@ -41,7 +41,7 @@
       gtag('config', 'G-PVQMQ78LBR');
     </script>
   <% } %>
-  
+
 </head>
 
 <body>

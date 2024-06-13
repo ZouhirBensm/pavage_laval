@@ -33,7 +33,7 @@
   <meta name="title" content="Request a Free Quote">
   <meta name="description" content="Get a free, no-obligation quote for your drywall project from Drywall Kingston. Fill out our easy form to receive an estimate tailored to your needs.">
 
-  <% if (env === production) { %>
+  console.log('Production:', '<%= locals.production %>');
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
@@ -44,7 +44,7 @@
       gtag('config', 'G-PVQMQ78LBR');
     </script>
   <% } %>
-  
+
 </head>
 
 <body>

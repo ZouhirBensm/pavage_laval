@@ -32,7 +32,7 @@
     window.blogData = <%- JSON.stringify(blogData) %>;
   </script>
 
-  <% if (env === production) { %>
+  console.log('Production:', '<%= locals.production %>');
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
