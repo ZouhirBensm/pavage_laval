@@ -1,3 +1,39 @@
 div#content-template img {
   display: block;
 }
+
+div#content-template img {
+  margin: 40px auto;
+}
+
+span.category-template {
+  /* background-color: blueviolet; */
+  background-color: rgb(207, 34, 34);
+  color: white;
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+
+@media screen and (max-width: 710px) {
+  div#content-template img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+div#content-template h2 {
+  margin: 2.3rem 0 1.3rem 0;
+}
+
+div#content-template h3 {
+  margin: 1.7rem 0;
+}
+
+
+div#content-template p {
+  letter-spacing: 0.4px;
+}
