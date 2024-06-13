@@ -29,6 +29,11 @@
   <meta name="title" content="Sitemap">
   <meta name="description" content="Navigate through the Drywall Kingston website with ease. Our sitemap provides a comprehensive list of pages and services for your convenience.">
 
+  <script>
+    console.log('Production:', '<%= locals.production %>');
+    console.log('Env:', '<%= locals.env %>');
+  </script>
+  
   <% if (locals.env === locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>

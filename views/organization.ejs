@@ -35,6 +35,12 @@
   <meta name="title" content="Our Organization">
   <meta name="description" content="Discover the structure and leadership of Drywall Kingston. Meet the team that ensures the highest standards of quality and customer satisfaction in every project.">
 
+
+  <script>
+    console.log('Production:', '<%= locals.production %>');
+    console.log('Env:', '<%= locals.env %>');
+  </script>
+  
   <% if (locals.env === locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>

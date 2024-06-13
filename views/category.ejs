@@ -29,6 +29,11 @@
   <meta name="title" content="Drywall">
   <meta name="description" content="Explore our range of drywall services at Drywall Kingston. Find detailed information on installation, repair, patching, finishing, and texturing to meet your project needs.">
 
+  <script>
+    console.log('Production:', '<%= locals.production %>');
+    console.log('Env:', '<%= locals.env %>');
+  </script>
+  
   <% if (locals.env === locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>

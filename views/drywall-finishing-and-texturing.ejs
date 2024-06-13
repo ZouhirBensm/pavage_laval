@@ -31,6 +31,11 @@
   <meta name="title" content="Drywall Finishing and Texturing Services">
   <meta name="description" content="Achieve a flawless finish with Drywall Kingston's professional finishing and texturing services. Transform your walls and ceilings with our expert techniques.">
 
+  <script>
+    console.log('Production:', '<%= locals.production %>');
+    console.log('Env:', '<%= locals.env %>');
+  </script>
+  
   <% if (locals.env === locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
