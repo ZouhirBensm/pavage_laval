@@ -222,7 +222,7 @@ app.get('/blog', (req, res) => {
 
 
 app.get('/blog/:category', (req, res) => {
-  const category = req.params.category;
+  const category = req.params.category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
   res.render('category', { category });
 });
 
