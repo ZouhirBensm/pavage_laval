@@ -171,6 +171,7 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 
 // Your route
 app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+  
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
 
@@ -179,6 +180,7 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   res.render('extra-service-page-for-seo', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
+    canonical: req.originalUrl
   });
 });
 
@@ -223,7 +225,7 @@ app.get('/blog', (req, res) => {
 
 app.get('/blog/:category', (req, res) => {
   const category = req.params.category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-  res.render('category', { category });
+  res.render('category', { category: category, canonical: req.originalUrl });
 });
 
 
