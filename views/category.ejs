@@ -33,7 +33,7 @@
     console.log('Production:', '<%= locals.production %>');
     console.log('Env:', '<%= locals.env %>');
   </script>
-  
+
   <% if (locals.env === locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
@@ -152,11 +152,11 @@
             <h2 class="category-template"></h2>
             <h3>Blog Postings</h3>
             <ul>
-              <li><a href="/blog/{Category}/blog-posting/drywall-taping-tools" class="category-link">Drywall Taping Tools</a></li>
-              <li><a href="/blog/{Category}/blog-posting/drywall-alternatives-for-garage" class="category-link">Drywall Alternatives for Garage</a></li>
-              <li><a href="/blog/{Category}/blog-posting/types-of-drywall" class="category-link">Types Of Drywall</a></li>
-              <li><a href="/blog/{Category}/blog-posting/how-to-tape-drywall" class="category-link">How To Tape Drywall</a></li>
-              <li><a href="/blog/{Category}/blog-posting/all-about-popcorn-ceilings" class="category-link">All About Popcorn Ceilings</a></li>
+              <li><a href="/blog/<%= category %>/blog-posting/drywall-taping-tools" class="category-link">Drywall Taping Tools</a></li>
+              <li><a href="/blog/<%= category %>/blog-posting/drywall-alternatives-for-garage" class="category-link">Drywall Alternatives for Garage</a></li>
+              <li><a href="/blog/<%= category %>/blog-posting/types-of-drywall" class="category-link">Types Of Drywall</a></li>
+              <li><a href="/blog/<%= category %>/blog-posting/how-to-tape-drywall" class="category-link">How To Tape Drywall</a></li>
+              <li><a href="/blog/<%= category %>/blog-posting/all-about-popcorn-ceilings" class="category-link">All About Popcorn Ceilings</a></li>
             </ul>
           </div>
         </div>
@@ -225,44 +225,7 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/parallax.min.js"></script>
 
-
-  <script>
-    // Function to get the path parameter
-    function getPathParameter() {
-      // Get the full path
-      const path = window.location.pathname;
-      // Split the path into segments
-      const segments = path.split('/');
-      // The category is expected to be the last segment
-      // const category = segments[segments.length - 1];
-      const category = segments[segments.length - 1].replace(/-/g, ' ');
-      return category;
-    }
-
-    // Assign the path parameter to a variable
-    let category = getPathParameter();
-
-    // Render the category in the HTML
-    document.addEventListener('DOMContentLoaded', () => {
-      const categoryElements = document.querySelectorAll('.category-template');
-      console.log(categoryElements)
-      categoryElements.forEach(element => {
-        let capped_category = category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-        element.textContent = capped_category;
-      });
-
-      const categoryLinks = document.querySelectorAll('.category-link');
-      categoryLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        const newHref = href.replace('{Category}', category);
-        link.setAttribute('href', newHref);
-      });
-    });
-  </script>
-
-
-
-
+  
   <script>
     function detectMsBrowser() {
       using_ms_browser =

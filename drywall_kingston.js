@@ -65,6 +65,21 @@ const data_error_handler_controller = require('./lifecycle/controller/error-cont
 
 
 
+const goneUrls = [
+  "/blog/drywall/blog-posting/Article1",
+  "/blog/drywall/blog-posting/article1",
+  "/blog/drywall/blog-posting/article2"
+];
+
+goneUrls.forEach(url => {
+  app.get(url, (req, res) => {
+      res.status(410).send('This page has been permanently removed.');
+  });
+});
+
+
+
+
 
 // Serve index.html for the root path
 app.get('/', (req, res) => {
