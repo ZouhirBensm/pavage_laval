@@ -171,7 +171,7 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 
 // Your route
 app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
-  
+
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
 
@@ -195,6 +195,7 @@ app.get('/blog', (req, res) => {
   return res.render('blog');
   // return res.sendFile('blog.html', { root: 'public' });
 });
+
 
 
 
