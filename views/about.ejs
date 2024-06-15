@@ -32,24 +32,25 @@
 
   <title>About Us</title>
   <meta name="title" content="About Us">
-  <meta name="description" content="Learn more about Drywall Kingston, our mission, values, and the experienced team dedicated to providing top-quality drywall services in Kingston, Ontario.">
+  <meta name="description"
+    content="Learn more about Drywall Kingston, our mission, values, and the experienced team dedicated to providing top-quality drywall services in Kingston, Ontario.">
 
   <script>
     console.log('Production:', '<%= locals.production %>');
     console.log('Env:', '<%= locals.env %>');
   </script>
 
-  <% if (locals.env === locals.production) { %>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <% if (locals.env===locals.production) { %>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-    gtag('config', 'G-PVQMQ78LBR');
-  </script>
-  <% } %>
+      gtag('config', 'G-PVQMQ78LBR');
+    </script>
+    <% } %>
 
 </head>
 
@@ -62,7 +63,7 @@
     </a>
     <!-- <a href="/about">About</a> -->
     <a href="/request-free-quote">Request free quote</a>
-    <a target="_blank" href="https://calendly.com/earnanswers2/30min">
+    <a target="_blank" href="https://calendly.com/dtywallkingston/30min">
       Book a call
     </a>
     <a href="tel:3434771480">
@@ -75,7 +76,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif" alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
+    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
 
 
     <div class="container-fluid tm-brand-container-outer">
@@ -88,7 +90,7 @@
             <div class="tm-brand-container text-center">
               <h1 class="tm-brand-name">About Us</h1>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
-              <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/earnanswers2/30min">
+              <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/dtywallkingston/30min">
                 Book a call
               </a>
             </div>
@@ -105,7 +107,7 @@
           <div class="col-md-7 tm-welcome-left-col">
             <div class="tm-welcome-left">
               <h2 class="tm-welcome-title">Address</h2>
-             <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
+              <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
                 <a rel="nofollow" href="/organization" itemprop="url">1786 Bath Rd #18
                   Kingston, ON K7M 4Y2
                   Canada</a>
@@ -127,11 +129,15 @@
 
           <!-- Brown bg -->
           <div class="col-md-5">
-                         <a href="/organization">
-                <div class="tm-welcome-right" aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-              <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario." style="display:none;">
-              <!-- Map is here -->
-            </div>
+            <a href="/organization">
+              <div class="tm-welcome-right"
+                aria-label="Map showing the local drywall business location in Kingston, Ontario.">
+                <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
+                  style="display:none;">
+                <!-- Map is here -->
+              </div>
+            </a>
+
           </div>
 
 
