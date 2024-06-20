@@ -661,6 +661,18 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       priority: 1
     },
     {
+      URL: '/sitemap',
+      lastmod: last_modified_1_date,
+      changefreq: "monthly",
+      priority: 1
+    },
+
+
+
+
+
+
+    {
       URL: '/service/drywall-installation',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
@@ -714,12 +726,13 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 1
     },
-    {
-      URL: '/sitemap',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    },
+
+
+
+
+
+
+
     {
       URL: '/drywall/drywall-contractors-kingston',
       lastmod: last_modified_2_date,
@@ -774,6 +787,8 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 0.8
     },
+
+
     // {
     //   URL: '/blog/drywall/blog-posting/drywall-taping-tools',
     //   lastmod: last_modified_2_date,
@@ -810,6 +825,8 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     if (json.hasOwnProperty(key)) {
       const title = json[key].title;
       console.log(title);
+
+      
       if (!json[key].dateModified) continue;
 
       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
