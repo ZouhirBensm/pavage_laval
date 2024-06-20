@@ -791,7 +791,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
   for (const key in json) {
     if (json.hasOwnProperty(key)) {
-      
+
       const title = json[key].title;
       console.log(title);
 
@@ -799,6 +799,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       if (!json[key].dateModified) continue;
 
       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      
       const url = `/blog/drywall/blog-posting/${formattedTitle}`;
       const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
 
