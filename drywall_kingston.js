@@ -363,17 +363,278 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
 
 
 
+// app.get('/sitemap/xml-sitemap', (req, res) => {
+//   // return res.sendFile('sitemap.html', { root: 'public' });
+
+//   const now = new Date()
+//   console.log(now)
+
+//   let last_modified_1 = '2024-06-02T15:07:49.699Z'
+//   let last_modified_1_date = new Date(last_modified_1);
+
+
+//   let last_modified_2 = '2024-06-20T18:11:40.666Z'
+//   let last_modified_2_date = new Date(last_modified_2);
+
+//   const urls = [
+//     {
+//       URL: '/',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/request-free-quote',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/organization',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/about',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/service/drywall-installation',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/service/drywall-repair-and-patching',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/service/drywall-finishing-and-texturing"',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/steel-stud-framing",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/blown-and-batt-insulation",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/suspended-t-bar-ceilings",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/textured-and-coffered-ceilings",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/cove-moldings-and-bulkheads",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: "/service/spray-priming-and-painting",
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/sitemap',
+//       lastmod: last_modified_1_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 1
+//     },
+//     {
+//       URL: '/drywall/drywall-contractors-kingston',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/residential-drywall-contractors-kingston',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/drywall-contractors-kingston-ontario',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/drywall-companies-in-kingston-ontario',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/drywall-companies-in-kingston',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.5
+//     },
+//     {
+//       URL: '/drywall/drywall-kingston-ltd',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/drywall-kingston-prices',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/drywall-kingston-cost',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/drywall/best-drywall-kingston',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/blog/drywall/blog-posting/drywall-taping-tools',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/blog/drywall/blog-posting/types-of-drywall',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     },
+//     {
+//       URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
+//       lastmod: last_modified_2_date,
+//       changefreq: "monthly",
+//       // hreflang: "en",
+//       priority: 0.8
+//     }
+//   ];
+
+//   // console.log(json)
+
+
+//   for (const key in json) {
+//     if (json.hasOwnProperty(key)) {
+      
+//       const title = json[key].title;
+//       console.log(title)
+//       if (!json[key].dateModified) continue
+      
+//       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+//       const url = `/blog/drywall/blog-posting/${formattedTitle}`;
+//       const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
+      
+  
+//       urls.push({
+//         URL: url,
+//         lastmod: lastmod,
+//         changefreq: "monthly",
+//         priority: 0.8
+//       });
+//     }
+//   }
+
+
+//   // console.log(urls)
+
+//   // return res.end();
+
+
+//   const xml = createSiteMap(urls)
+
+//   fs.writeFileSync(`./public/sitemap/sitemap.xml`, xml, 'utf-8');
+
+//   return res.render('sitemap');
+//   // return res.sendFile('sitemap.html', { root: 'public' });
+// });
+
+
+
+const fs = require('fs');
+const path = require('path');
+
 app.get('/sitemap/xml-sitemap', (req, res) => {
-  // return res.sendFile('sitemap.html', { root: 'public' });
+  // Define the path to the XML file
+  const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 
-  const now = new Date()
-  console.log(now)
+  // Delete the existing XML file if it exists
+  if (fs.existsSync(xmlFilePath)) {
+    fs.unlinkSync(xmlFilePath);
+    console.log('Deleted existing sitemap.xml file');
+  }
 
-  let last_modified_1 = '2024-06-02T15:07:49.699Z'
+  const now = new Date();
+  console.log(now);
+
+  let last_modified_1 = '2024-06-02T15:07:49.699Z';
   let last_modified_1_date = new Date(last_modified_1);
 
-
-  let last_modified_2 = '2024-06-20T18:11:40.666Z'
+  let last_modified_2 = '2024-06-20T18:11:40.666Z';
   let last_modified_2_date = new Date(last_modified_2);
 
   const urls = [
@@ -381,215 +642,182 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       URL: '/',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/request-free-quote',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/organization',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/about',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/service/drywall-installation',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/service/drywall-repair-and-patching',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: '/service/drywall-finishing-and-texturing"',
+      URL: '/service/drywall-finishing-and-texturing',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/steel-stud-framing",
+      URL: '/service/steel-stud-framing',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/blown-and-batt-insulation",
+      URL: '/service/blown-and-batt-insulation',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/suspended-t-bar-ceilings",
+      URL: '/service/suspended-t-bar-ceilings',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/textured-and-coffered-ceilings",
+      URL: '/service/textured-and-coffered-ceilings',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/cove-moldings-and-bulkheads",
+      URL: '/service/cove-moldings-and-bulkheads',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
-      URL: "/service/spray-priming-and-painting",
+      URL: '/service/spray-priming-and-painting',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/sitemap',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 1
     },
     {
       URL: '/drywall/drywall-contractors-kingston',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/residential-drywall-contractors-kingston',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/drywall-contractors-kingston-ontario',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/drywall-companies-in-kingston-ontario',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/drywall-companies-in-kingston',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.5
     },
     {
       URL: '/drywall/drywall-kingston-ltd',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/drywall-kingston-prices',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/drywall-kingston-cost',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/drywall/best-drywall-kingston',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/blog/drywall/blog-posting/drywall-taping-tools',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/blog/drywall/blog-posting/types-of-drywall',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     },
     {
       URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
       lastmod: last_modified_2_date,
       changefreq: "monthly",
-      // hreflang: "en",
       priority: 0.8
     }
   ];
 
-  // console.log(json)
-
-
   for (const key in json) {
     if (json.hasOwnProperty(key)) {
-      
       const title = json[key].title;
-      console.log(title)
-      if (!json[key].dateModified) continue
-      
+      console.log(title);
+      if (!json[key].dateModified) continue;
+
       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
       const url = `/blog/drywall/blog-posting/${formattedTitle}`;
       const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
-      
-  
+
       urls.push({
         URL: url,
         lastmod: lastmod,
@@ -599,19 +827,17 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     }
   }
 
+  const xml = createSiteMap(urls);
 
-  // console.log(urls)
-
-  // return res.end();
-
-
-  const xml = createSiteMap(urls)
-
-  fs.writeFileSync(`./public/sitemap/sitemap.xml`, xml, 'utf-8');
+  fs.writeFileSync(xmlFilePath, xml, 'utf-8');
+  console.log('New sitemap.xml file generated');
 
   return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
 });
+
+
+
 
 
 
