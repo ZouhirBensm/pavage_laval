@@ -787,46 +787,15 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 0.8
     },
-
-
-    // {
-    //   URL: '/blog/drywall/blog-posting/drywall-taping-tools',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/blog/drywall/blog-posting/types-of-drywall',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // }
   ];
 
   for (const key in json) {
     if (json.hasOwnProperty(key)) {
+      
       const title = json[key].title;
       console.log(title);
 
-      
+
       if (!json[key].dateModified) continue;
 
       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
