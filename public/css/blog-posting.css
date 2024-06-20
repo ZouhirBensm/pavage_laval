@@ -1,9 +1,7 @@
 div#content-template img {
   display: block;
-}
-
-div#content-template img {
   margin: 40px auto;
+  border-radius: 10px;
 }
 
 span.category-template {
