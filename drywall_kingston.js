@@ -417,62 +417,57 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: '/service/drywall-finishing-and-texturing"',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
-
-
     {
       URL: "/service/steel-stud-framing",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: "/service/blown-and-batt-insulation",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: "/service/suspended-t-bar-ceilings",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: "/service/textured-and-coffered-ceilings",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: "/service/cove-moldings-and-bulkheads",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
     {
       URL: "/service/spray-priming-and-painting",
       lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.8
+      priority: 1
     },
-
-
-
     {
       URL: '/sitemap',
       lastmod: last_modified_1_date,
@@ -482,66 +477,101 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     },
     {
       URL: '/drywall/drywall-contractors-kingston',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 1
+      priority: 0.8
     },
     {
       URL: '/drywall/residential-drywall-contractors-kingston',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/drywall-contractors-kingston-ontario',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/drywall-companies-in-kingston-ontario',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/drywall-companies-in-kingston',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
       URL: '/drywall/drywall-kingston-ltd',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/drywall-kingston-prices',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/drywall-kingston-cost',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
     },
     {
       URL: '/drywall/best-drywall-kingston',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       // hreflang: "en",
-      priority: 0.5
+      priority: 0.8
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-taping-tools',
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/blog/drywall/blog-posting/types-of-drywall',
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
     }
   ];
 
