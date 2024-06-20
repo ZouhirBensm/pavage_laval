@@ -662,7 +662,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     },
     {
       URL: '/sitemap',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_2_date,
       changefreq: "monthly",
       priority: 1
     },
