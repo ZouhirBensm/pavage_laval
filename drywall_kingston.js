@@ -774,36 +774,36 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 0.8
     },
-    {
-      URL: '/blog/drywall/blog-posting/drywall-taping-tools',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/blog/drywall/blog-posting/types-of-drywall',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    }
+    // {
+    //   URL: '/blog/drywall/blog-posting/drywall-taping-tools',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/blog/drywall/blog-posting/types-of-drywall',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // }
   ];
 
   for (const key in json) {
