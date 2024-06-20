@@ -615,8 +615,6 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
 
 
 
-const fs = require('fs');
-const path = require('path');
 
 app.get('/sitemap/xml-sitemap', (req, res) => {
   // Define the path to the XML file
