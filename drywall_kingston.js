@@ -65,6 +65,7 @@ const data_error_handler_controller = require('./lifecycle/controller/error-cont
 
 
 
+// For SEO Keep until google identifies that the pages are gone
 const goneUrls = [
   "/blog/drywall/blog-posting/Article1",
   "/blog/drywall/blog-posting/article1",
@@ -76,6 +77,12 @@ goneUrls.forEach(url => {
       res.status(410).send('This page has been permanently removed.');
   });
 });
+
+
+
+
+
+
 
 
 
@@ -169,8 +176,20 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 // });
 
 
-// Your route
+// For SEO Keep until google identifies the redirects
 app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+
+  const { extra_service_page_title_for_seo } = req.params;
+  console.log(extra_service_page_title_for_seo);
+
+  const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
+  return res.redirect(301, newUrl);
+});
+
+
+
+// New route
+app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
@@ -369,63 +388,63 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       priority: 1
     },
     {
-      URL: '/service/drywall-contractors-kingston',
+      URL: '/drywall/drywall-contractors-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 1
     },
     {
-      URL: '/service/residential-drywall-contractors-kingston',
+      URL: '/drywall/residential-drywall-contractors-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-contractors-kingston-ontario',
+      URL: '/drywall/drywall-contractors-kingston-ontario',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-companies-in-kingston-ontario',
+      URL: '/drywall/drywall-companies-in-kingston-ontario',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-companies-in-kingston',
+      URL: '/drywall/drywall-companies-in-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-kingston-ltd',
+      URL: '/drywall/drywall-kingston-ltd',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-kingston-prices',
+      URL: '/drywall/drywall-kingston-prices',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/drywall-kingston-cost',
+      URL: '/drywall/drywall-kingston-cost',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
       priority: 0.5
     },
     {
-      URL: '/service/best-drywall-kingston',
+      URL: '/drywall/best-drywall-kingston',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       // hreflang: "en",
