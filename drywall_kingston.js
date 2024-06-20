@@ -155,6 +155,30 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 });
 
 
+// app.get('/service/steel-stud-framing', (req, res) => {
+//   return res.render('steel-stud-framing');
+// });
+
+// app.get('/service/blown-and-batt-insulation', (req, res) => {
+//   return res.render('blown-and-batt-insulation');
+// });
+
+// app.get('/service/suspended-t-bar-ceilings', (req, res) => {
+//   return res.render('suspended-t-bar-ceilings');
+// });
+
+// app.get('/service/textured-and-coffered-ceilings', (req, res) => {
+//   return res.render('textured-and-coffered-ceilings');
+// });
+
+// app.get('/service/cove-moldings-and-bulkheads', (req, res) => {
+//   return res.render('cove-moldings-and-bulkheads');
+// });
+
+// app.get('/service/spray-priming-and-painting', (req, res) => {
+//   return res.render('spray-priming-and-painting');
+// });
+
 
 
 // app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
@@ -176,14 +200,33 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 // });
 
 
-// For SEO Keep until google identifies the redirects
+
 app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
 
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
 
-  const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
-  return res.redirect(301, newUrl);
+
+  redirected_seo_pages = ['drywall-contractors-kingston', 'residential-drywall-contractors-kingston', 'drywall-contractors-kingston-ontario', 'drywall-companies-in-kingston-ontario', 'drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
+
+
+  // For SEO Keep until google identifies the redirects
+  if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
+    const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
+    return res.redirect(301, newUrl);
+  }
+
+  // Render other service pages
+  const jsonData = getJsonData2(extra_service_page_title_for_seo);
+
+  return res.render('extra-service-page-for-seo', {
+    blogData: jsonData,
+    // env: process.env.NODE_ENV
+    canonical: req.originalUrl
+  });
+
+
+
 });
 
 
@@ -330,6 +373,9 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
   let last_modified_1_date = new Date(last_modified_1);
 
 
+  let last_modified_2 = '2024-06-20T18:11:40.666Z'
+  let last_modified_2_date = new Date(last_modified_2);
+
   const urls = [
     {
       URL: '/',
@@ -380,6 +426,53 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       // hreflang: "en",
       priority: 0.8
     },
+
+
+    {
+      URL: "/service/steel-stud-framing",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: "/service/blown-and-batt-insulation",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: "/service/suspended-t-bar-ceilings",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: "/service/textured-and-coffered-ceilings",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: "/service/cove-moldings-and-bulkheads",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+    {
+      URL: "/service/spray-priming-and-painting",
+      lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      // hreflang: "en",
+      priority: 0.8
+    },
+
+
+
     {
       URL: '/sitemap',
       lastmod: last_modified_1_date,
