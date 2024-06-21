@@ -393,7 +393,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
   
   let last_modified_3 = '2024-06-21T15:04:37.758Z';
-  let last_modified_3_date = new Date(last_modified_1);
+  let last_modified_3_date = new Date(last_modified_3);
 
   const urls = [
     {
