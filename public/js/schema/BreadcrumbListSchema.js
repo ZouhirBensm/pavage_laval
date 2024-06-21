@@ -5,7 +5,7 @@ const breadcrumbListSchema = {
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Home",
+      "name": "Drywall Kingston Residential & Commercial Contractor",
       "item": "https://drywallkingston.com/"
     },
     {
@@ -136,25 +136,25 @@ const breadcrumbListSchema = {
     },
     {
       "@type": "ListItem",
-      "position": 26,
+      "position": 23,
       "name": "Drywall Alternatives for Garage",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-alternatives-for-garage"
     },
     {
       "@type": "ListItem",
-      "position": 23,
+      "position": 24,
       "name": "Types of Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/types-of-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 24,
+      "position": 25,
       "name": "How to Tape Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/how-to-tape-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 25,
+      "position": 26,
       "name": "All About Popcorn Ceilings",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/all-about-popcorn-ceilings"
     }
