@@ -24,6 +24,14 @@ body>footer>div>div#social-media>a[href='#social6']>img:hover {
 }
 
 
+body>footer>div>div#social-media>a[href='#social6']>img:hover {
+  content: url('../img/icons/reddit_red.svg');
+}
+
+body>footer>div>div#social-media>a[href='mailto:drywallkingston@outlook.com']>img:hover {
+  content: url('../img/icons/email_red.svg');
+}
+
 
 body > footer {
   padding: 20px 0;
