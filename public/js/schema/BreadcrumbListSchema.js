@@ -95,60 +95,42 @@ const breadcrumbListSchema = {
     {
       "@type": "ListItem",
       "position": 16,
-      "name": "Drywall Contractors Kingston",
-      "item": "https://drywallkingston.com/drywall/drywall-contractors-kingston"
-    },
-    {
-      "@type": "ListItem",
-      "position": 17,
-      "name": "Residential Drywall Contractors Kingston",
-      "item": "https://drywallkingston.com/drywall/residential-drywall-contractors-kingston"
-    },
-    {
-      "@type": "ListItem",
-      "position": 18,
-      "name": "Drywall Contractors Kingston Ontario",
-      "item": "https://drywallkingston.com/drywall/drywall-contractors-kingston-ontario"
-    },
-    {
-      "@type": "ListItem",
-      "position": 19,
       "name": "Drywall Companies in Kingston Ontario",
       "item": "https://drywallkingston.com/drywall/drywall-companies-in-kingston-ontario"
     },
     {
       "@type": "ListItem",
-      "position": 20,
+      "position": 17,
       "name": "Drywall Companies in Kingston",
       "item": "https://drywallkingston.com/drywall/drywall-companies-in-kingston"
     },
     {
       "@type": "ListItem",
-      "position": 21,
+      "position": 18,
       "name": "Drywall Kingston Ltd",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-ltd"
     },
     {
       "@type": "ListItem",
-      "position": 22,
+      "position": 19,
       "name": "Drywall Kingston Prices",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-prices"
     },
     {
       "@type": "ListItem",
-      "position": 23,
+      "position": 20,
       "name": "Drywall Kingston Cost",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-cost"
     },
     {
       "@type": "ListItem",
-      "position": 24,
+      "position": 21,
       "name": "Best Drywall Kingston",
       "item": "https://drywallkingston.com/drywall/best-drywall-kingston"
     },
     {
       "@type": "ListItem",
-      "position": 25,
+      "position": 22,
       "name": "Drywall Taping Tools",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-taping-tools"
     },
@@ -160,19 +142,19 @@ const breadcrumbListSchema = {
     },
     {
       "@type": "ListItem",
-      "position": 27,
+      "position": 23,
       "name": "Types of Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/types-of-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 28,
+      "position": 24,
       "name": "How to Tape Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/how-to-tape-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 29,
+      "position": 25,
       "name": "All About Popcorn Ceilings",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/all-about-popcorn-ceilings"
     }
