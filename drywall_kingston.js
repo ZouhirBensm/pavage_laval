@@ -270,8 +270,11 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
   console.log(jsonData)
-
-  if (!jsonData.dateModified) return res.status(410).send('This page has been permanently removed.');
+  
+  let titles_of_extra_services = ['Drywall Companies In Kingston Ontario', 'Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
+  
+  
+  if (!titles_of_extra_services.includes(jsonData.title)) return res.status(410).send('This page has been permanently removed.');
 
   return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
