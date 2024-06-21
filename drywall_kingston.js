@@ -269,6 +269,10 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
+  console.log(jsonData)
+
+  if (!jsonData.dateModified) return res.status(410).send('This page has been permanently removed.');
+
   return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
@@ -379,6 +383,7 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
   const { title, category } = req.params;
   
   const jsonData = getJsonData(title, category);
+
 
 
   return res.render('blog-posting', {
