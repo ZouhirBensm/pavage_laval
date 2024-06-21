@@ -239,7 +239,7 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
-  res.render('extra-service-page-for-seo', {
+  return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
     canonical: req.originalUrl
@@ -288,7 +288,7 @@ app.get('/blog', (req, res) => {
 
 app.get('/blog/:category', (req, res) => {
   const category = req.params.category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-  res.render('category', { category: category, canonical: req.originalUrl });
+  return res.render('category', { category: category, canonical: req.originalUrl });
 });
 
 
@@ -351,7 +351,7 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
   const jsonData = getJsonData(title, category);
 
 
-  res.render('blog-posting', {
+  return res.render('blog-posting', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
   });
@@ -359,259 +359,14 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
 
 
 
+// Your route
+app.get('/tiroir1/legal-disclaimer', (req, res) => {
+  return res.render('legal-disclaimer');
+});
 
 
 
 
-// app.get('/sitemap/xml-sitemap', (req, res) => {
-//   // return res.sendFile('sitemap.html', { root: 'public' });
-
-//   const now = new Date()
-//   console.log(now)
-
-//   let last_modified_1 = '2024-06-02T15:07:49.699Z'
-//   let last_modified_1_date = new Date(last_modified_1);
-
-
-//   let last_modified_2 = '2024-06-20T18:11:40.666Z'
-//   let last_modified_2_date = new Date(last_modified_2);
-
-//   const urls = [
-//     {
-//       URL: '/',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/request-free-quote',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/organization',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/about',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/service/drywall-installation',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/service/drywall-repair-and-patching',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/service/drywall-finishing-and-texturing"',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/steel-stud-framing",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/blown-and-batt-insulation",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/suspended-t-bar-ceilings",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/textured-and-coffered-ceilings",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/cove-moldings-and-bulkheads",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: "/service/spray-priming-and-painting",
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/sitemap',
-//       lastmod: last_modified_1_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 1
-//     },
-//     {
-//       URL: '/drywall/drywall-contractors-kingston',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/residential-drywall-contractors-kingston',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/drywall-contractors-kingston-ontario',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/drywall-companies-in-kingston-ontario',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/drywall-companies-in-kingston',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.5
-//     },
-//     {
-//       URL: '/drywall/drywall-kingston-ltd',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/drywall-kingston-prices',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/drywall-kingston-cost',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/drywall/best-drywall-kingston',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/blog/drywall/blog-posting/drywall-taping-tools',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/blog/drywall/blog-posting/drywall-alternatives-for-garage',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/blog/drywall/blog-posting/types-of-drywall',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/blog/drywall/blog-posting/how-to-tape-drywall',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     },
-//     {
-//       URL: '/blog/drywall/blog-posting/all-about-popcorn-ceilings',
-//       lastmod: last_modified_2_date,
-//       changefreq: "monthly",
-//       // hreflang: "en",
-//       priority: 0.8
-//     }
-//   ];
-
-//   // console.log(json)
-
-
-//   for (const key in json) {
-//     if (json.hasOwnProperty(key)) {
-      
-//       const title = json[key].title;
-//       console.log(title)
-//       if (!json[key].dateModified) continue
-      
-//       const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-//       const url = `/blog/drywall/blog-posting/${formattedTitle}`;
-//       const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
-      
-  
-//       urls.push({
-//         URL: url,
-//         lastmod: lastmod,
-//         changefreq: "monthly",
-//         priority: 0.8
-//       });
-//     }
-//   }
-
-
-//   // console.log(urls)
-
-//   // return res.end();
-
-
-//   const xml = createSiteMap(urls)
-
-//   fs.writeFileSync(`./public/sitemap/sitemap.xml`, xml, 'utf-8');
-
-//   return res.render('sitemap');
-//   // return res.sendFile('sitemap.html', { root: 'public' });
-// });
 
 
 
@@ -634,6 +389,11 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
   let last_modified_2 = '2024-06-20T18:11:40.666Z';
   let last_modified_2_date = new Date(last_modified_2);
+
+
+  
+  let last_modified_3 = '2024-06-21T15:04:37.758Z';
+  let last_modified_3_date = new Date(last_modified_1);
 
   const urls = [
     {
@@ -663,6 +423,12 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     {
       URL: '/sitemap',
       lastmod: last_modified_2_date,
+      changefreq: "monthly",
+      priority: 1
+    },
+    {
+      URL: '/tiroir1/legal-disclaimer',
+      lastmod: last_modified_3_date,
       changefreq: "monthly",
       priority: 1
     },

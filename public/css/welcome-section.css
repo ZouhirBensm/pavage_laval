@@ -12,6 +12,17 @@ h2.tm-welcome-title {
   color: white;
 }
 
+span.tm-welcome-title {
+  color: white;
+  font-size: 2rem;
+  line-height: 1.2;
+  display: block;
+  /* margin-bottom: 40px; */
+  /* font-weight: 500; */
+  /* margin-top: 0; */
+  /* box-sizing: border-box; */
+}
+
 /* @keyframes bookacall_blue {
   0% {
     color: #007bff;;

@@ -14,24 +14,42 @@
   <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
 
 
+  <link rel="canonical" href='/service/drywall-finishing-and-texturing'>
+
   <link rel="stylesheet" href="/css/all.min.css" />
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/css/templatemo-style.css" />
   <link rel="stylesheet" href="/css/nav-style.css" />
   <link rel="stylesheet" href="/css/welcome-section.css" />
   <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/review-section.css" /> -->
+  <link rel="stylesheet" href="/css/review-section.css" />
   <link rel="stylesheet" href="/css/footer-style.css" />
   <link rel="stylesheet" href="/css/request-free-quote.css" />
 
 
-  <script src="/js/schema/ContactPageSchema.js"></script>
 
 
+  <title>Drywall Finishing and Texturing</title>
+  <meta name="title" content="Drywall Finishing and Texturing Services">
+  <meta name="description"
+    content="Achieve a flawless finish with Drywall Kingston's professional finishing and texturing services. Transform your walls and ceilings with our expert techniques.">
 
-  <title>Request Free Quote</title>
-  <meta name="title" content="Request a Free Quote">
-  <meta name="description" content="Get a free, no-obligation quote for your drywall project from Drywall Kingston. Fill out our easy form to receive an estimate tailored to your needs.">
+  <script>
+    console.log('Production:', '<%= locals.production %>');
+    console.log('Env:', '<%= locals.env %>');
+  </script>
+
+  <% if (locals.env===locals.production) { %>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-PVQMQ78LBR');
+    </script>
+    <% } %>
 
 </head>
 
@@ -57,7 +75,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif" alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
+    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
 
 
     <div class="container-fluid tm-brand-container-outer">
@@ -68,7 +87,7 @@
           <!-- Black transparent bg -->
           <div class="ml-auto mr-0 tm-bg-blue-transparent text-white tm-brand-container-inner">
             <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name">Request Free Quote</h1>
+              <h1 class="tm-brand-name">Legal Disclaimer</h1>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
               <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/drywallkingston/30min">
                 Book a call
@@ -86,15 +105,12 @@
           <!-- White transparent bg -->
           <div class="col-md-7 tm-welcome-left-col">
             <div class="tm-welcome-left">
-              <h2 class="tm-welcome-title">Address</h2>
+              <!-- <h2 class="tm-welcome-title">Address</h2> -->
+              <span class="tm-welcome-title">Address</span>
               <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
                 <a rel="nofollow" href="/organization" itemprop="url">1786 Bath Rd #18
                   Kingston, ON K7M 4Y2
                   Canada</a>
-                <!-- This is Bootstrap v4.3.1 parallax layout for you. Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> for 2 background images. In
-                odio sapien, commodo id ullamcorper ac, dignissim at sapien.
-                Nullam leo massa, vaius ac massa et, tincidunt imperdiet
-              turpis.  -->
               </p>
 
 
@@ -113,10 +129,14 @@
 
           <!-- Brown bg -->
           <div class="col-md-5">
-                        <div class="tm-welcome-right" aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-              <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario." style="display:none;">
-              <!-- Map is here -->
-            </div>
+            <a href="/organization">
+              <div class="tm-welcome-right"
+                aria-label="Map showing the local drywall business location in Kingston, Ontario.">
+                <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
+                  style="display:none;">
+                <!-- Map is here -->
+              </div>
+            </a>
           </div>
 
 
@@ -129,22 +149,96 @@
 
 
 
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+          <div>
+            <h2 class="tm-text-blue">
+              Legal Disclaimer
+            </h2>
+
+            <p class="mb-0">
+              <span>Referral Service Disclaimer for <strong>Drywall Kingston</strong>, <strong>Drywall Kingston Earnanswers</strong>, and <strong>drywallkingston.com</strong></span></br>
+              The website <a href='/' target='_blank'>drywallkingston.com</a> is a referral service that connects users
+              with professional drywall contractors in Ontario, Canada. We strive to provide accurate and up-to-date
+              information regarding available services and contractors. However, we do not guarantee the quality,
+              reliability, or performance of the services provided by the referred contractors.
+
+            <h3><strong>Limitation of Liability</strong></h3>
+
+            <p class="mb-0">
+              By using this website and the referral services offered, you agree that Drywall Kingston and its owners,
+              operators, affiliates, and employees are not responsible for any damages, losses, or liabilities that may
+              arise from the use of the services provided by the referred contractors. This includes, but is not limited
+              to, any direct, indirect, incidental, consequential, or punitive damages.
+            </p>
+
+            <h3><strong>No Warranty</strong></h3>
+
+            <p class="mb-0">
+              Drywall Kingston makes no representations or warranties of any kind, express or implied, regarding the
+              accuracy, completeness, or suitability of the information provided on this website. All information is
+              provided "as is" without any warranties of any kind.
+            </p>
+
+            <h3><strong>Independent Contractors</strong></h3>
+
+            <p class="mb-0">
+              The contractors referred by Drywall Kingston are independent businesses and are not employees, agents, or
+              representatives of Drywall Kingston. We do not supervise, control, or have any authority over the work
+              performed by these contractors. It is the responsibility of the user to conduct their own due diligence
+              and verify the credentials, licensing, and insurance of any contractor they choose to hire.
+            </p>
+
+            <h3><strong>Jurisdiction</strong></h3>
+
+            <p class="mb-0">
+              This disclaimer is governed by the laws of Ontario, Canada. By using this website, you agree to submit to
+              the exclusive jurisdiction of the courts located in Ontario for the resolution of any disputes arising out
+              of or related to your use of this website or the referral services provided.
+            </p>
+
+            <h3><strong>Additional Statement</strong></h3>
+
+            <p class="mb-0">
+              For the purposes of this disclaimer, any references to "Drywall Kingston" also refer to "Drywall Kingston
+              Earnanswers", and "drywallkingston.com."
+            </p>
+
+            <p class="mb-0">
+              If you have any questions or concerns regarding this disclaimer, please <a href='/request-free-quote'
+                target='_blank'>contact us</a>.
+            </p>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End portfolio section -->
+
+
+
+
+
 
 
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
 
-      <div class="row">
+
+
+      <!-- <div class="row">
         <div class="col-12">
 
-          <h2>
-            <a href='https://drywallkingston.com/' target='_blank'>Contact us</a>
-          </h2>
-          <!-- Using Node -->
-          <!-- <form action="/retrieve-request-free-quote-data" method="post" id="tmContactForm" class="tm-bg-white-transparent"> -->
-
-          <!-- Using browser capabilities -->
           <form id="tmContactForm" class="tm-bg-white-transparent">
           <div class="form-group">
             <input type="text" id="contact_name" name="contact_name"
@@ -174,11 +268,8 @@
 
           </form>
 
-
-
-
         </div>
-      </div>
+      </div> -->
 
 
     </div>
@@ -246,8 +337,6 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/parallax.min.js"></script>
 
-
-  <script src="/js/request-free-quote.js"></script>
 
 
 
