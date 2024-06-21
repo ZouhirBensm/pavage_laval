@@ -72,8 +72,28 @@ const goneUrls = [
   "/blog/drywall/blog-posting/article2",
   "/drywall/drywall-contractors-kingston",
   "/drywall/residential-drywall-contractors-kingston",
-  "/drywall/drywall-contractors-kingston-ontario"
+  "/drywall/drywall-contractors-kingston-ontario",
+  "/service/drywall-contractors-kingston",
+  "/service/residential-drywall-contractors-kingston",
+  "/service/drywall-contractors-kingston-ontario",
+  "/blog/drywall/blog-posting/best-drywall-kingston",
+  "/blog/{Category}/blog-posting/residential-drywall-contractors-kingston",
+  "/blog/{Category}/blog-posting/drywall-companies-in-kingston-ontario",
+  "/blog/{Category}/blog-posting/drywall-contractors-kingston-ontario",
+  "/blog/drywall/blog-posting/drywall-contractors-kingston",
+  "/blog/drywall/blog-posting/residential-drywall-contractors-kingston",
+  "/blog/drywall/blog-posting/drywall-contractors-kingston-ontario",
+  "/blog/drywall/blog-posting/drywall-companies-in-kingston-ontario",
+  "/blog/drywall/blog-posting/drywall-kingston-ltd",
+  "/blog/drywall/blog-posting/drywall-kingston-prices",
+  "/blog/drywall/blog-posting/drywall-kingston-cost",
+  "/blog/drywall/blog-posting/best-drywall-kingston",
+  "/blog/{Category}/blog-posting/Drywall Companies In Kingston Ontario",
+  "/blog/{Category}/blog-posting/best-drywall-kingston"
 ];
+
+
+
 
 goneUrls.forEach(url => {
   app.get(url, (req, res) => {
@@ -210,7 +230,7 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   console.log(extra_service_page_title_for_seo);
 
 
-  redirected_seo_pages = ['drywall-contractors-kingston', 'residential-drywall-contractors-kingston', 'drywall-contractors-kingston-ontario', 'drywall-companies-in-kingston-ontario', 'drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
+  redirected_seo_pages = ['drywall-companies-in-kingston-ontario', 'drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
 
 
   // For SEO Keep until google identifies the redirects
