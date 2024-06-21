@@ -531,27 +531,6 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
 
 
-
-
-
-    // {
-    //   URL: '/drywall/drywall-contractors-kingston',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/drywall/residential-drywall-contractors-kingston',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/drywall/drywall-contractors-kingston-ontario',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
     {
       URL: '/drywall/drywall-companies-in-kingston-ontario',
       lastmod: last_modified_2_date,
