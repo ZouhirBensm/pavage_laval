@@ -39,7 +39,7 @@ function getJsonData(title, category) {
   category =  category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
 
 
-  console.log('title->', title)
+  // console.log('title->', title)
   const matchingObject = getJsonObjectByTitle(title);
   
   if (!matchingObject) {
@@ -63,7 +63,7 @@ function getJsonData2(title) {
   title =  title.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase())
 
 
-  console.log('title->', title)
+  // console.log('title->', title)
 
   const matchingObject = getJsonObjectByTitle(title);
   

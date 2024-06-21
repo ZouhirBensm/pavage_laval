@@ -1,4 +1,4 @@
-// 999
+// 999666
 const express = require('express')
 const path = require('path');
 
@@ -269,13 +269,18 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
-  console.log(jsonData)
+  // console.log(jsonData)
   
   let titles_of_extra_services = ['Drywall Companies In Kingston Ontario', 'Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
   
+  console.log(jsonData.title)
+  console.log(titles_of_extra_services)
+  console.log(titles_of_extra_services.includes(jsonData.title))
   
   if (!titles_of_extra_services.includes(jsonData.title)) return res.status(410).send('This page has been permanently removed.');
 
+
+  console.log('render extra-service-page-for-seo')
   return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
