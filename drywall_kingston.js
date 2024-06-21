@@ -396,9 +396,14 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
 
   let titles_of_extra_services = ['Drywall Companies In Kingston Ontario', 'Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
   
+  console.log('->', jsonData)
   // console.log(jsonData.title)
   // console.log(titles_of_extra_services)
   // console.log(titles_of_extra_services.includes(jsonData.title))
+
+  if (!jsonData) {
+    return res.status(404).render('url_not_present')
+  }
   
   if (titles_of_extra_services.includes(jsonData.title)) {
     const newUrl = `/drywall/${title}`;

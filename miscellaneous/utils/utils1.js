@@ -41,9 +41,12 @@ function getJsonData(title, category) {
 
   // console.log('title->', title)
   const matchingObject = getJsonObjectByTitle(title);
+
+
+  console.log('matchingObject->', matchingObject)
   
   if (!matchingObject) {
-    content = ''
+    return null
   }
 
   // Example JSON data
@@ -68,7 +71,7 @@ function getJsonData2(title) {
   const matchingObject = getJsonObjectByTitle(title);
   
   if (!matchingObject) {
-    content = ''
+    return null
   }
 
   // Example JSON data
