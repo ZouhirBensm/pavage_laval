@@ -95,6 +95,7 @@ const goneUrls = [
   "/blog/%7BCategory%7D/blog-posting/drywall-contractors-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/best-drywall-kingston",
+  "/drywall/drywall-companies-in-kingston-ontario"
 ];
 
 
@@ -237,11 +238,12 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   console.log(extra_service_page_title_for_seo);
 
 
-  redirected_seo_pages = ['drywall-companies-in-kingston-ontario', 'drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
+  redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
 
-
+  console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
   // For SEO Keep until google identifies the redirects
   if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
+    console.log(extra_service_page_title_for_seo);
     const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
     return res.redirect(301, newUrl);
   }
@@ -271,7 +273,7 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
   // console.log(jsonData)
   
-  let titles_of_extra_services = ['Drywall Companies In Kingston Ontario', 'Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
+  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
   
   console.log(jsonData.title)
   console.log(titles_of_extra_services)
@@ -394,7 +396,7 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
 
 
 
-  let titles_of_extra_services = ['Drywall Companies In Kingston Ontario', 'Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
+  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
   
   console.log('->', jsonData)
   // console.log(jsonData.title)
@@ -565,13 +567,6 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
 
 
-
-    {
-      URL: '/drywall/drywall-companies-in-kingston-ontario',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
     {
       URL: '/drywall/drywall-companies-in-kingston',
       lastmod: last_modified_2_date,
