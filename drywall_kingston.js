@@ -252,6 +252,12 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   // Render other service pages
   const jsonData = getJsonData2(extra_service_page_title_for_seo);
 
+  if (!jsonData) {
+    return res.status(404).render('url_not_present')
+  }
+
+  console.log(jsonData)
+
   return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
     // env: process.env.NODE_ENV
