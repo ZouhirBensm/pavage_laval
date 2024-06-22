@@ -95,7 +95,8 @@ const goneUrls = [
   "/blog/%7BCategory%7D/blog-posting/drywall-contractors-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/best-drywall-kingston",
-  "/drywall/drywall-companies-in-kingston-ontario"
+  "/drywall/drywall-companies-in-kingston-ontario",
+  "/service/drywall-companies-in-kingston-ontario"
 ];
 
 
