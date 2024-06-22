@@ -41,120 +41,126 @@ const breadcrumbListSchema = {
     {
       "@type": "ListItem",
       "position": 7,
+      "name": "Legal Disclaimer",
+      "item": "https://drywallkingston.com/tiroir1/privacy-policy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
       "name": "Drywall Installation",
       "item": "https://drywallkingston.com/service/drywall-installation"
     },
     {
       "@type": "ListItem",
-      "position": 8,
+      "position": 9,
       "name": "Drywall Repair and Patching",
       "item": "https://drywallkingston.com/service/drywall-repair-and-patching"
     },
     {
       "@type": "ListItem",
-      "position": 9,
+      "position": 10,
       "name": "Drywall Finishing and Texturing",
       "item": "https://drywallkingston.com/service/drywall-finishing-and-texturing"
     },
     {
       "@type": "ListItem",
-      "position": 10,
+      "position": 11,
       "name": "Steel Stud Framing",
       "item": "https://drywallkingston.com/service/steel-stud-framing"
     },
     {
       "@type": "ListItem",
-      "position": 11,
+      "position": 12,
       "name": "Blown and Batt Insulation",
       "item": "https://drywallkingston.com/service/blown-and-batt-insulation"
     },
     {
       "@type": "ListItem",
-      "position": 12,
+      "position": 13,
       "name": "Suspended T-Bar Ceilings",
       "item": "https://drywallkingston.com/service/suspended-t-bar-ceilings"
     },
     {
       "@type": "ListItem",
-      "position": 13,
+      "position": 14,
       "name": "Textured and Coffered Ceilings",
       "item": "https://drywallkingston.com/service/textured-and-coffered-ceilings"
     },
     {
       "@type": "ListItem",
-      "position": 14,
+      "position": 15,
       "name": "Cove Moldings and Bulkheads",
       "item": "https://drywallkingston.com/service/cove-moldings-and-bulkheads"
     },
     {
       "@type": "ListItem",
-      "position": 15,
+      "position": 16,
       "name": "Spray Priming and Painting",
       "item": "https://drywallkingston.com/service/spray-priming-and-painting"
     },
     {
       "@type": "ListItem",
-      "position": 16,
+      "position": 17,
       "name": "Drywall Companies in Kingston Ontario",
       "item": "https://drywallkingston.com/drywall/drywall-companies-in-kingston-ontario"
     },
     {
       "@type": "ListItem",
-      "position": 17,
+      "position": 18,
       "name": "Drywall Companies in Kingston",
       "item": "https://drywallkingston.com/drywall/drywall-companies-in-kingston"
     },
     {
       "@type": "ListItem",
-      "position": 18,
+      "position": 19,
       "name": "Drywall Kingston Ltd",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-ltd"
     },
     {
       "@type": "ListItem",
-      "position": 19,
+      "position": 20,
       "name": "Drywall Kingston Prices",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-prices"
     },
     {
       "@type": "ListItem",
-      "position": 20,
+      "position": 21,
       "name": "Drywall Kingston Cost",
       "item": "https://drywallkingston.com/drywall/drywall-kingston-cost"
     },
     {
       "@type": "ListItem",
-      "position": 21,
+      "position": 22,
       "name": "Best Drywall Kingston",
       "item": "https://drywallkingston.com/drywall/best-drywall-kingston"
     },
     {
       "@type": "ListItem",
-      "position": 22,
+      "position": 23,
       "name": "Drywall Taping Tools",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-taping-tools"
     },
     {
       "@type": "ListItem",
-      "position": 23,
+      "position": 24,
       "name": "Drywall Alternatives for Garage",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/drywall-alternatives-for-garage"
     },
     {
       "@type": "ListItem",
-      "position": 24,
+      "position": 25,
       "name": "Types of Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/types-of-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 25,
+      "position": 26,
       "name": "How to Tape Drywall",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/how-to-tape-drywall"
     },
     {
       "@type": "ListItem",
-      "position": 26,
+      "position": 27,
       "name": "All About Popcorn Ceilings",
       "item": "https://drywallkingston.com/blog/drywall/blog-posting/all-about-popcorn-ceilings"
     }

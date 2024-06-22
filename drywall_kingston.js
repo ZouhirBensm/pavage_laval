@@ -424,6 +424,11 @@ app.get('/tiroir1/legal-disclaimer', (req, res) => {
   return res.render('legal-disclaimer');
 });
 
+// Your route
+app.get('/tiroir1/privacy-policy', (req, res) => {
+  return res.render('privacy-policy');
+});
+
 
 
 
@@ -486,14 +491,19 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 1
     },
+    
     {
       URL: '/tiroir1/legal-disclaimer',
       lastmod: last_modified_3_date,
       changefreq: "monthly",
       priority: 1
     },
-
-
+    {
+      URL: '/tiroir1/privacy-policy',
+      lastmod: last_modified_3_date,
+      changefreq: "monthly",
+      priority: 1
+    },
 
 
 
