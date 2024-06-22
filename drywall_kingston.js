@@ -88,12 +88,12 @@ const goneUrls = [
   "/blog/drywall/blog-posting/drywall-kingston-prices",
   "/blog/drywall/blog-posting/drywall-kingston-cost",
   "/blog/drywall/blog-posting/best-drywall-kingston",
-  "/blog/{Category}/blog-posting/Drywall Companies In Kingston Ontario",
+  "/blog/{Category}/blog-posting/drywall-companies-in-kingston-ontario",
   "/blog/{Category}/blog-posting/best-drywall-kingston",
   "/blog/%7BCategory%7D/blog-posting/residential-drywall-contractors-kingston",
   "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/drywall-contractors-kingston-ontario",
-  "/blog/%7BCategory%7D/blog-posting/Drywall Companies In Kingston Ontario",
+  "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
   "/blog/%7BCategory%7D/blog-posting/best-drywall-kingston",
 ];
 
