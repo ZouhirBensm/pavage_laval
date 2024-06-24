@@ -473,10 +473,13 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
   let last_modified_3 = '2024-06-21T15:04:37.758Z';
   let last_modified_3_date = new Date(last_modified_3);
 
+  let last_modified_4 = '2024-06-24T13:13:22.821Z';
+  let last_modified_4_date = new Date(last_modified_4);
+
   const urls = [
     {
       URL: '/',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
@@ -500,7 +503,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     },
     {
       URL: '/sitemap',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
@@ -523,37 +526,37 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
     {
       URL: '/service/drywall-installation',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/drywall-repair-and-patching',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/drywall-finishing-and-texturing',
-      lastmod: last_modified_1_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/steel-stud-framing',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/blown-and-batt-insulation',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/suspended-t-bar-ceilings',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
@@ -565,13 +568,13 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     },
     {
       URL: '/service/cove-moldings-and-bulkheads',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
     {
       URL: '/service/spray-priming-and-painting',
-      lastmod: last_modified_2_date,
+      lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
     },
