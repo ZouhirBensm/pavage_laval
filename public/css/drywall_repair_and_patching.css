@@ -1,0 +1,4 @@
+/* Select the third occurrence of the matched div */
+section#tmPortfolio .tm-portfolio-item:nth-of-type(1) .tm-portfolio-name {
+  background-image: url('../img/drywall_repair_and_patching.avif');
+}

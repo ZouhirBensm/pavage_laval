@@ -22,15 +22,21 @@
   <link rel="stylesheet" href="/css/welcome-section.css" />
   <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
   <!-- <link rel="stylesheet" href="/css/review-section.css" /> -->
+
+  <link rel="stylesheet" href="/css/extra-service-page-for-seo.css" />
   <link rel="stylesheet" href="/css/footer-style.css" />
   <link rel="stylesheet" href="/css/request-free-quote.css" />
 
 
+
+
+
   <title class="title-template"></title>
   <meta name="title" content="Comprehensive Drywall Services | Drywall Kingston">
-  <meta name="description" content="Discover our comprehensive range of drywall services designed to meet all your construction needs. From installation to finishing, Drywall Kingston has you covered.">
+  <meta name="description"
+    content="Discover our comprehensive range of drywall services designed to meet all your construction needs. From installation to finishing, Drywall Kingston has you covered.">
   <script>
-    window.blogData = <%- JSON.stringify(blogData) %>;
+    window.blogData = <% - JSON.stringify(blogData) %>;
   </script>
 
   <script>
@@ -38,17 +44,17 @@
     console.log('Env:', '<%= locals.env %>');
   </script>
 
-  <% if (locals.env === locals.production) { %>
+  <% if (locals.env===locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
       gtag('config', 'G-PVQMQ78LBR');
     </script>
-  <% } %>
+    <% } %>
 
 </head>
 
@@ -86,7 +92,7 @@
           <!-- Black transparent bg -->
           <div class="ml-auto mr-0 tm-bg-blue-transparent text-white tm-brand-container-inner">
             <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name title-template"></h1>
+              <h1 class="tm-brand-name title-template"><%- blogData.title %></h1>
               <p class="tm-brand-description">Drywall Kingston 🇨🇦</p>
               <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/drywallkingston/30min">
                 Book a call
@@ -153,17 +159,27 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div>
-            <h3 class="tm-text-blue title-template"></h3>
-            <!-- <span class="category-template"></span> -->
 
+          <%- blogData.htmlContent %>
+          <!-- <div class="tm-portfolio-item">
+
+          </div> -->
+
+
+
+          <!-- <div>
+            <h3 class="tm-text-blue title-template"></h3>
 
             <div id="content-template"></div>
           </div>
+        </div> -->
+
+
+
         </div>
       </div>
-    </div>
   </section>
+
 
 
 
