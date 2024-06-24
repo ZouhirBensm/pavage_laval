@@ -35,3 +35,7 @@ div#content-template h3 {
 div#content-template p {
   letter-spacing: 0.4px;
 }
+
+div#blog-posting {
+  margin: 0 0 80px 0;
+}

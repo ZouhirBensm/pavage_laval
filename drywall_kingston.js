@@ -400,6 +400,8 @@ app.get('/blog/:category', (req, res) => {
 
 // Your route
 app.get('/blog/:category/blog-posting/:title', (req, res) => {
+
+
   const { title, category } = req.params;
   
   const jsonData = getJsonData(title, category);
@@ -428,6 +430,12 @@ app.get('/blog/:category/blog-posting/:title', (req, res) => {
     // env: process.env.NODE_ENV
   });
 });
+
+
+
+
+
+
 
 
 
@@ -612,6 +620,8 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     // },
   ];
 
+
+
   for (const key in json) {
     if (json.hasOwnProperty(key)) {
 
@@ -621,9 +631,14 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
       if (!json[key].dateModified) continue;
 
-      const formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      let formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
       
-      const url = `/blog/drywall/blog-posting/${formattedTitle}`;
+      let url = `/blog/drywall/blog-posting/${formattedTitle}`;
+
+      if (formattedTitle = 'an-exhaustive-guide-to-digiseine') {
+        url = `/blog/agency/blog-posting/${formattedTitle}`;
+      }
+
       const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
 
       urls.push({
