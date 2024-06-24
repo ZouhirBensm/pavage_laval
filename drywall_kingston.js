@@ -270,32 +270,32 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
 
 
 
-// New route
-app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
-  const { extra_service_page_title_for_seo } = req.params;
-  console.log(extra_service_page_title_for_seo);
+// app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 
-  const jsonData = getJsonData2(extra_service_page_title_for_seo);
+//   const { extra_service_page_title_for_seo } = req.params;
+//   console.log(extra_service_page_title_for_seo);
 
-  // console.log(jsonData)
+//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
+
+//   // console.log(jsonData)
   
-  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
+//   let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
   
-  console.log(jsonData.title)
-  console.log(titles_of_extra_services)
-  console.log(titles_of_extra_services.includes(jsonData.title))
+//   console.log(jsonData.title)
+//   console.log(titles_of_extra_services)
+//   console.log(titles_of_extra_services.includes(jsonData.title))
   
-  if (!titles_of_extra_services.includes(jsonData.title)) return res.status(410).send('This page has been permanently removed.');
+//   if (!titles_of_extra_services.includes(jsonData.title)) return res.status(410).send('This page has been permanently removed.');
 
 
-  console.log('render extra-service-page-for-seo')
-  return res.render('extra-service-page-for-seo', {
-    blogData: jsonData,
-    // env: process.env.NODE_ENV
-    canonical: req.originalUrl
-  });
-});
+//   console.log('render extra-service-page-for-seo')
+//   return res.render('extra-service-page-for-seo', {
+//     blogData: jsonData,
+//     // env: process.env.NODE_ENV
+//     canonical: req.originalUrl
+//   });
+// });
 
 
 
@@ -505,18 +505,18 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       priority: 1
     },
     
-    {
-      URL: '/tiroir1/legal-disclaimer',
-      lastmod: last_modified_3_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/tiroir1/privacy-policy',
-      lastmod: last_modified_3_date,
-      changefreq: "monthly",
-      priority: 1
-    },
+    // {
+    //   URL: '/tiroir1/legal-disclaimer',
+    //   lastmod: last_modified_3_date,
+    //   changefreq: "monthly",
+    //   priority: 1
+    // },
+    // {
+    //   URL: '/tiroir1/privacy-policy',
+    //   lastmod: last_modified_3_date,
+    //   changefreq: "monthly",
+    //   priority: 1
+    // },
 
 
 
@@ -578,36 +578,36 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
 
 
 
-    {
-      URL: '/drywall/drywall-companies-in-kingston',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.5
-    },
-    {
-      URL: '/drywall/drywall-kingston-ltd',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/drywall/drywall-kingston-prices',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/drywall/drywall-kingston-cost',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
-    {
-      URL: '/drywall/best-drywall-kingston',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 0.8
-    },
+    // {
+    //   URL: '/drywall/drywall-companies-in-kingston',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.5
+    // },
+    // {
+    //   URL: '/drywall/drywall-kingston-ltd',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/drywall/drywall-kingston-prices',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/drywall/drywall-kingston-cost',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
+    // {
+    //   URL: '/drywall/best-drywall-kingston',
+    //   lastmod: last_modified_2_date,
+    //   changefreq: "monthly",
+    //   priority: 0.8
+    // },
   ];
 
   for (const key in json) {
