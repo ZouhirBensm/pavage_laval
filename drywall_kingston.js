@@ -126,7 +126,6 @@ app.get('/', (req, res) => {
   // let error = new Error("new error")
   // return next(error)
 
-
   return res.render('index3');
   // return res.sendFile('index.html', { root: 'public' });
   // return res.render('index')
