@@ -298,6 +298,10 @@ app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
 });
 
 
+
+
+
+
 app.get('/sitemap', (req, res) => {
   return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
