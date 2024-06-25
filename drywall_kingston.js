@@ -635,7 +635,8 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       
       let url = `/blog/drywall/blog-posting/${formattedTitle}`;
 
-      if (formattedTitle = 'an-exhaustive-guide-to-digiseine') {
+
+      if (formattedTitle == 'an-exhaustive-guide-to-digiseine' || formattedTitle == 'an-exhaustive-guide-to-atlas-vinyl-sundecks-ltd') {
         url = `/blog/agency/blog-posting/${formattedTitle}`;
       }
 
