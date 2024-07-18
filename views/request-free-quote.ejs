@@ -38,18 +38,18 @@
     console.log('Production:', '<%= locals.production %>');
     console.log('Env:', '<%= locals.env %>');
   </script>
-  
-  <% if (locals.env === locals.production) { %>
+
+  <% if (locals.env===locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
       gtag('config', 'G-PVQMQ78LBR');
     </script>
-  <% } %>
+    <% } %>
 
 </head>
 
@@ -75,7 +75,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif" alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
+    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
 
 
     <div class="container-fluid tm-brand-container-outer">
@@ -167,34 +168,36 @@
           <!-- Using Node -->
           <!-- <form action="/retrieve-request-free-quote-data" method="post" id="tmContactForm" class="tm-bg-white-transparent"> -->
 
+
+
           <!-- Using browser capabilities -->
           <form id="tmContactForm" class="tm-bg-white-transparent">
-          <div class="form-group">
-            <input type="text" id="contact_name" name="contact_name"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Name" required />
-          </div>
-          <div class="form-group">
+            <div class="form-group">
+              <input type="text" id="contact_name" name="contact_name"
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Name" required />
+            </div>
+            <div class="form-group">
               <input type="email" id="contact_email" name="contact_email"
                 class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Email" required />
             </div>
             <div class="form-group">
               <input type="tel" id="contact_phone" name="contact_phone"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Phone" 
-              pattern="^\+?1?\d{10,15}$" required />
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Phone"
+                pattern="^\+?1?\d{10,15}$" required />
               <div class="side-note-form">(valid formats: 9991234444, +19991234444)</span>
-              
-            </div>
-            <div class="form-group">
-              <textarea rows="4" id="contact_message" name="contact_message"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="The message goes here. Please provide details on what needs to be done, and we will get back to you as soon as possible."
-                required></textarea>
-            </div>
-          <div class="text-center">
-            <button type="submit" class="btn tm-btn-submit rounded-0">
-              Submit
-            </button>
-          </div>
 
+              </div>
+              <div class="form-group">
+                <textarea rows="4" id="contact_message" name="contact_message"
+                  class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                  placeholder="The message goes here. Please provide details on what needs to be done, and we will get back to you as soon as possible."
+                  required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn tm-btn-submit rounded-0">
+                  Submit
+                </button>
+              </div>
           </form>
 
 
