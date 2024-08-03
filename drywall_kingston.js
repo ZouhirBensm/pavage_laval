@@ -7,7 +7,7 @@ const fs = require('fs');
 require('dotenv').config()
 
 const { Sequelize } = require('sequelize');
-// const { initModels } = require(`./models/init-models`);
+const { initModels } = require(`./models/init-models`);
 
 const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
 const { getJsonData, getJsonData2 } = require('./miscellaneous/utils/utils1')
@@ -232,7 +232,61 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 
 
 
-app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+
+
+// ORIGINAL
+// app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
+
+//   const now = new Date()
+
+//   console.log('datetime = ', now)
+
+
+//   const { extra_service_page_title_for_seo } = req.params;
+//   console.log(extra_service_page_title_for_seo);
+
+
+//   redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
+
+//   console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
+  
+  
+//   // For SEO Keep until google identifies the redirects
+//   if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
+//     console.log(extra_service_page_title_for_seo);
+//     const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
+//     return res.redirect(301, newUrl);
+//   }
+
+//   // Render other service pages
+//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
+
+//   if (!jsonData) {
+//     return res.status(404).render('url_not_present')
+//   }
+
+//   console.log(jsonData)
+
+//   return res.render('extra-service-page-for-seo', {
+//     blogData: jsonData,
+//     // env: process.env.NODE_ENV
+//     canonical: req.originalUrl
+//   });
+
+
+
+// });
+
+
+
+
+// NEW
+app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => {
+
+  const now = new Date()
+
+  console.log('datetime = ', now)
+
 
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
@@ -241,6 +295,8 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
   redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
 
   console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
+  
+  
   // For SEO Keep until google identifies the redirects
   if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
     console.log(extra_service_page_title_for_seo);
@@ -255,7 +311,37 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
     return res.status(404).render('url_not_present')
   }
 
-  console.log(jsonData)
+  // console.log(jsonData)
+
+
+
+
+  let db_service_page
+
+
+  try {
+    db_service_page = await db.service_page.findOne({
+      where: {
+        slug: req.params.extra_service_page_title_for_seo,
+      },
+      raw: true,
+    });
+  } catch (error) {
+    return next(error);
+  }
+
+
+  console.log('\n\n(1)\n\n', db_service_page)
+
+
+  if (!db_service_page) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
+
+
+
+
 
   return res.render('extra-service-page-for-seo', {
     blogData: jsonData,
@@ -266,6 +352,12 @@ app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
 
 
 });
+
+
+
+
+
+
 
 
 
@@ -694,6 +786,9 @@ const server = app.listen(PORT, async () => {
   } catch (err) {
     console.error('Database authentication failed:', err);
   }
+
+  global.db = initModels(sequelize);
+
 
   console.log('\n')
   console.log(`Congrats, your Node.JS Express.JS application is running on localhost:${PORT}.\napp.listen() callback function`)
