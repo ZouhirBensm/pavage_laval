@@ -167,49 +167,27 @@
                   <li><a href="/service/drywall-installation">Drywall Installation</a></li>
                   <li><a href="/service/drywall-repair-and-patching">Drywall Repair and Patching</a></li>
                   <li><a href="/service/drywall-finishing-and-texturing">Drywall Finishing and Texturing</a></li>
-                  <li><a href="/service/steel-stud-framing">Steel Stud Framing</a></li>
-                  <li><a href="/service/blown-and-batt-insulation">Blown and Batt Insulation</a></li>
-                  <li><a href="/service/suspended-t-bar-ceilings">Suspended T-Bar Ceilings</a></li>
-                  <li><a href="/service/textured-and-coffered-ceilings">Textured and Coffered Ceilings</a></li>
-                  <li><a href="/service/cove-moldings-and-bulkheads">Cove Moldings and Bulkheads</a></li>
-                  <li><a href="/service/spray-priming-and-painting">Spray Priming and Painting</a></li>
+                  <% service_pages.forEach(function(page) { %>
+                    <li><a href="/service/<%= page.slug %>"><%= page.title %></a></li>
+                  <% }); %>
                 </ul>
               </li>
-              <!-- <li>Drywall
-                <ul>
-                  <li><a href="/drywall/drywall-contractors-kingston">Drywall Contractors Kingston</a></li>
-                  <li><a href="/drywall/residential-drywall-contractors-kingston">Residential Drywall Contractors
-                      Kingston</a></li>
-                  <li><a href="/drywall/drywall-contractors-kingston-ontario">Drywall Contractors Kingston Ontario</a>
-                  </li>
-                  <li><a href="/drywall/drywall-companies-in-kingston">Drywall Companies in Kingston</a></li>
-                  <li><a href="/drywall/drywall-kingston-ltd">Drywall Kingston ltd</a></li>
-                  <li><a href="/drywall/drywall-kingston-prices">Drywall Kingston Prices</a></li>
-                  <li><a href="/drywall/drywall-kingston-cost">Drywall Kingston Cost</a></li>
-                  <li><a href="/drywall/best-drywall-kingston">Best Drywall Kingston</a></li>
-                </ul>
-              </li> -->
+
               <li><a href="/blog">Blog</a>
+
                 <ul>
-                  <li>Drywall
-                    <ul>
-                      <li><a href="/blog/drywall/blog-posting/drywall-taping-tools">Drywall Taping Tools</a></li>
-                      <li><a href="/blog/drywall/blog-posting/drywall-alternatives-for-garage">Drywall Alternatives for
-                          Garage</a></li>
-                      <li><a href="/blog/drywall/blog-posting/types-of-drywall">Types Of Drywall</a></li>
-                      <li><a href="/blog/drywall/blog-posting/how-to-tape-drywall" class="category-link">How To Tape
-                          Drywall</a></li>
-                      <li><a href="/blog/drywall/blog-posting/all-about-popcorn-ceilings" class="category-link">All About
-                          Popcorn Ceilings</a></li>
-                    </ul>
-                  </li>
-                  <li>Agency
-                    <ul>
-                      <li><a href="/blog/agency/blog-posting/an-exhaustive-guide-to-digiseine">An Exhaustive Guide To Digiseine</a></li>
-                      <li><a href="/blog/agency/blog-posting/an-exhaustive-guide-to-atlas-vinyl-sundecks-ltd">An Exhaustive Guide To Atlas Vinyl Sundecks Ltd.</a></li>
-                    </ul>
-                  </li>
+                  <% Object.keys(categories_and_associated_blogs).forEach(function(categoryName) { %>
+                    <li><%= categoryName %>
+                      <ul>
+                        <% categories_and_associated_blogs[categoryName].blogs.forEach(function(blog) { %>
+                          <li><a href="/blog/<%= categories_and_associated_blogs[categoryName].categorySlug %>/blog-posting/<%= blog.slug %>"><%= blog.title %></a></li>
+                        <% }); %>
+                      </ul>
+                    </li>
+                  <% }); %>
                 </ul>
+
+
 
               </li>
               <li><a href="/sitemap">Sitemap</a></li>

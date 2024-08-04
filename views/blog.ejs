@@ -162,12 +162,14 @@
         <div>
           <h2>Blog</h2>
           <h3>Categories</h3>
+
           <ul>
-            <li><a href="/blog/drywall">Drywall</a></li>
-            <li><a href="/blog/agency">Agency</a></li>
-            <!-- <li><a href="/blog/categoryB">Category B</a></li>
-            <li><a href="/blog/categoryC">Category C</a></li> -->
+            <% categories.forEach(function(category) { %>
+              <li><a href="/blog/<%= category.slug %>"><%= category.category_name %></a></li>
+            <% }); %>
           </ul>
+
+
         </div>
       </div>
     </div>

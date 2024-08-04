@@ -164,8 +164,7 @@ app.get('/', async (req, res) => {
 
   return res.render('index3', {
     blog_elements: blog_elements,
-    service_pages: service_pages,
-    env: process.env.NODE_ENV,
+    service_pages: service_pages
   });
 
 
@@ -277,7 +276,6 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
 
   return res.render('extra-service-page-for-seo', {
     blogData: db_service_page,
-    // env: process.env.NODE_ENV
     canonical: req.originalUrl
   });
 
@@ -295,10 +293,17 @@ app.get('/sitemap', async (req, res) => {
 
   // Fetch the slugs from the blog_element table with the same category_id
   const blog_elements = await db.blog_element.findAll({
-    where: {
-      category_id: db_category.id,
-    },
+    // where: {
+    //   category_id: db_category.id,
+    // },
+  include: [
+    {
+      model: db.category,
+      as: 'category',
+      attributes: ['category_name', 'slug']
+    }],
     attributes: ['slug', 'title'],
+    nest: true,
     raw: true,
   });
 
@@ -313,6 +318,25 @@ app.get('/sitemap', async (req, res) => {
     raw: true
   });
 
+  // Group blogs by category
+  const categories_and_associated_blogs = blog_elements.reduce((acc, blog) => {
+    const categoryName = blog.category.category_name;
+    const categorySlug = blog.category.slug;
+
+    if (!acc[categoryName]) {
+      acc[categoryName] = {
+        categorySlug: categorySlug,
+        blogs: []
+      };
+    }
+
+    acc[categoryName].blogs.push(blog);
+    return acc;
+  }, {});
+
+
+  // console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
+
 
 
   if (!service_pages) {
@@ -323,7 +347,11 @@ app.get('/sitemap', async (req, res) => {
 
 
 
-  return res.render('sitemap');
+  return res.render('sitemap', {
+    // blog_elements: blog_elements,
+    service_pages: service_pages,
+    categories_and_associated_blogs: categories_and_associated_blogs
+  });
   // return res.sendFile('sitemap.html', { root: 'public' });
 });
 
@@ -336,9 +364,21 @@ app.get('/sitemap', async (req, res) => {
 
 
 
-app.get('/blog', (req, res) => {
+app.get('/blog', async (req, res) => {
 
-  return res.render('blog');
+
+  const categories = await db.category.findAll({
+    raw: true
+  }
+);
+
+console.log(categories)
+
+
+
+  return res.render('blog', {
+    categories
+  });
   // return res.sendFile('blog.html', { root: 'public' });
 });
 
@@ -448,7 +488,6 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   return res.render('blog-posting', {
     blogData: blog_element,
     // blogData: JSON.stringify(blog_element),
-    env: process.env.NODE_ENV
   });
 });
 
