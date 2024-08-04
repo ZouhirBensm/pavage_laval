@@ -106,7 +106,7 @@ const goneUrls = [
 
 goneUrls.forEach(url => {
   app.get(url, (req, res) => {
-      res.status(410).send('This page has been permanently removed.');
+    res.status(410).send('This page has been permanently removed.');
   });
 });
 
@@ -119,16 +119,56 @@ goneUrls.forEach(url => {
 
 
 
-
 // Serve index.html for the root path
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   // Throw an error for testing the error handling middleware.
   // let error = new Error("new error")
   // return next(error)
 
-  return res.render('index3');
-  // return res.sendFile('index.html', { root: 'public' });
-  // return res.render('index')
+  // Fetch the slugs from the blog_element table with the same category_id
+  const blog_elements = await db.blog_element.findAll({
+    // where: {
+    //   category_id: db_category.id,
+    // },
+  include: [
+    {
+      model: db.category,
+      as: 'category',
+      attributes: ['category_name', 'slug']
+    }],
+    attributes: ['slug', 'title'],
+    nest: true,
+    raw: true,
+  });
+
+
+
+  if (!blog_elements) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
+
+  const service_pages = await db.service_page.findAll({
+    attributes: ['slug', 'title'],
+    raw: true
+  });
+
+
+
+  if (!service_pages) {
+    const error = new Error("No service pages found!")
+    return next(error)
+  }
+
+  console.log(blog_elements, service_pages)
+
+  return res.render('index3', {
+    blog_elements: blog_elements,
+    service_pages: service_pages,
+    env: process.env.NODE_ENV,
+  });
+
+
 });
 
 
@@ -186,101 +226,8 @@ app.get('/service/drywall-finishing-and-texturing', (req, res) => {
 });
 
 
-// app.get('/service/steel-stud-framing', (req, res) => {
-//   return res.render('steel-stud-framing');
-// });
-
-// app.get('/service/blown-and-batt-insulation', (req, res) => {
-//   return res.render('blown-and-batt-insulation');
-// });
-
-// app.get('/service/suspended-t-bar-ceilings', (req, res) => {
-//   return res.render('suspended-t-bar-ceilings');
-// });
-
-// app.get('/service/textured-and-coffered-ceilings', (req, res) => {
-//   return res.render('textured-and-coffered-ceilings');
-// });
-
-// app.get('/service/cove-moldings-and-bulkheads', (req, res) => {
-//   return res.render('cove-moldings-and-bulkheads');
-// });
-
-// app.get('/service/spray-priming-and-painting', (req, res) => {
-//   return res.render('spray-priming-and-painting');
-// });
 
 
-
-// app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
-//   const { extra_service_page_title_for_seo } = req.params;
-
-//   console.log(extra_service_page_title_for_seo)
-
-//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
-
-//   const htmlFilePath = path.join(__dirname, 'public', 'extra-service-page-for-seo.html');
-
-//   let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
-
-//   // Embed the JSON data in a script tag
-//   const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
-//   htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
-
-//   res.send(htmlContent);
-// });
-
-
-
-
-
-// ORIGINAL
-// app.get('/service/:extra_service_page_title_for_seo', (req, res) => {
-
-//   const now = new Date()
-
-//   console.log('datetime = ', now)
-
-
-//   const { extra_service_page_title_for_seo } = req.params;
-//   console.log(extra_service_page_title_for_seo);
-
-
-//   redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
-
-//   console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
-  
-  
-//   // For SEO Keep until google identifies the redirects
-//   if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
-//     console.log(extra_service_page_title_for_seo);
-//     const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
-//     return res.redirect(301, newUrl);
-//   }
-
-//   // Render other service pages
-//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
-
-//   if (!jsonData) {
-//     return res.status(404).render('url_not_present')
-//   }
-
-//   console.log(jsonData)
-
-//   return res.render('extra-service-page-for-seo', {
-//     blogData: jsonData,
-//     // env: process.env.NODE_ENV
-//     canonical: req.originalUrl
-//   });
-
-
-
-// });
-
-
-
-
-// NEW
 app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => {
 
   const now = new Date()
@@ -295,8 +242,8 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
   redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
 
   console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
-  
-  
+
+
   // For SEO Keep until google identifies the redirects
   if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
     console.log(extra_service_page_title_for_seo);
@@ -304,20 +251,7 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
     return res.redirect(301, newUrl);
   }
 
-  // Render other service pages
-  const jsonData = getJsonData2(extra_service_page_title_for_seo);
-
-  if (!jsonData) {
-    return res.status(404).render('url_not_present')
-  }
-
-  // console.log(jsonData)
-
-
-
-
   let db_service_page
-
 
   try {
     db_service_page = await db.service_page.findOne({
@@ -341,15 +275,11 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
 
 
 
-
-
   return res.render('extra-service-page-for-seo', {
-    blogData: jsonData,
+    blogData: db_service_page,
     // env: process.env.NODE_ENV
     canonical: req.originalUrl
   });
-
-
 
 });
 
@@ -360,46 +290,54 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
 
 
 
+// HERE
+app.get('/sitemap', async (req, res) => {
+
+  // Fetch the slugs from the blog_element table with the same category_id
+  const blog_elements = await db.blog_element.findAll({
+    where: {
+      category_id: db_category.id,
+    },
+    attributes: ['slug', 'title'],
+    raw: true,
+  });
 
 
-// app.get('/drywall/:extra_service_page_title_for_seo', (req, res) => {
+  if (!blog_elements) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
 
-//   const { extra_service_page_title_for_seo } = req.params;
-//   console.log(extra_service_page_title_for_seo);
-
-//   const jsonData = getJsonData2(extra_service_page_title_for_seo);
-
-//   // console.log(jsonData)
-  
-//   let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
-  
-//   console.log(jsonData.title)
-//   console.log(titles_of_extra_services)
-//   console.log(titles_of_extra_services.includes(jsonData.title))
-  
-//   if (!titles_of_extra_services.includes(jsonData.title)) return res.status(410).send('This page has been permanently removed.');
-
-
-//   console.log('render extra-service-page-for-seo')
-//   return res.render('extra-service-page-for-seo', {
-//     blogData: jsonData,
-//     // env: process.env.NODE_ENV
-//     canonical: req.originalUrl
-//   });
-// });
+  const service_pages = await db.service_page.findAll({
+    attributes: ['slug', 'title'],
+    raw: true
+  });
 
 
 
+  if (!service_pages) {
+    const error = new Error("No service pages found!")
+    return next(error)
+  }
 
 
 
-app.get('/sitemap', (req, res) => {
+
   return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
 });
 
 
+
+
+
+
+
+
+
+
 app.get('/blog', (req, res) => {
+
   return res.render('blog');
   // return res.sendFile('blog.html', { root: 'public' });
 });
@@ -408,118 +346,109 @@ app.get('/blog', (req, res) => {
 
 
 
+app.get('/blog/:category', async (req, res) => {
 
-// app.get('/blog/:category', (req, res) => {
-
-//   const category = req.params.category;
-
-//   console.log(category);
-
-//   const options = {
-//     root: path.join(__dirname, 'public'),
-//   };
-
-//   res.sendFile('category.html', options, (err) => {
-//     if (err) {
-//       console.error('Error sending file:', err);
-//       res.status(err.status).end();
-//     } else {
-//       console.log('Sent:', 'category.html');
-//     }
-//   });
-
-// });
+  try {
+    db_category = await db.category.findOne({
+      where: {
+        slug: req.params.category,
+      },
+      raw: true,
+    });
+  } catch (error) {
+    return next(error);
+  }
 
 
+  if (!db_category) {
+    return res.status(404).send('Category not found');
+  }
 
-app.get('/blog/:category', (req, res) => {
-  const category = req.params.category.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-  return res.render('category', { category: category, canonical: req.originalUrl });
+  console.log('->', req.params.category, db_category)
+
+  // Fetch the slugs from the blog_element table with the same category_id
+  const blog_elements = await db.blog_element.findAll({
+    where: {
+      category_id: db_category.id,
+    },
+    attributes: ['slug', 'title'],
+    raw: true,
+  });
+
+
+  if (!blog_elements) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
+
+  // Extract slugs into an array
+  // const slugs = blog_elements.map(element => element.slug);
+
+  // console.log('->', {
+  //   category: db_category.category_name,
+  //   category_slug: db_category.slug,
+  //   canonical: req.originalUrl,
+  //   blog_elements: blog_elements
+  // })
+
+  // Render the view with the category name and slugs
+  return res.render('category', {
+    category: db_category.category_name,
+    category_slug: db_category.slug,
+    canonical: req.originalUrl,
+    blog_elements: blog_elements
+  });
+
+
 });
 
 
 
-
-
-
-
-// app.get('/blog/:category/blog-posting/:title', (req, res) => {
-
-//   const category = req.params.category;
-//   const title = req.params.title;
-
-
-
-//   console.log(category, title);
-
-//   const options = {
-//     root: path.join(__dirname, 'public'),
-//   };
-
-//   res.sendFile('blog-posting.html', options, (err) => {
-//     if (err) {
-//       console.error('Error sending file:', err);
-//       res.status(err.status).end();
-//     } else {
-//       console.log('Sent:', 'blog-posting.html');
-//     }
-//   });
-
-// });
-
-
-
-
-
-// app.get('/blog/:category/blog-posting/:title', (req, res) => {
-//   const { title, category } = req.params;
-
-//   console.log(title)
-
-//   const jsonData = getJsonData(title, category);
-
-//   const htmlFilePath = path.join(__dirname, 'public', 'blog-posting.html');
-
-//   let htmlContent = fs.readFileSync(htmlFilePath, 'utf-8');
-
-//   // Embed the JSON data in a script tag
-//   const scriptTag = `<script>window.blogData = ${JSON.stringify(jsonData)};</script>`;
-//   htmlContent = htmlContent.replace('</head>', `${scriptTag}</head>`);
-
-//   res.send(htmlContent);
-// });
-
-
-// Your route
-app.get('/blog/:category/blog-posting/:title', (req, res) => {
+app.get('/blog/:category/blog-posting/:title', async (req, res) => {
 
 
   const { title, category } = req.params;
-  
-  const jsonData = getJsonData(title, category);
-
 
 
   let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
-  
-  console.log('->', jsonData)
-  // console.log(jsonData.title)
-  // console.log(titles_of_extra_services)
-  // console.log(titles_of_extra_services.includes(jsonData.title))
 
-  if (!jsonData) {
-    return res.status(404).render('url_not_present')
-  }
+
+
+  // Fetch the slugs from the blog_element table with the same category_id
+  const blog_element = await db.blog_element.findOne({
+    where: {
+      slug: title,
+    },
+    include: [
+      {
+        model: db.category,
+        as: 'category',
+        attributes: ['category_name', 'slug']
+      }
+    ],
+    raw: true,
+    nest: true,
+  });
+
   
-  if (titles_of_extra_services.includes(jsonData.title)) {
+  console.log('\n\n(1)-> ', blog_element, '\n\n')
+
+
+  if (!blog_element) {
+    const error = new Error("No blog element found!")
+    return next(error)
+  }
+
+  if (titles_of_extra_services.includes(blog_element.title)) {
     const newUrl = `/drywall/${title}`;
     return res.redirect(301, newUrl);
   }
 
 
   return res.render('blog-posting', {
-    blogData: jsonData,
-    // env: process.env.NODE_ENV
+    blogData: blog_element,
+    // blogData: JSON.stringify(blog_element),
+    env: process.env.NODE_ENV
   });
 });
 
@@ -545,10 +474,7 @@ app.get('/tiroir1/privacy-policy', (req, res) => {
 
 
 
-
-
-
-app.get('/sitemap/xml-sitemap', (req, res) => {
+app.get('/sitemap/xml-sitemap', async (req, res) => {
   // Define the path to the XML file
   const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 
@@ -564,24 +490,11 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
   let last_modified_1 = '2024-06-02T15:07:49.699Z';
   let last_modified_1_date = new Date(last_modified_1);
 
-  let last_modified_2 = '2024-06-20T18:11:40.666Z';
-  let last_modified_2_date = new Date(last_modified_2);
-
-
-  
   let last_modified_3 = '2024-06-21T15:04:37.758Z';
   let last_modified_3_date = new Date(last_modified_3);
 
   let last_modified_4 = '2024-06-24T13:13:22.821Z';
   let last_modified_4_date = new Date(last_modified_4);
-
-  // let last_modified_5 = '2024-07-26T15:20:26.052Z';
-  // let last_modified_5_date = new Date(last_modified_5);
-
-  
-
-  // let last_modified_5 = '2024-06-25T17:29:12.963Z'
-  // let last_modified_5_date = new Date(last_modified_5);
 
   const urls = [
     {
@@ -614,7 +527,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       changefreq: "monthly",
       priority: 1
     },
-    
+
     // {
     //   URL: '/tiroir1/legal-disclaimer',
     //   lastmod: last_modified_3_date,
@@ -627,9 +540,6 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
     //   changefreq: "monthly",
     //   priority: 1
     // },
-
-
-
 
     {
       URL: '/service/drywall-installation',
@@ -648,108 +558,86 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
       lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
-    },
-    {
-      URL: '/service/steel-stud-framing',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/blown-and-batt-insulation',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/suspended-t-bar-ceilings',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/textured-and-coffered-ceilings',
-      lastmod: last_modified_2_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/cove-moldings-and-bulkheads',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/spray-priming-and-painting',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-
-
-
-    // {
-    //   URL: '/drywall/drywall-companies-in-kingston',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.5
-    // },
-    // {
-    //   URL: '/drywall/drywall-kingston-ltd',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/drywall/drywall-kingston-prices',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/drywall/drywall-kingston-cost',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
-    // {
-    //   URL: '/drywall/best-drywall-kingston',
-    //   lastmod: last_modified_2_date,
-    //   changefreq: "monthly",
-    //   priority: 0.8
-    // },
+    }
   ];
 
 
 
-  for (const key in json) {
-    if (json.hasOwnProperty(key)) {
-
-      const title = json[key].title;
-      console.log(title);
-
-
-      if (!json[key].dateModified) continue;
-
-      let formattedTitle = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-      
-      let url = `/blog/drywall/blog-posting/${formattedTitle}`;
+  const service_pages = await db.service_page.findAll({
+    attributes: ['slug', 'title', 'last_modified'],
+    raw: true
+  });
 
 
-      if (formattedTitle == 'an-exhaustive-guide-to-digiseine' || formattedTitle == 'an-exhaustive-guide-to-atlas-vinyl-sundecks-ltd') {
-        url = `/blog/agency/blog-posting/${formattedTitle}`;
-      }
 
-      const lastmod = json[key].dateModified ? new Date(json[key].dateModified) : last_modified_1_date;
-
-      urls.push({
-        URL: url,
-        lastmod: lastmod,
-        changefreq: "monthly",
-        priority: 0.8
-      });
-    }
+  if (!service_pages) {
+    const error = new Error("No service pages found!")
+    return next(error)
   }
+
+
+  // console.log('\n\nservice_pages-> ', service_pages)
+
+  service_pages.forEach(service_page => {
+
+    let url = `/service/${service_page.slug}`;
+
+    console.log(service_page.last_modified)
+    let lastmod = new Date(service_page.last_modified)
+
+
+    urls.push({
+      URL: url,
+      lastmod: lastmod,
+      changefreq: "monthly",
+      priority: 1
+    });
+
+
+  });
+
+
+  const blog_elements = await db.blog_element.findAll({
+    attributes: ['slug', 'title', 'datetime_edited'],
+    include: [
+      {
+        model: db.category,
+        as: 'category',
+        attributes: ['category_name', 'slug']
+      }
+    ],
+    raw: true,
+    nest: true
+  });
+
+
+  if (!blog_elements) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
+
+
+  // console.log('\n\nblog_elements-> ', blog_elements)
+
+  blog_elements.forEach(blog_element => {
+    // console.log(blog_element);
+
+    let url = `/blog/${blog_element.category.slug}/blog-posting/${blog_element.slug}`;
+
+    let datetime_edited = new Date(blog_element.datetime_edited)
+
+
+    urls.push({
+      URL: url,
+      lastmod: datetime_edited,
+      changefreq: "monthly",
+      priority: 0.8
+    });
+
+
+  });
+
+  // console.log(urls)
 
   const xml = createSiteMap(urls);
 
@@ -759,6 +647,7 @@ app.get('/sitemap/xml-sitemap', (req, res) => {
   return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
 });
+
 
 
 
