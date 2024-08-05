@@ -122,8 +122,12 @@ a:hover {
   background-size: cover;
 }
 
-.tm-brand-name {
+/* .tm-brand-name {
   font-size: 3.8rem;
+} */
+
+.tm-brand-name {
+  font-size: 2.2rem;
 }
 
 h1.tm-brand-name.long-title {
@@ -391,7 +395,7 @@ p {
 
 @media (max-width: 443px) {
   .tm-brand-name {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .tm-brand-container {

@@ -447,6 +447,9 @@ app.get('/blog/:category', async (req, res) => {
 app.get('/blog/:category/blog-posting/:title', async (req, res) => {
 
 
+  const now = new Date()
+  console.log(now)
+
   const { title, category } = req.params;
 
 
@@ -471,7 +474,7 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   });
 
   
-  console.log('\n\n(1)-> ', blog_element, '\n\n')
+  // console.log('\n\n(1)-> ', blog_element, '\n\n')
 
 
   if (!blog_element) {
