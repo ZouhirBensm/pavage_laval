@@ -28,6 +28,9 @@ jobs:
           rm package-lock.json
           rm -r node_modules
           rm -r models
+          rm -r ./miscellaneous/db/dump.txt
+          chmod -R 755 models
+          rm -rf ./models/*
           git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/drywall_kingston.git master
           npm install
           mysql -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_USERPASSWORD }} ${{ secrets.DB_NAME }} < ./miscellaneous/db/dump.txt
