@@ -686,8 +686,9 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
   fs.writeFileSync(xmlFilePath, xml, 'utf-8');
   console.log('New sitemap.xml file generated');
 
-  return res.render('sitemap');
+  // return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
+  return res.redirect(301, '/sitemap');
 });
 
 
