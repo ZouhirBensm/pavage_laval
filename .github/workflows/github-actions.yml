@@ -27,7 +27,6 @@ jobs:
           cd drywall_kingston
           rm package-lock.json
           rm -r node_modules
-          rm -r models
           rm -r ./miscellaneous/db/dump.txt
           chmod -R 755 models
           rm -rf ./models/*
