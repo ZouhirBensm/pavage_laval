@@ -24,14 +24,14 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         port: ${{ secrets.SERVER_PORT }}
         script: |
-          cd drywall_kingston
+          cd pavage_gatineau
           rm package-lock.json
           rm -r node_modules
           rm -r ./miscellaneous/db/dump.txt
           chmod -R 755 models
           rm -rf ./models/*
-          git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/drywall_kingston.git master
+          git pull https://${{ secrets.GITHUUB_USERNAME }}:${{ secrets.GITHUUB_PASSWORD }}@github.com/${{ secrets.GITHUUB_USERNAME }}/pavage_gatineau.git master
           npm install
           mysql -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_USERPASSWORD }} ${{ secrets.DB_NAME }} < ./miscellaneous/db/dump.txt
           sequelize-auto -o \"./models\" -d ${{ secrets.DB_NAME }} -h ${{ secrets.DB_HOST }} -u ${{ secrets.DB_USERNAME }} -p ${{ secrets.DB_PORT }} -x ${{ secrets.DB_USERPASSWORD }} -e mysql
-          pm2 restart drywall_kingston
+          pm2 restart pavage_gatineau

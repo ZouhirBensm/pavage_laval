@@ -33,6 +33,9 @@
     
     var blog_elements =<%-JSON.stringify(blog_elements)%>
     var service_pages =<%-JSON.stringify(service_pages)%>
+    var business_data =<%-JSON.stringify(business_data)%>
+    var service_data =<%-JSON.stringify(service_data)%>
+    var review_data =<%-JSON.stringify(review_data)%>
 
     // console.log(blog_elements);
     // console.log(service_pages);
@@ -44,7 +47,7 @@
   <script src="/js/schema/ServiceSchema.js"></script>
   <script src="/js/schema/BreadcrumbListSchema.js"></script>
 
-
+  <!-- HERE -->
   <title>Drywall Kingston Residential & Commercial Contractor</title>
   <meta name="title" content="Drywall Kingston Residential & Commercial Contractor">
   <meta name="description"
@@ -57,10 +60,10 @@ https://templatemo.com/tm-530-mini-profile
 
 
 
-  <script>
-    console.log('Production:', '<%= locals.production %>');
-    console.log('Env:', '<%= locals.env %>');
-  </script>
+  <!-- <script>
+    console.log('Production:', '< %= locals.production %>');
+    console.log('Env:', '< %= locals.env %>');
+  </script> -->
 
   <% if (locals.env===locals.production) { %>
     <!-- Google tag (gtag.js) -->
@@ -73,6 +76,10 @@ https://templatemo.com/tm-530-mini-profile
       gtag('config', 'G-PVQMQ78LBR');
     </script>
     <% } %>
+
+
+
+
 
 
       <style>

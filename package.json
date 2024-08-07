@@ -2,10 +2,10 @@
   "name": "boiler",
   "version": "1.0.0",
   "description": "",
-  "main": "drywall_kingston.js",
+  "main": "pavage_gatineau.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon drywall_kingston.js"
+    "start": "nodemon pavage_gatineau.js"
   },
   "author": "",
   "license": "ISC",

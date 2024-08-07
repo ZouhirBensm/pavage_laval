@@ -67,36 +67,7 @@ const data_error_handler_controller = require('./lifecycle/controller/error-cont
 
 // For SEO Keep until google identifies that the pages are gone
 const goneUrls = [
-  "/blog/drywall/blog-posting/Article1",
-  "/blog/drywall/blog-posting/article1",
-  "/blog/drywall/blog-posting/article2",
-  "/drywall/drywall-contractors-kingston",
-  "/drywall/residential-drywall-contractors-kingston",
-  "/drywall/drywall-contractors-kingston-ontario",
-  "/service/drywall-contractors-kingston",
-  "/service/residential-drywall-contractors-kingston",
-  "/service/drywall-contractors-kingston-ontario",
-  "/blog/drywall/blog-posting/best-drywall-kingston",
-  "/blog/{Category}/blog-posting/residential-drywall-contractors-kingston",
-  "/blog/{Category}/blog-posting/drywall-companies-in-kingston-ontario",
-  "/blog/{Category}/blog-posting/drywall-contractors-kingston-ontario",
-  "/blog/drywall/blog-posting/drywall-contractors-kingston",
-  "/blog/drywall/blog-posting/residential-drywall-contractors-kingston",
-  "/blog/drywall/blog-posting/drywall-contractors-kingston-ontario",
-  "/blog/drywall/blog-posting/drywall-companies-in-kingston-ontario",
-  "/blog/drywall/blog-posting/drywall-kingston-ltd",
-  "/blog/drywall/blog-posting/drywall-kingston-prices",
-  "/blog/drywall/blog-posting/drywall-kingston-cost",
-  "/blog/drywall/blog-posting/best-drywall-kingston",
-  "/blog/{Category}/blog-posting/drywall-companies-in-kingston-ontario",
-  "/blog/{Category}/blog-posting/best-drywall-kingston",
-  "/blog/%7BCategory%7D/blog-posting/residential-drywall-contractors-kingston",
-  "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
-  "/blog/%7BCategory%7D/blog-posting/drywall-contractors-kingston-ontario",
-  "/blog/%7BCategory%7D/blog-posting/drywall-companies-in-kingston-ontario",
-  "/blog/%7BCategory%7D/blog-posting/best-drywall-kingston",
-  "/drywall/drywall-companies-in-kingston-ontario",
-  "/service/drywall-companies-in-kingston-ontario"
+  "/some/url/path"
 ];
 
 
@@ -125,6 +96,9 @@ app.get('/', async (req, res) => {
   // let error = new Error("new error")
   // return next(error)
 
+
+
+
   // Fetch the slugs from the blog_element table with the same category_id
   const blog_elements = await db.blog_element.findAll({
     // where: {
@@ -140,35 +114,88 @@ app.get('/', async (req, res) => {
     nest: true,
     raw: true,
   });
-
-
-
   if (!blog_elements) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
+
+
+
+
 
   const service_pages = await db.service_page.findAll({
     attributes: ['slug', 'title'],
     raw: true
   });
 
-
-
   if (!service_pages) {
     const error = new Error("No service pages found!")
     return next(error)
   }
 
-  console.log(blog_elements, service_pages)
+
+
+  const business_data = await db.business_data.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!business_data) {
+    const error = new Error("No data set 1 found!")
+    return next(error)
+  }
+
+
+
+
+
+  const service_data = await db.service_data.findAll({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!service_data) {
+    const error = new Error("No data set 1 found!")
+    return next(error)
+  }
+
+
+
+  const review_data = await db.review_data.findAll({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!review_data) {
+    const error = new Error("No data set 1 found!")
+    return next(error)
+  }
+
+
+
+
+  // console.log(blog_elements, service_pages)
+  // console.log(business_data)
+  // console.log(service_data)
+  // console.log(review_data)
+
+
 
   return res.render('index3', {
     blog_elements: blog_elements,
-    service_pages: service_pages
+    service_pages: service_pages,
+    business_data: business_data,
+    service_data: service_data,
+    review_data: review_data
   });
 
 
+
 });
+
+
+
+
 
 
 
