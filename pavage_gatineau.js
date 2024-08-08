@@ -173,13 +173,13 @@ app.get('/', async (req, res) => {
 
 
 
-  const index = await db.index.findOne({
+  const index_fr = await db.index_fr.findOne({
     // attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!index) {
-    const error = new Error("No index found!")
+  if (!index_fr) {
+    const error = new Error("No index_fr found!")
     return next(error)
   }
 
@@ -199,7 +199,7 @@ app.get('/', async (req, res) => {
     business_data_fr: business_data_fr,
     main_service_data_fr: main_service_data_fr,
     review_data_fr: review_data_fr,
-    index: index
+    index_fr: index_fr
   });
 
 

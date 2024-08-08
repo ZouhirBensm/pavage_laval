@@ -135,13 +135,13 @@ INSERT INTO `extra_service_page_fr` VALUES (1,'Steel Stud Framing','<h2>Steel St
 UNLOCK TABLES;
 
 --
--- Table structure for table `index`
+-- Table structure for table `index_fr`
 --
 
-DROP TABLE IF EXISTS `index`;
+DROP TABLE IF EXISTS `index_fr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `index` (
+CREATE TABLE `index_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -149,13 +149,13 @@ CREATE TABLE `index` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `index`
+-- Dumping data for table `index_fr`
 --
 
-LOCK TABLES `index` WRITE;
-/*!40000 ALTER TABLE `index` DISABLE KEYS */;
-INSERT INTO `index` VALUES (1,'Pavage résidentiel et commercial à Gatineau');
-/*!40000 ALTER TABLE `index` ENABLE KEYS */;
+LOCK TABLES `index_fr` WRITE;
+/*!40000 ALTER TABLE `index_fr` DISABLE KEYS */;
+INSERT INTO `index_fr` VALUES (1,'Pavage résidentiel et commercial à Gatineau');
+/*!40000 ALTER TABLE `index_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -245,4 +245,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-08 11:52:40
+-- Dump completed on 2024-08-08 11:58:24

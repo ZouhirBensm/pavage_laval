@@ -4,7 +4,7 @@ var _blog_element_fr = require("./blog_element_fr");
 var _business_data_fr = require("./business_data_fr");
 var _category = require("./category");
 var _extra_service_page_fr = require("./extra_service_page_fr");
-var _index = require("./index");
+var _index_fr = require("./index_fr");
 var _main_service_data_fr = require("./main_service_data_fr");
 var _review_data_fr = require("./review_data_fr");
 
@@ -14,7 +14,7 @@ function initModels(sequelize) {
   var business_data_fr = _business_data_fr(sequelize, DataTypes);
   var category = _category(sequelize, DataTypes);
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
-  var index = _index(sequelize, DataTypes);
+  var index_fr = _index_fr(sequelize, DataTypes);
   var main_service_data_fr = _main_service_data_fr(sequelize, DataTypes);
   var review_data_fr = _review_data_fr(sequelize, DataTypes);
 
@@ -27,7 +27,7 @@ function initModels(sequelize) {
     business_data_fr,
     category,
     extra_service_page_fr,
-    index,
+    index_fr,
     main_service_data_fr,
     review_data_fr,
   };
