@@ -210,6 +210,18 @@ app.get('/', async (req, res) => {
 
 
 
+  const portfolio_section_fr = await db.portfolio_section_fr.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!portfolio_section_fr) {
+    const error = new Error("No portfolio_section_fr found!")
+    return next(error)
+  }
+
+
+
   // console.log(blog_elements_fr, extra_service_pages_fr)
   // console.log(business_data_fr)
   // console.log(main_service_data_fr)
@@ -225,7 +237,8 @@ app.get('/', async (req, res) => {
     review_data_fr: review_data_fr,
     index_fr: index_fr,
     nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr
+    welcome_section_fr: welcome_section_fr,
+    portfolio_section_fr: portfolio_section_fr
   });
 
 

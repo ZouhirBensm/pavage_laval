@@ -56,6 +56,10 @@ a:hover {
   max-width: 1200px;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 
 
 .tm-bg-black-transparent {
@@ -114,10 +118,21 @@ a:hover {
 .tm-brand-container {
   padding: 75px 110px;
   letter-spacing: 1.2px;
-  background-image: url('../img/svg/wave_footer.svg');
+
+
+  /* background-image: url('../img/svg/wave_footer.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
+
+  background-image: url('../img/pav.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+
+  border-radius: 15px;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* background-blend-mode: multiply; */
 }
 
 /* .tm-brand-name {
@@ -237,6 +252,11 @@ span.tm-brand-name {
 
 .tm-text-blue {
   color: #007bff;
+  letter-spacing: 1px;
+}
+
+.tm-text-black {
+  color: black;
   letter-spacing: 1px;
 }
 
