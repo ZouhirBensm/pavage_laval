@@ -61,7 +61,7 @@ const serviceSchema = {
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Service Catalog",
-      "itemListElement": service_data.map(service => ({
+      "itemListElement": main_service_data_fr.map(service => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",

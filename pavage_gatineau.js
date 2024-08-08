@@ -99,8 +99,8 @@ app.get('/', async (req, res) => {
 
 
 
-  // Fetch the slugs from the blog_element table with the same category_id
-  const blog_elements = await db.blog_element.findAll({
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_elements_fr = await db.blog_element_fr.findAll({
     // where: {
     //   category_id: db_category.id,
     // },
@@ -114,7 +114,7 @@ app.get('/', async (req, res) => {
     nest: true,
     raw: true,
   });
-  if (!blog_elements) {
+  if (!blog_elements_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
@@ -123,12 +123,12 @@ app.get('/', async (req, res) => {
 
 
 
-  const service_pages = await db.service_page.findAll({
+  const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
     attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!service_pages) {
+  if (!extra_service_pages_fr) {
     const error = new Error("No service pages found!")
     return next(error)
   }
@@ -141,7 +141,7 @@ app.get('/', async (req, res) => {
   });
 
   if (!business_data) {
-    const error = new Error("No data set 1 found!")
+    const error = new Error("No business data found!")
     return next(error)
   }
 
@@ -149,13 +149,13 @@ app.get('/', async (req, res) => {
 
 
 
-  const service_data = await db.service_data.findAll({
+  const main_service_data_fr = await db.main_service_data_fr.findAll({
     // attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!service_data) {
-    const error = new Error("No data set 1 found!")
+  if (!main_service_data_fr) {
+    const error = new Error("No service data found!")
     return next(error)
   }
 
@@ -167,26 +167,39 @@ app.get('/', async (req, res) => {
   });
 
   if (!review_data) {
-    const error = new Error("No data set 1 found!")
+    const error = new Error("No review data found!")
+    return next(error)
+  }
+
+
+
+  const index = await db.index.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!index) {
+    const error = new Error("No index found!")
     return next(error)
   }
 
 
 
 
-  // console.log(blog_elements, service_pages)
+  // console.log(blog_elements_fr, extra_service_pages_fr)
   // console.log(business_data)
-  // console.log(service_data)
+  // console.log(main_service_data_fr)
   // console.log(review_data)
 
 
 
   return res.render('index3', {
-    blog_elements: blog_elements,
-    service_pages: service_pages,
+    blog_elements_fr: blog_elements_fr,
+    extra_service_pages_fr: extra_service_pages_fr,
     business_data: business_data,
-    service_data: service_data,
-    review_data: review_data
+    main_service_data_fr: main_service_data_fr,
+    review_data: review_data,
+    index: index
   });
 
 
@@ -280,7 +293,7 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
   let db_service_page
 
   try {
-    db_service_page = await db.service_page.findOne({
+    db_service_page = await db.extra_service_page_fr.findOne({
       where: {
         slug: req.params.extra_service_page_title_for_seo,
       },
@@ -318,8 +331,8 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
 // HERE
 app.get('/sitemap', async (req, res) => {
 
-  // Fetch the slugs from the blog_element table with the same category_id
-  const blog_elements = await db.blog_element.findAll({
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_elements_fr = await db.blog_element_fr.findAll({
     // where: {
     //   category_id: db_category.id,
     // },
@@ -335,18 +348,18 @@ app.get('/sitemap', async (req, res) => {
   });
 
 
-  if (!blog_elements) {
+  if (!blog_elements_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
-  const service_pages = await db.service_page.findAll({
+  const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
     attributes: ['slug', 'title'],
     raw: true
   });
 
   // Group blogs by category
-  const categories_and_associated_blogs = blog_elements.reduce((acc, blog) => {
+  const categories_and_associated_blogs = blog_elements_fr.reduce((acc, blog) => {
     const categoryName = blog.category.category_name;
     const categorySlug = blog.category.slug;
 
@@ -366,7 +379,7 @@ app.get('/sitemap', async (req, res) => {
 
 
 
-  if (!service_pages) {
+  if (!extra_service_pages_fr) {
     const error = new Error("No service pages found!")
     return next(error)
   }
@@ -375,8 +388,8 @@ app.get('/sitemap', async (req, res) => {
 
 
   return res.render('sitemap', {
-    // blog_elements: blog_elements,
-    service_pages: service_pages,
+    // blog_elements_fr: blog_elements_fr,
+    extra_service_pages_fr: extra_service_pages_fr,
     categories_and_associated_blogs: categories_and_associated_blogs
   });
   // return res.sendFile('sitemap.html', { root: 'public' });
@@ -433,8 +446,8 @@ app.get('/blog/:category', async (req, res) => {
 
   console.log('->', req.params.category, db_category)
 
-  // Fetch the slugs from the blog_element table with the same category_id
-  const blog_elements = await db.blog_element.findAll({
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_elements_fr = await db.blog_element_fr.findAll({
     where: {
       category_id: db_category.id,
     },
@@ -443,19 +456,19 @@ app.get('/blog/:category', async (req, res) => {
   });
 
 
-  if (!blog_elements) {
+  if (!blog_elements_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
   // Extract slugs into an array
-  // const slugs = blog_elements.map(element => element.slug);
+  // const slugs = blog_elements_fr.map(element => element.slug);
 
   // console.log('->', {
   //   category: db_category.category_name,
   //   category_slug: db_category.slug,
   //   canonical: req.originalUrl,
-  //   blog_elements: blog_elements
+  //   blog_elements_fr: blog_elements_fr
   // })
 
   // Render the view with the category name and slugs
@@ -463,7 +476,7 @@ app.get('/blog/:category', async (req, res) => {
     category: db_category.category_name,
     category_slug: db_category.slug,
     canonical: req.originalUrl,
-    blog_elements: blog_elements
+    blog_elements_fr: blog_elements_fr
   });
 
 
@@ -484,8 +497,8 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
 
 
 
-  // Fetch the slugs from the blog_element table with the same category_id
-  const blog_element = await db.blog_element.findOne({
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_element_fr = await db.blog_element_fr.findOne({
     where: {
       slug: title,
     },
@@ -501,23 +514,23 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   });
 
   
-  // console.log('\n\n(1)-> ', blog_element, '\n\n')
+  // console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
 
 
-  if (!blog_element) {
+  if (!blog_element_fr) {
     const error = new Error("No blog element found!")
     return next(error)
   }
 
-  if (titles_of_extra_services.includes(blog_element.title)) {
+  if (titles_of_extra_services.includes(blog_element_fr.title)) {
     const newUrl = `/drywall/${title}`;
     return res.redirect(301, newUrl);
   }
 
 
   return res.render('blog-posting', {
-    blogData: blog_element,
-    // blogData: JSON.stringify(blog_element),
+    blogData: blog_element_fr,
+    // blogData: JSON.stringify(blog_element_fr),
   });
 });
 
@@ -632,27 +645,27 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
 
 
 
-  const service_pages = await db.service_page.findAll({
+  const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
     attributes: ['slug', 'title', 'last_modified'],
     raw: true
   });
 
 
 
-  if (!service_pages) {
+  if (!extra_service_pages_fr) {
     const error = new Error("No service pages found!")
     return next(error)
   }
 
 
-  // console.log('\n\nservice_pages-> ', service_pages)
+  // console.log('\n\nservice_pages-> ', extra_service_pages_fr)
 
-  service_pages.forEach(service_page => {
+  extra_service_pages_fr.forEach(extra_service_page_fr => {
 
-    let url = `/service/${service_page.slug}`;
+    let url = `/service/${extra_service_page_fr.slug}`;
 
-    console.log(service_page.last_modified)
-    let lastmod = new Date(service_page.last_modified)
+    console.log(extra_service_page_fr.last_modified)
+    let lastmod = new Date(extra_service_page_fr.last_modified)
 
 
     urls.push({
@@ -666,7 +679,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
   });
 
 
-  const blog_elements = await db.blog_element.findAll({
+  const blog_elements_fr = await db.blog_element_fr.findAll({
     attributes: ['slug', 'title', 'datetime_edited'],
     include: [
       {
@@ -680,20 +693,20 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
   });
 
 
-  if (!blog_elements) {
+  if (!blog_elements_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
 
-  // console.log('\n\nblog_elements-> ', blog_elements)
+  // console.log('\n\nblog_elements-> ', blog_elements_fr)
 
-  blog_elements.forEach(blog_element => {
-    // console.log(blog_element);
+  blog_elements_fr.forEach(blog_element_fr => {
+    // console.log(blog_element_fr);
 
-    let url = `/blog/${blog_element.category.slug}/blog-posting/${blog_element.slug}`;
+    let url = `/blog/${blog_element_fr.category.slug}/blog-posting/${blog_element_fr.slug}`;
 
-    let datetime_edited = new Date(blog_element.datetime_edited)
+    let datetime_edited = new Date(blog_element_fr.datetime_edited)
 
 
     urls.push({

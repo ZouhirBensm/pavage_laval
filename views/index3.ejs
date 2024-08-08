@@ -26,19 +26,15 @@
   <link rel="stylesheet" href="/css/faq-style.css" />
 
 
-  <!-- Embed the variables as inline JavaScript -->
   <script>
-    // let blog_elements = < %= blog_elements[0] %>
-    // let blog_elements = JSON.stringify(< %= blog_elements[0] %>)
-    
-    var blog_elements =<%-JSON.stringify(blog_elements)%>
-    var service_pages =<%-JSON.stringify(service_pages)%>
-    var business_data =<%-JSON.stringify(business_data)%>
-    var service_data =<%-JSON.stringify(service_data)%>
-    var review_data =<%-JSON.stringify(review_data)%>
+    var blog_elements_fr = <%-JSON.stringify(blog_elements_fr) %>
+    var extra_service_pages_fr = <%-JSON.stringify(extra_service_pages_fr) %>
+    var business_data = <%-JSON.stringify(business_data) %>
+    var main_service_data_fr = <%-JSON.stringify(main_service_data_fr) %>
+    var review_data = <%-JSON.stringify(review_data) %>
+    var index = <%-JSON.stringify(index) %>
 
-    // console.log(blog_elements);
-    // console.log(service_pages);
+    console.log(extra_service_pages_fr);
 
   </script>
 
@@ -48,8 +44,8 @@
   <script src="/js/schema/BreadcrumbListSchema.js"></script>
 
   <!-- HERE -->
-  <title>Drywall Kingston Residential & Commercial Contractor</title>
-  <meta name="title" content="Drywall Kingston Residential & Commercial Contractor">
+  <title><%= index.title %></title>
+  <meta name="title" content="<%= index.title %>">
   <meta name="description"
     content="Welcome to Drywall Kingston Residential & Commercial Contractor. We provide top-notch drywall installation, repair, and finishing services for residential and commercial projects near Kingston, Ontario. If you're searching for reliable drywall contractor near me, look no further!">
 
@@ -61,15 +57,15 @@ https://templatemo.com/tm-530-mini-profile
 
 
   <!-- <script>
-    console.log('Production:', '< %= locals.production %>');
-    console.log('Env:', '< %= locals.env %>');
+    console.log('production:', '< %= locals.production %>');
+    console.log('env:', '< %= locals.env %>');
   </script> -->
 
   <% if (locals.env===locals.production) { %>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
 
@@ -137,7 +133,7 @@ https://templatemo.com/tm-530-mini-profile
               <div class="tm-brand-container text-center">
                 <!-- <h1>Index2</h1> -->
                 <span>
-                  <h1 class="tm-brand-name long-title">Drywall Kingston Residential & Commercial Contractor</h1> 🇨🇦
+                  <h1 class="tm-brand-name long-title"><%= index.title %></h1> 🇨🇦
                 </span>
                 <p class="tm-brand-description">We do everything Drywall</p>
                 <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/drywallkingston/30min">
@@ -220,7 +216,11 @@ https://templatemo.com/tm-530-mini-profile
                 </h2>
                 <p class="mb-0">
                   <span>Expert Drywall Installation Services for Residential and Commercial Projects</span>
-                <div>Our professional drywall installation services are perfect for both residential and commercial projects near me. Whether you need drywall for new construction, remodels, or renovations near Kingston, we provide top-quality installation that ensures a smooth and durable finish. Our team works with precision to meet your project deadlines and specifications, delivering exceptional results every time.</div>
+                <div>Our professional drywall installation services are perfect for both residential and commercial
+                  projects near me. Whether you need drywall for new construction, remodels, or renovations near
+                  Kingston, we provide top-quality installation that ensures a smooth and durable finish. Our team works
+                  with precision to meet your project deadlines and specifications, delivering exceptional results every
+                  time.</div>
                 </p>
               </div>
             </div>
