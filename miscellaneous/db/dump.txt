@@ -68,6 +68,7 @@ CREATE TABLE `business_data_fr` (
   `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `longitude` double DEFAULT NULL,
+  `telephone2` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -78,7 +79,7 @@ CREATE TABLE `business_data_fr` (
 
 LOCK TABLES `business_data_fr` WRITE;
 /*!40000 ALTER TABLE `business_data_fr` DISABLE KEYS */;
-INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','##','Gatineau','QC','##','Canada','##@outlook.com','+1 (###) ### ####',43.6532,-79.3832);
+INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','#### Example St #20','Gatineau','QC','### ###','Canada','##@outlook.com','+1 (###) ### ####',43.6532,-79.3832,'###@@@!!!!');
 /*!40000 ALTER TABLE `business_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,6 +145,7 @@ DROP TABLE IF EXISTS `index_fr`;
 CREATE TABLE `index_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -154,7 +156,7 @@ CREATE TABLE `index_fr` (
 
 LOCK TABLES `index_fr` WRITE;
 /*!40000 ALTER TABLE `index_fr` DISABLE KEYS */;
-INSERT INTO `index_fr` VALUES (1,'Pavage résidentiel et commercial à Gatineau');
+INSERT INTO `index_fr` VALUES (1,'Pavage, Asphalte & Béton résidentiel et commercial à Gatineau','Pavage Gatineau Earnanswers - On se spécialise en pavage, travaux de béton, pavé uni, entretien de l\'asphalte, pavage autobloquant, et pavage commercial. Nous offrons des services de pavage résidentiel et commercial de qualité supérieure à Gatineau, en Outaouais, pour répondre à tous vos besoins en matière de pavage.\n');
 /*!40000 ALTER TABLE `index_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,6 +174,8 @@ CREATE TABLE `main_service_data_fr` (
   `service_description` text COLLATE utf8mb4_unicode_ci,
   `service_image_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `service_page_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service_sub_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -182,8 +186,34 @@ CREATE TABLE `main_service_data_fr` (
 
 LOCK TABLES `main_service_data_fr` WRITE;
 /*!40000 ALTER TABLE `main_service_data_fr` DISABLE KEYS */;
-INSERT INTO `main_service_data_fr` VALUES (1,'Service type 1','Service name 1','service description 1','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service1'),(2,'Service type 2','Service name 2','service description 2','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service2'),(3,'Service type 3','Service name 3','service description 3','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service3');
+INSERT INTO `main_service_data_fr` VALUES (1,'Service type 1','Service name 1','service description 1','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service1','Service 1 sub title','service1'),(2,'Service type 2','Service name 2','service description 2','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service2','Service 2 sub title','service2'),(3,'Service type 3','Service name 3','service description 3','https://pavagegatineau.com/img/##.avif','https://pavagegatineau.com/service/service3','Service 3 sub title','service3');
 /*!40000 ALTER TABLE `main_service_data_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nav_fr`
+--
+
+DROP TABLE IF EXISTS `nav_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `nav_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `op1` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `op2` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo_img_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nav_fr`
+--
+
+LOCK TABLES `nav_fr` WRITE;
+/*!40000 ALTER TABLE `nav_fr` DISABLE KEYS */;
+INSERT INTO `nav_fr` VALUES (1,'Demande de devis gratuit','Réserver un appel','Image du logo de l\'organisation');
+/*!40000 ALTER TABLE `nav_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -235,6 +265,33 @@ LOCK TABLES `Testing` WRITE;
 INSERT INTO `Testing` VALUES (1,'value1'),(2,'value2');
 /*!40000 ALTER TABLE `Testing` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `welcome_section_fr`
+--
+
+DROP TABLE IF EXISTS `welcome_section_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `welcome_section_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `banner_img_alt` text COLLATE utf8mb4_unicode_ci,
+  `under_h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `op1` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `op2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `welcome_section_fr`
+--
+
+LOCK TABLES `welcome_section_fr` WRITE;
+/*!40000 ALTER TABLE `welcome_section_fr` DISABLE KEYS */;
+INSERT INTO `welcome_section_fr` VALUES (1,'##','##','Adresse','À propos de nous');
+/*!40000 ALTER TABLE `welcome_section_fr` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -245,4 +302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-08 11:58:24
+-- Dump completed on 2024-08-08 14:02:05

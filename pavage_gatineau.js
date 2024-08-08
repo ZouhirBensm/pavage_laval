@@ -160,6 +160,8 @@ app.get('/', async (req, res) => {
   }
 
 
+  console.log(main_service_data_fr)
+
 
   const review_data_fr = await db.review_data_fr.findAll({
     // attributes: ['slug', 'title'],
@@ -185,6 +187,28 @@ app.get('/', async (req, res) => {
 
 
 
+  const nav_fr = await db.nav_fr.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!nav_fr) {
+    const error = new Error("No nav_fr found!")
+    return next(error)
+  }
+
+
+  const welcome_section_fr = await db.welcome_section_fr.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!welcome_section_fr) {
+    const error = new Error("No welcome_section_fr found!")
+    return next(error)
+  }
+
+
 
   // console.log(blog_elements_fr, extra_service_pages_fr)
   // console.log(business_data_fr)
@@ -199,7 +223,9 @@ app.get('/', async (req, res) => {
     business_data_fr: business_data_fr,
     main_service_data_fr: main_service_data_fr,
     review_data_fr: review_data_fr,
-    index_fr: index_fr
+    index_fr: index_fr,
+    nav_fr: nav_fr,
+    welcome_section_fr: welcome_section_fr
   });
 
 

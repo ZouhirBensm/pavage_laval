@@ -39,7 +39,7 @@ span.tm-welcome-title {
 
 @keyframes bookacall_red {
   0% {
-    color: red
+    color: orange
   }
 
   50% {
@@ -47,7 +47,7 @@ span.tm-welcome-title {
   }
 
   100% {
-    color: red;
+    color: orange;
   }
 }
 
