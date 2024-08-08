@@ -1,4 +1,4 @@
-// console.log(review_data);
+// console.log(review_data_fr);
 
 
 const priceCurrency = "CAD"
@@ -6,10 +6,10 @@ const priceCurrency = "CAD"
 
 
 // Get the count of reviews
-const reviewCount = review_data.length;
+const reviewCount = review_data_fr.length;
 
 // Calculate the average rating value
-const totalRatingValue = review_data.reduce((sum, review) => sum + review.rating_value, 0);
+const totalRatingValue = review_data_fr.reduce((sum, review) => sum + review.rating_value, 0);
 const averageRatingValue = (totalRatingValue / reviewCount).toFixed(1);
 
 // console.log('Review Count:', reviewCount, typeof reviewCount);
@@ -80,7 +80,7 @@ const serviceSchema = {
       }))
     },
 
-    "review": review_data.map(review => ({
+    "review": review_data_fr.map(review => ({
       "@type": "Review",
       "author": {
         "@type": "Person",

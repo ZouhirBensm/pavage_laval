@@ -161,12 +161,12 @@ app.get('/', async (req, res) => {
 
 
 
-  const review_data = await db.review_data.findAll({
+  const review_data_fr = await db.review_data_fr.findAll({
     // attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!review_data) {
+  if (!review_data_fr) {
     const error = new Error("No review data found!")
     return next(error)
   }
@@ -189,7 +189,7 @@ app.get('/', async (req, res) => {
   // console.log(blog_elements_fr, extra_service_pages_fr)
   // console.log(business_data_fr)
   // console.log(main_service_data_fr)
-  // console.log(review_data)
+  // console.log(review_data_fr)
 
 
 
@@ -198,7 +198,7 @@ app.get('/', async (req, res) => {
     extra_service_pages_fr: extra_service_pages_fr,
     business_data_fr: business_data_fr,
     main_service_data_fr: main_service_data_fr,
-    review_data: review_data,
+    review_data_fr: review_data_fr,
     index: index
   });
 

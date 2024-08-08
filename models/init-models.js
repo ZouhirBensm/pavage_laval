@@ -6,7 +6,7 @@ var _category = require("./category");
 var _extra_service_page_fr = require("./extra_service_page_fr");
 var _index = require("./index");
 var _main_service_data_fr = require("./main_service_data_fr");
-var _review_data = require("./review_data");
+var _review_data_fr = require("./review_data_fr");
 
 function initModels(sequelize) {
   var Testing = _Testing(sequelize, DataTypes);
@@ -16,7 +16,7 @@ function initModels(sequelize) {
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
   var index = _index(sequelize, DataTypes);
   var main_service_data_fr = _main_service_data_fr(sequelize, DataTypes);
-  var review_data = _review_data(sequelize, DataTypes);
+  var review_data_fr = _review_data_fr(sequelize, DataTypes);
 
   blog_element_fr.belongsTo(category, { as: "category", foreignKey: "category_id"});
   category.hasMany(blog_element_fr, { as: "blog_element_frs", foreignKey: "category_id"});
@@ -29,7 +29,7 @@ function initModels(sequelize) {
     extra_service_page_fr,
     index,
     main_service_data_fr,
-    review_data,
+    review_data_fr,
   };
 }
 module.exports = initModels;
