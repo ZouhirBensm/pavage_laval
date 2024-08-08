@@ -21,21 +21,21 @@ const averageRatingValue = (totalRatingValue / reviewCount).toFixed(1);
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": `${business_data.service_type}`,
+  "serviceType": `${business_data_fr.service_type}`,
   "provider": {
     "@type": "LocalBusiness",
-    "name": `${business_data.business_name}`,
-    "description": `${business_data.business_description}`,
+    "name": `${business_data_fr.business_name}`,
+    "description": `${business_data_fr.business_description}`,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": `${business_data.street_address}`,
-      "addressLocality": `${business_data.address_city}`,
-      "addressRegion": `${business_data.address_province_state}`,
-      "postalCode": `${business_data.postal_code}`,
-      "addressCountry": `${business_data.address_country}`
+      "streetAddress": `${business_data_fr.street_address}`,
+      "addressLocality": `${business_data_fr.address_city}`,
+      "addressRegion": `${business_data_fr.address_province_state}`,
+      "postalCode": `${business_data_fr.postal_code}`,
+      "addressCountry": `${business_data_fr.address_country}`
     },
-    "telephone": `${business_data.telephone}`,
-    "email": `${business_data.email}`,
+    "telephone": `${business_data_fr.telephone}`,
+    "email": `${business_data_fr.email}`,
 
     "openingHoursSpecification": [
       {
@@ -54,8 +54,8 @@ const serviceSchema = {
 
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": `${business_data.latitude}`,
-      "longitude": `${business_data.longitude}`,
+      "latitude": `${business_data_fr.latitude}`,
+      "longitude": `${business_data_fr.longitude}`,
     },
 
     "hasOfferCatalog": {
@@ -72,7 +72,7 @@ const serviceSchema = {
           "url": service.service_page_url,
           "provider": {
             "@type": "LocalBusiness",
-            "name": `${business_data.business_name}`
+            "name": `${business_data_fr.business_name}`
           }
         },
         "priceCurrency": `${priceCurrency}`,

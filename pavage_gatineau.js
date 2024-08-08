@@ -135,12 +135,12 @@ app.get('/', async (req, res) => {
 
 
 
-  const business_data = await db.business_data.findOne({
+  const business_data_fr = await db.business_data_fr.findOne({
     // attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!business_data) {
+  if (!business_data_fr) {
     const error = new Error("No business data found!")
     return next(error)
   }
@@ -187,7 +187,7 @@ app.get('/', async (req, res) => {
 
 
   // console.log(blog_elements_fr, extra_service_pages_fr)
-  // console.log(business_data)
+  // console.log(business_data_fr)
   // console.log(main_service_data_fr)
   // console.log(review_data)
 
@@ -196,7 +196,7 @@ app.get('/', async (req, res) => {
   return res.render('index3', {
     blog_elements_fr: blog_elements_fr,
     extra_service_pages_fr: extra_service_pages_fr,
-    business_data: business_data,
+    business_data_fr: business_data_fr,
     main_service_data_fr: main_service_data_fr,
     review_data: review_data,
     index: index

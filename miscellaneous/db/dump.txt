@@ -32,7 +32,7 @@ CREATE TABLE `blog_element_fr` (
   `category_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `blog_element_category_FK` (`category_id`),
-  CONSTRAINT `blog_element_category_FK` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `blog_element_category_FK` FOREIGN KEY (`category_id`) REFERENCES `category_fr` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -47,13 +47,13 @@ INSERT INTO `blog_element_fr` VALUES (1,'Drywall Taping Tools','<h2>Introduction
 UNLOCK TABLES;
 
 --
--- Table structure for table `business_data`
+-- Table structure for table `business_data_fr`
 --
 
-DROP TABLE IF EXISTS `business_data`;
+DROP TABLE IF EXISTS `business_data_fr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `business_data` (
+CREATE TABLE `business_data_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `website_main_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `business_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -73,23 +73,23 @@ CREATE TABLE `business_data` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `business_data`
+-- Dumping data for table `business_data_fr`
 --
 
-LOCK TABLES `business_data` WRITE;
-/*!40000 ALTER TABLE `business_data` DISABLE KEYS */;
-INSERT INTO `business_data` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','##','Gatineau','QC','##','Canada','##@outlook.com','+1 (###) ### ####',43.6532,-79.3832);
-/*!40000 ALTER TABLE `business_data` ENABLE KEYS */;
+LOCK TABLES `business_data_fr` WRITE;
+/*!40000 ALTER TABLE `business_data_fr` DISABLE KEYS */;
+INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','##','Gatineau','QC','##','Canada','##@outlook.com','+1 (###) ### ####',43.6532,-79.3832);
+/*!40000 ALTER TABLE `business_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `category`
+-- Table structure for table `category_fr`
 --
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `category_fr`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `category` (
+CREATE TABLE `category_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `category_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -98,13 +98,13 @@ CREATE TABLE `category` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `category`
+-- Dumping data for table `category_fr`
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Drywall','drywall'),(2,'Agency','agency');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+LOCK TABLES `category_fr` WRITE;
+/*!40000 ALTER TABLE `category_fr` DISABLE KEYS */;
+INSERT INTO `category_fr` VALUES (1,'Drywall','drywall'),(2,'Agency','agency');
+/*!40000 ALTER TABLE `category_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -245,4 +245,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-08 11:38:30
+-- Dump completed on 2024-08-08 11:41:25
