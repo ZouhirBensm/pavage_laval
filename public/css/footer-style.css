@@ -1,22 +1,22 @@
 body>footer>div>div#social-media>a[href='#social1']>img:hover {
-  content: url('../img/icons/youtube_red.svg');
+  content: url('../img/icons/youtube_orange.svg');
 }
 
 body>footer>div>div#social-media>a[href='#social2']>img:hover {
-  content: url('../img/icons/twitter_red.svg');
+  content: url('../img/icons/twitter_orange.svg');
 }
 
 body>footer>div>div#social-media>a[href='#social3']>img:hover {
-  content: url('../img/icons/pinterest_red.svg');
+  content: url('../img/icons/pinterest_orange.svg');
 }
 
 body>footer>div>div#social-media>a[href='#social4']>img:hover {
-  content: url('../img/icons/quora_red.svg');
+  content: url('../img/icons/quora_orange.svg');
 }
 
 /* mailto:admin@earnanswers.com */
 body>footer>div>div#social-media>a[href='#social5']>img:hover {
-  content: url('../img/icons/email_red.svg');
+  content: url('../img/icons/email_orange.svg');
 }
 
 body>footer>div>div#social-media>a[href='#social6']>img:hover {
@@ -29,7 +29,7 @@ body>footer>div>div#social-media>a[href='#social6']>img:hover {
 }
 
 body>footer>div>div#social-media>a[href='mailto:drywallkingston@outlook.com']>img:hover {
-  content: url('../img/icons/email_red.svg');
+  content: url('../img/icons/email_orange.svg');
 }
 
 
@@ -104,11 +104,11 @@ body > footer nav#bottom > a:visited {
 
 body > footer nav#bottom > a:link:active,
 body > footer nav#bottom > a:visited:active {
-  color: rgb(224, 4, 4);
+  color: orange
 }
 
 body > footer nav#bottom > a:hover {
-  color: red;
+  color: orange;
 }
 
 

@@ -259,6 +259,10 @@ span.tm-brand-name {
   letter-spacing: 1px;
 }
 
+a {
+  color: orange;
+}
+
 .tm-text-black {
   color: black;
   letter-spacing: 1px;
