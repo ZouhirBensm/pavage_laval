@@ -2,56 +2,47 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-
-  <link rel="canonical" href='/demande-de-devis-gratuit'>
-
-  <link rel="stylesheet" href="/css/all.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/templatemo-style.css" />
-  <link rel="stylesheet" href="/css/nav-style.css" />
-  <link rel="stylesheet" href="/css/welcome-section.css" />
-  <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/review-section.css" /> -->
-  <link rel="stylesheet" href="/css/footer-style.css" />
-  <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
+  <%
+    var req_path = locals.req_path
+    console.log('=>', req_path)
+  %>
 
 
-  <script src="/js/schema/ContactPageSchema.js"></script>
+  <%- include('head/head-common-part1.ejs') %>
 
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
 
+  <%- include('head/schema-loader/schema.ejs') %>
 
-  <title>Request Free Quote</title>
-  <meta name="title" content="Request a Free Quote">
-  <meta name="description" content="Get a free, no-obligation quote for your drywall project from Drywall Kingston. Fill out our easy form to receive an estimate tailored to your needs.">
-
-  <script>
-    console.log('Production:', '<%= locals.production %>');
-    console.log('Env:', '<%= locals.env %>');
-  </script>
-
-  <% if (locals.env===locals.production) { %>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-PVQMQ78LBR');
-    </script>
-    <% } %>
+  <%- include('head/load-backend-variables/variables.ejs') %>
 
 </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <body>
 

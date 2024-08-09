@@ -1,0 +1,21 @@
+<% switch(req_path) { %>
+  <% case '/': %>
+    <p>Status is active.</p>
+    <% break; %>
+  <% case '/demande-de-devis-gratuit': %>
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/templatemo-style.css" />
+    <link rel="stylesheet" href="/css/nav-style.css" />
+    <link rel="stylesheet" href="/css/welcome-section.css" />
+    <link rel="stylesheet" href="/css/footer-style.css" />
+    <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
+    <% break; %>
+  <% case 'pending': %>
+    <p>Status is pending.</p>
+    <% break; %>
+  <% default: %>
+    <p>Status is unknown.</p>
+<% } %>
+
+

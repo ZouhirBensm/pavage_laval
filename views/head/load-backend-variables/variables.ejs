@@ -1,0 +1,29 @@
+<% switch(req_path) { %>
+  <% case '/': %>
+    <script>
+      var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>
+      var extra_service_pages_fr = <%- JSON.stringify(extra_service_pages_fr) %>
+      var business_data_fr = <%- JSON.stringify(business_data_fr) %>
+      var main_service_data_fr = <%- JSON.stringify(main_service_data_fr) %>
+      var review_data_fr = <%- JSON.stringify(review_data_fr) %>
+      var index_fr = <%- JSON.stringify(index_fr) %>
+      var nav_fr = <%- JSON.stringify(nav_fr) %>
+      var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>
+      var portfolio_section_fr = <%- JSON.stringify(portfolio_section_fr) %>
+      var index_content_fr = <%- JSON.stringify(index_content_fr) %>
+      var faq_fr = <%- JSON.stringify(faq_fr) %>
+
+      // console.log(faq_fr);
+    </script>
+    <% break; %>
+  <% case '/demande-de-devis-gratuit': %>
+    
+    <% break; %>
+  <% case 'pending': %>
+    <p>Status is pending.</p>
+    <% break; %>
+  <% default: %>
+    <p>Status is unknown.</p>
+<% } %>
+
+

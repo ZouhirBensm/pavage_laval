@@ -1,0 +1,15 @@
+<% switch(req_path) { %>
+  <% case '/': %>
+    <p>Status is active.</p>
+    <% break; %>
+  <% case '/demande-de-devis-gratuit': %>
+    <script src="/js/schema/ContactPageSchema.js"></script>
+    <% break; %>
+  <% case 'pending': %>
+    <p>Status is pending.</p>
+    <% break; %>
+  <% default: %>
+    <p>Status is unknown.</p>
+<% } %>
+
+

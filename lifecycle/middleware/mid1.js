@@ -1,6 +1,11 @@
 async function mid1(req, res, next) {
 
 
+  // const req_path = req.path
+  // const req_url = req.url
+
+  // console.log(req_path, req_url)
+
   // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_elements_fr = await db.blog_element_fr.findAll({
     // where: {

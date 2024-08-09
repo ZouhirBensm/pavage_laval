@@ -54,6 +54,15 @@ app.use(express.static('public'));
 app.use((req, res, next) => {
   res.locals.env = process.env.NODE_ENV;
   res.locals.production = ENVIRONMENT.PRODUCTION;
+
+
+  const req_path = req.path
+  const req_url = req.url
+
+  console.log(req_path, req_url)
+
+  res.locals.req_path = req_path
+
   return next()
 });
 

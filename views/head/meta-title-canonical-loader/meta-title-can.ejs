@@ -1,0 +1,18 @@
+<% switch(req_path) { %>
+  <% case '/': %>
+    <p>Status is active.</p>
+    <% break; %>
+  <% case '/demande-de-devis-gratuit': %>
+    <title>Request Free Quote</title>
+    <meta name="title" content="Request a Free Quote">
+    <meta name="description" content="Get a free, no-obligation quote for your drywall project from Drywall Kingston. Fill out our easy form to receive an estimate tailored to your needs.">
+    <link rel="canonical" href='/demande-de-devis-gratuit'>
+    <% break; %>
+  <% case 'pending': %>
+    <p>Status is pending.</p>
+    <% break; %>
+  <% default: %>
+    <p>Status is unknown.</p>
+<% } %>
+
+
