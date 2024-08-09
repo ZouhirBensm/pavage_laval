@@ -2,109 +2,24 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <%
+    var req_path = locals.req_path
+    console.log('\n\n(1) req_path => ', req_path, '\n\n')
+  %>
 
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-
-  <link rel="canonical" href='/'>
-
-  <link rel="stylesheet" href="/css/all.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/templatemo-style.css" />
-  <link rel="stylesheet" href="/css/nav-style.css" />
-  <link rel="stylesheet" href="/css/welcome-section.css" />
-  <link rel="stylesheet" href="/css/portfolio-section.css" />
-  <link rel="stylesheet" href="/css/review-section.css" />
-  <link rel="stylesheet" href="/css/footer-style.css" />
-  <link rel="stylesheet" href="/css/faq-style.css" />
+  <%- include('head/load-backend-variables/variables.ejs') %>
 
 
-  <script>
-    var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>
-    var extra_service_pages_fr = <%- JSON.stringify(extra_service_pages_fr) %>
-    var business_data_fr = <%- JSON.stringify(business_data_fr) %>
-    var main_service_data_fr = <%- JSON.stringify(main_service_data_fr) %>
-    var review_data_fr = <%- JSON.stringify(review_data_fr) %>
-    var index_fr = <%- JSON.stringify(index_fr) %>
-    var nav_fr = <%- JSON.stringify(nav_fr) %>
-    var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>
-    var portfolio_section_fr = <%- JSON.stringify(portfolio_section_fr) %>
-    var index_content_fr = <%- JSON.stringify(index_content_fr) %>
-    var faq_fr = <%- JSON.stringify(faq_fr) %>
+  <%- include('head/head-common-part1.ejs') %>
 
-    var req_path = '<%= req_path %>'
-    // console.log(faq_fr);
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
 
-    // console.log(req_path);
-  </script>
-
-
-
-
-  <script src="/js/schema/WebSiteSchema.js"></script>
-  <script src="/js/schema/ServiceSchema.js"></script>
-  <script src="/js/schema/BreadcrumbListSchema.js"></script>
-
-  <!-- HERE -->
-  <title>
-    <%= index_fr.title %>
-  </title>
-  <meta name="title" content="<%= index_fr.title %>">
-  <meta name="description" content="<%= index_fr.description %>">
-
-  <!--
-Mini Profile Template
-https://templatemo.com/tm-530-mini-profile
--->
-
-
-
-  <!-- <script>
-    console.log('production:', '< %= locals.production %>');
-    console.log('env:', '< %= locals.env %>');
-  </script> -->
-
-  <% if (locals.env===locals.production) { %>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-PVQMQ78LBR');
-    </script>
-    <% } %>
-
-
-
-
-
-
-      <style>
-        @media (max-width: 850px) {
-          .responsive-img {
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-          }
-        }
-      </style>
-
-
+  <%- include('head/schema-loader/schema.ejs') %>
 
 </head>
-
-
-
 
 
 
@@ -117,98 +32,44 @@ https://templatemo.com/tm-530-mini-profile
 
 
 
+    <%- include('body/nav.ejs') %>
 
-    <nav id="top">
-      <a href="/">
-        <img src="/img/logo_head2.png" alt="<%= nav_fr.logo_img_alt %>" width="60px" height="60px">
-      </a>
-      <a href="/demande-de-devis-gratuit">
-        <%= nav_fr.op1 %>
-      </a>
-      <a target="_blank" href="https://calendly.com/drywallkingston/30min">
-        <%= nav_fr.op2 %>
-      </a>
-      <a href="tel:<%= business_data_fr.telephone2 %>">
-        <%= business_data_fr.telephone %>
-      </a>
-    </nav>
+
+
+
+
+
+
+
+
 
     <!-- Welcome Section -->
-    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/pavage_gatineau_b1.webp"
+
+    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
       alt="<%= welcome_section_fr.banner_img_alt %>">
 
+      <%- include('body/welcome-section/part1.ejs') %>
 
-      <div class="container-fluid tm-brand-container-outer">
-        <div class="row">
-          <div class="col-12">
-            <!-- style="overflow: hidden;" -->
-            <!-- Logo Area -->
-            <!-- Black transparent bg -->
-            <div class="ml-auto mr-0 tm-bg-black-transparent text-white tm-brand-container-inner">
-              <div class="tm-brand-container text-center">
-                <!-- <h1>Index2</h1> -->
-                <span class="tm-brand-name">
-                  <h1 class="tm-brand-name long-title">
-                    <%= index_fr.title %>
-                  </h1> 🇨🇦
-                </span>
-                <p class="tm-brand-description">
-                  <%= welcome_section_fr.under_h1 %>
-                </p>
-                <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/drywallkingston/30min">
-                  <%= nav_fr.op2 %>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+      
 
       <div class="tm-bg-black-transparent tm-welcome-container">
+
         <div class="container-fluid">
           <div class="row h-100">
-            <!-- Welcome Text -->
-            <!-- White transparent bg -->
-            <div class="col-md-7 tm-welcome-left-col">
-              <div class="tm-welcome-left">
-                <span class="tm-welcome-title">
-                  <%= welcome_section_fr.op1 %>
-                </span>
-                <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-                  <a rel="nofollow" href="/organization" itemprop="url">
-                    <%= business_data_fr.street_address %>
-                      <%= business_data_fr.address_city %>, <%= business_data_fr.address_province_state %>
-                          <%= business_data_fr.postal_code %>
-                            <%= business_data_fr.address_country %>
-                  </a>
-                  <!-- 1786 Bath Rd #18, Kingston, ON K7M 4Y2 -->
-                </p>
 
+            <%- include('body/welcome-section/part2.ejs') %>
 
-
-                <div>
-                  <!-- <a style="text-decoration: underline;" href="#/extra-link">Extra link</a> -->
-                  <a style="text-decoration: underline;" href="/about">
-                    <%= welcome_section_fr.op2 %>
-                  </a>
-                </div>
-
-
-
-              </div>
-            </div>
-
-            <!-- Brown bg -->
-            <div class="col-md-5">
-              <a href="/organization">
-                <div class="tm-welcome-right"
-                  aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-                  <img src="/img/map1_op.avif"
-                    alt="Map showing the local drywall business location in Kingston, Ontario." style="display:none;">
-                </div>
-              </a>
-
-            </div>
           </div>
         </div>
       </div>
@@ -464,121 +325,12 @@ https://templatemo.com/tm-530-mini-profile
   </div>
 
 
-
-  <footer>
-    <div>
-      <div id="social-media">
-        <a target="_blank" rel="noopener nofollow" href="#social1">
-          <img style="height: 44px; width: 44px;" src="/img/icons/youtube_white.svg" alt="Youtube logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social2">
-          <img style="height: 44px; width: 44px;" src="/img/icons/twitter_white.svg" alt="Twitter logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social3">
-          <img style="height: 44px; width: 44px;" src="/img/icons/pinterest_white.svg" alt="Pinterest logo SVG image">
-        </a>
-        <a target="_blank" href="#social4">
-          <img style="height: 44px; width: 44px;" src="/img/icons/quora_white.svg" alt="Quora logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="mailto:drywallkingston@outlook.com">
-          <img style="height: 44px; width: 44px;" src="/img/icons/email_white.svg" alt="email logo SVG image">
-        </a>
-
-      </div>
-
-
-      <nav id="bottom">
-        <a href="/sitemap">Sitemap</a>
-        <a href="/blog">Blog</a>
-        <a href="/tiroir1/legal-disclaimer">Legal</a>
-        <a href="/tiroir1/privacy-policy">Privacy</a>
-        <a href="tel:3434771480">
-          +1 (343) 477 1480
-        </a>
-      </nav>
-    </div>
-
-  </footer>
-
-
-
-
-  <div>
-    <div>
-
-      <p class="text-center tm-copyright-text">
-        Copyright © 2024
-        | Powered by: <a target="_blank" href="https://earnanswers.com">Earnanswers</a>
-
-        <a href="/tiroir1/legal-disclaimer">
-          <img src="/img/abc1.png" alt="Logo" class="responsive-img" style="width: auto; max-width: 100%;">
-        </a>
-
-      </p>
-
-      <!-- <a href='https://ebusinesspages.com/Drywall-Kingston-Earnanswers_enk4v.co'><img border='0' src='https://ebusinesspages.com/i/lbs.png' alt='Plastering, Drywall and Insulation in North Pomfret' /></a> -->
-
-
-    </div>
-  </div>
-
-
-
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/parallax.min.js"></script>
-
-
-
-
-
-
-
-
-  <script>
-    function detectMsBrowser() {
-      using_ms_browser =
-        navigator.appName == "Microsoft Internet Explorer" ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Edge") > -1) ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Trident") > -1);
-
-      if (using_ms_browser == true) {
-        alert(
-          "Please use Chrome or Firefox for the best browsing experience!"
-        );
-      }
-    }
-    function setBrandMarginTop() {
-      var bottomContainerHeight = $(".tm-welcome-container").height();
-
-      $(".tm-brand-container-outer").css({
-        "margin-top": -bottomContainerHeight + "px"
-      });
-    }
-
-    $(function () {
-      setBrandMarginTop();
-      detectMsBrowser();
-
-      // Handle window resize event
-      $(window).resize(function () {
-        setBrandMarginTop();
-      });
-    });
-  </script>
-
+  <%- include('footer/footer.ejs') %>
 
 
 
 
 </body>
-
-
-
 
 
 </html>

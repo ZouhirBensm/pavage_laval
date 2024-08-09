@@ -85,13 +85,16 @@ async function mid1(req, res, next) {
 
 
 
-  const index_fr = await db.index_fr.findOne({
-    // attributes: ['slug', 'title'],
+  const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
+    where: {
+      page_url_identify: res.locals.req_path,
+    },
     raw: true
+    // attributes: ['slug', 'title'],
   });
 
-  if (!index_fr) {
-    const error = new Error("No index_fr found!")
+  if (!all_data_per_page_fr) {
+    const error = new Error("No all_data_per_page_fr found!")
     return next(error)
   }
 
@@ -154,6 +157,17 @@ async function mid1(req, res, next) {
   }
 
 
+  const footer_fr = await db.footer_fr.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!footer_fr) {
+    const error = new Error("No footer_fr found!")
+    return next(error)
+  }
+
+
 
 
   
@@ -165,6 +179,8 @@ async function mid1(req, res, next) {
   // console.log(main_service_data_fr)
   // console.log(review_data_fr)
   // console.log(faq_fr)
+  console.log(footer_fr)
+  
 
 
 
@@ -175,12 +191,13 @@ async function mid1(req, res, next) {
     business_data_fr: business_data_fr,
     main_service_data_fr: main_service_data_fr,
     review_data_fr: review_data_fr,
-    index_fr: index_fr,
+    all_data_per_page_fr: all_data_per_page_fr,
     nav_fr: nav_fr,
     welcome_section_fr: welcome_section_fr,
     portfolio_section_fr: portfolio_section_fr,
     index_content_fr: index_content_fr,
-    faq_fr: faq_fr
+    faq_fr: faq_fr,
+    footer_fr: footer_fr
   }
 
 

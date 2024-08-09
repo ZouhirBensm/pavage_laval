@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `all_data_per_page_fr`
+--
+
+DROP TABLE IF EXISTS `all_data_per_page_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `all_data_per_page_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `page_url_identify` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `under_h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `all_data_per_page_fr`
+--
+
+LOCK TABLES `all_data_per_page_fr` WRITE;
+/*!40000 ALTER TABLE `all_data_per_page_fr` DISABLE KEYS */;
+INSERT INTO `all_data_per_page_fr` VALUES (1,'Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.','Pavage Gatineau Earnanswers - On se spécialise en pavage, travaux de béton, pavé uni, entretien de l\'asphalte, pavage autobloquant, et pavage commercial. Nous offrons des services de pavage résidentiel et commercial de qualité supérieure à Gatineau, en Outaouais, pour répondre à tous vos besoins en matière de pavage.\n','/','##'),(2,'Demande de devis gratuit','Obtenez un devis gratuit et sans engagement pour vos travaux de pavage, asphalte ou béton à Gatineau. Remplissez notre formulaire simple pour recevoir une estimation adaptée à vos besoins résidentiels ou commerciaux.','/demande-de-devis-gratuit','Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.');
+/*!40000 ALTER TABLE `all_data_per_page_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `blog_element_fr`
 --
 
@@ -64,11 +91,11 @@ CREATE TABLE `business_data_fr` (
   `address_province_state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `postal_code` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `telephone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `telephone2` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -79,7 +106,7 @@ CREATE TABLE `business_data_fr` (
 
 LOCK TABLES `business_data_fr` WRITE;
 /*!40000 ALTER TABLE `business_data_fr` DISABLE KEYS */;
-INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','#### Example St #20','Gatineau','QC','### ###','Canada','##@outlook.com','+1 (###) ### ####',43.6532,-79.3832,'###@@@!!!!');
+INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','#### Example St #20','Gatineau','QC','### ###','Canada','+1 (###) ### ####',43.6532,-79.3832,'###@@@!!!!','##@outlook.com');
 /*!40000 ALTER TABLE `business_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,6 +133,30 @@ LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` VALUES (1,'Drywall','drywall'),(2,'Agency','agency');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `demande_de_devis_gratuit_fr`
+--
+
+DROP TABLE IF EXISTS `demande_de_devis_gratuit_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `demande_de_devis_gratuit_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `demande_de_devis_gratuit_fr`
+--
+
+LOCK TABLES `demande_de_devis_gratuit_fr` WRITE;
+/*!40000 ALTER TABLE `demande_de_devis_gratuit_fr` DISABLE KEYS */;
+/*!40000 ALTER TABLE `demande_de_devis_gratuit_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -161,6 +212,43 @@ INSERT INTO `faq_fr` VALUES (1,'Quelle est la durée de vie de l\'asphalte ?','L
 UNLOCK TABLES;
 
 --
+-- Table structure for table `footer_fr`
+--
+
+DROP TABLE IF EXISTS `footer_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `footer_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `youtube_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pinterest_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quora_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sitemap` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blog` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `legal_disclaimer` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `privacy_policy` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sitemap_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blog_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `legal_disclaimer_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `privacy_policy_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `powered` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footer_fr`
+--
+
+LOCK TABLES `footer_fr` WRITE;
+/*!40000 ALTER TABLE `footer_fr` DISABLE KEYS */;
+INSERT INTO `footer_fr` VALUES (1,'Image SVG du logo Youtube','Image SVG du logo Twitter','Image SVG du logo Pinterest','Image SVG du logo Quora','Image SVG d\'une lettre','Plan du site','Blog','Mention légale','Politique de confidentialité','/plan-du-site','/blog','/tiroir1/mention-legale','/tiroir1/politique-de-confidentialite','Propulsé par :');
+/*!40000 ALTER TABLE `footer_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `index_content_fr`
 --
 
@@ -186,31 +274,6 @@ LOCK TABLES `index_content_fr` WRITE;
 /*!40000 ALTER TABLE `index_content_fr` DISABLE KEYS */;
 INSERT INTO `index_content_fr` VALUES (1,'Réduction des coûts d\'entretien de l’asphalte','L\'application régulière d\'un scellant pour asphalte permet de réduire les coûts d\'entretien en protégeant la surface contre les infiltrations d\'eau, les effets néfastes des rayons UV, et les dommages causés par les cycles de gel-dégel. En préservant l\'intégrité de l\'asphalte, vous diminuez la nécessité de réparations fréquentes et coûteuses.','A close-up image of asphalt showing the rough, dark surface with tiny stones, uneven texture, and small cracks typical of road or driveway pavement.','/img/reduction-des-couts-entretien-de-asphalte.webp','Prolonger la durée de vie de votre pavage à Gatineau'),(2,'Prévention des fissures et de la dégradation','Le scellant pour asphalte forme une couche protectrice qui empêche l\'eau, la neige, et les rayons UV de pénétrer dans la surface. Cela réduit considérablement la formation de fissures, la décoloration, et la dégradation progressive de l\'asphalte, même dans des conditions climatiques extrêmes.','A close-up image of a degraded drive-thru surface with visible cracks, potholes, and signs of wear and tear, such as faded paint and rough textures, conveying a sense of aging and neglect.','/img/prevention-des-fissures-et-de-la-degradation.webp','Protection de votre asphalte contre les intempéries à Gatineau'),(3,'Rafraîchissement de l’apparence de l’asphalte','En appliquant un scellant, la surface de l\'asphalte retrouve une apparence noire et uniforme, renforçant l\'esthétique globale de votre propriété. Ce traitement masque également les petites fissures et imperfections, offrant une finition plus lisse et un aspect renouvelé à la chaussée.','A retro-style cartoon illustration of a builder standing proudly in front of a freshly renovated drive-thru. The builder is dressed in classic work overalls, holding a hammer, with a satisfied expression. The renovated drive-thru is clean with bright, bold lines marking the lanes, and the background includes a clear sky and simple building structure in vintage cartoon style.','/img/rafraichissement-de-apparence-de-asphalte.webp','Amélioration de l’apparence et de la durabilité du béton à Gatineau');
 /*!40000 ALTER TABLE `index_content_fr` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `index_fr`
---
-
-DROP TABLE IF EXISTS `index_fr`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `index_fr` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `index_fr`
---
-
-LOCK TABLES `index_fr` WRITE;
-/*!40000 ALTER TABLE `index_fr` DISABLE KEYS */;
-INSERT INTO `index_fr` VALUES (1,'Pavage, Asphalte & Béton résidentiel et commercial à Gatineau','Pavage Gatineau Earnanswers - On se spécialise en pavage, travaux de béton, pavé uni, entretien de l\'asphalte, pavage autobloquant, et pavage commercial. Nous offrons des services de pavage résidentiel et commercial de qualité supérieure à Gatineau, en Outaouais, pour répondre à tous vos besoins en matière de pavage.\n');
-/*!40000 ALTER TABLE `index_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -356,9 +419,10 @@ DROP TABLE IF EXISTS `welcome_section_fr`;
 CREATE TABLE `welcome_section_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `banner_img_alt` text COLLATE utf8mb4_unicode_ci,
-  `under_h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `op1` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `op2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner_img_path` text COLLATE utf8mb4_unicode_ci,
+  `map_img_alt` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -369,7 +433,7 @@ CREATE TABLE `welcome_section_fr` (
 
 LOCK TABLES `welcome_section_fr` WRITE;
 /*!40000 ALTER TABLE `welcome_section_fr` DISABLE KEYS */;
-INSERT INTO `welcome_section_fr` VALUES (1,'##','##','Adresse','À propos de nous');
+INSERT INTO `welcome_section_fr` VALUES (1,'##','Adresse','À propos de nous','/img/pavage_gatineau_b1.webp','Carte montrant l\'emplacement de l\'entreprise locale de pavage, d\'asphalte et de béton résidentiel et commercial à Gatineau.');
 /*!40000 ALTER TABLE `welcome_section_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -382,4 +446,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-09 12:59:11
+-- Dump completed on 2024-08-09 16:41:18

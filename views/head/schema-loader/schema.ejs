@@ -1,15 +1,20 @@
-<% switch(req_path) { %>
-  <% case '/': %>
-    <p>Status is active.</p>
-    <% break; %>
-  <% case '/demande-de-devis-gratuit': %>
-    <script src="/js/schema/ContactPageSchema.js"></script>
-    <% break; %>
-  <% case 'pending': %>
-    <p>Status is pending.</p>
-    <% break; %>
-  <% default: %>
-    <p>Status is unknown.</p>
+<% if (req_path === '/') { %>
+  <script src="/js/schema/WebSiteSchema.js"></script>
+  <script src="/js/schema/ServiceSchema.js"></script>
+  <script src="/js/schema/BreadcrumbListSchema.js"></script>
+  <style>
+    @media (max-width: 850px) {
+      .responsive-img {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  </style>
+<% } else if (req_path === '/demande-de-devis-gratuit') { %>
+  <script src="/js/schema/ContactPageSchema.js"></script>
+<% } else if (req_path === 'pending') { %>
+  <p>Status is pending.</p>
+<% } else { %>
+  <p>Status is unknown.</p>
 <% } %>
-
-

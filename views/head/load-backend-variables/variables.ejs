@@ -1,29 +1,32 @@
-<% switch(req_path) { %>
-  <% case '/': %>
-    <script>
-      var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>
-      var extra_service_pages_fr = <%- JSON.stringify(extra_service_pages_fr) %>
-      var business_data_fr = <%- JSON.stringify(business_data_fr) %>
-      var main_service_data_fr = <%- JSON.stringify(main_service_data_fr) %>
-      var review_data_fr = <%- JSON.stringify(review_data_fr) %>
-      var index_fr = <%- JSON.stringify(index_fr) %>
-      var nav_fr = <%- JSON.stringify(nav_fr) %>
-      var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>
-      var portfolio_section_fr = <%- JSON.stringify(portfolio_section_fr) %>
-      var index_content_fr = <%- JSON.stringify(index_content_fr) %>
-      var faq_fr = <%- JSON.stringify(faq_fr) %>
+<% if (req_path === '/') { %>
+  <script>
+    var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>;
+    var extra_service_pages_fr = <%- JSON.stringify(extra_service_pages_fr) %>;
+    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+    var main_service_data_fr = <%- JSON.stringify(main_service_data_fr) %>;
+    var review_data_fr = <%- JSON.stringify(review_data_fr) %>;
+    var all_data_per_page_fr = <%- JSON.stringify(all_data_per_page_fr) %>;
+    var nav_fr = <%- JSON.stringify(nav_fr) %>;
+    var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>;
+    var portfolio_section_fr = <%- JSON.stringify(portfolio_section_fr) %>;
+    var index_content_fr = <%- JSON.stringify(index_content_fr) %>;
+    var faq_fr = <%- JSON.stringify(faq_fr) %>;
+    var footer_fr = <%- JSON.stringify(footer_fr) %>;
+  </script>
+<% } else if (req_path === '/demande-de-devis-gratuit') { %>
+  <script>
+    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+    var nav_fr = <%- JSON.stringify(nav_fr) %>;
+    var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>;
+    var all_data_per_page_fr = <%- JSON.stringify(all_data_per_page_fr) %>;
+    var footer_fr = <%- JSON.stringify(footer_fr) %>;
 
-      // console.log(faq_fr);
-    </script>
-    <% break; %>
-  <% case '/demande-de-devis-gratuit': %>
-    
-    <% break; %>
-  <% case 'pending': %>
-    <p>Status is pending.</p>
-    <% break; %>
-  <% default: %>
-    <p>Status is unknown.</p>
+    console.log(business_data_fr, nav_fr, welcome_section_fr, all_data_per_page_fr)
+
+
+  </script>
+<% } else if (req_path === 'pending') { %>
+  <p>Status is pending.</p>
+<% } else { %>
+  <p>Status is unknown.</p>
 <% } %>
-
-
