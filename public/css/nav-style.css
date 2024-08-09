@@ -14,17 +14,17 @@ nav#top {
   /* background-color: rgb(77, 77, 77); */
 
   border-bottom: 2px solid #fdfdfd;
+  background-color: #303030;
 
-  /* background-image: url('../img/svg/wave_nav.svg'); */
-  /* background-image: url('../img/pav2.jpg'); */
-  /* background-repeat: repeat; */
-  /* background-position: center; */
-  /* background-size: cover; */
+  /* background-image: url('../img/svg/wave_nav.svg');
+  background-repeat: repeat;
+  background-position: center; 
+  background-size: cover; */
 
-  background-image: url('../img/pav2.jpg');
+  /* background-image: url('../img/pav2.jpg');
   background-repeat: repeat-x;
   background-position: center top;
-  background-size: auto 100%;
+  background-size: auto 100%; */
 }
 
 

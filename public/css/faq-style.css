@@ -10,7 +10,43 @@ div#FAQ > div {
 
 
 
+
+
+
+
 div#FAQ > div > div {
   border-radius: 10px;
   padding: 20px;
+  font-size: 1.2rem;
+
+  background-image: url("../img/pav3.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 100% auto;
+  border-radius: 15px;
+}
+
+
+
+div#FAQ details {
+  margin-bottom: 15px;
+}
+
+
+div[itemprop="acceptedAnswer"] {
+  margin-top: 20px;
+}
+
+
+div#FAQ h2 {
+  margin: .5rem auto;
+  width: fit-content;
+}
+
+div#FAQ details:first-of-type {
+  margin-top: 20px;
+}
+
+div#FAQ details:last-of-type {
+  margin-bottom: 20px;
 }

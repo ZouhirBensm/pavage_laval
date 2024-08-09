@@ -221,11 +221,36 @@ app.get('/', async (req, res) => {
   }
 
 
+  const index_content_fr = await db.index_content_fr.findAll({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
 
+  if (!index_content_fr) {
+    const error = new Error("No index_content_fr found!")
+    return next(error)
+  }
+
+
+
+  const faq_fr = await db.faq_fr.findAll({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!faq_fr) {
+    const error = new Error("No faq_fr found!")
+    return next(error)
+  }
+
+
+
+  // console.log(index_content_fr)
   // console.log(blog_elements_fr, extra_service_pages_fr)
   // console.log(business_data_fr)
   // console.log(main_service_data_fr)
   // console.log(review_data_fr)
+  console.log(faq_fr)
 
 
 
@@ -238,7 +263,9 @@ app.get('/', async (req, res) => {
     index_fr: index_fr,
     nav_fr: nav_fr,
     welcome_section_fr: welcome_section_fr,
-    portfolio_section_fr: portfolio_section_fr
+    portfolio_section_fr: portfolio_section_fr,
+    index_content_fr: index_content_fr,
+    faq_fr: faq_fr
   });
 
 

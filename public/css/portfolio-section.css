@@ -18,10 +18,6 @@ section#tmPortfolio div.tm-portfolio-name{
 
 
 
-/* Select the third occurrence of the matched div */
-section#tmPortfolio .tm-portfolio-item:nth-of-type(4) .tm-portfolio-name {
-  background-image: url('../img/drywall_extra.avif');
-}
 
 /* Select the third occurrence of the matched div */
 section#tmPortfolio .tm-portfolio-item:nth-of-type(5) .tm-portfolio-name {
@@ -40,13 +36,3 @@ section#tmPortfolio .tm-portfolio-item:nth-of-type(6) .tm-portfolio-name {
 section#tmPortfolio .tm-portfolio-item:nth-of-type(7) .tm-portfolio-name {
   background-image: url('../img/benefits_of_professional_drywall_services.avif');
 }
-
-
-/* Select the third occurrence of the matched div */
-section#tmPortfolio .tm-portfolio-item:nth-of-type(8) .tm-portfolio-name {
-  background-image: url('../img/future_trends_in_the_drywall_industry.avif');
-}
-
-
-
-

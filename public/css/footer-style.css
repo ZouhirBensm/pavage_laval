@@ -35,13 +35,24 @@ body>footer>div>div#social-media>a[href='mailto:drywallkingston@outlook.com']>im
 
 body > footer {
   padding: 20px 0;
-  background-image: url('../img/svg/wave_footer.svg');
+
+  /* background-image: url('../img/svg/wave_footer.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
+
   border-radius: 0 0 10px 10px;
+
+
   border-top: 2px solid #fdfdfd;
-  background-color: rgb(85, 164, 255)
+
+  /* background-color: rgb(85, 164, 255); */
+
+
+  /* background-color: #c0c0c0; */
+  background-color: rgb(12, 12, 12);
+
+
   /* font-size: var(--font-size-footer); */
   /* background-color: #76bd9fbd; */
 }
