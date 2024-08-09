@@ -10,7 +10,7 @@ const organizationSchema = {
     "contactType": "Customer Service",
     "areaServed": "CA",
     "availableLanguage": "English",
-    "url": "https://drywallkingston.com/request-free-quote"
+    "url": "https://drywallkingston.com/demande-de-devis-gratuit"
   },
   "address": {
     "@type": "PostalAddress",

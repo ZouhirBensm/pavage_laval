@@ -111,23 +111,18 @@ app.get('/', middleware.mid1, async (req, res) => {
 
 
 
-// Serve request-free-quote.html for the /request-free-quote path
-app.get('/request-free-quote', (req, res) => {
+app.get('/demande-de-devis-gratuit', (req, res) => {
 
-  const now = new Date()
-  console.log('123', now)
+  // const now = new Date()
+  // console.log('123', now)
 
-  return res.render('request-free-quote');
-  // return res.sendFile('request-free-quote.html', { root: 'public' });
+  return res.render('demande-de-devis-gratuit');
+  // return res.sendFile('demande-de-devis-gratuit.html', { root: 'public' });
 });
 
 
-// Using Node
-// Serve request-free-quote.html for the /request-free-quote path
-// app.post('/retrieve-request-free-quote-data', (req, res) => {
-//   console.log('retrieve-request-free-quote-data!')
-//   return res.end()
-// });
+
+
 
 
 
@@ -484,7 +479,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
       priority: 1
     },
     {
-      URL: '/request-free-quote',
+      URL: '/demande-de-devis-gratuit',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       priority: 1
