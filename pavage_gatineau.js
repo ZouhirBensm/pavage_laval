@@ -23,7 +23,8 @@ const dialect = 'mysql'
 
 const sequelize = new Sequelize(process.env['DB_NAME'], process.env['DB_USERNAME'], process.env['DB_USERPASSWORD'], {
   host: process.env['DB_HOST'],
-  dialect: dialect
+  dialect: dialect,
+  logging: false,
 });
 
 
@@ -35,6 +36,10 @@ const { ENVIRONMENT, SIGNAL } = require('./miscellaneous/const/env')
 const app = express()
 
 app.use(Compression);
+
+
+
+const middleware = require('./lifecycle/middleware/mid1')
 
 
 
@@ -91,185 +96,12 @@ goneUrls.forEach(url => {
 
 
 // Serve index.html for the root path
-app.get('/', async (req, res) => {
+app.get('/', middleware.mid1, async (req, res) => {
   // Throw an error for testing the error handling middleware.
   // let error = new Error("new error")
   // return next(error)
 
-
-
-
-  // Fetch the slugs from the blog_element_fr table with the same category_id
-  const blog_elements_fr = await db.blog_element_fr.findAll({
-    // where: {
-    //   category_id: db_category.id,
-    // },
-  include: [
-    {
-      model: db.category,
-      as: 'category',
-      attributes: ['category_name', 'slug']
-    }],
-    attributes: ['slug', 'title'],
-    nest: true,
-    raw: true,
-  });
-  if (!blog_elements_fr) {
-    const error = new Error("No blog elements found!")
-    return next(error)
-  }
-
-
-
-
-
-  const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
-    attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!extra_service_pages_fr) {
-    const error = new Error("No service pages found!")
-    return next(error)
-  }
-
-
-
-  const business_data_fr = await db.business_data_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!business_data_fr) {
-    const error = new Error("No business data found!")
-    return next(error)
-  }
-
-
-
-
-
-  const main_service_data_fr = await db.main_service_data_fr.findAll({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!main_service_data_fr) {
-    const error = new Error("No service data found!")
-    return next(error)
-  }
-
-
-  console.log(main_service_data_fr)
-
-
-  const review_data_fr = await db.review_data_fr.findAll({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!review_data_fr) {
-    const error = new Error("No review data found!")
-    return next(error)
-  }
-
-
-
-  const index_fr = await db.index_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!index_fr) {
-    const error = new Error("No index_fr found!")
-    return next(error)
-  }
-
-
-
-  const nav_fr = await db.nav_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!nav_fr) {
-    const error = new Error("No nav_fr found!")
-    return next(error)
-  }
-
-
-  const welcome_section_fr = await db.welcome_section_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!welcome_section_fr) {
-    const error = new Error("No welcome_section_fr found!")
-    return next(error)
-  }
-
-
-
-  const portfolio_section_fr = await db.portfolio_section_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!portfolio_section_fr) {
-    const error = new Error("No portfolio_section_fr found!")
-    return next(error)
-  }
-
-
-  const index_content_fr = await db.index_content_fr.findAll({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!index_content_fr) {
-    const error = new Error("No index_content_fr found!")
-    return next(error)
-  }
-
-
-
-  const faq_fr = await db.faq_fr.findAll({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!faq_fr) {
-    const error = new Error("No faq_fr found!")
-    return next(error)
-  }
-
-
-
-  // console.log(index_content_fr)
-  // console.log(blog_elements_fr, extra_service_pages_fr)
-  // console.log(business_data_fr)
-  // console.log(main_service_data_fr)
-  // console.log(review_data_fr)
-  console.log(faq_fr)
-
-
-
-  return res.render('index3', {
-    blog_elements_fr: blog_elements_fr,
-    extra_service_pages_fr: extra_service_pages_fr,
-    business_data_fr: business_data_fr,
-    main_service_data_fr: main_service_data_fr,
-    review_data_fr: review_data_fr,
-    index_fr: index_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    portfolio_section_fr: portfolio_section_fr,
-    index_content_fr: index_content_fr,
-    faq_fr: faq_fr
-  });
-
-
-
+  return res.render('index3', {...res.locals.index_page_data});
 });
 
 
