@@ -106,7 +106,7 @@ CREATE TABLE `business_data_fr` (
 
 LOCK TABLES `business_data_fr` WRITE;
 /*!40000 ALTER TABLE `business_data_fr` DISABLE KEYS */;
-INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','#### Example St #20','Gatineau','QC','### ###','Canada','+1 (###) ### ####',43.6532,-79.3832,'###@@@!!!!','##@outlook.com');
+INSERT INTO `business_data_fr` VALUES (1,'https://pavagegatineau.com','Pavage Gatineau Earnanswers','Service de Pavage et d\'Asphalte','Service de pavage et réparation d\'asphalte pour allées, stationnements et routes à Gatineau.','#### Example St #20','Gatineau','QC','### ###','Canada','+1 (###) ### ####',43.6532,-79.3832,'###@@@!!!!','pavagegatineau@outlook.com');
 /*!40000 ALTER TABLE `business_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,4 +426,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-09 21:32:55
+-- Dump completed on 2024-08-10 11:46:59
