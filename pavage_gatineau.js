@@ -248,11 +248,11 @@ app.get('/sitemap', async (req, res) => {
   // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_elements_fr = await db.blog_element_fr.findAll({
     // where: {
-    //   category_id: db_category.id,
+    //   category_id: db_category_fr.id,
     // },
   include: [
     {
-      model: db.category,
+      model: db.category_fr,
       as: 'category',
       attributes: ['category_name', 'slug']
     }],
@@ -289,7 +289,7 @@ app.get('/sitemap', async (req, res) => {
   }, {});
 
 
-  // console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
+  console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
 
 
 
@@ -321,7 +321,7 @@ app.get('/sitemap', async (req, res) => {
 app.get('/blog', async (req, res) => {
 
 
-  const categories = await db.category.findAll({
+  const categories = await db.category_fr.findAll({
     raw: true
   }
 );
@@ -343,7 +343,7 @@ console.log(categories)
 app.get('/blog/:category', async (req, res) => {
 
   try {
-    db_category = await db.category.findOne({
+    db_category_fr = await db.category_fr.findOne({
       where: {
         slug: req.params.category,
       },
@@ -354,16 +354,16 @@ app.get('/blog/:category', async (req, res) => {
   }
 
 
-  if (!db_category) {
+  if (!db_category_fr) {
     return res.status(404).send('Category not found');
   }
 
-  console.log('->', req.params.category, db_category)
+  console.log('->', req.params.category, db_category_fr)
 
   // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_elements_fr = await db.blog_element_fr.findAll({
     where: {
-      category_id: db_category.id,
+      category_id: db_category_fr.id,
     },
     attributes: ['slug', 'title'],
     raw: true,
@@ -379,16 +379,16 @@ app.get('/blog/:category', async (req, res) => {
   // const slugs = blog_elements_fr.map(element => element.slug);
 
   // console.log('->', {
-  //   category: db_category.category_name,
-  //   category_slug: db_category.slug,
+  //   category: db_category_fr.category_name,
+  //   category_slug: db_category_fr.slug,
   //   canonical: req.originalUrl,
   //   blog_elements_fr: blog_elements_fr
   // })
 
   // Render the view with the category name and slugs
   return res.render('category', {
-    category: db_category.category_name,
-    category_slug: db_category.slug,
+    category: db_category_fr.category_name,
+    category_slug: db_category_fr.slug,
     canonical: req.originalUrl,
     blog_elements_fr: blog_elements_fr
   });
@@ -418,7 +418,7 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
     },
     include: [
       {
-        model: db.category,
+        model: db.category_fr,
         as: 'category',
         attributes: ['category_name', 'slug']
       }
@@ -428,7 +428,7 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   });
 
   
-  // console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
+  console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
 
 
   if (!blog_element_fr) {
@@ -597,7 +597,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
     attributes: ['slug', 'title', 'datetime_edited'],
     include: [
       {
-        model: db.category,
+        model: db.category_fr,
         as: 'category',
         attributes: ['category_name', 'slug']
       }
