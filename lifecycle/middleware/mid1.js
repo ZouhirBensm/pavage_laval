@@ -13,7 +13,7 @@ async function mid1(req, res, next) {
     // },
     include: [
       {
-        model: db.category,
+        model: db.category_fr,
         as: 'category',
         attributes: ['category_name', 'slug']
       }],

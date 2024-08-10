@@ -2,7 +2,6 @@ var DataTypes = require("sequelize").DataTypes;
 var _all_data_per_page_fr = require("./all_data_per_page_fr");
 var _blog_element_fr = require("./blog_element_fr");
 var _business_data_fr = require("./business_data_fr");
-var _category = require("./category");
 var _category_fr = require("./category_fr");
 var _demande_de_devis_gratuit_fr = require("./demande_de_devis_gratuit_fr");
 var _extra_service_page_fr = require("./extra_service_page_fr");
@@ -19,7 +18,6 @@ function initModels(sequelize) {
   var all_data_per_page_fr = _all_data_per_page_fr(sequelize, DataTypes);
   var blog_element_fr = _blog_element_fr(sequelize, DataTypes);
   var business_data_fr = _business_data_fr(sequelize, DataTypes);
-  var category = _category(sequelize, DataTypes);
   var category_fr = _category_fr(sequelize, DataTypes);
   var demande_de_devis_gratuit_fr = _demande_de_devis_gratuit_fr(sequelize, DataTypes);
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
@@ -39,7 +37,6 @@ function initModels(sequelize) {
     all_data_per_page_fr,
     blog_element_fr,
     business_data_fr,
-    category,
     category_fr,
     demande_de_devis_gratuit_fr,
     extra_service_page_fr,
