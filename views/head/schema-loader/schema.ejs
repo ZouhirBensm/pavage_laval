@@ -1,4 +1,5 @@
 <% if (req_path === '/') { %>
+
   <script src="/js/schema/WebSiteSchema.js"></script>
   <script src="/js/schema/ServiceSchema.js"></script>
   <script src="/js/schema/BreadcrumbListSchema.js"></script>
@@ -11,13 +12,15 @@
       }
     }
   </style>
+
 <% } else if (req_path === '/demande-de-devis-gratuit') { %>
 
-
-
   <script src="/js/schema/ContactPageSchema.js"></script>
-<% } else if (req_path === 'pending') { %>
-  <p>Status is pending.</p>
+
+<% } else if (req_path === '/organisation') { %>
+
+  <script src="/js/schema/OrganizatonSchema.js"></script>
+
 <% } else { %>
   <p>Status is unknown.</p>
 <% } %>

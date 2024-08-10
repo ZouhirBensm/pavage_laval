@@ -29,7 +29,7 @@ CREATE TABLE `all_data_per_page_fr` (
   `page_url_identify` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `under_h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `all_data_per_page_fr` (
 
 LOCK TABLES `all_data_per_page_fr` WRITE;
 /*!40000 ALTER TABLE `all_data_per_page_fr` DISABLE KEYS */;
-INSERT INTO `all_data_per_page_fr` VALUES (1,'Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.','Pavage Gatineau Earnanswers - On se spécialise en pavage, travaux de béton, pavé uni, entretien de l\'asphalte, pavage autobloquant, et pavage commercial. Nous offrons des services de pavage résidentiel et commercial de qualité supérieure à Gatineau, en Outaouais, pour répondre à tous vos besoins en matière de pavage.\n','/','##'),(2,'Demande de devis gratuit','Obtenez un devis gratuit et sans engagement pour vos travaux de pavage, asphalte ou béton à Gatineau. Remplissez notre formulaire simple pour recevoir une estimation adaptée à vos besoins résidentiels ou commerciaux.','/demande-de-devis-gratuit','Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.');
+INSERT INTO `all_data_per_page_fr` VALUES (1,'Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.','Pavage Gatineau Earnanswers - On se spécialise en pavage, travaux de béton, pavé uni, entretien de l\'asphalte, pavage autobloquant, et pavage commercial. Nous offrons des services de pavage résidentiel et commercial de qualité supérieure à Gatineau, en Outaouais, pour répondre à tous vos besoins en matière de pavage.\n','/','##'),(2,'Demande de devis gratuit','Obtenez un devis gratuit et sans engagement pour vos travaux de pavage, asphalte ou béton à Gatineau. Remplissez notre formulaire simple pour recevoir une estimation adaptée à vos besoins résidentiels ou commerciaux.','/demande-de-devis-gratuit','Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau.'),(3,'Organisation','Découvrez la structure et la direction de Pavage Gatineau. Rencontrez l\'équipe qui garantit les plus hauts standards de qualité et de satisfaction client dans chaque projet.','/organisation','Pavage, Asphalte & Béton résidentiel et commercial à Gatineau');
 /*!40000 ALTER TABLE `all_data_per_page_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -427,4 +427,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-10 12:10:37
+-- Dump completed on 2024-08-10 12:40:32

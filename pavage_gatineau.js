@@ -41,6 +41,7 @@ app.use(Compression);
 
 const middleware1 = require('./lifecycle/middleware/mid1')
 const middleware2 = require('./lifecycle/middleware/mid2')
+const middleware3 = require('./lifecycle/middleware/mid3')
 
 
 
@@ -147,10 +148,15 @@ app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
 
 
-app.get('/organization', (req, res) => {
-  return res.render('organization');
-  // return res.sendFile('organization.html', { root: 'public' });
+app.get('/organisation', middleware3.mid1, (req, res) => {
+
+  return res.render('organization', {...res.locals.index_page_data});
 });
+
+
+
+
+
 
 
 

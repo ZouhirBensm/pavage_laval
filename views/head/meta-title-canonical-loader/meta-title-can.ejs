@@ -16,8 +16,15 @@
   <link rel="canonical" href='/demande-de-devis-gratuit'>
 
 
-<% } else if (req_path === 'pending') { %>
-  <p>Status is pending.</p>
+<% } else if (req_path === '/organisation') { %>
+
+  <title><%= all_data_per_page_fr.title %></title>
+  <meta name="title" content="<%= all_data_per_page_fr.title %>">
+  <meta name="description"
+    content="<%= all_data_per_page_fr.description %>">
+  <link rel="canonical" href='/organization'>
+
+
 <% } else { %>
   <p>Status is unknown.</p>
 <% } %>

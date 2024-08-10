@@ -23,11 +23,21 @@
     var demande_de_devis_gratuit_fr = <%- JSON.stringify(demande_de_devis_gratuit_fr) %>;
 
     // console.log(business_data_fr, nav_fr, welcome_section_fr, all_data_per_page_fr)
-
-
   </script>
-<% } else if (req_path === 'pending') { %>
-  <p>Status is pending.</p>
+
+<% } else if (req_path === '/organisation') { %>
+
+  <script>
+    var all_data_per_page_fr = <%- JSON.stringify(all_data_per_page_fr) %>;
+
+
+    console.log(all_data_per_page_fr)
+  </script>
+
+
+
+
+
 <% } else { %>
   <p>Status is unknown.</p>
 <% } %>

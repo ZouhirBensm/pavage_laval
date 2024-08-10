@@ -8,13 +8,22 @@
 
 
 <% if (req_path === '/') { %>
+
   <link rel="stylesheet" href="/css/portfolio-section.css" />
   <link rel="stylesheet" href="/css/review-section.css" />
   <link rel="stylesheet" href="/css/faq-style.css" />
+
 <% } else if (req_path === '/demande-de-devis-gratuit') { %>
+
   <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
-<% } else if (req_path === 'pending') { %>
-  <p>Status is pending.</p>
+
+<% } else if (req_path === '/organisation') { %>
+
+  <link rel="stylesheet" href="/css/organization.css" />
+
 <% } else { %>
+
   <p>Status is unknown.</p>
+
 <% } %>
+
