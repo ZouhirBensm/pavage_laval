@@ -3,10 +3,7 @@
 
 <head>
 
-  <%
-    var req_path = locals.req_path
-    console.log('\n\n(1) req_path => ', req_path, '\n\n')
-  %>
+  <%- include('head/setup-pre-variables.ejs') %>
 
   <%- include('head/load-backend-variables/variables.ejs') %>
 

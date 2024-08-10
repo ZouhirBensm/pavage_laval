@@ -1,7 +1,7 @@
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "url": "https://drywallkingston.com/demande-de-devis-gratuit"
+  "url": fullUrl
 }
 
 const script1 = document.createElement('script');

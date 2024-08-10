@@ -3,10 +3,7 @@
 
 <head>
 
-  <%
-    var req_path = locals.req_path
-    console.log('=>', req_path)
-  %>
+  <%- include('head/setup-pre-variables.ejs') %>
 
   <%- include('head/load-backend-variables/variables.ejs') %>
 
@@ -94,7 +91,7 @@
         <div class="col-12">
 
           <h2>
-            <a href='https://drywallkingston.com/' target='_blank'>Contact us</a>
+            <a href='/' target='_blank'><%= demande_de_devis_gratuit_fr.h2_1 %></a>
           </h2>
 
 
@@ -104,7 +101,7 @@
           <form id="tmContactForm" class="tm-bg-white-transparent">
             <div class="form-group">
               <input type="text" id="contact_name" name="contact_name"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Name" required />
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="<%= demande_de_devis_gratuit_fr.placeholder_name %>" required />
             </div>
             <div class="form-group">
               <input type="email" id="contact_email" name="contact_email"
@@ -112,20 +109,20 @@
             </div>
             <div class="form-group">
               <input type="tel" id="contact_phone" name="contact_phone"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Phone"
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Telephone"
                 pattern="^\+?1?\d{10,15}$" required />
-              <div class="side-note-form">(valid formats: 9991234444, +19991234444)</span>
+              <div class="side-note-form">(<%= demande_de_devis_gratuit_fr.valid_format %> 9991234444, +19991234444)</span>
 
               </div>
               <div class="form-group">
                 <textarea rows="4" id="contact_message" name="contact_message"
                   class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
-                  placeholder="The message goes here. Please provide details on what needs to be done, and we will get back to you as soon as possible."
+                  placeholder="<%= demande_de_devis_gratuit_fr.placeholder_message %>"
                   required></textarea>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn tm-btn-submit rounded-0">
-                  Submit
+                  <%= demande_de_devis_gratuit_fr.button %>
                 </button>
               </div>
           </form>

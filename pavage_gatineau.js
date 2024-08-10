@@ -39,7 +39,8 @@ app.use(Compression);
 
 
 
-const middleware = require('./lifecycle/middleware/mid1')
+const middleware1 = require('./lifecycle/middleware/mid1')
+const middleware2 = require('./lifecycle/middleware/mid2')
 
 
 
@@ -59,9 +60,14 @@ app.use((req, res, next) => {
   const req_path = req.path
   const req_url = req.url
 
-  console.log(req_path, req_url)
+  // console.log(req_path, req_url)
 
   res.locals.req_path = req_path
+
+
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  res.locals.fullUrl = fullUrl
+  
 
   return next()
 });
@@ -105,7 +111,7 @@ goneUrls.forEach(url => {
 
 
 // Serve index.html for the root path
-app.get('/', middleware.mid1, async (req, res) => {
+app.get('/', middleware1.mid1, async (req, res) => {
   // Throw an error for testing the error handling middleware.
   // let error = new Error("new error")
   // return next(error)
@@ -124,80 +130,9 @@ app.get('/', middleware.mid1, async (req, res) => {
 
 
 
-app.get('/demande-de-devis-gratuit', async (req, res) => {
+app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
-  // const now = new Date()
-  // console.log('123', now)
-
-
-
-
-  const business_data_fr = await db.business_data_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!business_data_fr) {
-    const error = new Error("No business data found!")
-    return next(error)
-  }
-
-  const nav_fr = await db.nav_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!nav_fr) {
-    const error = new Error("No nav_fr found!")
-    return next(error)
-  }
-
-
-  const welcome_section_fr = await db.welcome_section_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!welcome_section_fr) {
-    const error = new Error("No welcome_section_fr found!")
-    return next(error)
-  }
-
-
-  const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
-    where: {
-      page_url_identify: res.locals.req_path,
-    },
-    raw: true
-    // attributes: ['slug', 'title'],
-  });
-
-
-
-  const footer_fr = await db.footer_fr.findOne({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
-
-  if (!footer_fr) {
-    const error = new Error("No footer_fr found!")
-    return next(error)
-  }
-
-
-
-
-  // console.log(nav_fr, welcome_section_fr, business_data_fr, all_data_per_page_fr)
-  console.log(footer_fr)
-
-  return res.render('demande-de-devis-gratuit',  {
-    business_data_fr: business_data_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    all_data_per_page_fr: all_data_per_page_fr,
-    footer_fr: footer_fr
-  });
-
+  return res.render('demande-de-devis-gratuit', {...res.locals.index_page_data});
 });
 
 

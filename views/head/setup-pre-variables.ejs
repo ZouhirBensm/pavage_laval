@@ -1,0 +1,15 @@
+<!-- Variables needed on the front end -->
+<script>
+  var fullUrl = <%- JSON.stringify(fullUrl) %>;
+</script>
+
+
+<!-- Variables needed on the back end -->
+<%
+var req_path = locals.req_path
+// console.log('\n\n(1) req_path => ', req_path, '\n\n')
+
+var fullUrl = locals.fullUrl
+// console.log('\n\n(2) fullUrl => ', fullUrl, '\n\n')
+%>
+
