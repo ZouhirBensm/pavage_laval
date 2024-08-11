@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+</head>
+
+
+
+
+<body>
+
+
+  <%- include('body/nav.ejs') %>
+
+
+
+  <!-- Welcome Section -->
+
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+    alt="<%= welcome_section_fr.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+
+
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+
+
+          <div class="tm-portfolio-item">
+
+            <%
+              const alt_img1 = "A freshly paved residential driveway with smooth, black asphalt leading up to a well-maintained home, surrounded by green lawns and landscaping."
+            %>
+
+            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img1 %>">
+              <img src="/img/pavage-residentiel-et-commercial.webp" alt="<%= alt_img1 %>" style="display:none;">
+            </div>
+      
+            <div class="tm-portfolio-description">
+              <h2 class="tm-text-blue">Pavage résidentiel et commercial</h2>
+              <p class="mb-0"><span>Services de <strong>pavage résidentiel et commercial</strong> de qualité supérieure</span></br> Chez Earnanswers, nous offrons des services de pavage professionnels pour les propriétés résidentielles et commerciales. Que vous ayez besoin d'un nouveau pavage ou d'une rénovation, notre équipe est là pour répondre à tous vos besoins en matière de pavage.</p>
+              <h3><strong>Pourquoi choisir nos services de pavage?</strong></h3>
+              <ul>
+                <li>Utilisation de matériaux de haute qualité pour garantir la durabilité et l'esthétique.</li>
+                <li>Équipe expérimentée avec une expertise en pavage résidentiel et commercial.</li>
+                <li>Respect strict des délais et des budgets pour chaque projet.</li>
+                <li>Solutions personnalisées pour répondre aux besoins spécifiques de chaque client.</li>
+                <li>Environnement de travail propre et sécurisé, avec un soin particulier apporté à la finition.</li>
+              </ul>
+              <h3><strong>Notre Processus de Pavage</strong></h3>
+              <ul>
+                <li>Nous commençons par une <strong>excavation du terrain</strong> minutieuse pour préparer la base du pavage.</li>
+                <li>Ensuite, nous procédons au <strong>remplissage de la fondation</strong> avec des matériaux robustes pour assurer une base stable.</li>
+                <li>La <strong>compaction de la fondation</strong> est réalisée pour éviter tout affaissement et garantir la longévité du pavage.</li>
+                <li>Nous assurons un <strong>drainage adéquat</strong> pour prévenir les problèmes liés à l'eau et protéger votre investissement.</li>
+                <li>L'<strong>installation de la couche d'asphalte</strong> est effectuée avec précision pour un résultat uniforme et résistant.</li>
+                <li>Enfin, le <strong>compactage de l'asphalte</strong> garantit une surface lisse et durable, prête à être utilisée.</li>
+                <li>Une <strong>vérification finale du drainage</strong> est réalisée pour s'assurer que tout est en ordre avant la livraison du projet.</li>
+              </ul>
+              <p class="mb-0">Prêt à démarrer votre projet de pavage? <a href='/' target='_blank'>Contactez-nous</a> pour une consultation gratuite et découvrez comment nos experts peuvent vous aider à réaliser le pavage parfait pour votre propriété.</p>
+            </div>
+          </div>
+
+          <div class="tm-portfolio-item">
+
+            <%
+              const alt_img2 = "A commercial parking lot undergoing renovation with heavy machinery removing old asphalt, surrounded by office buildings and safety barriers."
+            %>
+
+            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img2 %>">
+              <img src="/img/renovation-de-pavage-enlevement-de-asphalte-existante.webp" alt="<%= alt_img2 %>" style="display:none;">
+            </div>
+
+            <div class="tm-portfolio-description">
+              <h2 class="tm-text-blue">Rénovation de pavage: enlèvement de l'asphalte existante</h2>
+              <p class="mb-0"><span>Service d'<strong>enlèvement de l'asphalte existante</strong> pour une <strong>rénovation complète</strong></span></br> Lorsque votre surface pavée commence à montrer des signes d'usure, notre service d'enlèvement de l'asphalte existante est la solution idéale. Nous retirons l'ancienne couche d'asphalte, procédons aux réparations nécessaires de la fondation, et appliquons une nouvelle couche d'asphalte pour redonner vie à vos espaces extérieurs.</p>
+              <h3><strong>Avantages de nos Services de rénovation</strong></h3>
+              <ul>
+                <li>Élimination complète des surfaces endommagées pour un nouveau départ.</li>
+                <li>Restauration de la fondation pour une base solide et stable.</li>
+                <li>Application d'une nouvelle couche d'asphalte avec un compactage professionnel.</li>
+                <li>Amélioration de l'apparence et de la fonctionnalité de votre espace pavé.</li>
+                <li>Prévention des problèmes futurs grâce à un drainage adéquat.</li>
+              </ul>
+              <h3><strong>Notre processus de rénovation</strong></h3>
+              <ul>
+                <li>Évaluation initiale de la surface pour déterminer les besoins spécifiques.</li>
+                <li>Enlèvement soigneux de l'asphalte existante pour préparer la fondation.</li>
+                <li>Réparation et <strong>compaction de la fondation</strong> pour assurer une base solide.</li>
+                <li>Application et <strong>compactage de la nouvelle couche d'asphalte</strong> pour une finition lisse et durable.</li>
+                <li>Vérification finale pour garantir que le drainage est efficace et que le pavage est prêt à l'emploi.</li>
+              </ul>
+              <p class="mb-0">Besoin de rénover votre pavage? <a href='/' target='_blank'>Contactez-nous</a> dès aujourd'hui pour obtenir une estimation gratuite et redonnez vie à vos surfaces pavées avec notre expertise en rénovation de pavage.</p>
+            </div>
+          </div>
+      
+          <div class="tm-portfolio-item">
+
+            <%
+              const alt_img3 = "A newly paved commercial parking lot with smooth, dark asphalt and bright white lines marking parking spaces, surrounded by modern office buildings."
+            %>
+
+
+            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img3 %>">
+              <img src="/img/nouveau-pavage-et-agrandissement.webp" alt="<%= alt_img3 %>" style="display:none;">
+            </div>
+
+            <div class="tm-portfolio-description">
+              <h2 class="tm-text-blue">Nouveau pavage et agrandissement</h2>
+              <p class="mb-0"><span>Service de <strong>nouveau pavage et agrandissement</strong> pour <strong>projets résidentiels et commerciaux</strong></span></br> Que vous construisiez une nouvelle propriété ou cherchiez à agrandir vos surfaces pavées existantes, notre service de nouveau pavage et agrandissement est conçu pour répondre à vos besoins. Nous nous engageons à fournir un pavage de haute qualité qui durera pendant des années, avec un accent particulier sur la préparation du terrain et l'installation.</p>
+              <h3><strong>Pourquoi nous choisir pour votre nouveau pavage?</strong></h3>
+              <ul>
+                <li>Préparation soignée avec une <strong>excavation du terrain</strong> et un <strong>remplissage de la fondation</strong> solides.</li>
+                <li>Utilisation des meilleures pratiques pour la <strong>compaction de la fondation</strong>, garantissant une base durable.</li>
+                <li>Application professionnelle de l'asphalte pour une finition lisse et résistante.</li>
+                <li>Assurance d'un <strong>drainage adéquat</strong> pour prévenir l'accumulation d'eau et les problèmes d'érosion.</li>
+                <li>Vérification finale pour s'assurer que le pavage est parfait et prêt à l'emploi.</li>
+              </ul>
+              <h3><strong>Notre processus de nouveau pavage</strong></h3>
+              <ul>
+                <li>Consultation initiale pour comprendre vos besoins et fournir une estimation précise.</li>
+                <li><strong>Excavation et remplissage de la fondation</strong> pour créer une base solide.</li>
+                <li>Application de la couche d'asphalte suivie du <strong>compactage de l'asphalte</strong> pour une finition lisse.</li>
+                <li><strong>Vérification finale du drainage</strong> pour assurer un écoulement d'eau optimal.</li>
+                <li>Finalisation du projet avec une inspection détaillée pour garantir la qualité du résultat.</li>
+              </ul>
+              <p class="mb-0">Prêt à démarrer votre projet de nouveau pavage? <a href='/' target='_blank'>Contactez-nous</a> pour une consultation gratuite et laissez nos experts transformer vos espaces avec un pavage de qualité supérieure.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End portfolio section -->
+
+
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

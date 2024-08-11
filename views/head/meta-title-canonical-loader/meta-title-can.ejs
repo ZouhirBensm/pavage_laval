@@ -24,6 +24,32 @@
     content="<%= all_data_per_page_fr.description %>">
   <link rel="canonical" href='/organization'>
 
+<% } else if (req_path === '/a-propos') { %>
+
+  <title><%= all_data_per_page_fr.title %></title>
+  <meta name="title" content="<%= all_data_per_page_fr.title %>">
+  <meta name="description"
+    content="<%= all_data_per_page_fr.description %>">
+  <link rel="canonical" href='/a-propos'>
+
+
+<% } else if (req_path === '/service/pavage-residentiel-et-commercial') { %>
+
+  <title><%= all_data_per_page_fr.title %></title>
+  <meta name="title" content="<%= all_data_per_page_fr.title %>">
+  <meta name="description"
+    content="<%= all_data_per_page_fr.description %>">
+  <link rel="canonical" href='/service/pavage-residentiel-et-commercial'>
+
+
+<% } else if (req_path === '/service/revetement-maintenance-en-asphalte-gatineau') { %>
+
+  <title><%= all_data_per_page_fr.title %></title>
+  <meta name="title" content="<%= all_data_per_page_fr.title %>">
+  <meta name="description"
+    content="<%= all_data_per_page_fr.description %>">
+  <link rel="canonical" href='/service/revetement-maintenance-en-asphalte-gatineau'>
+  
 
 <% } else { %>
   <p>Status is unknown.</p>

@@ -158,7 +158,7 @@ app.get('/organisation', middleware3.mid1, (req, res) => {
 
 
 
-app.get('/a-propos', middleware4.mid1, (req, res) => {
+app.get('/a-propos', middleware3.mid1, (req, res) => {
 
   return res.render('a-propos', {...res.locals.index_page_data});
 });
@@ -168,15 +168,26 @@ app.get('/a-propos', middleware4.mid1, (req, res) => {
 
 
 
-app.get('/service/drywall-installation', (req, res) => {
-  return res.render('drywall-installation');
-  // return res.sendFile('drywall-installation.html', { root: 'public' });
+
+app.get('/service/pavage-residentiel-et-commercial',  middleware4.mid1, (req, res) => {
+  return res.render('pavage-residentiel-et-commercial', {...res.locals.index_page_data});
 });
+
+
+
+// app.get('/service/drywall-installation', (req, res) => {
+//   return res.render('drywall-installation');
+// });
 
 
 app.get('/service/drywall-repair-and-patching', (req, res) => {
   return res.render('drywall-repair-and-patching');
   // return res.sendFile('drywall-repair-and-patching.html', { root: 'public' });
+});
+
+
+app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid1, (req, res) => {
+  return res.render('revetement-en-asphalte', {...res.locals.index_page_data});
 });
 
 

@@ -2,157 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Freeman&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-
-  <link rel="canonical" href='/a-propos'>
-
-
-  <link rel="stylesheet" href="/css/all.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/templatemo-style.css" />
-  <link rel="stylesheet" href="/css/nav-style.css" />
-  <link rel="stylesheet" href="/css/welcome-section.css" />
-  <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/review-section.css" /> -->
-  <link rel="stylesheet" href="/css/footer-style.css" />
-  <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
-
-
-  <script src="/js/schema/AboutWebPageSchema.js"></script>
-
-
-  <title>About Us</title>
-  <meta name="title" content="About Us">
-  <meta name="description"
-    content="Learn more about Drywall Kingston, our mission, values, and the experienced team dedicated to providing top-quality drywall services in Kingston, Ontario.">
-
-  <script>
-    console.log('Production:', '<%= locals.production %>');
-    console.log('Env:', '<%= locals.env %>');
-  </script>
-
-  <% if (locals.env===locals.production) { %>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-PVQMQ78LBR');
-    </script>
-    <% } %>
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+  
+  <%- include('head/schema-loader/schema.ejs') %>
 
 </head>
+
 
 <body>
 
 
-  <nav id="top">
-    <a href="/">
-      <img src="/img/logo_head2.png" width="60px" height="60px">
-    </a>
-    <!-- <a href="/a-propos">About</a> -->
-    <a href="/demande-de-devis-gratuit">Request free quote</a>
-    <a target="_blank" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-      Book a call
-    </a>
-    <a href="tel:3434771480">
-      +1 (343) 477 1480
-    </a>
-    <!-- <span>+1 (343) 477 1480</span> -->
-  </nav>
+  <%- include('body/nav.ejs') %>
 
 
 
 
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
-    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+    <!-- Welcome Section -->
+
+    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+      alt="<%= welcome_section_fr.banner_img_alt %>">
+
+      <%- include('body/welcome-section/part1.ejs') %>
+
+      <div class="tm-bg-black-transparent tm-welcome-container">
+        <div class="container-fluid">
 
 
-    <div class="container-fluid tm-brand-container-outer">
-      <div class="row">
-        <div class="col-12">
-          <!-- style="overflow: hidden;" -->
-          <!-- Logo Area -->
-          <!-- Black transparent bg -->
-          <div class="ml-auto mr-0 tm-bg-black-transparent text-white tm-brand-container-inner">
-            <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name">About Us</h1>
-              <p class="tm-brand-description">Pavage, Asphalte & Béton résidentiel et commercial à Gatineau 🇨🇦</p>
-              <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-                Book a call
-              </a>
-            </div>
+          <div class="row h-100">
+
+            <%- include('body/welcome-section/part2.ejs') %>
+
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
-        <div class="row h-100">
-          <!-- Welcome Text -->
-          <!-- White transparent bg -->
-          <div class="col-md-7 tm-welcome-left-col">
-            <div class="tm-welcome-left">
-              <span class="tm-welcome-title">Address</span>
-              <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-                <a rel="nofollow" href="/organization" itemprop="url">1786 Bath Rd #18
-                  Kingston, ON K7M 4Y2
-                  Canada</a>
-              </p>
+    </section>
+    <!-- End Welcome section -->
 
 
-
-              <div>
-                <!-- <a style="text-decoration: underline;" href="#/extra-link">Extra link</a> -->
-                <a style="text-decoration: underline;" href="/a-propos">About Us</a>
-              </div>
-
-
-
-            </div>
-          </div>
-
-
-
-          <!-- Brown bg -->
-          <div class="col-md-5">
-            <a href="/organization">
-              <div class="tm-welcome-right"
-                aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-                <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
-                  style="display:none;">
-                <!-- Map is here -->
-              </div>
-            </a>
-
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Welcome section -->
 
 
 
@@ -167,65 +62,45 @@
       <div class="row">
         <div class="col-12">
 
-          <div>
-            <h3 class="tm-text-blue">
-              About Us
-            </h3>
-
-            <p class="mb-0">
-              <span>Welcome to <strong>Drywall Kingston</strong>! We are a dedicated referral service, committed to
-                helping our clients find the best professional drywall contractors in Ontario, Canada. Our goal is to
-                connect you with experienced and reliable contractors who can meet your drywall needs, whether it's
-                installation, repair, or finishing.</span>
-            </p>
-
-            <h4><strong>Our Mission</strong></h4>
-
-            <p class="mb-0">
-              At Drywall Kingston, our mission is to make the process of finding a qualified drywall contractor as
-              smooth and straightforward as possible. We understand that quality workmanship is crucial for any drywall
-              project, and we are here to ensure that you have access to top-rated professionals in the industry.
-            </p>
-
-            <h4><strong>Who We Are</strong></h4>
-
-            <p class="mb-0">
-              We are a team of genuine people passionate about helping our clients achieve their home improvement and
-              construction goals. Our extensive network of contractors has been carefully vetted to ensure they meet our
-              high standards of excellence. We take pride in providing a service that saves you time and effort in your
-              search for the perfect contractor.
-            </p>
-
-            <h4><strong>What We Do</strong></h4>
-
-            <p class="mb-0">
-              Our service is simple: we connect you with professional drywall contractors based on your specific needs
-              and location. By leveraging our knowledge of the industry and our local expertise, we can recommend
-              contractors who are well-suited to handle your project. From small residential repairs to large commercial
-              installations, our contractors have the skills and experience to deliver outstanding results.
-            </p>
-
-            <h4><strong>Why Choose Us?</strong></h4>
-
-            <ul>
-              <li>We save you time by pre-screening contractors and ensuring they meet our standards.</li>
-              <li>Our service is free to use, and there is no obligation to hire any contractor we refer.</li>
-              <li>We provide personalized recommendations based on your specific project requirements.</li>
-              <li>We are committed to your satisfaction and are always here to answer your questions and provide
-                support.</li>
-            </ul>
-
-            <h4><strong>Contact Us</strong></h4>
-
-            <p class="mb-0">
-              If you have any questions about our service or need assistance finding a drywall contractor, please <a
-                href='/' target='_blank'>contact us</a>. We are here to help you every step of the way.
-            </p>
-          </div>
-
-
-
-
+          <h2>Notre Histoire</h2>
+          <p>Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau est né de la volonté de créer des espaces durables et esthétiques pour notre communauté. Depuis nos débuts, nous avons grandi en offrant des services de pavage, d'asphalte et de béton de qualité, en mettant l'accent sur l'intégrité, l'innovation et la satisfaction de nos clients. Ce qui a commencé comme une petite entreprise familiale s'est développé pour devenir un leader respecté dans l'industrie du pavage et du béton à Gatineau.</p>
+      
+  
+      
+          <h2>Notre Mission</h2>
+          <p>Notre mission est simple : fournir des solutions de pavage, d'asphalte et de béton qui allient durabilité, esthétique et fonctionnalité. Que ce soit pour un nouveau pavage et agrandissement, l'enlèvement de l'asphalte existante, ou la mise en place de trottoirs en béton, chaque projet est une occasion de démontrer notre engagement envers l'excellence et la satisfaction de nos clients.</p>
+      
+  
+      
+          <h2>Notre Expertise</h2>
+          <p>Nous nous spécialisons dans une gamme complète de services pour répondre à tous vos besoins en matière de pavage résidentiel et commercial. Nos services incluent, entre autres, l'excavation du terrain, le remplissage et la compaction de la fondation, l'installation de la couche d'asphalte, et la vérification finale du drainage pour assurer un travail bien fait. Nous sommes également experts en revêtement en asphalte, offrant des solutions telles que les terrasses en asphalte, les murets de soutènement, et le scellement de l'asphalte pour prolonger la durée de vie de vos surfaces.</p>
+          <p>Pour ceux qui recherchent des travaux en béton, nous proposons des services allant de la mise en place de fondations en béton à l'installation de dalles, trottoirs, et murs de soutènement. Nous nous engageons également à l'entretien et la réparation de vos surfaces pour qu'elles restent en parfait état année après année.</p>
+      
+  
+      
+          <h2>Nos Valeurs</h2>
+          <ul>
+              <li><strong>Qualité</strong> : Chaque projet est une opportunité de démontrer notre savoir-faire. Nous utilisons des matériaux de première qualité et des techniques avancées pour garantir des résultats durables.</li>
+              <li><strong>Fiabilité</strong> : Nous comprenons l'importance de respecter les délais et les budgets. Vous pouvez compter sur nous pour livrer des projets dans les temps et selon les spécifications.</li>
+              <li><strong>Innovation</strong> : Nous intégrons les dernières technologies et méthodes pour offrir des solutions modernes qui répondent aux besoins évolutifs de nos clients.</li>
+              <li><strong>Engagement envers la communauté</strong> : Nous sommes fiers de servir la région de Gatineau et de contribuer à l'amélioration des infrastructures locales. Nos projets ne sont pas seulement fonctionnels, ils sont conçus pour embellir et enrichir notre communauté.</li>
+          </ul>
+      
+  
+      
+          <h2>Pourquoi Nous Choisir ?</h2>
+          <p>Choisir Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau, c'est choisir une entreprise qui place vos besoins au cœur de tout ce qu'elle fait. Nous travaillons en étroite collaboration avec chaque client pour comprendre leurs objectifs et fournir des solutions personnalisées qui dépassent leurs attentes. Que vous ayez besoin d'une entrée de garage en asphalte, d'un mur de soutènement en béton, ou de réparations d'asphalte, nous sommes là pour vous offrir une expérience sans souci et des résultats durables.</p>
+      
+  
+      
+          <h2>Engagement Environnemental</h2>
+          <p>Nous croyons en l'importance de préserver notre environnement tout en réalisant des travaux de qualité. C'est pourquoi nous adoptons des pratiques respectueuses de l'environnement dans tous nos projets, en minimisant les déchets et en utilisant des matériaux durables qui réduisent l'empreinte écologique de nos travaux.</p>
+      
+  
+      
+          <h2>Contactez-Nous</h2>
+          <p>Prêts à transformer vos espaces extérieurs ? <a
+            href='/' target='_blank'>Contactez-nous</a> dès aujourd'hui pour discuter de vos projets et découvrir comment nous pouvons vous aider à réaliser vos rêves de pavage et de béton à Gatineau.</p>
 
 
         </div>
@@ -234,109 +109,12 @@
 
     </div>
   </section>
+
+
   <!-- End portfolio section -->
 
 
-
-
-  <footer>
-    <div>
-      <div id="social-media">
-        <a target="_blank" rel="noopener nofollow" href="#social1">
-          <img style="height: 44px; width: 44px;" src="/img/icons/youtube_white.svg" alt="Youtube logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social2">
-          <img style="height: 44px; width: 44px;" src="/img/icons/twitter_white.svg" alt="Twitter logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social3">
-          <img style="height: 44px; width: 44px;" src="/img/icons/pinterest_white.svg" alt="Pinterest logo SVG image">
-        </a>
-        <a target="_blank" href="#social4">
-          <img style="height: 44px; width: 44px;" src="/img/icons/quora_white.svg" alt="Quora logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="mailto:pavagegatineau@outlook.com">
-          <img style="height: 44px; width: 44px;" src="/img/icons/email_white.svg" alt="email logo SVG image">
-        </a>
-
-      </div>
-
-
-      <nav id="bottom">
-        <!-- <a href="#/demande-de-devis-gratuit">Request free quote</a> -->
-        <!-- <a href="#/tad">Terms and Conditions</a> -->
-        <a href="/sitemap">Sitemap</a>
-        <a href="/blog">Blog</a>
-        <a href="tel:3434771480">
-          +1 (343) 477 1480
-        </a>
-      </nav>
-    </div>
-
-  </footer>
-
-
-
-
-  <div>
-    <div>
-      <p class="text-center tm-copyright-text">
-        Copyright © 2024
-
-
-        | Powered by: <a target="_blank" href="https://earnanswers.com">Earnanswers</a></p>
-      </footer>
-    </div>
-  </div>
-
-
-
-  <!-- section -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/parallax.min.js"></script>
-
-
-
-
-  <script>
-    function detectMsBrowser() {
-      using_ms_browser =
-        navigator.appName == "Microsoft Internet Explorer" ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Edge") > -1) ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Trident") > -1);
-
-      if (using_ms_browser == true) {
-        alert(
-          "Please use Chrome or Firefox for the best browsing experience!"
-        );
-      }
-    }
-    function setBrandMarginTop() {
-      var bottomContainerHeight = $(".tm-welcome-container").height();
-
-      $(".tm-brand-container-outer").css({
-        "margin-top": -bottomContainerHeight + "px"
-      });
-    }
-
-    $(function () {
-      setBrandMarginTop();
-      detectMsBrowser();
-
-      // Handle window resize event
-      $(window).resize(function () {
-        setBrandMarginTop();
-      });
-    });
-  </script>
-
-
-
-
+  <%- include('footer/footer.ejs') %>
 
 
 </body>
