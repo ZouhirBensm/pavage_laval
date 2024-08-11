@@ -2,7 +2,7 @@ const aboutWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "About Us",
-  "url": "https://drywallkingston.com/about",
+  "url": "https://drywallkingston.com/a-propos",
   "mainEntity": {
     "@type": "Organization",
     "url": "https://drywallkingston.com/organization",

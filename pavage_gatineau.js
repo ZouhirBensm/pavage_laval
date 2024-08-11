@@ -42,6 +42,7 @@ app.use(Compression);
 const middleware1 = require('./lifecycle/middleware/mid1')
 const middleware2 = require('./lifecycle/middleware/mid2')
 const middleware3 = require('./lifecycle/middleware/mid3')
+const middleware4 = require('./lifecycle/middleware/mid4')
 
 
 
@@ -157,13 +158,14 @@ app.get('/organisation', middleware3.mid1, (req, res) => {
 
 
 
+app.get('/a-propos', middleware4.mid1, (req, res) => {
 
-
-
-app.get('/about', (req, res) => {
-  return res.render('about');
-  // return res.sendFile('about.html', { root: 'public' });
+  return res.render('a-propos', {...res.locals.index_page_data});
 });
+
+
+
+
 
 
 app.get('/service/drywall-installation', (req, res) => {
@@ -518,7 +520,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
       priority: 1
     },
     {
-      URL: '/about',
+      URL: '/a-propos',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       priority: 1
