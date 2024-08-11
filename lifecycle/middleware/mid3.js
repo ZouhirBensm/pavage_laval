@@ -2,37 +2,37 @@ async function mid1(req, res, next) {
 
 
 
-  // const business_data_fr = await db.business_data_fr.findOne({
-  //   raw: true
-  // });
+  const business_data_fr = await db.business_data_fr.findOne({
+    raw: true
+  });
 
-  // if (!business_data_fr) {
-  //   const error = new Error("No business data found!")
-  //   return next(error)
-  // }
-
-
-
-  // const nav_fr = await db.nav_fr.findOne({
-  //   raw: true
-  // });
-
-  // if (!nav_fr) {
-  //   const error = new Error("No nav_fr found!")
-  //   return next(error)
-  // }
+  if (!business_data_fr) {
+    const error = new Error("No business data found!")
+    return next(error)
+  }
 
 
 
+  const nav_fr = await db.nav_fr.findOne({
+    raw: true
+  });
 
-  // const welcome_section_fr = await db.welcome_section_fr.findOne({
-  //   raw: true
-  // });
+  if (!nav_fr) {
+    const error = new Error("No nav_fr found!")
+    return next(error)
+  }
 
-  // if (!welcome_section_fr) {
-  //   const error = new Error("No welcome_section_fr found!")
-  //   return next(error)
-  // }
+
+
+
+  const welcome_section_fr = await db.welcome_section_fr.findOne({
+    raw: true
+  });
+
+  if (!welcome_section_fr) {
+    const error = new Error("No welcome_section_fr found!")
+    return next(error)
+  }
 
 
 
@@ -48,14 +48,14 @@ async function mid1(req, res, next) {
 
 
 
-  // const footer_fr = await db.footer_fr.findOne({
-  //   raw: true
-  // });
+  const footer_fr = await db.footer_fr.findOne({
+    raw: true
+  });
 
-  // if (!footer_fr) {
-  //   const error = new Error("No footer_fr found!")
-  //   return next(error)
-  // }
+  if (!footer_fr) {
+    const error = new Error("No footer_fr found!")
+    return next(error)
+  }
 
 
 
@@ -76,13 +76,17 @@ async function mid1(req, res, next) {
 
   // console.log(nav_fr, welcome_section_fr, business_data_fr, all_data_per_page_fr)
   // console.log(demande_de_devis_gratuit_fr)
-  console.log(all_data_per_page_fr)
+  console.log(welcome_section_fr)
 
 
 
 
   res.locals.index_page_data = {
     all_data_per_page_fr: all_data_per_page_fr,
+    business_data_fr: business_data_fr,
+    nav_fr: nav_fr,
+    welcome_section_fr: welcome_section_fr,
+    footer_fr: footer_fr
   }
 
 
