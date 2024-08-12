@@ -175,15 +175,6 @@ app.get('/service/pavage-residentiel-et-commercial',  middleware4.mid1, (req, re
 
 
 
-// app.get('/service/drywall-installation', (req, res) => {
-//   return res.render('drywall-installation');
-// });
-
-
-app.get('/service/drywall-repair-and-patching', (req, res) => {
-  return res.render('drywall-repair-and-patching');
-  // return res.sendFile('drywall-repair-and-patching.html', { root: 'public' });
-});
 
 
 app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid1, (req, res) => {
@@ -192,10 +183,20 @@ app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid
 
 
 
-app.get('/service/drywall-finishing-and-texturing', (req, res) => {
-  return res.render('drywall-finishing-and-texturing');
-  // return res.sendFile('drywall-finishing-and-texturing.html', { root: 'public' });
+
+
+
+app.get('/service/travaux-en-beton-residentiel-et-commercial',  middleware4.mid1, (req, res) => {
+  return res.render('travaux-en-beton-residentiel-et-commercial', {...res.locals.index_page_data});
 });
+
+
+
+
+
+
+
+
 
 
 

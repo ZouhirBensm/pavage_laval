@@ -257,6 +257,10 @@ span.tm-brand-name {
   color: #cc6733;
 }
 
+.tm-text-light-orange {
+  color: orange;
+}
+
 .tm-text-blue {
   color: #007bff;
   letter-spacing: 1px;

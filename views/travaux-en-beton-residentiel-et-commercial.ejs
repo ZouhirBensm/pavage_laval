@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+</head>
+
+
+
+<body>
+
+
+  <%- include('body/nav.ejs') %>
+
+
+
+  <!-- Welcome Section -->
+
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+    alt="<%= welcome_section_fr.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+<!-- Portfolio section -->
+<section id="tmPortfolio">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="tm-portfolio-item">
+
+          <%
+            const alt_img1 = "A newly constructed concrete sidewalk, showcasing a smooth, durable surface. The sidewalk is part of a residential property, surrounded by a well-maintained lawn and landscaping."
+          %>
+
+          <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img1 %>">
+            <img src="/img/concrete-sidewalk.webp" alt="<%= alt_img1 %>" style="display:none;">
+          </div>
+    
+          <div class="tm-portfolio-description">
+            <h2 class="tm-text-light-orange">Travaux en béton résidentiel et commercial</h2>
+            <p class="mb-0"><span>Nos <strong>services de travaux en béton</strong> pour projets résidentiels et commerciaux</span></br> Chez Earnanswers, nous proposons une large gamme de services de béton pour tous vos besoins. De la construction de <strong>trottoirs en béton</strong> aux <strong>dalles en béton</strong> et <strong>fondations en béton</strong>, notre équipe assure des réalisations de qualité, résistantes et esthétiques.</p>
+            <h3><strong>Pourquoi choisir nos services de travaux en béton?</strong></h3>
+            <ul>
+              <li>Utilisation de matériaux de première qualité pour garantir la durabilité et la résistance.</li>
+              <li>Expertise dans la création de structures en béton pour des projets de toutes tailles.</li>
+              <li>Respect des délais et des budgets, avec des solutions personnalisées pour chaque client.</li>
+              <li>Processus complet incluant la <strong>préparation du terrain</strong>, la <strong>mise en place du béton</strong>, et les <strong>finitions en béton</strong>.</li>
+              <li>Entretien et réparation pour prolonger la durée de vie de vos structures en béton.</li>
+            </ul>
+            <h3><strong>Nos services de travaux en béton</strong></h3>
+            <ul>
+              <li><strong>Trottoirs en béton:</strong> Construction de trottoirs durables et esthétiques pour les espaces résidentiels et commerciaux.</li>
+              <li><strong>Dalles en béton:</strong> Installation de dalles en béton pour terrasses, allées et autres espaces extérieurs.</li>
+              <li><strong>Fondations en béton:</strong> Pose de fondations solides pour les bâtiments résidentiels et commerciaux.</li>
+              <li><strong>Murs de soutènement en béton:</strong> Construction de murs pour stabiliser les terrains en pente et prévenir l'érosion.</li>
+              <li><strong>Bordure de stationnement:</strong> Installation de bordures pour délimiter et sécuriser les aires de stationnement.</li>
+              <li><strong>Ensemble de marches en béton:</strong> Réalisation de marches en béton pour un accès stable et durable.</li>
+              <li><strong>Bollard de protection:</strong> Installation de bollards en béton pour protéger les structures et les zones piétonnes.</li>
+            </ul>
+            <h3><strong>Notre processus de travaux en béton</strong></h3>
+            <ul>
+              <li><strong>Préparation du terrain:</strong> Étude et préparation du site pour assurer une base solide.</li>
+              <li><strong>Mise en place du béton:</strong> Coulage et finition du béton pour créer des structures résistantes.</li>
+              <li><strong>Finitions en béton:</strong> Application de finitions pour améliorer l'esthétique et la durabilité.</li>
+              <li><strong>Entretien et réparation:</strong> Services pour maintenir et prolonger la vie de vos structures en béton.</li>
+              <li><strong>Inspection finale:</strong> Vérification rigoureuse pour garantir que le travail répond aux normes de qualité les plus élevées.</li>
+            </ul>
+            <p class="mb-0">Prêt à commencer votre projet de béton? <a href='/' target='_blank'>Contactez-nous</a> pour une consultation gratuite et découvrez comment nos experts peuvent vous aider à réaliser vos projets en béton avec une qualité supérieure.</p>
+          </div>
+        </div>
+
+        <div class="tm-portfolio-item">
+
+          <%
+            const alt_img2 = "A set of newly installed concrete stairs with clean, sharp edges, part of a building entrance surrounded by landscaping, highlighting craftsmanship and attention to detail."
+          %>
+
+          <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img2 %>">
+            <img src="/img/concrete-stairs.webp" alt="<%= alt_img2 %>" style="display:none;">
+          </div>
+
+          <div class="tm-portfolio-description">
+            <h2 class="tm-text-light-orange">Construction de marches et bordures en béton</h2>
+            <p class="mb-0"><span>Réalisation d'<strong>ensemble de marches en béton</strong> et <strong>bordure de stationnement</strong> pour des accès sécurisés et esthétiques</span></br> Que ce soit pour des entrées de bâtiments ou des zones de stationnement, nos services de création de marches et bordures en béton sont conçus pour offrir des solutions pratiques et durables. Notre équipe s'assure que chaque projet est réalisé avec précision et respect des normes.</p>
+            <h3><strong>Avantages de nos marches et bordures en béton</strong></h3>
+            <ul>
+              <li>Résistance à l'usure et aux intempéries, assurant une longue durée de vie.</li>
+              <li>Finition soignée et esthétique pour un rendu professionnel.</li>
+              <li>Conception sur mesure pour s'adapter parfaitement à votre environnement.</li>
+              <li>Options de protection supplémentaires avec l'installation de <strong>bollard de protection</strong>.</li>
+              <li>Installation rapide et efficace, minimisant les perturbations.</li>
+            </ul>
+            <h3><strong>Notre processus de construction</strong></h3>
+            <ul>
+              <li><strong>Évaluation:</strong> Nous commençons par une évaluation détaillée du site pour planifier la meilleure approche.</li>
+              <li><strong>Préparation du terrain:</strong> Le terrain est préparé pour assurer une base stable pour les marches et les bordures.</li>
+              <li><strong>Mise en place du béton:</strong> Coulage et modelage du béton pour créer des marches et bordures durables.</li>
+              <li><strong>Finitions en béton:</strong> Les finitions sont appliquées pour garantir un aspect lisse et professionnel.</li>
+              <li><strong>Inspection finale:</strong> Nous effectuons une inspection finale pour garantir que le projet respecte les normes de qualité les plus élevées.</li>
+            </ul>
+            <p class="mb-0">Besoin de marches ou de bordures en béton? <a href='/' target='_blank'>Contactez-nous</a> dès aujourd'hui pour discuter de vos besoins et obtenir une solution sur mesure.</p>
+          </div>
+        </div>
+    
+        <div class="tm-portfolio-item">
+
+          <%
+            const alt_img3 = "A construction site showing the preparation and pouring of concrete for a foundation, with heavy machinery and workers actively involved."
+          %>
+
+          <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img3 %>">
+            <img src="/img/concrete-foundation.webp" alt="<%= alt_img3 %>" style="display:none;">
+          </div>
+
+          <div class="tm-portfolio-description">
+            <h2 class="tm-text-light-orange">Préparation et mise en place de fondations en béton</h2>
+            <p class="mb-0"><span>Service complet de <strong>préparation du terrain</strong> et de <strong>mise en place du béton</strong> pour des <strong>fondations en béton</strong> solides et durables</span></br> Les fondations sont la base de toute construction durable. Notre équipe s'assure que chaque étape, de la préparation du terrain à la mise en place du béton, est réalisée avec précision pour créer des fondations solides et fiables pour votre projet.</p>
+            <h3><strong>Pourquoi nos fondations en béton sont-elles de qualité supérieure?</strong></h3>
+            <ul>
+              <li>Utilisation de techniques modernes pour assurer la solidité et la stabilité des fondations.</li>
+              <li>Matériaux de haute qualité pour garantir une résistance à long terme.</li>
+              <li>Respect des normes de construction pour assurer la sécurité et la durabilité.</li>
+              <li>Finitions en béton soignées pour un rendu professionnel et durable.</li>
+              <li>Entretien et réparation pour prolonger la durée de vie de vos fondations.</li>
+            </ul>
+            <h3><strong>Notre processus de fondations en béton</strong></h3>
+            <ul>
+              <li><strong>Préparation du terrain:</strong> Étude du sol et préparation pour assurer une base stable.</li>
+              <li><strong>Mise en place du béton:</strong> Coulage du béton avec des techniques précises pour créer des fondations solides.</li>
+              <li><strong>Finitions en béton:</strong> Application des finitions pour garantir l'esthétique et la durabilité.</li>
+              <li><strong>Entretien et réparation:</strong> Services pour maintenir la qualité et la longévité de vos fondations.</li>
+              <li><strong>Inspection finale:</strong> Vérification rigoureuse pour garantir que les fondations respectent toutes les normes de qualité et de sécurité.</li>
+            </ul>
+            <p class="mb-0">Besoin de fondations en béton pour votre projet? <a href='/' target='_blank'>Contactez-nous</a> pour une consultation gratuite et assurez-vous que votre construction repose sur des bases solides.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End portfolio section -->
+
+
+
+
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

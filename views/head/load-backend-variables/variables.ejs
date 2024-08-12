@@ -79,7 +79,20 @@
   </script>
 
 
+<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial') { %>
+  <script>
+    var all_data_per_page_fr = <%- JSON.stringify(all_data_per_page_fr) %>;
+    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+    var nav_fr = <%- JSON.stringify(nav_fr) %>;
+    var welcome_section_fr = <%- JSON.stringify(welcome_section_fr) %>;
+    var footer_fr = <%- JSON.stringify(footer_fr) %>;
+
+
+    console.log(footer_fr)
+  </script>
+
+
 
 <% } else { %>
-  <p>Status is unknown.</p>
+  <p>Status is unknown. 1</p>
 <% } %>
