@@ -24,7 +24,7 @@
 <% } else if (req_path === '/a-propos') { %>
 
   
-<% } else if (req_path === '/service/pavage-residentiel-et-commercial') { %>
+<% } else if (req_path === '/service/pavage-residentiel-et-commercial-a-gatineau') { %>
   <link rel="stylesheet" href="/css/pavage-residentiel-et-commercial.css" />
 
 <% } else if (req_path === '/service/revetement-maintenance-en-asphalte-gatineau') { %>
@@ -33,9 +33,14 @@
 
 
 
-<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial') { %>
-  
+<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial-a-gatineau') { %>
+
   <link rel="stylesheet" href="/css/travaux-en-beton-residentiel-et-commercial.css" />
+
+
+<% } else if (req_path.startsWith('/service')) { %>
+
+  <link rel="stylesheet" href="/css/extra-service-page-for-seo.css" />
 
 <% } else { %>
 

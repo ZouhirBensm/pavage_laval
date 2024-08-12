@@ -33,13 +33,13 @@
   <link rel="canonical" href='/a-propos'>
 
 
-<% } else if (req_path === '/service/pavage-residentiel-et-commercial') { %>
+<% } else if (req_path === '/service/pavage-residentiel-et-commercial-a-gatineau') { %>
 
   <title><%= all_data_per_page_fr.title %></title>
   <meta name="title" content="<%= all_data_per_page_fr.title %>">
   <meta name="description"
     content="<%= all_data_per_page_fr.description %>">
-  <link rel="canonical" href='/service/pavage-residentiel-et-commercial'>
+  <link rel="canonical" href='/service/pavage-residentiel-et-commercial-a-gatineau'>
 
 
 <% } else if (req_path === '/service/revetement-maintenance-en-asphalte-gatineau') { %>
@@ -52,15 +52,28 @@
   
 
 
-<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial') { %>
+<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial-a-gatineau') { %>
 
   <title><%= all_data_per_page_fr.title %></title>
   <meta name="title" content="<%= all_data_per_page_fr.title %>">
   <meta name="description"
     content="<%= all_data_per_page_fr.description %>">
-  <link rel="canonical" href='/service/travaux-en-beton-residentiel-et-commercial'>
+  <link rel="canonical" href='/service/travaux-en-beton-residentiel-et-commercial-a-gatineau'>
+  
+<% } else if (req_path.startsWith('/service')) { %>
+
+  <title><%= extra_service_page_fr.title %></title>
+  <meta name="title" content="<%= extra_service_page_fr.title %>">
+  <meta name="description"
+    content="<%= extra_service_page_fr.description %>">
+  <link rel="canonical" href='/service/<%= extra_service_page_fr.slug %>'>
   
 
 <% } else { %>
   <p>Status is unknown. 2</p>
 <% } %>
+
+
+
+
+

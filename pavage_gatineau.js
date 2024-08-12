@@ -169,7 +169,7 @@ app.get('/a-propos', middleware3.mid1, (req, res) => {
 
 
 
-app.get('/service/pavage-residentiel-et-commercial',  middleware4.mid1, (req, res) => {
+app.get('/service/pavage-residentiel-et-commercial-a-gatineau',  middleware4.mid1, (req, res) => {
   return res.render('pavage-residentiel-et-commercial', {...res.locals.index_page_data});
 });
 
@@ -186,7 +186,7 @@ app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid
 
 
 
-app.get('/service/travaux-en-beton-residentiel-et-commercial',  middleware4.mid1, (req, res) => {
+app.get('/service/travaux-en-beton-residentiel-et-commercial-a-gatineau',  middleware4.mid1, (req, res) => {
   return res.render('travaux-en-beton-residentiel-et-commercial', {...res.locals.index_page_data});
 });
 
@@ -201,33 +201,21 @@ app.get('/service/travaux-en-beton-residentiel-et-commercial',  middleware4.mid1
 
 
 
-app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => {
+app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (req, res, next) => {
 
   const now = new Date()
 
-  console.log('datetime = ', now)
+  // console.log('datetime = ', now)
 
 
   const { extra_service_page_title_for_seo } = req.params;
   console.log(extra_service_page_title_for_seo);
 
 
-  redirected_seo_pages = ['drywall-companies-in-kingston', 'drywall-kingston-ltd', 'drywall-kingston-prices', 'drywall-kingston-cost', 'best-drywall-kingston']
-
-  console.log('**', redirected_seo_pages.includes(extra_service_page_title_for_seo))
-
-
-  // For SEO Keep until google identifies the redirects
-  if (redirected_seo_pages.includes(extra_service_page_title_for_seo)) {
-    console.log(extra_service_page_title_for_seo);
-    const newUrl = `/drywall/${extra_service_page_title_for_seo}`;
-    return res.redirect(301, newUrl);
-  }
-
-  let db_service_page
+  let db_extra_service_page_fr
 
   try {
-    db_service_page = await db.extra_service_page_fr.findOne({
+    db_extra_service_page_fr = await db.extra_service_page_fr.findOne({
       where: {
         slug: req.params.extra_service_page_title_for_seo,
       },
@@ -238,20 +226,30 @@ app.get('/service/:extra_service_page_title_for_seo', async (req, res, next) => 
   }
 
 
-  console.log('\n\n(1)\n\n', db_service_page)
+  // console.log('\n\n(1)\n\n', db_extra_service_page_fr)
 
 
-  if (!db_service_page) {
+  if (!db_extra_service_page_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
 
+  res.locals.index_page_data.all_data_per_page_fr = {
+    title: db_extra_service_page_fr.title,
+    under_h1: db_extra_service_page_fr.under_h1,
+  }
 
-  return res.render('extra-service-page-for-seo', {
-    blogData: db_service_page,
-    canonical: req.originalUrl
-  });
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    extra_service_page_fr: db_extra_service_page_fr
+  }
+
+
+  console.log('\n\n(**) ->', res.locals.index_page_data)
+
+  return res.render('extra-service-page-for-seo', {...res.locals.index_page_data});
+
 
 });
 
