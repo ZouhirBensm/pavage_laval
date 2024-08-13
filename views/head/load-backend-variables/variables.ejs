@@ -1,3 +1,6 @@
+<!-- Some variables do not need to be declared here (i.e. those that are used in ejs < %%> i.e. server rendered)
+The variables needing to be declared are those that will be used on a front end <script> tag only. -->
+  
 <% if (req_path === '/') { %>
   <script>
     var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>;
@@ -96,8 +99,25 @@
   <script>
     var extra_service_page_fr = <%- JSON.stringify(extra_service_page_fr) %>;
 
-    console.log(extra_service_page_fr)
+    console.log("(1)->", extra_service_page_fr)
   </script>
+
+
+
+
+
+<% } else if (req_path === '/blog') { %>
+  <script>
+    // console.log(footer_fr)
+  </script>
+
+<% } else if (req_path.startsWith('/blog')) { %>
+
+  <script>
+
+  </script>
+  <!-- <p>req_path.startsWith('/blog') /views/head/load-backend-variables/variables.ejs</p> -->
+
 
 <% } else { %>
   <p>Status is unknown. 1</p>

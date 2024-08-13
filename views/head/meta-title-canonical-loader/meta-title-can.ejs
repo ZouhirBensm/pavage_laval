@@ -68,6 +68,23 @@
     content="<%= extra_service_page_fr.description %>">
   <link rel="canonical" href='/service/<%= extra_service_page_fr.slug %>'>
   
+  <% } else if (req_path === '/blog') { %>
+
+    <title><%= all_data_per_page_fr.title %></title>
+    <meta name="title" content="<%= all_data_per_page_fr.title %>">
+    <meta name="description"
+      content="<%= all_data_per_page_fr.description %>">
+    <link rel="canonical" href='/blog'>
+
+
+<% } else if (req_path.startsWith('/blog')) { %>
+
+  <title><%= category_fr.category_name %></title>
+  <meta name="title" content="<%= category_fr.category_name %>">
+  <meta name="description"
+    content="<%= category_fr.category_description %>">
+  <link rel="canonical" href='/blog/<%= category_fr.slug %>'>
+    
 
 <% } else { %>
   <p>Status is unknown. 2</p>

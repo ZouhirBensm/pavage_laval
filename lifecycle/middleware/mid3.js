@@ -39,6 +39,7 @@ async function mid1(req, res, next) {
 
 
 
+
   const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
     where: {
       page_url_identify: res.locals.req_path,
@@ -46,6 +47,10 @@ async function mid1(req, res, next) {
     raw: true
   });
 
+  if (!all_data_per_page_fr) {
+    const error = new Error("No all_data_per_page_fr found!")
+    return next(error)
+  }
 
 
   const footer_fr = await db.footer_fr.findOne({

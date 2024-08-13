@@ -1,147 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-
-  <link rel="canonical" href='<%=canonical%>'>
-
-  <link rel="stylesheet" href="/css/all.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/templatemo-style.css" />
-  <link rel="stylesheet" href="/css/nav-style.css" />
-  <link rel="stylesheet" href="/css/welcome-section.css" />
-  <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
-  <!-- <link rel="stylesheet" href="/css/review-section.css" /> -->
-  <link rel="stylesheet" href="/css/footer-style.css" />
-  <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
-
-
-
-
-  <title class="category-template">
-    <%= category %>
-  </title>
-  <meta name="title" content="Drywall">
-  <meta name="description"
-    content="Explore our range of drywall services at Drywall Kingston. Find detailed information on installation, repair, patching, finishing, and texturing to meet your project needs.">
-
-  <script>
-    console.log('Production:', '<%= locals.production %>');
-    console.log('Env:', '<%= locals.env %>');
-  </script>
-
-  <% if (locals.env===locals.production) { %>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-PVQMQ78LBR');
-    </script>
-    <% } %>
-
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
 
 </head>
 
+
+
 <body>
 
-
-  <nav id="top">
-    <a href="/">
-      <img src="/img/logo_head2.png" width="60px" height="60px">
-    </a>
-    <!-- <a href="/a-propos">About</a> -->
-    <a href="/demande-de-devis-gratuit">Request free quote</a>
-    <a target="_blank" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-      Book a call
-    </a>
-    <a href="tel:3434771480">
-      +1 (343) 477 1480
-    </a>
-    <!-- <span>+1 (343) 477 1480</span> -->
-  </nav>
-
-
+  <%- include('body/nav.ejs') %>
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
-    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+    alt="<%= welcome_section_fr.banner_img_alt %>">
 
-
-    <div class="container-fluid tm-brand-container-outer">
-      <div class="row">
-        <div class="col-12">
-          <!-- style="overflow: hidden;" -->
-          <!-- Logo Area -->
-          <!-- Black transparent bg -->
-          <div class="ml-auto mr-0 tm-bg-black-transparent text-white tm-brand-container-inner">
-            <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name category-template">
-                <%= category %>
-              </h1>
-              <p class="tm-brand-description">Pavage, Asphalte & Béton résidentiel et commercial à Gatineau 🇨🇦</p>
-              <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-                Book a call
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%- include('body/welcome-section/part1.ejs') %>
 
     <div class="tm-bg-black-transparent tm-welcome-container">
       <div class="container-fluid">
+
+
         <div class="row h-100">
-          <!-- Welcome Text -->
-          <!-- White transparent bg -->
-          <div class="col-md-7 tm-welcome-left-col">
-            <div class="tm-welcome-left">
-              <span class="tm-welcome-title">Address</span>
-              <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-                <a rel="nofollow" href="/organization" itemprop="url">1786 Bath Rd #18
-                  Kingston, ON K7M 4Y2
-                  Canada</a>
-              </p>
 
-
-
-              <div>
-                <!-- <a style="text-decoration: underline;" href="#/extra-link">Extra link</a> -->
-                <a style="text-decoration: underline;" href="/a-propos">About Us</a>
-              </div>
-
-
-
-            </div>
-          </div>
-
-
-
-          <!-- Brown bg -->
-          <div class="col-md-5">
-            <a href="/organization">
-              <div class="tm-welcome-right"
-                aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-                <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
-                  style="display:none;">
-                <!-- Map is here -->
-              </div>
-            </a>
-          </div>
-
+          <%- include('body/welcome-section/part2.ejs') %>
 
         </div>
       </div>
@@ -160,16 +54,14 @@
         <div class="col-12">
 
           <div>
-            <h2 class="category-template">
-              <%= category %>
-            </h2>
+            <h2 class="category-template"><%= category_fr.category_name %></h2>
             <h3>Blog Postings</h3>
 
 
               <ul>
                 <% blog_elements_fr.forEach(function(blog) { %>
                   <li>
-                    <a href="/blog/<%= category_slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                    <a href="/blog/<%= category_fr.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
                       <%= blog.title %>
                     </a>
                   </li>
@@ -184,102 +76,7 @@
 
 
 
-
-  <footer>
-    <div>
-      <div id="social-media">
-        <a target="_blank" rel="noopener nofollow" href="#social1">
-          <img style="height: 44px; width: 44px;" src="/img/icons/youtube_white.svg" alt="Youtube logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social2">
-          <img style="height: 44px; width: 44px;" src="/img/icons/twitter_white.svg" alt="Twitter logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social3">
-          <img style="height: 44px; width: 44px;" src="/img/icons/pinterest_white.svg" alt="Pinterest logo SVG image">
-        </a>
-        <a target="_blank" href="#social4">
-          <img style="height: 44px; width: 44px;" src="/img/icons/quora_white.svg" alt="Quora logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="mailto:pavagegatineau@outlook.com">
-          <img style="height: 44px; width: 44px;" src="/img/icons/email_white.svg" alt="email logo SVG image">
-        </a>
-
-      </div>
-
-
-      <nav id="bottom">
-        <!-- <a href="#/demande-de-devis-gratuit">Request free quote</a> -->
-        <!-- <a href="#/tad">Terms and Conditions</a> -->
-        <a href="/sitemap">Sitemap</a>
-        <a href="/blog">Blog</a>
-        <a href="tel:3434771480">
-          +1 (343) 477 1480
-        </a>
-      </nav>
-    </div>
-
-  </footer>
-
-
-
-
-  <div>
-    <div>
-      <p class="text-center tm-copyright-text">
-        Copyright © 2024
-
-
-        | Powered by: <a target="_blank" href="https://earnanswers.com">Earnanswers</a></p>
-      </footer>
-    </div>
-  </div>
-
-
-
-  <!-- section -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/parallax.min.js"></script>
-
-
-  <script>
-    function detectMsBrowser() {
-      using_ms_browser =
-        navigator.appName == "Microsoft Internet Explorer" ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Edge") > -1) ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Trident") > -1);
-
-      if (using_ms_browser == true) {
-        alert(
-          "Please use Chrome or Firefox for the best browsing experience!"
-        );
-      }
-    }
-    function setBrandMarginTop() {
-      var bottomContainerHeight = $(".tm-welcome-container").height();
-
-      $(".tm-brand-container-outer").css({
-        "margin-top": -bottomContainerHeight + "px"
-      });
-    }
-
-    $(function () {
-      setBrandMarginTop();
-      detectMsBrowser();
-
-      // Handle window resize event
-      $(window).resize(function () {
-        setBrandMarginTop();
-      });
-    });
-  </script>
-
-
-
+  <%- include('footer/footer.ejs') %>
 
 
 

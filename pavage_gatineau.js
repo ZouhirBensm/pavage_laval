@@ -69,7 +69,7 @@ app.use((req, res, next) => {
 
   const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
   res.locals.fullUrl = fullUrl
-  
+
 
   return next()
 });
@@ -118,7 +118,7 @@ app.get('/', middleware1.mid1, async (req, res) => {
   // let error = new Error("new error")
   // return next(error)
 
-  return res.render('index3', {...res.locals.index_page_data});
+  return res.render('index3', { ...res.locals.index_page_data });
 });
 
 
@@ -134,7 +134,7 @@ app.get('/', middleware1.mid1, async (req, res) => {
 
 app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
-  return res.render('demande-de-devis-gratuit', {...res.locals.index_page_data});
+  return res.render('demande-de-devis-gratuit', { ...res.locals.index_page_data });
 });
 
 
@@ -151,7 +151,7 @@ app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
 app.get('/organisation', middleware3.mid1, (req, res) => {
 
-  return res.render('organization', {...res.locals.index_page_data});
+  return res.render('organization', { ...res.locals.index_page_data });
 });
 
 
@@ -160,7 +160,7 @@ app.get('/organisation', middleware3.mid1, (req, res) => {
 
 app.get('/a-propos', middleware3.mid1, (req, res) => {
 
-  return res.render('a-propos', {...res.locals.index_page_data});
+  return res.render('a-propos', { ...res.locals.index_page_data });
 });
 
 
@@ -169,16 +169,16 @@ app.get('/a-propos', middleware3.mid1, (req, res) => {
 
 
 
-app.get('/service/pavage-residentiel-et-commercial-a-gatineau',  middleware4.mid1, (req, res) => {
-  return res.render('pavage-residentiel-et-commercial', {...res.locals.index_page_data});
+app.get('/service/pavage-residentiel-et-commercial-a-gatineau', middleware4.mid1, (req, res) => {
+  return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });
 });
 
 
 
 
 
-app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid1, (req, res) => {
-  return res.render('revetement-en-asphalte', {...res.locals.index_page_data});
+app.get('/service/revetement-maintenance-en-asphalte-gatineau', middleware4.mid1, (req, res) => {
+  return res.render('revetement-en-asphalte', { ...res.locals.index_page_data });
 });
 
 
@@ -186,8 +186,8 @@ app.get('/service/revetement-maintenance-en-asphalte-gatineau',  middleware4.mid
 
 
 
-app.get('/service/travaux-en-beton-residentiel-et-commercial-a-gatineau',  middleware4.mid1, (req, res) => {
-  return res.render('travaux-en-beton-residentiel-et-commercial', {...res.locals.index_page_data});
+app.get('/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', middleware4.mid1, (req, res) => {
+  return res.render('travaux-en-beton-residentiel-et-commercial', { ...res.locals.index_page_data });
 });
 
 
@@ -248,7 +248,235 @@ app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (r
 
   console.log('\n\n(**) ->', res.locals.index_page_data)
 
-  return res.render('extra-service-page-for-seo', {...res.locals.index_page_data});
+  return res.render('extra-service-page-for-seo', { ...res.locals.index_page_data });
+
+
+});
+
+
+
+
+
+
+
+app.get('/blog', middleware4.mid1, async (req, res, next) => {
+
+  const categories = await db.category_fr.findAll({
+    raw: true
+  });
+
+  if (!categories) {
+    const error = new Error("No categories found!")
+    return next(error)
+  }
+
+
+
+  const blog_page_fr = await db.blog_page_fr.findOne({
+    raw: true
+  });
+
+  if (!blog_page_fr) {
+    const error = new Error("No blog_page_fr found!")
+    return next(error)
+  }
+  
+  
+
+  console.log({categories, blog_page_fr})
+
+
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    categories,
+    blog_page_fr
+  }
+
+  return res.render('blog', { ...res.locals.index_page_data });
+
+});
+
+
+
+
+
+
+
+
+// app.get('/blog/:category', async (req, res) => {
+
+//   try {
+//     db_category_fr = await db.category_fr.findOne({
+//       where: {
+//         slug: req.params.category,
+//       },
+//       raw: true,
+//     });
+//   } catch (error) {
+//     return next(error);
+//   }
+
+
+//   if (!db_category_fr) {
+//     return res.status(404).send('Category not found');
+//   }
+
+//   const blog_elements_fr = await db.blog_element_fr.findAll({
+//     where: {
+//       category_id: db_category_fr.id,
+//     },
+//     attributes: ['slug', 'title'],
+//     raw: true,
+//   });
+
+
+//   if (!blog_elements_fr) {
+//     const error = new Error("No blog elements found!")
+//     return next(error)
+//   }
+
+//   return res.render('category', {
+//     category: db_category_fr.category_name,
+//     category_slug: db_category_fr.slug,
+//     canonical: req.originalUrl,
+//     blog_elements_fr: blog_elements_fr
+//   });
+
+// });
+
+
+
+
+app.get('/blog/:category', async (req, res, next) => {
+
+
+
+
+  const business_data_fr = await db.business_data_fr.findOne({
+    raw: true
+  });
+
+  if (!business_data_fr) {
+    const error = new Error("No business data found!")
+    return next(error)
+  }
+
+
+
+  const nav_fr = await db.nav_fr.findOne({
+    raw: true
+  });
+
+  if (!nav_fr) {
+    const error = new Error("No nav_fr found!")
+    return next(error)
+  }
+
+
+
+
+  const welcome_section_fr = await db.welcome_section_fr.findOne({
+    raw: true
+  });
+
+  if (!welcome_section_fr) {
+    const error = new Error("No welcome_section_fr found!")
+    return next(error)
+  }
+
+
+
+
+  const footer_fr = await db.footer_fr.findOne({
+    raw: true
+  });
+
+  if (!footer_fr) {
+    const error = new Error("No footer_fr found!")
+    return next(error)
+  }
+
+
+
+
+  try {
+    db_category_fr = await db.category_fr.findOne({
+      where: {
+        slug: req.params.category,
+      },
+      raw: true,
+    });
+  } catch (error) {
+    return next(error);
+  }
+
+
+  if (!db_category_fr) {
+    return res.status(404).send('Category not found');
+  }
+
+
+  // console.log('\n(1)-> ', req.params.category, db_category_fr)
+
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_elements_fr = await db.blog_element_fr.findAll({
+    where: {
+      category_id: db_category_fr.id,
+    },
+    attributes: ['slug', 'title'],
+    raw: true,
+  });
+
+
+  if (!blog_elements_fr) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
+
+
+  
+  const category_page_fr = await db.category_page_fr.findOne({
+    raw: true,
+  });
+
+
+  if (!category_page_fr) {
+    const error = new Error("No category_page_fr found!")
+    return next(error)
+  }
+
+
+  // console.log('\n(2)-> ', blog_elements_fr)
+
+  res.locals.index_page_data = {}
+
+  res.locals.index_page_data.all_data_per_page_fr = {
+    title: db_category_fr.category_name,
+    under_h1: category_page_fr.under_h1,
+  }
+
+
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    business_data_fr: business_data_fr,
+    nav_fr: nav_fr,
+    welcome_section_fr: welcome_section_fr,
+    footer_fr: footer_fr,
+    category_fr: db_category_fr,
+
+    // category: db_category_fr.category_name,
+    // category_slug: db_category_fr.slug,
+
+    canonical: req.originalUrl,
+    blog_elements_fr: blog_elements_fr
+  }
+
+
+  console.log(res.locals.index_page_data)
+
+  return res.render('category', { ...res.locals.index_page_data });
+
+  
 
 
 });
@@ -260,7 +488,82 @@ app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (r
 
 
 
-// HERE
+
+
+
+
+
+
+
+
+
+
+
+
+app.get('/blog/:category/blog-posting/:title', async (req, res) => {
+
+
+  const now = new Date()
+  console.log(now)
+
+  const { title, category } = req.params;
+
+
+  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
+
+
+
+  // Fetch the slugs from the blog_element_fr table with the same category_id
+  const blog_element_fr = await db.blog_element_fr.findOne({
+    where: {
+      slug: title,
+    },
+    include: [
+      {
+        model: db.category_fr,
+        as: 'category',
+        attributes: ['category_name', 'slug']
+      }
+    ],
+    raw: true,
+    nest: true,
+  });
+
+
+  console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
+
+
+  if (!blog_element_fr) {
+    const error = new Error("No blog element found!")
+    return next(error)
+  }
+
+  if (titles_of_extra_services.includes(blog_element_fr.title)) {
+    const newUrl = `/drywall/${title}`;
+    return res.redirect(301, newUrl);
+  }
+
+
+  return res.render('blog-posting', {
+    blogData: blog_element_fr,
+    // blogData: JSON.stringify(blog_element_fr),
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/sitemap', async (req, res) => {
 
   // Fetch the slugs from the blog_element_fr table with the same category_id
@@ -268,12 +571,12 @@ app.get('/sitemap', async (req, res) => {
     // where: {
     //   category_id: db_category_fr.id,
     // },
-  include: [
-    {
-      model: db.category_fr,
-      as: 'category',
-      attributes: ['category_name', 'slug']
-    }],
+    include: [
+      {
+        model: db.category_fr,
+        as: 'category',
+        attributes: ['category_name', 'slug']
+      }],
     attributes: ['slug', 'title'],
     nest: true,
     raw: true,
@@ -326,147 +629,6 @@ app.get('/sitemap', async (req, res) => {
   });
   // return res.sendFile('sitemap.html', { root: 'public' });
 });
-
-
-
-
-
-
-
-
-
-
-app.get('/blog', async (req, res) => {
-
-
-  const categories = await db.category_fr.findAll({
-    raw: true
-  }
-);
-
-console.log(categories)
-
-
-
-  return res.render('blog', {
-    categories
-  });
-  // return res.sendFile('blog.html', { root: 'public' });
-});
-
-
-
-
-
-app.get('/blog/:category', async (req, res) => {
-
-  try {
-    db_category_fr = await db.category_fr.findOne({
-      where: {
-        slug: req.params.category,
-      },
-      raw: true,
-    });
-  } catch (error) {
-    return next(error);
-  }
-
-
-  if (!db_category_fr) {
-    return res.status(404).send('Category not found');
-  }
-
-  console.log('->', req.params.category, db_category_fr)
-
-  // Fetch the slugs from the blog_element_fr table with the same category_id
-  const blog_elements_fr = await db.blog_element_fr.findAll({
-    where: {
-      category_id: db_category_fr.id,
-    },
-    attributes: ['slug', 'title'],
-    raw: true,
-  });
-
-
-  if (!blog_elements_fr) {
-    const error = new Error("No blog elements found!")
-    return next(error)
-  }
-
-  // Extract slugs into an array
-  // const slugs = blog_elements_fr.map(element => element.slug);
-
-  // console.log('->', {
-  //   category: db_category_fr.category_name,
-  //   category_slug: db_category_fr.slug,
-  //   canonical: req.originalUrl,
-  //   blog_elements_fr: blog_elements_fr
-  // })
-
-  // Render the view with the category name and slugs
-  return res.render('category', {
-    category: db_category_fr.category_name,
-    category_slug: db_category_fr.slug,
-    canonical: req.originalUrl,
-    blog_elements_fr: blog_elements_fr
-  });
-
-
-});
-
-
-
-app.get('/blog/:category/blog-posting/:title', async (req, res) => {
-
-
-  const now = new Date()
-  console.log(now)
-
-  const { title, category } = req.params;
-
-
-  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
-
-
-
-  // Fetch the slugs from the blog_element_fr table with the same category_id
-  const blog_element_fr = await db.blog_element_fr.findOne({
-    where: {
-      slug: title,
-    },
-    include: [
-      {
-        model: db.category_fr,
-        as: 'category',
-        attributes: ['category_name', 'slug']
-      }
-    ],
-    raw: true,
-    nest: true,
-  });
-
-  
-  console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
-
-
-  if (!blog_element_fr) {
-    const error = new Error("No blog element found!")
-    return next(error)
-  }
-
-  if (titles_of_extra_services.includes(blog_element_fr.title)) {
-    const newUrl = `/drywall/${title}`;
-    return res.redirect(301, newUrl);
-  }
-
-
-  return res.render('blog-posting', {
-    blogData: blog_element_fr,
-    // blogData: JSON.stringify(blog_element_fr),
-  });
-});
-
-
 
 
 

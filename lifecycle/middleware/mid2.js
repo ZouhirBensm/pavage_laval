@@ -37,8 +37,12 @@ async function mid1(req, res, next) {
       page_url_identify: res.locals.req_path,
     },
     raw: true
-    // attributes: ['slug', 'title'],
   });
+
+  if (!all_data_per_page_fr) {
+    const error = new Error("No all_data_per_page_fr found!")
+    return next(error)
+  }
 
 
 
