@@ -58,13 +58,16 @@
   
 <% } else if (req_path.startsWith('/blog')) { %>
 
-  <script>
 
-  </script>
-  <!-- <p>req_path.startsWith('/blog') /views/head/css-loader/css.ejs</p> -->
+
+
+<% } else if (req_path === '/plan-du-site') { %>
+
+
 
 <% } else { %>
 
   <p>Status is unknown.</p>
 
 <% } %>
+

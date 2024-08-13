@@ -440,20 +440,6 @@ app.get('/blog/:category', async (req, res, next) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.get('/blog/:category/blog-posting/:title', middleware4.mid1, async (req, res, next) => {
 
 
@@ -520,8 +506,79 @@ app.get('/blog/:category/blog-posting/:title', middleware4.mid1, async (req, res
 
 
 
+// app.get('/sitemap', async (req, res) => {
 
-app.get('/sitemap', async (req, res) => {
+//   const blog_elements_fr = await db.blog_element_fr.findAll({
+//     include: [
+//       {
+//         model: db.category_fr,
+//         as: 'category',
+//         attributes: ['category_name', 'slug']
+//       }],
+//     attributes: ['slug', 'title'],
+//     nest: true,
+//     raw: true,
+//   });
+
+
+//   if (!blog_elements_fr) {
+//     const error = new Error("No blog elements found!")
+//     return next(error)
+//   }
+
+//   const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
+//     attributes: ['slug', 'title'],
+//     raw: true
+//   });
+
+//   const categories_and_associated_blogs = blog_elements_fr.reduce((acc, blog) => {
+//     const categoryName = blog.category.category_name;
+//     const categorySlug = blog.category.slug;
+
+//     if (!acc[categoryName]) {
+//       acc[categoryName] = {
+//         categorySlug: categorySlug,
+//         blogs: []
+//       };
+//     }
+
+//     acc[categoryName].blogs.push(blog);
+//     return acc;
+//   }, {});
+
+
+//   console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
+
+
+
+//   if (!extra_service_pages_fr) {
+//     const error = new Error("No service pages found!")
+//     return next(error)
+//   }
+
+
+
+
+//   return res.render('sitemap', {
+//     extra_service_pages_fr: extra_service_pages_fr,
+//     categories_and_associated_blogs: categories_and_associated_blogs
+//   });
+// });
+
+
+
+
+
+
+
+
+
+
+
+app.get('/plan-du-site', middleware4.mid1, async (req, res, next) => {
+
+
+
 
   // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_elements_fr = await db.blog_element_fr.findAll({
@@ -567,7 +624,7 @@ app.get('/sitemap', async (req, res) => {
   }, {});
 
 
-  console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
+  // console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
 
 
 
@@ -579,13 +636,77 @@ app.get('/sitemap', async (req, res) => {
 
 
 
-  return res.render('sitemap', {
-    // blog_elements_fr: blog_elements_fr,
-    extra_service_pages_fr: extra_service_pages_fr,
-    categories_and_associated_blogs: categories_and_associated_blogs
+
+  const plan_du_site_page_fr = await db.plan_du_site_page_fr.findOne({
+    raw: true,
   });
-  // return res.sendFile('sitemap.html', { root: 'public' });
+
+
+  if (!plan_du_site_page_fr) {
+    const error = new Error("No plan_du_site_page_fr found!")
+    return next(error)
+  }
+
+
+
+
+
+  const main_service_data_fr = await db.main_service_data_fr.findAll({
+    attributes: ['service_name', 'slug'],
+    raw: true,
+  });
+
+
+  if (!main_service_data_fr) {
+    const error = new Error("No main_service_data_fr found!")
+    return next(error)
+  }
+
+
+
+
+
+
+
+  res.locals.index_page_data.all_data_per_page_fr = {
+    title: plan_du_site_page_fr.page_title,
+    under_h1: plan_du_site_page_fr.under_h1,
+  }
+
+
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    extra_service_pages_fr: extra_service_pages_fr,
+    categories_and_associated_blogs: categories_and_associated_blogs,
+    plan_du_site_page_fr: plan_du_site_page_fr,
+    main_service_data_fr: main_service_data_fr
+  }
+
+
+
+
+  console.log("\n\nres.locals.index_page_data -> \n\n", res.locals.index_page_data)
+
+
+
+  // return res.end()
+
+  return res.render('plan-du-site', { ...res.locals.index_page_data });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -602,9 +723,6 @@ app.get('/tiroir1/legal-disclaimer', (req, res) => {
 app.get('/tiroir1/privacy-policy', (req, res) => {
   return res.render('privacy-policy');
 });
-
-
-
 
 
 app.get('/sitemap/xml-sitemap', async (req, res) => {
@@ -643,7 +761,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
       priority: 1
     },
     {
-      URL: '/organization',
+      URL: '/organisation',
       lastmod: last_modified_1_date,
       changefreq: "monthly",
       priority: 1
@@ -655,7 +773,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
       priority: 1
     },
     {
-      URL: '/sitemap',
+      URL: '/plan-du-site',
       lastmod: last_modified_4_date,
       changefreq: "monthly",
       priority: 1
@@ -779,8 +897,20 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
 
   // return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
-  return res.redirect(301, '/sitemap');
+  return res.redirect(301, '/plan-du-site');
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

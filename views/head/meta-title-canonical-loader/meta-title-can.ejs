@@ -103,6 +103,19 @@
   <link rel="canonical" href='/blog/<%= category_fr.slug %>'>
     
 
+
+<% } else if (req_path === '/plan-du-site') { %>
+
+
+  <title><%= plan_du_site_page_fr.title %></title>
+  <meta name="title" content="<%= plan_du_site_page_fr.title %>">
+  <meta name="description"
+    content="<%= plan_du_site_page_fr.meta_description %>">
+  <link rel="canonical" href='/plan-du-site'>
+  
+  
+
+
 <% } else { %>
   <p>Status is unknown. 2</p>
 <% } %>

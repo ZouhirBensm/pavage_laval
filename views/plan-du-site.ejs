@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+</head>
+
+
+
+<body>
+
+
+  <%- include('body/nav.ejs') %>
+
+
+
+  <!-- Welcome Section -->
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+    alt="<%= welcome_section_fr.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+
+
+
+
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div>
+            <h2><%= plan_du_site_page_fr.h2_1 %></h2>
+            <h3><%= plan_du_site_page_fr.h3_1 %></h3>
+            
+            <ul>
+              <li><a href="/">Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</a></li>
+              <li><a href="/demande-de-devis-gratuit">Demande de devis gratuit</a></li>
+              <li><a href="/organisation">Organisation</a></li>
+              <li><a href="/a-propos">À propos</a></li>
+
+
+              <li><a href="/tiroir1/mention-legale">Mention légale</a></li>
+              <li><a href="/tiroir1/politique-de-confidentialite">Politique de confidentialité</a></li>
+
+
+
+              <li>Service
+                <ul>
+
+                  <% main_service_data_fr.forEach(function(service) { %>
+                    <li><a href="/service/<%= service.slug %>"><%= service.service_name %></a></li>
+                  <% }); %>
+
+
+                  <% extra_service_pages_fr.forEach(function(page) { %>
+                    <li><a href="/service/<%= page.slug %>"><%= page.title %></a></li>
+                  <% }); %>
+                </ul>
+              </li>
+
+              <li><a href="/blog">Blog</a>
+
+                <ul>
+                  <% Object.keys(categories_and_associated_blogs).forEach(function(categoryName) { %>
+                    <li><%= categoryName %>
+                      <ul>
+                        <% categories_and_associated_blogs[categoryName].blogs.forEach(function(blog) { %>
+                          <li><a href="/blog/<%= categories_and_associated_blogs[categoryName].categorySlug %>/blog-posting/<%= blog.slug %>"><%= blog.title %></a></li>
+                        <% }); %>
+                      </ul>
+                    </li>
+                  <% }); %>
+                </ul>
+
+
+
+              </li>
+              <li><a href="/plan-du-site"><%= plan_du_site_page_fr.page_title %></a></li>
+            </ul>
+            <h3><%= plan_du_site_page_fr.h3_2 %></h3>
+            <!-- TODO to edit the href bellow -->
+            <a href="/sitemap/sitemap.xml" target="_blank"><%= plan_du_site_page_fr.h3_2 %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
