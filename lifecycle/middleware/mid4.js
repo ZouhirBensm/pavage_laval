@@ -46,10 +46,10 @@ async function mid1(req, res, next) {
     raw: true
   });
 
-  if (!all_data_per_page_fr) {
-    const error = new Error("No all_data_per_page_fr found!")
-    return next(error)
-  }
+  // if (!all_data_per_page_fr) {
+  //   const error = new Error("No all_data_per_page_fr found!")
+  //   return next(error)
+  // }
 
 
 

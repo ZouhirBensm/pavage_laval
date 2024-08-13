@@ -98,6 +98,8 @@ script3.type = 'application/ld+json';
 
 // Generate the breadcrumb list schema
 const breadcrumbListSchema = generateBreadcrumbListSchema(blog_elements_fr, extra_service_pages_fr);
+
+
 console.log("\n(1)->\n", breadcrumbListSchema, "\n\n");
 // console.log("\n(2)->\n",JSON.stringify(breadcrumbListSchema, null, 2), "\n\n");
 

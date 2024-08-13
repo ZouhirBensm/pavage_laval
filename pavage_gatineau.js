@@ -302,51 +302,6 @@ app.get('/blog', middleware4.mid1, async (req, res, next) => {
 
 
 
-
-// app.get('/blog/:category', async (req, res) => {
-
-//   try {
-//     db_category_fr = await db.category_fr.findOne({
-//       where: {
-//         slug: req.params.category,
-//       },
-//       raw: true,
-//     });
-//   } catch (error) {
-//     return next(error);
-//   }
-
-
-//   if (!db_category_fr) {
-//     return res.status(404).send('Category not found');
-//   }
-
-//   const blog_elements_fr = await db.blog_element_fr.findAll({
-//     where: {
-//       category_id: db_category_fr.id,
-//     },
-//     attributes: ['slug', 'title'],
-//     raw: true,
-//   });
-
-
-//   if (!blog_elements_fr) {
-//     const error = new Error("No blog elements found!")
-//     return next(error)
-//   }
-
-//   return res.render('category', {
-//     category: db_category_fr.category_name,
-//     category_slug: db_category_fr.slug,
-//     canonical: req.originalUrl,
-//     blog_elements_fr: blog_elements_fr
-//   });
-
-// });
-
-
-
-
 app.get('/blog/:category', async (req, res, next) => {
 
 
@@ -499,7 +454,7 @@ app.get('/blog/:category', async (req, res, next) => {
 
 
 
-
+// HERE
 app.get('/blog/:category/blog-posting/:title', async (req, res) => {
 
 
