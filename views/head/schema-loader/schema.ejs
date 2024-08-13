@@ -27,6 +27,12 @@
 
   <script src="/js/schema/AboutWebPageSchema.js"></script>
 
+
+<% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
+
+  <script src="/js/schema/BlogPostingSchema.js"></script>
+
+
 <% } else { %>
   <p>Status is unknown.</p>
 <% } %>

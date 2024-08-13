@@ -454,8 +454,7 @@ app.get('/blog/:category', async (req, res, next) => {
 
 
 
-// HERE
-app.get('/blog/:category/blog-posting/:title', async (req, res) => {
+app.get('/blog/:category/blog-posting/:title', middleware4.mid1, async (req, res, next) => {
 
 
   const now = new Date()
@@ -464,11 +463,7 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   const { title, category } = req.params;
 
 
-  let titles_of_extra_services = ['Drywall Companies In Kingston', 'Drywall Kingston Ltd', 'Drywall Kingston Prices', 'Drywall Kingston Cost', 'Best Drywall Kingston']
 
-
-
-  // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_element_fr = await db.blog_element_fr.findOne({
     where: {
       slug: title,
@@ -485,7 +480,7 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
   });
 
 
-  console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
+  // console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
 
 
   if (!blog_element_fr) {
@@ -493,20 +488,27 @@ app.get('/blog/:category/blog-posting/:title', async (req, res) => {
     return next(error)
   }
 
-  if (titles_of_extra_services.includes(blog_element_fr.title)) {
-    const newUrl = `/drywall/${title}`;
-    return res.redirect(301, newUrl);
+
+  res.locals.index_page_data.all_data_per_page_fr = {
+    title: blog_element_fr.title,
+    under_h1: blog_element_fr.under_h1,
   }
 
 
-  return res.render('blog-posting', {
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
     blogData: blog_element_fr,
-    // blogData: JSON.stringify(blog_element_fr),
-  });
+  }
+
+
+  // console.log(res.locals.index_page_data)
+
+  console.log(res.locals.index_page_data.business_data_fr)
+
+
+
+  return res.render('blog-posting', { ...res.locals.index_page_data });
 });
-
-
-
 
 
 

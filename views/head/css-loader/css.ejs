@@ -43,6 +43,15 @@
   <link rel="stylesheet" href="/css/extra-service-page-for-seo.css" />
 
 
+
+
+<% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
+
+  <link rel="stylesheet" href="/css/blog-posting.css" />
+
+
+
+
 <% } else if (req_path === '/blog') { %>
 
 
@@ -59,4 +68,3 @@
   <p>Status is unknown.</p>
 
 <% } %>
-

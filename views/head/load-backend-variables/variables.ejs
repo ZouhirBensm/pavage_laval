@@ -128,11 +128,29 @@
 
   </script>
 
+  
+<% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
+
+  <script>
+    var blogData = <%- JSON.stringify(blogData) %>;
+    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+
+  </script>
+
+
+
+  <!-- <p>/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)</p> -->
+
+
 <% } else if (req_path.startsWith('/blog')) { %>
 
   <script>
 
   </script>
+  <!-- <p>/blog</p> -->
+
+
+
 
 
 <% } else { %>

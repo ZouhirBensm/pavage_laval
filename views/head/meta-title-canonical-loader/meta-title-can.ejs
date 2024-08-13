@@ -67,7 +67,20 @@
   <meta name="description"
     content="<%= extra_service_page_fr.description %>">
   <link rel="canonical" href='/service/<%= extra_service_page_fr.slug %>'>
-  
+
+
+
+<% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
+
+  <title><%= blogData.title %></title>
+  <meta name="title" content="<%= blogData.title %>">
+  <meta name="description"
+    content="<%= blogData.meta_description %>">
+  <link rel="canonical" href='/blog/<%= blogData.category.slug %>/blog-posting/<%= blogData.slug %>'>
+
+
+
+
   <% } else if (req_path === '/blog') { %>
 
     <title><%= all_data_per_page_fr.title %></title>
@@ -75,6 +88,10 @@
     <meta name="description"
       content="<%= all_data_per_page_fr.description %>">
     <link rel="canonical" href='/blog'>
+
+
+
+
 
 
 <% } else if (req_path.startsWith('/blog')) { %>
