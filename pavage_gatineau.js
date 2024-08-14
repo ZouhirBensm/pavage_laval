@@ -715,14 +715,23 @@ app.get('/plan-du-site', middleware4.mid1, async (req, res, next) => {
 
 
 // Your route
-app.get('/tiroir1/legal-disclaimer', (req, res) => {
-  return res.render('legal-disclaimer');
+app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
+
+
+  return res.render('mention-legale', { ...res.locals.index_page_data });
 });
 
+
+
+
 // Your route
-app.get('/tiroir1/privacy-policy', (req, res) => {
-  return res.render('privacy-policy');
+app.get('/tiroir1/politique-de-confidentialite', (req, res) => {
+  return res.render('politique-de-confidentialite');
 });
+
+
+
+
 
 
 app.get('/sitemap/xml-sitemap', async (req, res) => {

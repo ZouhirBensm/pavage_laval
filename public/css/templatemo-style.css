@@ -270,6 +270,11 @@ span.tm-brand-name {
   letter-spacing: 1px;
 }
 
+.tm-text-orange {
+  color: orange;
+  letter-spacing: 1px;
+}
+
 a {
   color: orange;
 }
