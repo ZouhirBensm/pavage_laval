@@ -10,9 +10,6 @@ const { Sequelize } = require('sequelize');
 const { initModels } = require(`./models/init-models`);
 
 const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
-const { getJsonData, getJsonData2 } = require('./miscellaneous/utils/utils1')
-
-const json = require('./miscellaneous/db/json')
 
 const Compression = require('./miscellaneous/services/compression/compression-middleware')
 
