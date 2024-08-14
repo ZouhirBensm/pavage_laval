@@ -37,6 +37,7 @@ app.use(Compression);
 
 
 const middleware1 = require('./lifecycle/middleware/mid1')
+const middleware1_en = require('./lifecycle/middleware/mid1_en')
 const middleware2 = require('./lifecycle/middleware/mid2')
 const middleware3 = require('./lifecycle/middleware/mid3')
 const middleware4 = require('./lifecycle/middleware/mid4')
@@ -52,6 +53,10 @@ app.use(express.static('public'));
 
 
 app.use((req, res, next) => {
+
+  global.is_english = req.path.endsWith('/en');
+
+
   res.locals.env = process.env.NODE_ENV;
   res.locals.production = ENVIRONMENT.PRODUCTION;
 
@@ -109,14 +114,11 @@ goneUrls.forEach(url => {
 
 
 
-// Serve index.html for the root path
-app.get('/', middleware1.mid1, async (req, res) => {
-  // Throw an error for testing the error handling middleware.
-  // let error = new Error("new error")
-  // return next(error)
+app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
 
 
-  return res.render('index3', { ...res.locals.index_page_data });
+  return res.end()
+  // return res.render('index', { ...res.locals.index_page_data });
 });
 
 

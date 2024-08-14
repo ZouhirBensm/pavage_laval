@@ -1,30 +1,23 @@
-async function mid1(req, res, next) {
-
-
+async function mid1_en(req, res, next) {
+  
   console.log(is_english, '\n\n')
 
-  if(is_english) return next()
+  if(!is_english) return next()
 
-  console.log("French mode is on")
+  console.log("English mode is on")
+
+
 
 
   const now = new Date();
   console.log(now);
 
-  
-  // const req_path = req.path
-  // const req_url = req.url
 
-  // console.log(req_path, req_url)
 
-  // Fetch the slugs from the blog_element_fr table with the same category_id
-  const blog_elements_fr = await db.blog_element_fr.findAll({
-    // where: {
-    //   category_id: db_category.id,
-    // },
+  const blog_elements_en = await db.blog_element_en.findAll({
     include: [
       {
-        model: db.category_fr,
+        model: db.category_en,
         as: 'category',
         attributes: ['category_name', 'slug']
       }],
@@ -35,13 +28,24 @@ async function mid1(req, res, next) {
 
 
 
-  if (!blog_elements_fr) {
+  if (!blog_elements_en) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
 
 
+
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
+
+  // HERE
+  // all tables here exist in en version and are populated in french
 
 
   const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
@@ -56,8 +60,16 @@ async function mid1(req, res, next) {
 
 
 
+
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
+
   const business_data_fr = await db.business_data_fr.findOne({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -68,10 +80,16 @@ async function mid1(req, res, next) {
 
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
 
 
   const main_service_data_fr = await db.main_service_data_fr.findAll({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -81,11 +99,16 @@ async function mid1(req, res, next) {
   }
 
 
-  // console.log(main_service_data_fr)
+
+
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
 
 
   const review_data_fr = await db.review_data_fr.findAll({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -95,13 +118,19 @@ async function mid1(req, res, next) {
   }
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
 
   const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
     where: {
       page_url_identify: res.locals.req_path,
     },
     raw: true
-    // attributes: ['slug', 'title'],
   });
 
   if (!all_data_per_page_fr) {
@@ -110,9 +139,16 @@ async function mid1(req, res, next) {
   }
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
+
 
   const nav_fr = await db.nav_fr.findOne({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -122,8 +158,14 @@ async function mid1(req, res, next) {
   }
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
   const welcome_section_fr = await db.welcome_section_fr.findOne({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -134,8 +176,14 @@ async function mid1(req, res, next) {
 
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
   const portfolio_section_fr = await db.portfolio_section_fr.findOne({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -145,8 +193,19 @@ async function mid1(req, res, next) {
   }
 
 
+
+
+
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
+
+
   const index_content_fr = await db.index_content_fr.findAll({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -157,8 +216,14 @@ async function mid1(req, res, next) {
 
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
   const faq_fr = await db.faq_fr.findAll({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -168,8 +233,15 @@ async function mid1(req, res, next) {
   }
 
 
+  // console.log(blog_elements_en)
+
+
+  // return next()
+
+
+
+
   const footer_fr = await db.footer_fr.findOne({
-    // attributes: ['slug', 'title'],
     raw: true
   });
 
@@ -180,8 +252,19 @@ async function mid1(req, res, next) {
 
 
 
+  // console.log(blog_elements_en)
 
-  
+
+  // return next()
+
+
+
+
+
+
+
+
+
 
   // console.log(extra_service_pages_fr)
   // console.log(index_content_fr)
@@ -190,7 +273,7 @@ async function mid1(req, res, next) {
   // console.log(main_service_data_fr)
   // console.log(review_data_fr)
   // console.log(faq_fr)
-  console.log(footer_fr)
+  // console.log(footer_fr)
   
 
 
@@ -221,7 +304,7 @@ async function mid1(req, res, next) {
 
 
 const middleware = {
-  mid1: mid1
+  mid1_en: mid1_en
 }
 
 
