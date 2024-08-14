@@ -198,16 +198,15 @@ app.get('/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', middle
 
 
 
-
-app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (req, res, next) => {
+app.get('/service/:page_de_services_supplementaires_seo', middleware4.mid1, async (req, res, next) => {
 
   const now = new Date()
 
   // console.log('datetime = ', now)
 
 
-  const { extra_service_page_title_for_seo } = req.params;
-  console.log(extra_service_page_title_for_seo);
+  const { page_de_services_supplementaires_seo } = req.params;
+  console.log(page_de_services_supplementaires_seo);
 
 
   let db_extra_service_page_fr
@@ -215,7 +214,7 @@ app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (r
   try {
     db_extra_service_page_fr = await db.extra_service_page_fr.findOne({
       where: {
-        slug: req.params.extra_service_page_title_for_seo,
+        slug: req.params.page_de_services_supplementaires_seo,
       },
       raw: true,
     });
@@ -246,7 +245,7 @@ app.get('/service/:extra_service_page_title_for_seo', middleware4.mid1, async (r
 
   console.log('\n\n(**) ->', res.locals.index_page_data)
 
-  return res.render('extra-service-page-for-seo', { ...res.locals.index_page_data });
+  return res.render('page_de_services_supplementaires_seo', { ...res.locals.index_page_data });
 
 
 });
