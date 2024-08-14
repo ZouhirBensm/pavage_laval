@@ -149,7 +149,7 @@ app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
 app.get('/organisation', middleware3.mid1, (req, res) => {
 
-  return res.render('organization', { ...res.locals.index_page_data });
+  return res.render('organisation', { ...res.locals.index_page_data });
 });
 
 
@@ -426,7 +426,8 @@ app.get('/blog/:category', async (req, res, next) => {
 
   console.log(res.locals.index_page_data)
 
-  return res.render('category', { ...res.locals.index_page_data });
+  return res.render('categorie', { ...res.locals.index_page_data });
+  
 
   
 
@@ -498,69 +499,6 @@ app.get('/blog/:category/blog-posting/:title', middleware4.mid1, async (req, res
 
 
 
-
-
-
-
-
-// app.get('/sitemap', async (req, res) => {
-
-//   const blog_elements_fr = await db.blog_element_fr.findAll({
-//     include: [
-//       {
-//         model: db.category_fr,
-//         as: 'category',
-//         attributes: ['category_name', 'slug']
-//       }],
-//     attributes: ['slug', 'title'],
-//     nest: true,
-//     raw: true,
-//   });
-
-
-//   if (!blog_elements_fr) {
-//     const error = new Error("No blog elements found!")
-//     return next(error)
-//   }
-
-//   const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
-//     attributes: ['slug', 'title'],
-//     raw: true
-//   });
-
-//   const categories_and_associated_blogs = blog_elements_fr.reduce((acc, blog) => {
-//     const categoryName = blog.category.category_name;
-//     const categorySlug = blog.category.slug;
-
-//     if (!acc[categoryName]) {
-//       acc[categoryName] = {
-//         categorySlug: categorySlug,
-//         blogs: []
-//       };
-//     }
-
-//     acc[categoryName].blogs.push(blog);
-//     return acc;
-//   }, {});
-
-
-//   console.log("\n\ncategories_and_associated_blogs:\n", categories_and_associated_blogs)
-
-
-
-//   if (!extra_service_pages_fr) {
-//     const error = new Error("No service pages found!")
-//     return next(error)
-//   }
-
-
-
-
-//   return res.render('sitemap', {
-//     extra_service_pages_fr: extra_service_pages_fr,
-//     categories_and_associated_blogs: categories_and_associated_blogs
-//   });
-// });
 
 
 
