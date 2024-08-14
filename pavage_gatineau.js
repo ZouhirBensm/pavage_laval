@@ -724,10 +724,16 @@ app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
 
 
 
+
+
 // Your route
-app.get('/tiroir1/politique-de-confidentialite', (req, res) => {
-  return res.render('politique-de-confidentialite');
+app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) => {
+
+
+  return res.render('politique-de-confidentialite', { ...res.locals.index_page_data });
 });
+
+
 
 
 

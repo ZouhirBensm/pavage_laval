@@ -1,152 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
-
-
-  <link rel="canonical" href='/service/drywall-finishing-and-texturing'>
-
-  <link rel="stylesheet" href="/css/all.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/templatemo-style.css" />
-  <link rel="stylesheet" href="/css/nav-style.css" />
-  <link rel="stylesheet" href="/css/welcome-section.css" />
-  <!-- <link rel="stylesheet" href="/css/portfolio-section.css" /> -->
-  <link rel="stylesheet" href="/css/review-section.css" />
-  <link rel="stylesheet" href="/css/footer-style.css" />
-  <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
-
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <!-- < %- include('head/load-backend-variables/variables.ejs') %> -->
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
 
   <meta name="googlebot" content="noindex">
   <meta name="robots" content="noindex">
 
-  <!-- <meta name="googlebot" content="nofollow">
-  <meta name="robots" content="nofollow"> -->
-
-
-
-
-
-  <title>Drywall Finishing and Texturing</title>
-  <meta name="title" content="Drywall Finishing and Texturing Services">
-  <meta name="description"
-    content="Achieve a flawless finish with Drywall Kingston's professional finishing and texturing services. Transform your walls and ceilings with our expert techniques.">
-
-  <script>
-    console.log('Production:', '<%= locals.production %>');
-    console.log('Env:', '<%= locals.env %>');
-  </script>
-
-  <% if (locals.env===locals.production) { %>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVQMQ78LBR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-PVQMQ78LBR');
-    </script>
-    <% } %>
-
 </head>
+
+
 
 <body>
 
 
-  <nav id="top">
-    <a href="/">
-      <img src="/img/logo_head2.png" width="60px" height="60px">
-    </a>
-    <!-- <a href="/a-propos">About</a> -->
-    <a href="/demande-de-devis-gratuit">Request free quote</a>
-    <a target="_blank" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-      Book a call
-    </a>
-    <a href="tel:3434771480">
-      +1 (343) 477 1480
-    </a>
-    <!-- <span>+1 (343) 477 1480</span> -->
-  </nav>
-
-
+  <%- include('body/nav.ejs') %>
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="/img/drywall-kingston1.avif"
-    alt="Professional drywall installer in Kingston, Ontario applying joint compound to a wall around a window frame.">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
+    alt="<%= welcome_section_fr.banner_img_alt %>">
 
-
-    <div class="container-fluid tm-brand-container-outer">
-      <div class="row">
-        <div class="col-12">
-          <!-- style="overflow: hidden;" -->
-          <!-- Logo Area -->
-          <!-- Black transparent bg -->
-          <div class="ml-auto mr-0 tm-bg-black-transparent text-white tm-brand-container-inner">
-            <div class="tm-brand-container text-center">
-              <h1 class="tm-brand-name">Privacy Policy</h1>
-              <p class="tm-brand-description">Pavage, Asphalte & Béton résidentiel et commercial à Gatineau 🇨🇦</p>
-              <a target="_blank" class="animated-text blue mb-0" href="https://calendly.com/pavagegatineau/pavage-gatineau-meeting">
-                Book a call
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%- include('body/welcome-section/part1.ejs') %>
 
     <div class="tm-bg-black-transparent tm-welcome-container">
       <div class="container-fluid">
+
+
         <div class="row h-100">
-          <!-- Welcome Text -->
-          <!-- White transparent bg -->
-          <div class="col-md-7 tm-welcome-left-col">
-            <div class="tm-welcome-left">
-              <!-- <h2 class="tm-welcome-title">Address</h2> -->
-              <span class="tm-welcome-title">Address</span>
-              <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-                <a rel="nofollow" href="/organization" itemprop="url">1786 Bath Rd #18
-                  Kingston, ON K7M 4Y2
-                  Canada</a>
-              </p>
 
-
-
-              <div>
-                <!-- <a style="text-decoration: underline;" href="#/extra-link">Extra link</a> -->
-                <a style="text-decoration: underline;" href="/a-propos">About Us</a>
-              </div>
-
-
-
-            </div>
-          </div>
-
-
-
-          <!-- Brown bg -->
-          <div class="col-md-5">
-            <a href="/organization">
-              <div class="tm-welcome-right"
-                aria-label="Map showing the local drywall business location in Kingston, Ontario.">
-                <img src="/img/map1_op.avif" alt="Map showing the local drywall business location in Kingston, Ontario."
-                  style="display:none;">
-                <!-- Map is here -->
-              </div>
-            </a>
-          </div>
-
+          <%- include('body/welcome-section/part2.ejs') %>
 
         </div>
       </div>
@@ -157,6 +49,7 @@
 
 
 
+
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
@@ -165,161 +58,161 @@
 
 
 
-
           <div>
-            <h2 class="tm-text-orange">Privacy Policy</h2>
-            <p class="mb-0">Effective date: June 22, 2024</p>
-            <p class="mb-0">
-              Drywall Kingston ("us", "we", or "our") operates the https://www.drywallkingston.com/ website (hereinafter referred to as the "Service").
+            <h2 class="tm-text-orange">Politique de Confidentialité</h2>
+            <p>Date d'entrée en vigueur : 13 août 2024</p>
+            <p>
+                Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau ("nous", "notre" ou "nos") exploite le site https://www.pavagegatineau.com/ (ci-après dénommé le "Service").
             </p>
-            <p class="mb-0">
-              This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+            <p>
+                Cette page vous informe de nos politiques concernant la collecte, l'utilisation et la divulgation des données personnelles lorsque vous utilisez notre Service et des choix que vous avez en lien avec ces données.
             </p>
-            <p class="mb-0">
-              We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from https://www.drywallkingston.com/
+            <p>
+                Nous utilisons vos données pour fournir et améliorer le Service. En utilisant le Service, vous acceptez la collecte et l'utilisation des informations conformément à cette politique. Sauf définition contraire dans cette Politique de Confidentialité, les termes utilisés dans cette Politique de Confidentialité ont les mêmes significations que dans nos Conditions Générales d'Utilisation, accessibles depuis https://www.pavagegatineau.com/
             </p>
-          
-            <h3><strong>Definitions</strong></h3>
-            <p class="mb-0"><strong>Service</strong></p>
-            <p class="mb-0">Service is the https://www.drywallkingston.com/ website operated by Drywall Kingston</p>
-            <p class="mb-0"><strong>Personal Data</strong></p>
-            <p class="mb-0">
-              Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).
+        
+            <h3><strong>Définitions</strong></h3>
+            <p><strong>Service</strong></p>
+            <p>Le Service est le site https://www.pavagegatineau.com/ exploité par Pavage Gatineau</p>
+            <p><strong>Données Personnelles</strong></p>
+            <p>
+                Les Données Personnelles désignent les données concernant un individu vivant qui peut être identifié à partir de ces données (ou à partir de ces informations et d'autres en notre possession ou susceptibles de venir en notre possession).
             </p>
-            <p class="mb-0"><strong>Usage Data</strong></p>
-            <p class="mb-0">
-              Usage Data is data collected automatically either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
+            <p><strong>Données d'Utilisation</strong></p>
+            <p>
+                Les Données d'Utilisation sont des données collectées automatiquement, générées soit par l'utilisation du Service, soit par l'infrastructure du Service elle-même (par exemple, la durée de consultation d'une page).
             </p>
-            <p class="mb-0"><strong>Cookies</strong></p>
-            <p class="mb-0">
-              Cookies are small files stored on your device (computer or mobile device).
+            <p><strong>Cookies</strong></p>
+            <p>
+                Les Cookies sont de petits fichiers stockés sur votre appareil (ordinateur ou appareil mobile).
             </p>
-          
-            <h3><strong>Information Collection and Use</strong></h3>
-            <p class="mb-0">We collect several different types of information for various purposes to provide and improve our Service to you.</p>
-          
-            <h3><strong>Types of Data Collected</strong></h3>
-            <p class="mb-0"><strong>Personal Data</strong></p>
-            <p class="mb-0">
-              While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
-            </p>
-            <ul>
-              <li>Email address</li>
-              <li>First name and last name</li>
-              <li>Phone number</li>
-              <li>Cookies and Usage Data</li>
-            </ul>
-          
-            <p class="mb-0"><strong>Usage Data</strong></p>
-            <p class="mb-0">
-              We may also collect information how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
-            </p>
-          
-            <h3><strong>Tracking & Cookies Data</strong></h3>
-            <p class="mb-0">
-              We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information.
-            </p>
-            <p class="mb-0">
-              Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyse our Service.
-            </p>
-            <p class="mb-0">
-              You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
-            </p>
-            <p class="mb-0"><strong>Examples of Cookies we use:</strong></p>
-            <ul>
-              <li>Session Cookies. We use Session Cookies to operate our Service.</li>
-              <li>Preference Cookies. We use Preference Cookies to remember your preferences and various settings.</li>
-              <li>Security Cookies. We use Security Cookies for security purposes.</li>
-            </ul>
-          
-            <h3><strong>Use of Data</strong></h3>
-            <p class="mb-0">Drywall Kingston uses the collected data for various purposes:</p>
-            <ul>
-              <li>To provide and maintain the Service</li>
-              <li>To notify you about changes to our Service</li>
-              <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
-              <li>To provide customer care and support</li>
-              <li>To provide analysis or valuable information so that we can improve the Service</li>
-              <li>To monitor the usage of the Service</li>
-              <li>To detect, prevent and address technical issues</li>
-            </ul>
-          
-            <h3><strong>Transfer Of Data</strong></h3>
-            <p class="mb-0">
-              Your information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
-            </p>
-            <p class="mb-0">
-              If you are located outside Canada and choose to provide information to us, please note that we transfer the data, including Personal Data, to Canada and process it there.
-            </p>
-            <p class="mb-0">
-              Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
-            </p>
-            <p class="mb-0">
-              Drywall Kingston will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
-            </p>
-          
-            <h3><strong>Disclosure Of Data</strong></h3>
-            <p class="mb-0"><strong>Legal Requirements</strong></p>
-            <p class="mb-0">
-              Drywall Kingston may disclose your Personal Data in the good faith belief that such action is necessary to:
+        
+            <h3><strong>Collecte et Utilisation des Informations</strong></h3>
+            <p>Nous collectons différents types d'informations pour diverses raisons afin de vous fournir et d'améliorer notre Service.</p>
+        
+            <h3><strong>Types de Données Collectées</strong></h3>
+            <p><strong>Données Personnelles</strong></p>
+            <p>
+                Lors de l'utilisation de notre Service, il peut vous être demandé de nous fournir certaines informations personnelles identifiables qui peuvent être utilisées pour vous contacter ou vous identifier ("Données Personnelles"). Les informations personnelles identifiables peuvent inclure, mais ne se limitent pas à :
             </p>
             <ul>
-              <li>To comply with a legal obligation</li>
-              <li>To protect and defend the rights or property of Drywall Kingston</li>
-              <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
-              <li>To protect the personal safety of users of the Service or the public</li>
-              <li>To protect against legal liability</li>
+                <li>Adresse e-mail</li>
+                <li>Prénom et nom de famille</li>
+                <li>Numéro de téléphone</li>
+                <li>Cookies et Données d'Utilisation</li>
             </ul>
-          
-            <h3><strong>Security of Data</strong></h3>
-            <p class="mb-0">
-              The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+        
+            <p><strong>Données d'Utilisation</strong></p>
+            <p>
+                Nous pouvons également collecter des informations sur la façon dont le Service est accédé et utilisé ("Données d'Utilisation"). Ces Données d'Utilisation peuvent inclure des informations telles que l'adresse de protocole Internet de votre ordinateur (par exemple, adresse IP), le type de navigateur, la version du navigateur, les pages de notre Service que vous visitez, l'heure et la date de votre visite, le temps passé sur ces pages, les identifiants uniques de l'appareil et d'autres données de diagnostic.
             </p>
-          
-            <h3><strong>Service Providers</strong></h3>
-            <p class="mb-0">
-              We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+        
+            <h3><strong>Données de Suivi & Cookies</strong></h3>
+            <p>
+                Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur notre Service et nous conservons certaines informations.
             </p>
-            <p class="mb-0">
-              These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+            <p>
+                Les cookies sont des fichiers contenant une petite quantité de données qui peuvent inclure un identifiant unique anonyme. Les cookies sont envoyés à votre navigateur depuis un site web et stockés sur votre appareil. D'autres technologies de suivi sont également utilisées telles que les balises, les tags et les scripts pour collecter et suivre les informations et pour améliorer et analyser notre Service.
             </p>
-          
-            <h3><strong>Links to Other Sites</strong></h3>
-            <p class="mb-0">
-              Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+            <p>
+                Vous pouvez demander à votre navigateur de refuser tous les cookies ou d'indiquer lorsqu'un cookie est envoyé. Cependant, si vous n'acceptez pas les cookies, il se peut que vous ne puissiez pas utiliser certaines parties de notre Service.
             </p>
-            <p class="mb-0">
-              We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+            <p><strong>Exemples de Cookies que nous utilisons :</strong></p>
+            <ul>
+                <li>Cookies de Session. Nous utilisons des Cookies de Session pour faire fonctionner notre Service.</li>
+                <li>Cookies de Préférence. Nous utilisons des Cookies de Préférence pour nous souvenir de vos préférences et de divers paramètres.</li>
+                <li>Cookies de Sécurité. Nous utilisons des Cookies de Sécurité pour des raisons de sécurité.</li>
+            </ul>
+        
+            <h3><strong>Utilisation des Données</strong></h3>
+            <p>Pavage Gatineau utilise les données collectées à diverses fins :</p>
+            <ul>
+                <li>Pour fournir et maintenir le Service</li>
+                <li>Pour vous notifier des changements apportés à notre Service</li>
+                <li>Pour vous permettre de participer aux fonctionnalités interactives de notre Service lorsque vous choisissez de le faire</li>
+                <li>Pour fournir un support client</li>
+                <li>Pour fournir des analyses ou des informations précieuses afin que nous puissions améliorer le Service</li>
+                <li>Pour surveiller l'utilisation du Service</li>
+                <li>Pour détecter, prévenir et résoudre les problèmes techniques</li>
+            </ul>
+        
+            <h3><strong>Transfert des Données</strong></h3>
+            <p>
+                Vos informations, y compris vos Données Personnelles, peuvent être transférées - et maintenues - sur des ordinateurs situés en dehors de votre état, province, pays ou autre juridiction gouvernementale où les lois de protection des données peuvent différer de celles de votre juridiction.
             </p>
-          
-            <h3><strong>Children's Privacy</strong></h3>
-            <p class="mb-0">
-              Our Service does not address anyone under the age of 18 ("Children").
+            <p>
+                Si vous êtes situé en dehors du Canada et que vous choisissez de nous fournir des informations, veuillez noter que nous transférons les données, y compris les Données Personnelles, au Canada et que nous les traitons là-bas.
             </p>
-            <p class="mb-0">
-              We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Child has provided us with Personal Data, please <a href='/' target='_blank'>contact us</a>. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
+            <p>
+                Votre consentement à cette Politique de Confidentialité suivi de votre soumission de telles informations représente votre accord à ce transfert.
             </p>
-          
-            <h3><strong>Changes to This Privacy Policy</strong></h3>
-            <p class="mb-0">
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+            <p>
+                Pavage Gatineau prendra toutes les mesures raisonnablement nécessaires pour s'assurer que vos données sont traitées de manière sécurisée et conformément à cette Politique de Confidentialité et aucun transfert de vos Données Personnelles n'aura lieu vers une organisation ou un pays à moins que des contrôles adéquats ne soient en place, y compris la sécurité de vos données et autres informations personnelles.
             </p>
-            <p class="mb-0">
-              We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.
-            </p>
-            <p class="mb-0">
-              You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-            </p>
-          
-            <h3><strong>Contact Us</strong></h3>
-            <p class="mb-0">
-              If you have any questions about this Privacy Policy, please <a href='/' target='_blank'>contact us</a>:
+        
+            <h3><strong>Divulgation des Données</strong></h3>
+            <p><strong>Exigences Légales</strong></p>
+            <p>
+                Pavage Gatineau peut divulguer vos Données Personnelles de bonne foi, croyant qu'une telle action est nécessaire pour :
             </p>
             <ul>
-              <li>By phone number: +1 (343) 477 1480</li>
-              <li>By mail: 1786 Bath Rd #18 Kingston, ON K7M 4Y2 Canada</li>
+                <li>Se conformer à une obligation légale</li>
+                <li>Protéger et défendre les droits ou la propriété de Pavage Gatineau</li>
+                <li>Prévenir ou enquêter sur d'éventuels actes répréhensibles en relation avec le Service</li>
+                <li>Protéger la sécurité personnelle des utilisateurs du Service ou du public</li>
+                <li>Se protéger contre la responsabilité légale</li>
             </ul>
-          </div>
+        
+            <h3><strong>Sécurité des Données</strong></h3>
+            <p>
+                La sécurité de vos données est importante pour nous mais n'oubliez pas qu'aucune méthode de transmission sur Internet ou méthode de stockage électronique n'est 100% sécurisée. Bien que nous nous efforcions d'utiliser des moyens commercialement acceptables pour protéger vos Données Personnelles, nous ne pouvons garantir leur sécurité absolue.
+            </p>
+        
+            <h3><strong>Fournisseurs de Services</strong></h3>
+            <p>
+                Nous pouvons employer des sociétés tierces et des individus pour faciliter notre Service ("Fournisseurs de Services"), pour fournir le Service en notre nom, pour effectuer des services liés au Service ou pour nous aider à analyser comment notre Service est utilisé.
+            </p>
+            <p>
+                Ces tiers ont accès à vos Données Personnelles uniquement pour effectuer ces tâches en notre nom et sont tenus de ne pas les divulguer ou les utiliser à d'autres fins.
+            </p>
+        
+            <h3><strong>Liens Vers D'autres Sites</strong></h3>
+            <p>
+                Notre Service peut contenir des liens vers d'autres sites qui ne sont pas exploités par nous. Si vous cliquez sur un lien tiers, vous serez dirigé vers ce site tiers. Nous vous conseillons fortement de consulter la Politique de Confidentialité de chaque site que vous visitez.
+            </p>
+            <p>
+                Nous n'avons aucun contrôle sur et n'assumons aucune responsabilité pour le contenu, les politiques de confidentialité ou les pratiques de tout site tiers ou service.
+            </p>
+        
+            <h3><strong>Confidentialité des Enfants</strong></h3>
+            <p>
+                Notre Service ne s'adresse à personne de moins de 18 ans ("Enfants").
+            </p>
+            <p>
+                Nous ne collectons pas sciemment d'informations personnellement identifiables auprès de personnes de moins de 18 ans. Si vous êtes un parent ou un tuteur et que vous êtes conscient que votre enfant nous a fourni des Données Personnelles, veuillez <a href='/' target='_blank'>nous contacter</a>. Si nous prenons conscience que nous avons collecté des Données Personnelles auprès d'enfants sans vérification du consentement parental, nous prenons des mesures pour supprimer ces informations de nos serveurs.
+            </p>
+        
+            <h3><strong>Modifications de cette Politique de Confidentialité</strong></h3>
+            <p>
+                Nous pouvons mettre à jour notre Politique de Confidentialité de temps en temps. Nous vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page.
+            </p>
+            <p>
+                Nous vous informerons par e-mail et/ou par un avis bien visible sur notre Service, avant que la modification ne prenne effet et nous mettrons à jour la "date d'entrée en vigueur" en haut de cette Politique de Confidentialité.
+            </p>
+            <p>
+                Vous êtes conseillé de consulter cette Politique de Confidentialité périodiquement pour tout changement. Les modifications apportées à cette Politique de Confidentialité sont effectives lorsqu'elles sont publiées sur cette page.
+            </p>
+        
+            <h3><strong>Contactez-nous</strong></h3>
+            <p class="mb-0">
+                Si vous avez des questions concernant cette Politique de Confidentialité, veuillez <a href='/' target='_blank'>nous contacter</a> :
+            </p>
+            <ul>
+                <li>Par téléphone : <%= business_data_fr.telephone %></li>
+                <li>Par courrier : <%= business_data_fr.street_address %> <%= business_data_fr.address_city %>, <%= business_data_fr.address_province_state %> <%= business_data_fr.postal_code %> <%= business_data_fr.address_country %></li>
+            </ul>
+        </div>
+        
 
 
 
@@ -333,153 +226,7 @@
 
 
 
-
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-
-
-
-      <!-- <div class="row">
-        <div class="col-12">
-
-          <form id="tmContactForm" class="tm-bg-white-transparent">
-          <div class="form-group">
-            <input type="text" id="contact_name" name="contact_name"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Name" required />
-          </div>
-          <div class="form-group">
-              <input type="email" id="contact_email" name="contact_email"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Email" required />
-            </div>
-            <div class="form-group">
-              <input type="tel" id="contact_phone" name="contact_phone"
-              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Phone" 
-              pattern="^\+?1?\d{10,15}$" required />
-              <div class="side-note-form">(valid formats: 9991234444, +19991234444)</span>
-              
-            </div>
-            <div class="form-group">
-              <textarea rows="4" id="contact_message" name="contact_message"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="The message goes here. Please provide details on what needs to be done, and we will get back to you as soon as possible."
-                required></textarea>
-            </div>
-          <div class="text-center">
-            <button type="submit" class="btn tm-btn-submit rounded-0">
-              Submit
-            </button>
-          </div>
-
-          </form>
-
-        </div>
-      </div> -->
-
-
-    </div>
-  </section>
-  <!-- End portfolio section -->
-
-
-
-
-  <footer>
-    <div>
-      <div id="social-media">
-        <a target="_blank" rel="noopener nofollow" href="#social1">
-          <img style="height: 44px; width: 44px;" src="/img/icons/youtube_white.svg" alt="Youtube logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social2">
-          <img style="height: 44px; width: 44px;" src="/img/icons/twitter_white.svg" alt="Twitter logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="#social3">
-          <img style="height: 44px; width: 44px;" src="/img/icons/pinterest_white.svg" alt="Pinterest logo SVG image">
-        </a>
-        <a target="_blank" href="#social4">
-          <img style="height: 44px; width: 44px;" src="/img/icons/quora_white.svg" alt="Quora logo SVG image">
-        </a>
-
-        <a target="_blank" rel="noopener nofollow" href="mailto:pavagegatineau@outlook.com">
-          <img style="height: 44px; width: 44px;" src="/img/icons/email_white.svg" alt="email logo SVG image">
-        </a>
-
-      </div>
-
-
-      <nav id="bottom">
-        <!-- <a href="#/demande-de-devis-gratuit">Request free quote</a> -->
-        <!-- <a href="#/tad">Terms and Conditions</a> -->
-        <a href="/sitemap">Sitemap</a>
-        <a href="/blog">Blog</a>
-        <a href="tel:3434771480">
-          +1 (343) 477 1480
-        </a>
-      </nav>
-    </div>
-
-  </footer>
-
-
-
-
-  <div>
-    <div>
-      <p class="text-center tm-copyright-text">
-        Copyright © 2024
-
-
-        | Powered by: <a target="_blank" href="https://earnanswers.com">Earnanswers</a></p>
-      </footer>
-    </div>
-  </div>
-
-
-
-  <!-- section -->
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/parallax.min.js"></script>
-
-
-
-
-  <script>
-    function detectMsBrowser() {
-      using_ms_browser =
-        navigator.appName == "Microsoft Internet Explorer" ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Edge") > -1) ||
-        (navigator.appName == "Netscape" &&
-          navigator.appVersion.indexOf("Trident") > -1);
-
-      if (using_ms_browser == true) {
-        alert(
-          "Please use Chrome or Firefox for the best browsing experience!"
-        );
-      }
-    }
-    function setBrandMarginTop() {
-      var bottomContainerHeight = $(".tm-welcome-container").height();
-
-      $(".tm-brand-container-outer").css({
-        "margin-top": -bottomContainerHeight + "px"
-      });
-    }
-
-    $(function () {
-      setBrandMarginTop();
-      detectMsBrowser();
-
-      // Handle window resize event
-      $(window).resize(function () {
-        setBrandMarginTop();
-      });
-    });
-  </script>
-
-
+  <%- include('footer/footer.ejs') %>
 
 
 
