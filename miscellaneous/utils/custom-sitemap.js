@@ -4,7 +4,7 @@ function createSiteMap(urls) {
 
   urls.forEach(url => {
     xml += '<url>\n';
-    xml += `<loc>https://drywallkingston.com${url.URL}</loc>\n`;
+    xml += `<loc>https://pavagegatineau.com${url.URL}</loc>\n`;
     xml += `<lastmod>${url.lastmod.toISOString()}</lastmod>\n`;
     xml += `<changefreq>${url.changefreq}</changefreq>\n`;
     xml += `<priority>${url.priority}</priority>\n`;

@@ -1,6 +1,11 @@
 async function mid1(req, res, next) {
 
 
+
+  const now = new Date();
+  console.log(now);
+
+  
   // const req_path = req.path
   // const req_url = req.url
 

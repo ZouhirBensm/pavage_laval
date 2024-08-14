@@ -1,4 +1,4 @@
-// 9995555
+// 1
 const express = require('express')
 const path = require('path');
 
@@ -117,6 +117,7 @@ app.get('/', middleware1.mid1, async (req, res) => {
   // Throw an error for testing the error handling middleware.
   // let error = new Error("new error")
   // return next(error)
+
 
   return res.render('index3', { ...res.locals.index_page_data });
 });
@@ -740,7 +741,7 @@ app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) =>
 
 
 
-app.get('/sitemap/xml-sitemap', async (req, res) => {
+app.get('/sitemap/xml-sitemap', async (req, res, next) => {
   // Define the path to the XML file
   const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 
@@ -753,19 +754,14 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
   const now = new Date();
   console.log(now);
 
-  let last_modified_1 = '2024-06-02T15:07:49.699Z';
+  let last_modified_1 = '2024-08-14T00:34:21.928Z';
   let last_modified_1_date = new Date(last_modified_1);
 
-  let last_modified_3 = '2024-06-21T15:04:37.758Z';
-  let last_modified_3_date = new Date(last_modified_3);
-
-  let last_modified_4 = '2024-06-24T13:13:22.821Z';
-  let last_modified_4_date = new Date(last_modified_4);
 
   const urls = [
     {
       URL: '/',
-      lastmod: last_modified_4_date,
+      lastmod: last_modified_1_date,
       changefreq: "monthly",
       priority: 1
     },
@@ -789,43 +785,50 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
     },
     {
       URL: '/plan-du-site',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-
-    // {
-    //   URL: '/tiroir1/legal-disclaimer',
-    //   lastmod: last_modified_3_date,
-    //   changefreq: "monthly",
-    //   priority: 1
-    // },
-    // {
-    //   URL: '/tiroir1/privacy-policy',
-    //   lastmod: last_modified_3_date,
-    //   changefreq: "monthly",
-    //   priority: 1
-    // },
-
-    {
-      URL: '/service/drywall-installation',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/drywall-repair-and-patching',
-      lastmod: last_modified_4_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/service/drywall-finishing-and-texturing',
-      lastmod: last_modified_4_date,
+      lastmod: last_modified_1_date,
       changefreq: "monthly",
       priority: 1
     }
   ];
+
+
+
+  const main_services_data_fr = await db.main_service_data_fr.findAll({
+    attributes: ['slug', 'service_name', 'last_modified'],
+    raw: true
+  });
+
+
+
+  if (!main_services_data_fr) {
+    const error = new Error("No service pages found!")
+    return next(error)
+  }
+
+
+
+
+  // console.log('\n\nservice_pages-> ', extra_service_pages_fr)
+
+  main_services_data_fr.forEach(main_service_data_fr => {
+
+    let url = `/service/${main_service_data_fr.slug}`;
+
+    // console.log(main_service_data_fr.last_modified)
+    let lastmod = new Date(main_service_data_fr.last_modified)
+
+
+    urls.push({
+      URL: url,
+      lastmod: lastmod,
+      changefreq: "monthly",
+      priority: 1
+    });
+
+
+  });
+
+
 
 
 
@@ -848,7 +851,7 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
 
     let url = `/service/${extra_service_page_fr.slug}`;
 
-    console.log(extra_service_page_fr.last_modified)
+    // console.log(extra_service_page_fr.last_modified)
     let lastmod = new Date(extra_service_page_fr.last_modified)
 
 
@@ -861,6 +864,11 @@ app.get('/sitemap/xml-sitemap', async (req, res) => {
 
 
   });
+
+
+
+
+
 
 
   const blog_elements_fr = await db.blog_element_fr.findAll({
