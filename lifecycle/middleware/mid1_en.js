@@ -4,7 +4,7 @@ async function mid1_en(req, res, next) {
 
   if(!is_english) return next()
 
-  console.log("English mode is on")
+  console.log("English mode is on.\n\n")
 
 
 
@@ -44,16 +44,16 @@ async function mid1_en(req, res, next) {
 
 
 
-  // HERE
+  
   // all tables here exist in en version and are populated in french
 
 
-  const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
+  const extra_service_pages_en = await db.extra_service_page_en.findAll({
     attributes: ['slug', 'title'],
     raw: true
   });
 
-  if (!extra_service_pages_fr) {
+  if (!extra_service_pages_en) {
     const error = new Error("No service pages found!")
     return next(error)
   }
@@ -61,7 +61,7 @@ async function mid1_en(req, res, next) {
 
 
 
-  // console.log(blog_elements_en)
+  // console.log('extra_service_pages_en ->\n', extra_service_pages_en, '\n\n')
 
 
   // return next()
@@ -69,18 +69,18 @@ async function mid1_en(req, res, next) {
 
 
 
-  const business_data_fr = await db.business_data_fr.findOne({
+  const business_data_en = await db.business_data_en.findOne({
     raw: true
   });
 
-  if (!business_data_fr) {
+  if (!business_data_en) {
     const error = new Error("No business data found!")
     return next(error)
   }
 
 
 
-  // console.log(blog_elements_en)
+  // console.log('business_data_en ->\n', business_data_en, '\n\n')
 
 
   // return next()
@@ -89,11 +89,11 @@ async function mid1_en(req, res, next) {
 
 
 
-  const main_service_data_fr = await db.main_service_data_fr.findAll({
+  const main_service_data_en = await db.main_service_data_en.findAll({
     raw: true
   });
 
-  if (!main_service_data_fr) {
+  if (!main_service_data_en) {
     const error = new Error("No service data found!")
     return next(error)
   }
@@ -101,24 +101,26 @@ async function mid1_en(req, res, next) {
 
 
 
-  // console.log(blog_elements_en)
+
+  // console.log('main_service_data_en ->\n', main_service_data_en, '\n\n')
 
 
   // return next()
 
 
 
-  const review_data_fr = await db.review_data_fr.findAll({
+  const review_data_en = await db.review_data_en.findAll({
     raw: true
   });
 
-  if (!review_data_fr) {
+  if (!review_data_en) {
     const error = new Error("No review data found!")
     return next(error)
   }
 
 
-  // console.log(blog_elements_en)
+
+  // console.log('review_data_en ->\n', review_data_en, '\n\n')
 
 
   // return next()
@@ -126,20 +128,20 @@ async function mid1_en(req, res, next) {
 
 
 
-  const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
+  const all_data_per_page_en = await db.all_data_per_page_en.findOne({
     where: {
       page_url_identify: res.locals.req_path,
     },
     raw: true
   });
 
-  if (!all_data_per_page_fr) {
-    const error = new Error("No all_data_per_page_fr found!")
+  if (!all_data_per_page_en) {
+    const error = new Error("No all_data_per_page_en found!")
     return next(error)
   }
 
 
-  // console.log(blog_elements_en)
+  // console.log('all_data_per_page_en ->\n', all_data_per_page_en, '\n\n')
 
 
   // return next()
@@ -148,47 +150,47 @@ async function mid1_en(req, res, next) {
 
 
 
-  const nav_fr = await db.nav_fr.findOne({
+  const nav_en = await db.nav_en.findOne({
     raw: true
   });
 
-  if (!nav_fr) {
-    const error = new Error("No nav_fr found!")
+  if (!nav_en) {
+    const error = new Error("No nav_en found!")
     return next(error)
   }
 
 
-  // console.log(blog_elements_en)
+  // console.log('nav_en ->\n', nav_en, '\n\n')
 
 
   // return next()
 
 
 
-  const welcome_section_fr = await db.welcome_section_fr.findOne({
+  const welcome_section_en = await db.welcome_section_en.findOne({
     raw: true
   });
 
-  if (!welcome_section_fr) {
-    const error = new Error("No welcome_section_fr found!")
+  if (!welcome_section_en) {
+    const error = new Error("No welcome_section_en found!")
     return next(error)
   }
 
 
 
-  // console.log(blog_elements_en)
+  // console.log('welcome_section_en ->\n', welcome_section_en, '\n\n')
 
 
   // return next()
 
 
 
-  const portfolio_section_fr = await db.portfolio_section_fr.findOne({
+  const portfolio_section_en = await db.portfolio_section_en.findOne({
     raw: true
   });
 
-  if (!portfolio_section_fr) {
-    const error = new Error("No portfolio_section_fr found!")
+  if (!portfolio_section_en) {
+    const error = new Error("No portfolio_section_en found!")
     return next(error)
   }
 
@@ -196,44 +198,7 @@ async function mid1_en(req, res, next) {
 
 
 
-  // console.log(blog_elements_en)
-
-
-  // return next()
-
-
-
-
-
-  const index_content_fr = await db.index_content_fr.findAll({
-    raw: true
-  });
-
-  if (!index_content_fr) {
-    const error = new Error("No index_content_fr found!")
-    return next(error)
-  }
-
-
-
-  // console.log(blog_elements_en)
-
-
-  // return next()
-
-
-
-  const faq_fr = await db.faq_fr.findAll({
-    raw: true
-  });
-
-  if (!faq_fr) {
-    const error = new Error("No faq_fr found!")
-    return next(error)
-  }
-
-
-  // console.log(blog_elements_en)
+  // console.log('portfolio_section_en ->\n', portfolio_section_en, '\n\n')
 
 
   // return next()
@@ -241,18 +206,58 @@ async function mid1_en(req, res, next) {
 
 
 
-  const footer_fr = await db.footer_fr.findOne({
+
+  const index_content_en = await db.index_content_en.findAll({
     raw: true
   });
 
-  if (!footer_fr) {
-    const error = new Error("No footer_fr found!")
+  if (!index_content_en) {
+    const error = new Error("No index_content_en found!")
     return next(error)
   }
 
 
 
-  // console.log(blog_elements_en)
+  // console.log('index_content_en ->\n', index_content_en, '\n\n')
+
+
+  // return next()
+
+
+
+
+
+
+  const faq_en = await db.faq_en.findAll({
+    raw: true
+  });
+
+  if (!faq_en) {
+    const error = new Error("No faq_en found!")
+    return next(error)
+  }
+
+
+  // console.log('faq_en ->\n', faq_en, '\n\n')
+
+
+  // return next()
+
+
+
+
+  const footer_en = await db.footer_en.findOne({
+    raw: true
+  });
+
+  if (!footer_en) {
+    const error = new Error("No footer_en found!")
+    return next(error)
+  }
+
+
+
+  // console.log('footer_en ->\n', footer_en, '\n\n')
 
 
   // return next()
@@ -280,18 +285,18 @@ async function mid1_en(req, res, next) {
 
 
   res.locals.index_page_data = {
-    blog_elements_fr: blog_elements_fr,
-    extra_service_pages_fr: extra_service_pages_fr,
-    business_data_fr: business_data_fr,
-    main_service_data_fr: main_service_data_fr,
-    review_data_fr: review_data_fr,
-    all_data_per_page_fr: all_data_per_page_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    portfolio_section_fr: portfolio_section_fr,
-    index_content_fr: index_content_fr,
-    faq_fr: faq_fr,
-    footer_fr: footer_fr
+    blog_elements: blog_elements_en,
+    extra_service_pages: extra_service_pages_en,
+    business_data: business_data_en,
+    main_service_data: main_service_data_en,
+    review_data: review_data_en,
+    all_data_per_page: all_data_per_page_en,
+    nav: nav_en,
+    welcome_section: welcome_section_en,
+    portfolio_section: portfolio_section_en,
+    index_content: index_content_en,
+    faq: faq_en,
+    footer: footer_en
   }
 
 

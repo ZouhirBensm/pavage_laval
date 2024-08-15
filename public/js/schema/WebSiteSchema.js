@@ -1,10 +1,10 @@
-// console.log(business_data_fr);
+// console.log(business_data);
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": `${business_data_fr.website_main_url}`, // Place real website URL here
-  "name": `${business_data_fr.business_name}` // Place business name here
+  "url": `${business_data.website_main_url}`, // Place real website URL here
+  "name": `${business_data.business_name}` // Place business name here
 };
 
 const script1 = document.createElement('script');

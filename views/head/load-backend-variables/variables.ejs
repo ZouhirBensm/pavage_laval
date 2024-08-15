@@ -1,10 +1,13 @@
-<% if (req_path === '/') { %>
+<% if (req_path === '/' || req_path === '/en') { %>
+
+
   <script>
-    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
-    var review_data_fr = <%- JSON.stringify(review_data_fr) %>;
-    var main_service_data_fr = <%- JSON.stringify(main_service_data_fr) %>;
-    var blog_elements_fr = <%- JSON.stringify(blog_elements_fr) %>;
-    var extra_service_pages_fr = <%- JSON.stringify(extra_service_pages_fr) %>;
+
+    var business_data = <%- JSON.stringify(business_data) %>;
+    var review_data = <%- JSON.stringify(review_data) %>;
+    var main_service_data = <%- JSON.stringify(main_service_data) %>;
+    var blog_elements = <%- JSON.stringify(blog_elements) %>;
+    var extra_service_pages = <%- JSON.stringify(extra_service_pages) %>;
 
 
 

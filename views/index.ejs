@@ -7,7 +7,6 @@
 
   <%- include('head/load-backend-variables/variables.ejs') %>
 
-
   <%- include('head/head-common-part1.ejs') %>
 
   <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
@@ -42,8 +41,8 @@
 
     <!-- Welcome Section -->
 
-    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-      alt="<%= welcome_section_fr.banner_img_alt %>">
+    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+      alt="<%= welcome_section.banner_img_alt %>">
 
       <%- include('body/welcome-section/part1.ejs') %>
 
@@ -87,7 +86,7 @@
 
 
 
-            <% main_service_data_fr.forEach((service, i)=> { %>
+            <% main_service_data.forEach((service, i)=> { %>
 
 
 
@@ -113,7 +112,7 @@
                   <h2 class="tm-text-black">
                     <%= service.service_name %>
                       <a class="tm-title-small" href="/service/<%= service.slug %>">
-                        <%= portfolio_section_fr.op1 %>
+                        <%= portfolio_section.op1 %>
                       </a>
                   </h2>
                   <p class="mb-0">
@@ -152,16 +151,16 @@
 
               <div class="tm-portfolio-description">
                 <h2 class="tm-text-black">
-                  <%= portfolio_section_fr.op2 %>
+                  <%= portfolio_section.op2 %>
                   <a class="tm-title-small" href="#">
-                    <%= portfolio_section_fr.op1 %>
+                    <%= portfolio_section.op1 %>
                   </a>
                 </h2>
                 
                 <p class="mb-0">
                 <div>
                   <ul>
-                    <% extra_service_pages_fr.forEach(function(service) { %>
+                    <% extra_service_pages.forEach(function(service) { %>
                       <li><a href="/service/<%= service.slug %>"><%= service.title %></a></li>
                     <% }); %>
                   </ul>
@@ -175,7 +174,7 @@
 
 
 
-            <% index_content_fr.forEach((content, i)=> { %>
+            <% index_content.forEach((content, i)=> { %>
 
               <div class="tm-portfolio-item">
                 <div class="tm-portfolio-name text-white tm-bg-purple"
@@ -237,7 +236,8 @@
 
     <!-- Review section -->
     <div id="tmContact" class="parallax-window" data-parallax="scroll" data-image-src="/img/pavage_gatineau_b1.webp"
-    alt="Two workers installing a large drywall sheet in a residential construction project in Kingston, Ontario.">
+    alt="<%= welcome_section.banner_img_alt %>">
+
       <div class="container-fluid">
 
         <div class="row">
@@ -248,7 +248,7 @@
 
 
 
-              <% review_data_fr.forEach(function(review) { %>
+              <% review_data.forEach(function(review) { %>
               <div class="tm-contact-item">
                 <!-- Review Text -->
                 <p>
@@ -287,7 +287,7 @@
             <div class="tm-bg-darker-blue-transparent" itemscope itemtype="https://schema.org/FAQPage">
               <h2>FAQ</h2>
         
-              <% faq_fr.forEach(function(faq) { %>
+              <% faq.forEach(function(faq) { %>
                 <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                   <summary itemprop="name"><%= faq.id %>. <%= faq.question %></summary>
                   <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">

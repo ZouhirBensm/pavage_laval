@@ -1,6 +1,6 @@
-// console.log(blog_elements_fr);
-// console.log(main_service_data_fr); // main services
-// console.log(extra_service_pages_fr); // extra services
+// console.log(blog_elements);
+// console.log(main_service_data); // main services
+// console.log(extra_service_pages); // extra services
 
 
 
@@ -9,7 +9,7 @@
 // Function to generate breadcrumb list schema
 function generateBreadcrumbListSchema(blogElements, servicePages) {
 
-  // console.log("(1)", main_service_data_fr); // main services
+  // console.log("(1)", main_service_data); // main services
 
   const itemListElement = [];
 
@@ -31,14 +31,14 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
   ];
 
   // Generate service breadcrumb items from service data
-  main_service_data_fr = main_service_data_fr.map(service => ({
+  main_service_data = main_service_data.map(service => ({
     name: service.service_name,
     item: service.service_page_url
   }));
 
 
   // Combine static and service breadcrumb items
-  staticItems = [...staticItems, ...main_service_data_fr];
+  staticItems = [...staticItems, ...main_service_data];
 
 
   // console.log("HERE", staticItems)
@@ -97,7 +97,7 @@ script3.type = 'application/ld+json';
 
 
 // Generate the breadcrumb list schema
-const breadcrumbListSchema = generateBreadcrumbListSchema(blog_elements_fr, extra_service_pages_fr);
+const breadcrumbListSchema = generateBreadcrumbListSchema(blog_elements, extra_service_pages);
 
 
 console.log("\n(1)->\n", breadcrumbListSchema, "\n\n");

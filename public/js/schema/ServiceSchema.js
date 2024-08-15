@@ -1,4 +1,4 @@
-// console.log(review_data_fr);
+// console.log(review_data);
 
 
 const priceCurrency = "CAD"
@@ -6,10 +6,10 @@ const priceCurrency = "CAD"
 
 
 // Get the count of reviews
-const reviewCount = review_data_fr.length;
+const reviewCount = review_data.length;
 
 // Calculate the average rating value
-const totalRatingValue = review_data_fr.reduce((sum, review) => sum + review.rating_value, 0);
+const totalRatingValue = review_data.reduce((sum, review) => sum + review.rating_value, 0);
 const averageRatingValue = (totalRatingValue / reviewCount).toFixed(1);
 
 // console.log('Review Count:', reviewCount, typeof reviewCount);
@@ -21,21 +21,21 @@ const averageRatingValue = (totalRatingValue / reviewCount).toFixed(1);
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": `${business_data_fr.service_type}`,
+  "serviceType": `${business_data.service_type}`,
   "provider": {
     "@type": "LocalBusiness",
-    "name": `${business_data_fr.business_name}`,
-    "description": `${business_data_fr.business_description}`,
+    "name": `${business_data.business_name}`,
+    "description": `${business_data.business_description}`,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": `${business_data_fr.street_address}`,
-      "addressLocality": `${business_data_fr.address_city}`,
-      "addressRegion": `${business_data_fr.address_province_state}`,
-      "postalCode": `${business_data_fr.postal_code}`,
-      "addressCountry": `${business_data_fr.address_country}`
+      "streetAddress": `${business_data.street_address}`,
+      "addressLocality": `${business_data.address_city}`,
+      "addressRegion": `${business_data.address_province_state}`,
+      "postalCode": `${business_data.postal_code}`,
+      "addressCountry": `${business_data.address_country}`
     },
-    "telephone": `${business_data_fr.telephone}`,
-    "email": `${business_data_fr.email}`,
+    "telephone": `${business_data.telephone}`,
+    "email": `${business_data.email}`,
 
     "openingHoursSpecification": [
       {
@@ -54,14 +54,14 @@ const serviceSchema = {
 
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": `${business_data_fr.latitude}`,
-      "longitude": `${business_data_fr.longitude}`,
+      "latitude": `${business_data.latitude}`,
+      "longitude": `${business_data.longitude}`,
     },
 
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Service Catalog",
-      "itemListElement": main_service_data_fr.map(service => ({
+      "itemListElement": main_service_data.map(service => ({
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
@@ -72,7 +72,7 @@ const serviceSchema = {
           "url": service.service_page_url,
           "provider": {
             "@type": "LocalBusiness",
-            "name": `${business_data_fr.business_name}`
+            "name": `${business_data.business_name}`
           }
         },
         "priceCurrency": `${priceCurrency}`,
@@ -80,7 +80,7 @@ const serviceSchema = {
       }))
     },
 
-    "review": review_data_fr.map(review => ({
+    "review": review_data.map(review => ({
       "@type": "Review",
       "author": {
         "@type": "Person",

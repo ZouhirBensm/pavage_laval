@@ -197,18 +197,18 @@ async function mid1(req, res, next) {
 
 
   res.locals.index_page_data = {
-    blog_elements_fr: blog_elements_fr,
-    extra_service_pages_fr: extra_service_pages_fr,
-    business_data_fr: business_data_fr,
-    main_service_data_fr: main_service_data_fr,
-    review_data_fr: review_data_fr,
-    all_data_per_page_fr: all_data_per_page_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    portfolio_section_fr: portfolio_section_fr,
-    index_content_fr: index_content_fr,
-    faq_fr: faq_fr,
-    footer_fr: footer_fr
+    blog_elements: blog_elements_fr,
+    extra_service_pages: extra_service_pages_fr,
+    business_data: business_data_fr,
+    main_service_data: main_service_data_fr,
+    review_data: review_data_fr,
+    all_data_per_page: all_data_per_page_fr,
+    nav: nav_fr,
+    welcome_section: welcome_section_fr,
+    portfolio_section: portfolio_section_fr,
+    index_content: index_content_fr,
+    faq: faq_fr,
+    footer: footer_fr
   }
 
 
