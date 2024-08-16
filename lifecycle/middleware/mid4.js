@@ -1,5 +1,14 @@
+const ejs = require('ejs');
+
+
 async function mid1(req, res, next) {
 
+
+  console.log(is_english, '\n\n')
+
+  if(is_english) return next()
+
+  console.log("French mode is on")
 
 
   const business_data_fr = await db.business_data_fr.findOne({
@@ -63,23 +72,47 @@ async function mid1(req, res, next) {
   }
 
 
+  let req_path = res.locals.req_path.replace('/service/', '');
+  console.log(req_path);
 
+
+  const main_service_data_fr = await db.main_service_data_fr.findOne({
+    where: {
+      slug: req_path
+    },
+    raw: true
+  });
+
+
+  let rendered_web_page_content = undefined
+
+  if (main_service_data_fr) {
+    // console.log(typeof main_service_data_fr.web_page_content);
+
+    rendered_web_page_content = ejs.render(main_service_data_fr.web_page_content, { alt_img1: main_service_data_fr.alt_img1, alt_img2: main_service_data_fr.alt_img2, alt_img3: main_service_data_fr.alt_img3 });
+  }
+  
 
 
   // console.log(nav_fr, welcome_section_fr, business_data_fr, all_data_per_page_fr)
-  console.log(welcome_section_fr)
+  // console.log(welcome_section_fr)
 
 
 
 
   res.locals.index_page_data = {
-    all_data_per_page_fr: all_data_per_page_fr,
-    business_data_fr: business_data_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    footer_fr: footer_fr
+    all_data_per_page: all_data_per_page_fr,
+    business_data: business_data_fr,
+    nav: nav_fr,
+    welcome_section: welcome_section_fr,
+    footer: footer_fr,
+    // ...(main_service_data_fr ? { main_service_data: rendered_main_service_data_fr } : {}),
+    ...(rendered_web_page_content ? { main_service_data: rendered_web_page_content } : {})
   }
 
+
+
+  console.log(res.locals.index_page_data)
 
 
 

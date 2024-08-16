@@ -43,6 +43,7 @@ const middleware2_en = require('./lifecycle/middleware/mid2_en')
 const middleware3 = require('./lifecycle/middleware/mid3')
 const middleware3_en = require('./lifecycle/middleware/mid3_en')
 const middleware4 = require('./lifecycle/middleware/mid4')
+const middleware4_en = require('./lifecycle/middleware/mid4_en')
 
 
 
@@ -165,11 +166,6 @@ app.get(['/organisation', '/organization/en'], middleware3.mid1, middleware3_en.
 
 
 
-// app.get('/a-propos', middleware3.mid1, (req, res) => {
-
-//   return res.render('a-propos', { ...res.locals.index_page_data });
-// });
-
 
 
 app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req, res) => {
@@ -181,11 +177,19 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 
 
 
-// HERE
 
-app.get('/service/pavage-residentiel-et-commercial-a-gatineau', middleware4.mid1, (req, res) => {
+
+
+
+app.get(['/service/pavage-residentiel-et-commercial-a-gatineau', '/service/residential-and-commercial-paving-in-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
+
+  // return res.end()
   return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });
+
 });
+
+
+
 
 
 

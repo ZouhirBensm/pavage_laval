@@ -10,8 +10,10 @@ section#tmPortfolio .tm-portfolio-item:nth-of-type(2) .tm-portfolio-name {
 
 /* Select the third occurrence of the matched div */
 section#tmPortfolio .tm-portfolio-item:nth-of-type(3) .tm-portfolio-name {
-  background-image: url('../img/nouveau-pavage-et-agrandissement.webp');
+  background-image: url('../img/revetement_en_asphalte_1.webp');
 }
+
+
 
 
 section#tmPortfolio .tm-portfolio-item .tm-portfolio-name {
