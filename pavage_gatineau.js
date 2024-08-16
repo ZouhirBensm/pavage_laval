@@ -181,7 +181,7 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 
 
 
-
+// HERE
 
 app.get('/service/pavage-residentiel-et-commercial-a-gatineau', middleware4.mid1, (req, res) => {
   return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });

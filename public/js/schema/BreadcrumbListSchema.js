@@ -41,7 +41,7 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
   staticItems = [...staticItems, ...main_service_data];
 
 
-  // console.log("HERE", staticItems)
+  // console.log(staticItems)
 
 
 
