@@ -44,6 +44,8 @@ const middleware3 = require('./lifecycle/middleware/mid3')
 const middleware3_en = require('./lifecycle/middleware/mid3_en')
 const middleware4 = require('./lifecycle/middleware/mid4')
 const middleware4_en = require('./lifecycle/middleware/mid4_en')
+const middleware5 = require('./lifecycle/middleware/mid5')
+const middleware5_en = require('./lifecycle/middleware/mid5_en')
 
 
 
@@ -227,57 +229,8 @@ app.get(['/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', '/ser
 
 
 
-// HERE make bi-lingual
 
-app.get('/service/:page_de_services_supplementaires_seo', middleware4.mid1, async (req, res, next) => {
-
-  const now = new Date()
-
-  // console.log('datetime = ', now)
-
-
-  const { page_de_services_supplementaires_seo } = req.params;
-  console.log(page_de_services_supplementaires_seo);
-
-
-  let db_extra_service_page_fr
-
-  try {
-    db_extra_service_page_fr = await db.extra_service_page_fr.findOne({
-      where: {
-        slug: req.params.page_de_services_supplementaires_seo,
-      },
-      raw: true,
-    });
-  } catch (error) {
-    return next(error);
-  }
-
-
-  // console.log('\n\n(1)\n\n', db_extra_service_page_fr)
-
-
-  if (!db_extra_service_page_fr) {
-    const error = new Error("No blog elements found!")
-    return next(error)
-  }
-
-
-  let eq_lang_page =  '/service/' + db_extra_service_page_fr.eq_lang_page
-
-  res.locals.index_page_data.all_data_per_page = {
-    title: db_extra_service_page_fr.title,
-    under_h1: db_extra_service_page_fr.under_h1,
-    eq_lang_page: eq_lang_page
-  }
-
-  res.locals.index_page_data = {
-    ...res.locals.index_page_data,
-    extra_service_page: db_extra_service_page_fr
-  }
-
-
-  console.log('\n\n(**) ->', res.locals.index_page_data)
+app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_services_supplementaires_seo/en'], middleware4.mid1, middleware4_en.mid1, middleware5.mid1, middleware5_en.mid1, async (req, res, next) => {
 
   return res.render('page_de_services_supplementaires_seo', { ...res.locals.index_page_data });
 
