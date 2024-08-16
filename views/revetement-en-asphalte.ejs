@@ -11,12 +11,13 @@
   <%- include('head/head-common-part1.ejs') %>
   
   <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
-  
+
   <%- include('head/css-loader/css.ejs') %>
 
 </head>
 
 <body>
+  <!-- HERE -->
 
 
   <%- include('body/nav.ejs') %>
@@ -27,8 +28,8 @@
 
   <!-- Welcome Section -->
 
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
     <%- include('body/welcome-section/part1.ejs') %>
 
@@ -52,110 +53,15 @@
   <section id="tmPortfolio">
     <div class="container-fluid">
       <div class="row">
-
         <div class="col-12">
 
-          <div class="tm-portfolio-item">
-
-            <%
-              const alt_img1 = "A freshly paved asphalt terrace with smooth, black asphalt, bordered by murets and walls of reinforced concrete."
-            %>
-
-            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img1 %>">
-              <img src="/img/revetement_en_asphalte_1.webp" alt="<%= alt_img1 %>" style="display:none;">
-            </div>
 
 
-            <div class="tm-portfolio-description">
-              <h2 class="tm-text-light-orange">Revêtement en asphalte</h2>
-              <p class="mb-0"><span>Services complets de <strong>revêtement en asphalte</strong> pour terrasses, allées, et plus encore</span></br> Chez Earnanswers, nous offrons une gamme complète de services de revêtement en asphalte, incluant la création de <strong>terrasses en asphalte</strong> élégantes et durables. Nous travaillons également sur les <strong>murets et murs de soutènement</strong> pour assurer une stabilité structurelle et un aspect visuel attrayant pour vos espaces extérieurs.</p>
-              <h3><strong>Pourquoi choisir notre revêtement en asphalte?</strong></h3>
-              <ul>
-                <li>Matériaux de première qualité pour une durabilité maximale et une esthétique améliorée.</li>
-                <li>Équipe d'experts en installation de terrasses et de murets, assurant un travail précis et soigné.</li>
-                <li>Respect des délais et du budget, avec des solutions personnalisées pour chaque projet.</li>
-                <li>Assistance complète, de la conception à la finition, pour garantir la satisfaction du client.</li>
-              </ul>
-              <h3><strong>Notre processus de revêtement en asphalte</strong></h3>
-              <ul>
-                <li>Analyse approfondie du site pour déterminer les meilleures solutions de revêtement et de soutènement.</li>
-                <li>Préparation du terrain avec une excavation précise et un remplissage de fondation robuste.</li>
-                <li>Installation du revêtement d'asphalte avec une attention particulière aux détails et à la finition.</li>
-                <li>Construction de murets et murs de soutènement pour un soutien structurel et une esthétique améliorée.</li>
-                <li>Vérification finale pour assurer la qualité et la durabilité du travail réalisé.</li>
-              </ul>
-              <p class="mb-0">Prêt à transformer votre espace extérieur? <a href='/' target='_blank'>Contactez-nous</a> pour une consultation gratuite et découvrez comment nos services de revêtement en asphalte peuvent améliorer votre propriété.</p>
-            </div>
 
-          </div>
+          <%- main_service_data %>
 
-          <div class="tm-portfolio-item">
 
-            <%
-              const alt_img2 = "A residential asphalt driveway showing the installation process with heavy machinery, surrounded by landscaping and safety cones."
-            %>
 
-            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img2 %>">
-              <img src="/img/entree-de-garage-en-asphalte-et-reparations.webp" alt="<%= alt_img2 %>" style="display:none;">
-              
-            </div>
-
-            <div class="tm-portfolio-description">
-              <h2 class="tm-text-light-orange">Entrée de garage en asphalte et réparations</h2>
-              <p class="mb-0"><span>Installation et <strong>réparations d'asphalte</strong> pour <strong>entrées de garage</strong></span></br> Protégez et embellissez votre propriété avec notre service d'installation et de réparation d'asphalte pour <strong>entrées de garage</strong>. Que vous ayez besoin d'un revêtement neuf ou de réparer une surface existante, notre équipe assure une exécution rapide et de qualité.</p>
-              <h3><strong>Avantages de notre service d'entrée de garage en asphalte</strong></h3>
-              <ul>
-                <li>Revêtement durable et esthétique, conçu pour résister aux intempéries et à l'usure quotidienne.</li>
-                <li>Réparations précises pour corriger les fissures et les imperfections, prolongeant ainsi la vie de votre asphalte.</li>
-                <li>Services de <strong>scellement d'asphalte</strong> pour protéger contre les dommages causés par l'eau, le sel et les UV.</li>
-                <li>Assistance pour l'installation de <strong>drains</strong> pour prévenir les problèmes de drainage.</li>
-                <li>Travail effectué rapidement et efficacement, avec une attention particulière aux détails.</li>
-              </ul>
-              <h3><strong>Notre processus d'installation et de réparation d'asphalte</strong></h3>
-              <ul>
-                <li>Évaluation initiale pour déterminer l'étendue des travaux nécessaires.</li>
-                <li>Excavation et préparation du site pour assurer une base solide.</li>
-                <li>Application d'une nouvelle couche d'asphalte ou réparation des zones endommagées.</li>
-                <li>Compactage et scellement pour une finition lisse et durable.</li>
-                <li>Vérification finale pour garantir que l'entrée de garage est prête à l'usage.</li>
-              </ul>
-              <p class="mb-0">Besoin d'une entrée de garage en asphalte ou de réparations? <a href='/' target='_blank'>Contactez-nous</a> dès aujourd'hui pour obtenir une estimation gratuite et améliorer l'apparence et la durabilité de votre propriété.</p>
-            </div>
-          </div>
-
-          <div class="tm-portfolio-item">
-
-            <%
-              const alt_img3 = "A construction site with heavy machinery, including trucks and backhoes, working on an asphalt paving project."
-            %>
-
-            <div class="tm-portfolio-name text-white tm-bg-green" aria-label="<%= alt_img3 %>">
-              <img src="/img/location_de_camion_et_pepine_avec_operateur.webp" alt="<%= alt_img3 %>" style="display:none;">
-              
-            </div>
-
-            <div class="tm-portfolio-description">
-              <h2 class="tm-text-light-orange">Location de camion et pépine avec opérateur</h2>
-              <p class="mb-0"><span>Service de <strong>location de camion et pépine avec opérateur</strong> pour tous vos besoins de <strong>revêtement en asphalte</strong></span></br> Pour les grands projets de revêtement et de maintenance en asphalte, nous proposons des services de <strong>location de camion et pépine avec opérateur</strong>, ainsi que de <strong>location de fardiers</strong> pour transporter les équipements lourds. Notre service est conçu pour faciliter vos projets de pavage, en vous fournissant les outils et le personnel nécessaires pour un travail efficace.</p>
-              <h3><strong>Avantages de notre service de location de camion et pépine</strong></h3>
-              <ul>
-                <li>Équipement moderne et bien entretenu pour une performance optimale.</li>
-                <li>Opérateurs expérimentés, assurant un travail sûr et efficace.</li>
-                <li>Flexibilité pour répondre aux besoins spécifiques de votre projet, qu'il soit grand ou petit.</li>
-                <li>Service complet incluant la livraison et la gestion des équipements sur site.</li>
-                <li>Disponibilité pour des projets résidentiels et commerciaux, avec des tarifs compétitifs.</li>
-              </ul>
-              <h3><strong>Notre processus de location de camion et pépine</strong></h3>
-              <ul>
-                <li>Consultation initiale pour comprendre les besoins de votre projet.</li>
-                <li>Sélection de l'équipement approprié et préparation pour le transport.</li>
-                <li>Livraison sur site avec opérateur, prêt à commencer le travail.</li>
-                <li>Suivi du projet pour s'assurer que tout se déroule selon le plan.</li>
-                <li>Récupération de l'équipement à la fin du projet, avec une évaluation finale.</li>
-              </ul>
-              <p class="mb-0">Besoin d'équipement lourd pour votre projet d'asphalte? <a href='/' target='_blank'>Contactez-nous</a> pour en savoir plus sur nos services de location et comment nous pouvons vous aider à accomplir votre projet efficacement.</p>
-            </div>
-          </div>
 
         </div>
       </div>

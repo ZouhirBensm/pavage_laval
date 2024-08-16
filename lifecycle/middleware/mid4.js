@@ -11,6 +11,9 @@ async function mid1(req, res, next) {
   console.log("French mode is on")
 
 
+
+
+
   const business_data_fr = await db.business_data_fr.findOne({
     raw: true
   });
@@ -55,10 +58,6 @@ async function mid1(req, res, next) {
     raw: true
   });
 
-  // if (!all_data_per_page_fr) {
-  //   const error = new Error("No all_data_per_page_fr found!")
-  //   return next(error)
-  // }
 
 
 
@@ -87,9 +86,10 @@ async function mid1(req, res, next) {
   let rendered_web_page_content = undefined
 
   if (main_service_data_fr) {
+
     // console.log(typeof main_service_data_fr.web_page_content);
 
-    rendered_web_page_content = ejs.render(main_service_data_fr.web_page_content, { alt_img1: main_service_data_fr.alt_img1, alt_img2: main_service_data_fr.alt_img2, alt_img3: main_service_data_fr.alt_img3 });
+    rendered_web_page_content = ejs.render(main_service_data_fr.web_page_content, { alt_img1: main_service_data_fr.alt_img1, alt_img2: main_service_data_fr.alt_img2, alt_img3: main_service_data_fr.alt_img3});
   }
   
 
