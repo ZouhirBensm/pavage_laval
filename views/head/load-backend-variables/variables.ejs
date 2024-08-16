@@ -57,12 +57,12 @@
   </script>
 
 
-<% } else if (req_path === '/a-propos') { %>
+<% } else if (req_path === '/a-propos' || req_path === '/about/en') { %>
 
 
   <script>
-    var all_data_per_page_fr = <%- JSON.stringify(all_data_per_page_fr) %>;
-    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+    var all_data_per_page = <%- JSON.stringify(all_data_per_page) %>;
+    var business_data = <%- JSON.stringify(business_data) %>;
 
 
     // var nav_fr = < %- JSON.stringify(nav_fr) %>;

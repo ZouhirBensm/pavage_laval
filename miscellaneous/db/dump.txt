@@ -16,6 +16,54 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `about_page_en`
+--
+
+DROP TABLE IF EXISTS `about_page_en`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `about_page_en` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `page_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `about_page_en`
+--
+
+LOCK TABLES `about_page_en` WRITE;
+/*!40000 ALTER TABLE `about_page_en` DISABLE KEYS */;
+INSERT INTO `about_page_en` VALUES (1,'<h2>Our History</h2>\n<p>Paving, asphalt and residential and commercial concrete in Gatineau was born from the desire to create sustainable and aesthetic spaces for our community. Since our beginnings, we have grown by providing quality paving, asphalt and concrete services, with a focus on integrity, innovation and customer satisfaction. What started as a small family business has grown to become a respected leader in the paving and concrete industry in Gatineau.</p>\n\n\n<h2>Our Mission</h2>\n<p>Our mission is simple: to provide paving, asphalt and concrete solutions that combine durability, aesthetics and functionality. Whether for new paving and expansion, removal of existing asphalt, or installation of concrete sidewalks, each project is an opportunity to demonstrate our commitment to excellence and customer satisfaction.</p>\n\n\n<h2>Our Expertise</h2>\n<p>We specialize in a full range of services to meet all of your residential and commercial paving needs. Our services include, among other things, the excavation of the land, the filling and compaction of the foundation, the installation of the asphalt layer, and the final check of the drainage to ensure a job well done. We are also experts in asphalt paving, offering solutions such as asphalt decking, retaining walls, and asphalt sealing to extend the life of your surfaces.</p>\n\n\n\n<p>For those looking for concrete work, we offer services ranging from laying concrete foundations to installing slabs, sidewalks, and retaining walls. We are also committed to maintaining and repairing your surfaces so that they remain in perfect condition year after year.</p>\n\n\n<h2>Our Values</h2>\n<ul>\n<li><strong>Quality</strong>: Each project is an opportunity to demonstrate our know-how. We use premium materials and advanced techniques to ensure long-lasting results.</li>\n<li><strong>Reliability</strong>: We understand the importance of meeting deadlines and budgets. You can count on us to deliver projects on time and to specifications.</li>\n<li><strong>Innovation</strong>: We integrate the latest technologies and methods to offer modern solutions that meet the evolving needs of our customers.</li>\n<li><strong>Commitment to the community</strong>: We are proud to serve the Gatineau region and contribute to the improvement of local infrastructure. Our projects are not only functional, they are designed to beautify and enrich our community.</li>\n</ul>\n\n\n<h2>Why Choose Us?</h2>\n<p>Choosing Paving, residential and commercial asphalt and concrete in Gatineau means choosing a company that places your needs at the heart of everything it does. We work closely with each client to understand their goals and provide customized solutions that exceed their expectations. Whether you need an asphalt driveway, concrete retaining wall, or asphalt repairs, we are here to provide you with a worry-free experience and long-lasting results.</p>\n\n<h2>Environmental Commitment</h2>\n<p>We believe in the importance of preserving our environment while carrying out quality work. This is why we adopt environmentally friendly practices in all our projects, minimizing waste and using sustainable materials that reduce the ecological footprint of our work.</p>\n\n\n<h2>Contact Us</h2>\n<p>Ready to transform your outdoor spaces? <a href=\'/en\' target=\'_blank\'>Contact us</a> today to discuss your projects and find out how we can help you realize your paving and concrete dreams in Gatineau.</p>');
+/*!40000 ALTER TABLE `about_page_en` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `about_page_fr`
+--
+
+DROP TABLE IF EXISTS `about_page_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `about_page_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `page_content` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `about_page_fr`
+--
+
+LOCK TABLES `about_page_fr` WRITE;
+/*!40000 ALTER TABLE `about_page_fr` DISABLE KEYS */;
+INSERT INTO `about_page_fr` VALUES (1,'<h2>Notre Histoire</h2>\n<p>Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau est né de la volonté de créer des espaces durables et esthétiques pour notre communauté. Depuis nos débuts, nous avons grandi en offrant des services de pavage, d\'asphalte et de béton de qualité, en mettant l\'accent sur l\'intégrité, l\'innovation et la satisfaction de nos clients. Ce qui a commencé comme une petite entreprise familiale s\'est développé pour devenir un leader respecté dans l\'industrie du pavage et du béton à Gatineau.</p>\n\n\n<h2>Notre Mission</h2>\n<p>Notre mission est simple : fournir des solutions de pavage, d\'asphalte et de béton qui allient durabilité, esthétique et fonctionnalité. Que ce soit pour un nouveau pavage et agrandissement, l\'enlèvement de l\'asphalte existante, ou la mise en place de trottoirs en béton, chaque projet est une occasion de démontrer notre engagement envers l\'excellence et la satisfaction de nos clients.</p>\n\n\n<h2>Notre Expertise</h2>\n<p>Nous nous spécialisons dans une gamme complète de services pour répondre à tous vos besoins en matière de pavage résidentiel et commercial. Nos services incluent, entre autres, l\'excavation du terrain, le remplissage et la compaction de la fondation, l\'installation de la couche d\'asphalte, et la vérification finale du drainage pour assurer un travail bien fait. Nous sommes également experts en revêtement en asphalte, offrant des solutions telles que les terrasses en asphalte, les murets de soutènement, et le scellement de l\'asphalte pour prolonger la durée de vie de vos surfaces.</p>\n\n<p>Pour ceux qui recherchent des travaux en béton, nous proposons des services allant de la mise en place de fondations en béton à l\'installation de dalles, trottoirs, et murs de soutènement. Nous nous engageons également à l\'entretien et la réparation de vos surfaces pour qu\'elles restent en parfait état année après année.</p>\n\n\n<h2>Nos Valeurs</h2>\n<ul>\n<li><strong>Qualité</strong> : Chaque projet est une opportunité de démontrer notre savoir-faire. Nous utilisons des matériaux de première qualité et des techniques avancées pour garantir des résultats durables.</li>\n<li><strong>Fiabilité</strong> : Nous comprenons l\'importance de respecter les délais et les budgets. Vous pouvez compter sur nous pour livrer des projets dans les temps et selon les spécifications.</li>\n<li><strong>Innovation</strong> : Nous intégrons les dernières technologies et méthodes pour offrir des solutions modernes qui répondent aux besoins évolutifs de nos clients.</li>\n<li><strong>Engagement envers la communauté</strong> : Nous sommes fiers de servir la région de Gatineau et de contribuer à l\'amélioration des infrastructures locales. Nos projets ne sont pas seulement fonctionnels, ils sont conçus pour embellir et enrichir notre communauté.</li>\n</ul>\n\n\n<h2>Pourquoi Nous Choisir ?</h2>\n<p>Choisir Pavage, l\'asphalte et le béton résidentiel et commercial à Gatineau, c\'est choisir une entreprise qui place vos besoins au cœur de tout ce qu\'elle fait. Nous travaillons en étroite collaboration avec chaque client pour comprendre leurs objectifs et fournir des solutions personnalisées qui dépassent leurs attentes. Que vous ayez besoin d\'une entrée de garage en asphalte, d\'un mur de soutènement en béton, ou de réparations d\'asphalte, nous sommes là pour vous offrir une expérience sans souci et des résultats durables.</p>\n\n\n<h2>Engagement Environnemental</h2>\n<p>Nous croyons en l\'importance de préserver notre environnement tout en réalisant des travaux de qualité. C\'est pourquoi nous adoptons des pratiques respectueuses de l\'environnement dans tous nos projets, en minimisant les déchets et en utilisant des matériaux durables qui réduisent l\'empreinte écologique de nos travaux.</p>\n\n\n<h2>Contactez-Nous</h2>\n<p>Prêts à transformer vos espaces extérieurs ? <a href=\'/\' target=\'_blank\'>Contactez-nous</a> dès aujourd\'hui pour discuter de vos projets et découvrir comment nous pouvons vous aider à réaliser vos rêves de pavage et de béton à Gatineau.</p>');
+/*!40000 ALTER TABLE `about_page_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `all_data_per_page_en`
 --
 
@@ -980,4 +1028,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-15 20:13:19
+-- Dump completed on 2024-08-15 20:53:48

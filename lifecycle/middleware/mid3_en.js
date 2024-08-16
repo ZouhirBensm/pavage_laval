@@ -93,10 +93,11 @@ async function mid1(req, res, next) {
     raw: true
   });
 
-  if (!organization_page_data_en) {
-    const error = new Error("No organization_page_data_en found!")
-    return next(error)
-  }
+
+  const about_page_en = await db.about_page_en.findOne({
+    raw: true
+  });
+
 
 
 
@@ -118,7 +119,8 @@ async function mid1(req, res, next) {
     nav: nav_en,
     welcome_section: welcome_section_en,
     footer: footer_en,
-    organization_page_data: organization_page_data_en
+    ...(organization_page_data_en ? { organization_page_data: organization_page_data_en } : {}),
+    ...(about_page_en ? { about_page: about_page_en } : {})
   }
 
 

@@ -1,11 +1,11 @@
 const aboutWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": `${all_data_per_page_fr.title}`,
-  "url": `${business_data_fr.website_main_url}/a-propos`,
+  "name": `${all_data_per_page.title}`,
+  "url": `${business_data.website_main_url}/a-propos`,
   "mainEntity": {
     "@type": "Organization",
-    "url": `${business_data_fr.website_main_url}/organisation`,
+    "url": `${business_data.website_main_url}/organisation`,
   }
 };
 

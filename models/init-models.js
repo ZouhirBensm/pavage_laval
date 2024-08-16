@@ -1,4 +1,6 @@
 var DataTypes = require("sequelize").DataTypes;
+var _about_page_en = require("./about_page_en");
+var _about_page_fr = require("./about_page_fr");
 var _all_data_per_page_en = require("./all_data_per_page_en");
 var _all_data_per_page_fr = require("./all_data_per_page_fr");
 var _blog_element_en = require("./blog_element_en");
@@ -34,6 +36,8 @@ var _welcome_section_en = require("./welcome_section_en");
 var _welcome_section_fr = require("./welcome_section_fr");
 
 function initModels(sequelize) {
+  var about_page_en = _about_page_en(sequelize, DataTypes);
+  var about_page_fr = _about_page_fr(sequelize, DataTypes);
   var all_data_per_page_en = _all_data_per_page_en(sequelize, DataTypes);
   var all_data_per_page_fr = _all_data_per_page_fr(sequelize, DataTypes);
   var blog_element_en = _blog_element_en(sequelize, DataTypes);
@@ -74,6 +78,8 @@ function initModels(sequelize) {
   category_fr.hasMany(blog_element_fr, { as: "blog_element_frs", foreignKey: "category_id"});
 
   return {
+    about_page_en,
+    about_page_fr,
     all_data_per_page_en,
     all_data_per_page_fr,
     blog_element_en,

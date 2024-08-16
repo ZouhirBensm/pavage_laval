@@ -140,9 +140,6 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
 
 app.get(['/demande-de-devis-gratuit', '/request-a-free-quote/en'], middleware2.mid1, middleware2_en.mid1, async (req, res) => {
 
-
-
-
   // return res.end()
   return res.render('demande-de-devis-gratuit', { ...res.locals.index_page_data });
 });
@@ -168,7 +165,14 @@ app.get(['/organisation', '/organization/en'], middleware3.mid1, middleware3_en.
 
 
 
-app.get('/a-propos', middleware3.mid1, (req, res) => {
+// app.get('/a-propos', middleware3.mid1, (req, res) => {
+
+//   return res.render('a-propos', { ...res.locals.index_page_data });
+// });
+
+
+
+app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req, res) => {
 
   return res.render('a-propos', { ...res.locals.index_page_data });
 });

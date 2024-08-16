@@ -74,10 +74,14 @@ async function mid1(req, res, next) {
     raw: true
   });
 
-  if (!organization_page_data_fr) {
-    const error = new Error("No organization_page_data_fr found!")
-    return next(error)
-  }
+  const about_page_fr = await db.about_page_fr.findOne({
+    raw: true
+  });
+
+
+
+
+
 
 
 
@@ -88,7 +92,10 @@ async function mid1(req, res, next) {
 
   // console.log(nav_fr, welcome_section_fr, business_data_fr, all_data_per_page_fr)
   // console.log(demande_de_devis_gratuit_fr)
-  console.log(welcome_section_fr)
+  // console.log(welcome_section_fr)
+
+
+
 
 
 
@@ -99,8 +106,9 @@ async function mid1(req, res, next) {
     nav: nav_fr,
     welcome_section: welcome_section_fr,
     footer: footer_fr,
-    organization_page_data: organization_page_data_fr
-  }
+    ...(organization_page_data_fr ? { organization_page_data: organization_page_data_fr } : {}),
+    ...(about_page_fr ? { about_page: about_page_fr } : {})
+  };
 
 
 
