@@ -1,5 +1,16 @@
 async function mid1(req, res, next) {
 
+
+  console.log(is_english, '\n\n')
+
+  if(is_english) return next()
+
+  console.log("French mode is on")
+
+
+
+
+
   const business_data_fr = await db.business_data_fr.findOne({
     // attributes: ['slug', 'title'],
     raw: true
@@ -76,12 +87,12 @@ async function mid1(req, res, next) {
 
 
   res.locals.index_page_data = {
-    business_data_fr: business_data_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    all_data_per_page_fr: all_data_per_page_fr,
-    footer_fr: footer_fr,
-    demande_de_devis_gratuit_fr: demande_de_devis_gratuit_fr
+    business_data: business_data_fr,
+    nav: nav_fr,
+    welcome_section: welcome_section_fr,
+    all_data_per_page: all_data_per_page_fr,
+    footer: footer_fr,
+    demande_de_devis_gratuit: demande_de_devis_gratuit_fr
   }
 
 

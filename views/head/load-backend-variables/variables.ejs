@@ -24,7 +24,7 @@
 
 
 
-<% } else if (req_path === '/demande-de-devis-gratuit') { %>
+<% } else if (req_path === '/demande-de-devis-gratuit' || req_path === '/request-a-free-quote/en') { %>
 
   <script>
 
@@ -41,10 +41,10 @@
 
 
 
-<% } else if (req_path === '/organisation') { %>
+<% } else if (req_path === '/organisation' || req_path === '/organization/en') { %>
 
   <script>
-    var business_data_fr = <%- JSON.stringify(business_data_fr) %>;
+    var business_data = <%- JSON.stringify(business_data) %>;
 
 
     // var all_data_per_page_fr = < %- JSON.stringify(all_data_per_page_fr) %>;

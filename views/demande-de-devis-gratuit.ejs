@@ -4,17 +4,16 @@
 <head>
 
   <%- include('head/setup-pre-variables.ejs') %>
-
+  
   <%- include('head/load-backend-variables/variables.ejs') %>
-
+  
   <%- include('head/head-common-part1.ejs') %>
-
+  
   <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
   
   <%- include('head/css-loader/css.ejs') %>
-
+  
   <%- include('head/schema-loader/schema.ejs') %>
-
 
 </head>
 
@@ -56,8 +55,8 @@
 
   <!-- Welcome Section -->
 
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
 
     <%- include('body/welcome-section/part1.ejs') %>
@@ -91,7 +90,7 @@
         <div class="col-12">
 
           <h2>
-            <a href='/' target='_blank'><%= demande_de_devis_gratuit_fr.h2_1 %></a>
+            <a href='/' target='_blank'><%= demande_de_devis_gratuit.h2_1 %></a>
           </h2>
 
 
@@ -101,7 +100,7 @@
           <form id="tmContactForm" class="tm-bg-white-transparent">
             <div class="form-group">
               <input type="text" id="contact_name" name="contact_name"
-                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="<%= demande_de_devis_gratuit_fr.placeholder_name %>" required />
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="<%= demande_de_devis_gratuit.placeholder_name %>" required />
             </div>
             <div class="form-group">
               <input type="email" id="contact_email" name="contact_email"
@@ -111,18 +110,18 @@
               <input type="tel" id="contact_phone" name="contact_phone"
                 class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Telephone"
                 pattern="^\+?1?\d{10,15}$" required />
-              <div class="side-note-form">(<%= demande_de_devis_gratuit_fr.valid_format %> 9991234444, +19991234444)</span>
+              <div class="side-note-form">(<%= demande_de_devis_gratuit.valid_format %> 9991234444, +19991234444)</span>
 
               </div>
               <div class="form-group">
                 <textarea rows="4" id="contact_message" name="contact_message"
                   class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
-                  placeholder="<%= demande_de_devis_gratuit_fr.placeholder_message %>"
+                  placeholder="<%= demande_de_devis_gratuit.placeholder_message %>"
                   required></textarea>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn tm-btn-submit rounded-0">
-                  <%= demande_de_devis_gratuit_fr.button %>
+                  <%= demande_de_devis_gratuit.button %>
                 </button>
               </div>
           </form>

@@ -6,7 +6,7 @@
   <div class="tm-welcome-left">
     <span class="tm-welcome-title"><%= welcome_section.op1 %></span>
     <p class="pb-0" itemscope itemtype="https://schema.org/Organization">
-      <a rel="nofollow" href="/organisation" itemprop="url"><%= business_data.street_address %>
+      <a rel="nofollow" href="<%= welcome_section.op1_link %>" itemprop="url"><%= business_data.street_address %>
         <%= business_data.address_city %>, <%= business_data.address_province_state %>
         <%= business_data.postal_code %>
         <%= business_data.address_country %>
@@ -15,7 +15,7 @@
 
     <div>
       <!-- <a style="text-decoration: underline;" href="#/extra-link">Extra link</a> -->
-      <a style="text-decoration: underline;" href="/a-propos"><%= welcome_section.op2 %></a>
+      <a style="text-decoration: underline;" href="<%= welcome_section.op2_link %>"><%= welcome_section.op2 %></a>
     </div>
 
 
@@ -27,7 +27,7 @@
 
 <!-- Brown bg -->
 <div class="col-md-5">
-  <a href="/organisation">
+  <a href="<%= welcome_section.op1_link %>">
     <div class="tm-welcome-right"
       aria-label="<%= welcome_section.map_img_alt %>">
       <img src="/img/map1_op.avif"

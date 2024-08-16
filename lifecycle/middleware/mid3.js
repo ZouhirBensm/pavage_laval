@@ -1,6 +1,12 @@
 async function mid1(req, res, next) {
 
 
+  console.log(is_english, '\n\n')
+
+  if(is_english) return next()
+
+  console.log("French mode is on")
+
 
   const business_data_fr = await db.business_data_fr.findOne({
     raw: true
@@ -64,16 +70,17 @@ async function mid1(req, res, next) {
 
 
 
+  const organization_page_data_fr = await db.organization_page_data_fr.findOne({
+    raw: true
+  });
+
+  if (!organization_page_data_fr) {
+    const error = new Error("No organization_page_data_fr found!")
+    return next(error)
+  }
 
 
-  // const demande_de_devis_gratuit_fr = await db.demande_de_devis_gratuit_fr.findOne({
-  //   raw: true
-  // });
 
-  // if (!demande_de_devis_gratuit_fr) {
-  //   const error = new Error("No demande_de_devis_gratuit_fr found!")
-  //   return next(error)
-  // }
 
 
 
@@ -87,11 +94,12 @@ async function mid1(req, res, next) {
 
 
   res.locals.index_page_data = {
-    all_data_per_page_fr: all_data_per_page_fr,
-    business_data_fr: business_data_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    footer_fr: footer_fr
+    all_data_per_page: all_data_per_page_fr,
+    business_data: business_data_fr,
+    nav: nav_fr,
+    welcome_section: welcome_section_fr,
+    footer: footer_fr,
+    organization_page_data: organization_page_data_fr
   }
 
 

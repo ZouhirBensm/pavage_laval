@@ -190,7 +190,7 @@ async function mid1(req, res, next) {
   // console.log(main_service_data_fr)
   // console.log(review_data_fr)
   // console.log(faq_fr)
-  console.log(footer_fr)
+  // console.log(footer_fr)
   
 
 
@@ -213,6 +213,8 @@ async function mid1(req, res, next) {
 
 
 
+
+  console.log(res.locals.index_page_data)
 
   return next()
 }

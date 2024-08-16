@@ -9,6 +9,7 @@ var _business_data_fr = require("./business_data_fr");
 var _category_en = require("./category_en");
 var _category_fr = require("./category_fr");
 var _category_page_fr = require("./category_page_fr");
+var _demande_de_devis_gratuit_en = require("./demande_de_devis_gratuit_en");
 var _demande_de_devis_gratuit_fr = require("./demande_de_devis_gratuit_fr");
 var _extra_service_page_en = require("./extra_service_page_en");
 var _extra_service_page_fr = require("./extra_service_page_fr");
@@ -22,6 +23,8 @@ var _main_service_data_en = require("./main_service_data_en");
 var _main_service_data_fr = require("./main_service_data_fr");
 var _nav_en = require("./nav_en");
 var _nav_fr = require("./nav_fr");
+var _organization_page_data_en = require("./organization_page_data_en");
+var _organization_page_data_fr = require("./organization_page_data_fr");
 var _plan_du_site_page_fr = require("./plan_du_site_page_fr");
 var _portfolio_section_en = require("./portfolio_section_en");
 var _portfolio_section_fr = require("./portfolio_section_fr");
@@ -41,6 +44,7 @@ function initModels(sequelize) {
   var category_en = _category_en(sequelize, DataTypes);
   var category_fr = _category_fr(sequelize, DataTypes);
   var category_page_fr = _category_page_fr(sequelize, DataTypes);
+  var demande_de_devis_gratuit_en = _demande_de_devis_gratuit_en(sequelize, DataTypes);
   var demande_de_devis_gratuit_fr = _demande_de_devis_gratuit_fr(sequelize, DataTypes);
   var extra_service_page_en = _extra_service_page_en(sequelize, DataTypes);
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
@@ -54,6 +58,8 @@ function initModels(sequelize) {
   var main_service_data_fr = _main_service_data_fr(sequelize, DataTypes);
   var nav_en = _nav_en(sequelize, DataTypes);
   var nav_fr = _nav_fr(sequelize, DataTypes);
+  var organization_page_data_en = _organization_page_data_en(sequelize, DataTypes);
+  var organization_page_data_fr = _organization_page_data_fr(sequelize, DataTypes);
   var plan_du_site_page_fr = _plan_du_site_page_fr(sequelize, DataTypes);
   var portfolio_section_en = _portfolio_section_en(sequelize, DataTypes);
   var portfolio_section_fr = _portfolio_section_fr(sequelize, DataTypes);
@@ -78,6 +84,7 @@ function initModels(sequelize) {
     category_en,
     category_fr,
     category_page_fr,
+    demande_de_devis_gratuit_en,
     demande_de_devis_gratuit_fr,
     extra_service_page_en,
     extra_service_page_fr,
@@ -91,6 +98,8 @@ function initModels(sequelize) {
     main_service_data_fr,
     nav_en,
     nav_fr,
+    organization_page_data_en,
+    organization_page_data_fr,
     plan_du_site_page_fr,
     portfolio_section_en,
     portfolio_section_fr,

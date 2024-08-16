@@ -36,8 +36,8 @@
 
     <!-- Welcome Section -->
 
-    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-      alt="<%= welcome_section_fr.banner_img_alt %>">
+    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+      alt="<%= welcome_section.banner_img_alt %>">
 
       <%- include('body/welcome-section/part1.ejs') %>
 
@@ -75,61 +75,8 @@
         <div class="col-12">
 
 
-        <h2>Organisation: Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</h2>
 
-
-        <h2>À Propos de Nous</h2>
-        <p>Bienvenue chez Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau, où notre mission est de bâtir des
-          fondations solides et des surfaces durables pour les communautés que nous servons. Notre organisation est fièrement
-          enracinée dans la région de Gatineau, et nous nous engageons à offrir des solutions de pavage, d'asphalte et de béton
-          qui non seulement répondent aux besoins de nos clients, mais les dépassent.</p>
-
-
-
-        <h2>Notre Engagement</h2>
-        <p>Chez nous, chaque projet commence avec une vision claire : celle de créer des espaces qui combinent fonctionnalité,
-          durabilité et esthétique. Que vous soyez un particulier cherchant à revitaliser votre entrée de garage ou un
-          entrepreneur à la recherche de partenaires fiables pour des travaux de grande envergure, nous mettons tout en œuvre
-          pour vous offrir des solutions sur mesure, adaptées à vos exigences spécifiques.</p>
-
-
-
-        <h2>Nos Valeurs</h2>
-        <ul>
-          <li><strong>Qualité</strong> : Nous croyons que chaque projet mérite l'excellence. De l'excavation du terrain à la
-            vérification finale du drainage, chaque étape est minutieusement réalisée pour garantir des résultats à la hauteur
-            de vos attentes.</li>
-          <li><strong>Durabilité</strong> : Nous utilisons des matériaux de première qualité et des techniques éprouvées pour
-            assurer la longévité de vos pavages, revêtements en asphalte, et ouvrages en béton. Nous veillons également à la
-            protection de ces surfaces contre les intempéries et les effets du temps.</li>
-          <li><strong>Service Client</strong> : La satisfaction de nos clients est au cœur de tout ce que nous faisons. Nous
-            sommes à votre écoute et travaillons en étroite collaboration avec vous pour transformer vos idées en réalité.</li>
-          <li><strong>Innovation</strong> : Nous restons à la pointe des innovations dans notre domaine pour offrir des
-            solutions modernes et efficaces, comme la prévention des fissures, la protection contre les intempéries, et la
-            réduction des coûts d'entretien.</li>
-        </ul>
-
-        <h2>Nos Services</h2>
-        <p>Nous offrons une gamme complète de services pour répondre à tous vos besoins en pavage, asphalte, et béton à
-          Gatineau. De l'installation de terrasses en asphalte, de trottoirs en béton, à la mise en place de fondations
-          robustes, notre équipe d'experts est équipée pour gérer des projets de toutes tailles. Nos services comprennent
-          également la réparation et l'entretien pour prolonger la durée de vie de vos surfaces et maintenir leur apparence
-          impeccable.</p>
-
-        <h2>Notre Équipe</h2>
-        <p>Notre équipe est composée de professionnels expérimentés et passionnés par leur métier. Chaque membre de notre
-          organisation apporte son expertise unique pour assurer que chaque projet soit réalisé avec soin, précision, et dans
-          les délais impartis. Nous croyons en l'importance du travail d'équipe et du partage des connaissances pour continuer à
-          évoluer et offrir les meilleurs services à nos clients.</p>
-
-        <h2>Engagement Environnemental</h2>
-        <p>Nous sommes également conscients de notre responsabilité envers l'environnement. C'est pourquoi nous adoptons des
-          pratiques durables dans tous nos projets, en utilisant des matériaux recyclables lorsque cela est possible, et en
-          minimisant notre impact environnemental.</p>
-
-        <h2>Contactez-Nous</h2>
-        <p>Que vous ayez un projet en tête ou que vous souhaitiez en savoir plus sur nos services, nous serions ravis de
-          discuter avec vous. Contactez-nous dès aujourd'hui pour découvrir comment <a target="_blank" href="/">Pavage, l'asphalte et le béton résidentiel</a> et commercial à Gatineau peut transformer vos espaces en surfaces résistantes et élégantes.</p>
+        <%- organization_page_data.page_content %>
 
         </div>
       </div>

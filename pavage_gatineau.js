@@ -39,7 +39,9 @@ app.use(Compression);
 const middleware1 = require('./lifecycle/middleware/mid1')
 const middleware1_en = require('./lifecycle/middleware/mid1_en')
 const middleware2 = require('./lifecycle/middleware/mid2')
+const middleware2_en = require('./lifecycle/middleware/mid2_en')
 const middleware3 = require('./lifecycle/middleware/mid3')
+const middleware3_en = require('./lifecycle/middleware/mid3_en')
 const middleware4 = require('./lifecycle/middleware/mid4')
 
 
@@ -121,6 +123,8 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
   // let viewName = is_english ? 'index_en' : 'index';
 
 
+  // return res.end()
+
   return res.render('index', { ...res.locals.index_page_data });
   // return res.render(viewName, { ...res.locals.index_page_data });
 });
@@ -132,12 +136,14 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
 
 
 
+// /demande-de-devis-gratuit/:en?
+
+app.get(['/demande-de-devis-gratuit', '/request-a-free-quote/en'], middleware2.mid1, middleware2_en.mid1, async (req, res) => {
 
 
 
 
-app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
-
+  // return res.end()
   return res.render('demande-de-devis-gratuit', { ...res.locals.index_page_data });
 });
 
@@ -151,9 +157,9 @@ app.get('/demande-de-devis-gratuit', middleware2.mid1, async (req, res) => {
 
 
 
+app.get(['/organisation', '/organization/en'], middleware3.mid1, middleware3_en.mid1, (req, res) => {
 
-
-app.get('/organisation', middleware3.mid1, (req, res) => {
+  // res.end()
 
   return res.render('organisation', { ...res.locals.index_page_data });
 });

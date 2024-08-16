@@ -3,8 +3,8 @@ const formatPhoneNumber = (phone) => {
               .replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '+$1-$2-$3-$4');
 };
 
-console.log(business_data_fr.telephone)
-const formattedPhone = formatPhoneNumber(business_data_fr.telephone);
+console.log(business_data.telephone)
+const formattedPhone = formatPhoneNumber(business_data.telephone);
 console.log(formattedPhone)
 
 
@@ -12,23 +12,23 @@ console.log(formattedPhone)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": business_data_fr.business_name,
-  "url": business_data_fr.website_main_url,
-  "logo": `${business_data_fr.website_main_url}/img/logo_head2.png`,
+  "name": business_data.business_name,
+  "url": business_data.website_main_url,
+  "logo": `${business_data.website_main_url}/img/logo_head2.png`,
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": formattedPhone,
     "contactType": "Customer Service",
     "areaServed": "CA",
     "availableLanguage": "English",
-    "url": `${business_data_fr.website_main_url}/demande-de-devis-gratuit`
+    "url": `${business_data.website_main_url}/demande-de-devis-gratuit`
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": business_data_fr.street_address,
-    "addressLocality": business_data_fr.address_city,
-    "addressRegion": business_data_fr.address_province_state,
-    "postalCode": business_data_fr.postal_code,
+    "streetAddress": business_data.street_address,
+    "addressLocality": business_data.address_city,
+    "addressRegion": business_data.address_province_state,
+    "postalCode": business_data.postal_code,
     "addressCountry": "CA"
   },
   // "sameAs": [
@@ -61,7 +61,7 @@ const organizationSchema = {
   //   }
   // ],
   // "foundingDate": "2010",
-  "description": business_data_fr.business_description,
+  "description": business_data.business_description,
 }
 
 const script1 = document.createElement('script');

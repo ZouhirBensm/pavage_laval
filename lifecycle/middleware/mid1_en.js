@@ -36,7 +36,8 @@ async function mid1_en(req, res, next) {
 
 
 
-  // console.log(blog_elements_en)
+
+  // console.log('blog_elements_en ->\n', blog_elements_en, '\n\n')
 
 
   // return next()
@@ -282,6 +283,8 @@ async function mid1_en(req, res, next) {
   
 
 
+  
+
 
 
   res.locals.index_page_data = {
@@ -300,7 +303,7 @@ async function mid1_en(req, res, next) {
   }
 
 
-
+  console.log(res.locals.index_page_data)
 
   return next()
 }
