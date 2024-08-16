@@ -69,11 +69,12 @@
   
 <% } else if (req_path.startsWith('/service')) { %>
 
-  <title><%= extra_service_page_fr.title %></title>
-  <meta name="title" content="<%= extra_service_page_fr.title %>">
+  <title><%= extra_service_page.title %></title>
+  <meta name="title" content="<%= extra_service_page.title %>">
   <meta name="description"
-    content="<%= extra_service_page_fr.description %>">
-  <link rel="canonical" href='/service/<%= extra_service_page_fr.slug %>'>
+    content="<%= extra_service_page.description %>">
+  <!-- <link rel="canonical" href='/service/< %= extra_service_page.slug %>'> -->
+  <link rel="canonical" href='<%= req_path %>'>
 
 
 

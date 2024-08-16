@@ -227,7 +227,7 @@ app.get(['/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', '/ser
 
 
 
-
+// HERE make bi-lingual
 
 app.get('/service/:page_de_services_supplementaires_seo', middleware4.mid1, async (req, res, next) => {
 
@@ -263,14 +263,17 @@ app.get('/service/:page_de_services_supplementaires_seo', middleware4.mid1, asyn
   }
 
 
-  res.locals.index_page_data.all_data_per_page_fr = {
+  let eq_lang_page =  '/service/' + db_extra_service_page_fr.eq_lang_page
+
+  res.locals.index_page_data.all_data_per_page = {
     title: db_extra_service_page_fr.title,
     under_h1: db_extra_service_page_fr.under_h1,
+    eq_lang_page: eq_lang_page
   }
 
   res.locals.index_page_data = {
     ...res.locals.index_page_data,
-    extra_service_page_fr: db_extra_service_page_fr
+    extra_service_page: db_extra_service_page_fr
   }
 
 
