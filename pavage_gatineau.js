@@ -195,11 +195,6 @@ app.get(['/service/pavage-residentiel-et-commercial-a-gatineau', '/service/resid
 
 
 
-// app.get('/service/revetement-maintenance-en-asphalte-gatineau', middleware4.mid1, (req, res) => {
-//   return res.render('revetement-en-asphalte', { ...res.locals.index_page_data });
-// });
-
-
 
 app.get(['/service/revetement-maintenance-en-asphalte-gatineau', '/service/asphalt-maintenance-coating-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
@@ -213,9 +208,16 @@ app.get(['/service/revetement-maintenance-en-asphalte-gatineau', '/service/aspha
 
 
 
-app.get('/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', middleware4.mid1, (req, res) => {
+
+
+app.get(['/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', '/service/residential-and-commercial-concrete-works-in-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
+
+  // return res.end()
   return res.render('travaux-en-beton-residentiel-et-commercial', { ...res.locals.index_page_data });
+
 });
+
+
 
 
 
