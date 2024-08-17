@@ -1,7 +1,3 @@
-// console.log('(1) => ', business_data_fr)
-
-
-
 
 
 function stripHTML(html) {
@@ -13,21 +9,21 @@ function stripHTML(html) {
 const blogPostingSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": blogData.title,
-  "about": blogData.category.category_name,
-  "articleBody": stripHTML(blogData.html_content),
-  "datePublished": blogData.datetime_published,
-  "dateModified": blogData.datetime_edited,
+  "headline": blog_element.title,
+  "about": blog_element.category.category_name,
+  "articleBody": stripHTML(blog_element.html_content),
+  "datePublished": blog_element.datetime_published,
+  "dateModified": blog_element.datetime_edited,
   "author": {
     "@type": "Organization",
-    "url": `${business_data_fr.website_main_url}/organisation`
+    "url": `${business_data.website_main_url}/organisation`
   },
   "publisher": {
     "@type": "Organization",
-    "name": `${business_data_fr.business_name}`,
+    "name": `${business_data.business_name}`,
     "logo": {
       "@type": "ImageObject",
-      "url": `${business_data_fr.website_main_url}/img/logo_head2.png`
+      "url": `${business_data.website_main_url}/img/logo_head2.png`
     }
   }
 };

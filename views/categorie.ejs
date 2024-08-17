@@ -59,13 +59,33 @@
 
 
               <ul>
-                <% blog_elements.forEach(function(blog) { %>
-                  <li>
-                    <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
-                      <%= blog.title %>
-                    </a>
-                  </li>
-                <% }); %>
+
+                <% if (is_english) { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug.replace(/\/en$/, '') %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+                
+                <% } else { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+
+                <% } %>
+
+
+
+
+
               </ul>
             </div>
 

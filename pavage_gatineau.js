@@ -36,6 +36,7 @@ app.use(Compression);
 
 
 
+const middleware0 = require('./lifecycle/middleware/mid0')
 const middleware1 = require('./lifecycle/middleware/mid1')
 const middleware1_en = require('./lifecycle/middleware/mid1_en')
 const middleware2 = require('./lifecycle/middleware/mid2')
@@ -50,6 +51,7 @@ const middleware6 = require('./lifecycle/middleware/mid6')
 const middleware6_en = require('./lifecycle/middleware/mid6_en')
 const middleware7 = require('./lifecycle/middleware/mid7')
 const middleware7_en = require('./lifecycle/middleware/mid7_en')
+const middleware8 = require('./lifecycle/middleware/mid8')
 
 
 
@@ -230,11 +232,6 @@ app.get(['/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', '/ser
 
 
 
-
-
-
-
-
 app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_services_supplementaires_seo/en'], middleware4.mid1, middleware4_en.mid1, middleware5.mid1, middleware5_en.mid1, async (req, res, next) => {
 
   return res.render('page_de_services_supplementaires_seo', { ...res.locals.index_page_data });
@@ -269,130 +266,6 @@ app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware
 
 
 
-
-
-
-
-
-// app.get('/blog/:category', async (req, res, next) => {
-
-
-//   // 1
-//   const business_data_fr = await db.business_data_fr.findOne({
-//     raw: true
-//   });
-
-//   if (!business_data_fr) {
-//     const error = new Error("No business data found!")
-//     return next(error)
-//   }
-
-
-//   // 1
-//   const nav_fr = await db.nav_fr.findOne({
-//     raw: true
-//   });
-
-//   if (!nav_fr) {
-//     const error = new Error("No nav_fr found!")
-//     return next(error)
-//   }
-
-
-
-//   // 1
-//   const welcome_section_fr = await db.welcome_section_fr.findOne({
-//     raw: true
-//   });
-
-//   if (!welcome_section_fr) {
-//     const error = new Error("No welcome_section_fr found!")
-//     return next(error)
-//   }
-
-// // 1
-//   const footer_fr = await db.footer_fr.findOne({
-//     raw: true
-//   });
-
-//   if (!footer_fr) {
-//     const error = new Error("No footer_fr found!")
-//     return next(error)
-//   }
-
-
-
-
-
-
-//   const category_fr = await db.category_fr.findOne({
-//     where: {
-//       slug: req.params.category,
-//     },
-//     raw: true,
-//   });
-
-//   if (!category_fr) {
-//     return res.status(404).send('Category not found');
-//   }
-
-
-//   const blog_elements_fr = await db.blog_element_fr.findAll({
-//     where: {
-//       category_id: category_fr.id,
-//     },
-//     attributes: ['slug', 'title'],
-//     raw: true,
-//   });
-
-//   if (!blog_elements_fr) {
-//     const error = new Error("No blog elements found!")
-//     return next(error)
-//   }
-
-//   const category_page_fr = await db.category_page_fr.findOne({
-//     raw: true,
-//   });
-
-//   if (!category_page_fr) {
-//     const error = new Error("No category_page_fr found!")
-//     return next(error)
-//   }
-
-
-
-//   res.locals.index_page_data = {}
-
-//   res.locals.index_page_data.all_data_per_page = {
-//     title: category_fr.category_name,
-//     under_h1: category_page_fr.under_h1,
-//     eq_lang_page: category_page_fr.eq_lang_page
-//   }
-
-
-//   res.locals.index_page_data = {
-//     ...res.locals.index_page_data,
-//     business_data: business_data_fr,
-//     nav: nav_fr,
-//     welcome_section: welcome_section_fr,
-//     footer: footer_fr,
-//     category: category_fr,
-//     blog_elements: blog_elements_fr
-//   }
-
-
-//   console.log("\n\n(*)->\n\n", res.locals.index_page_data)
-
-//   return res.render('categorie', { ...res.locals.index_page_data });
-// });
-
-
-
-
-
-
-
-
 app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4_en.mid1, middleware7.mid1, middleware7_en.mid1, async (req, res, next) => {
 
   console.log("\n\n(*)->\n\n", res.locals.index_page_data)
@@ -405,75 +278,42 @@ app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4
 
 
 
+app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware4.mid1, middleware4_en.mid1, middleware8.mid1,  async (req, res, next) => {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-app.get('/blog/:category/blog-posting/:title', middleware4.mid1, async (req, res, next) => {
-
-
-  const now = new Date()
-  console.log(now)
-
-  const { title, category } = req.params;
-
-
-
-  const blog_element_fr = await db.blog_element_fr.findOne({
-    where: {
-      slug: title,
-    },
-    include: [
-      {
-        model: db.category_fr,
-        as: 'category',
-        attributes: ['category_name', 'slug']
-      }
-    ],
-    raw: true,
-    nest: true,
-  });
-
-
-  // console.log('\n\n(1)-> ', blog_element_fr, '\n\n')
-
-
-  if (!blog_element_fr) {
-    const error = new Error("No blog element found!")
-    return next(error)
-  }
-
-
-  res.locals.index_page_data.all_data_per_page_fr = {
-    title: blog_element_fr.title,
-    under_h1: blog_element_fr.under_h1,
-  }
-
-
-  res.locals.index_page_data = {
-    ...res.locals.index_page_data,
-    blogData: blog_element_fr,
-  }
-
-
-  // console.log(res.locals.index_page_data)
-
-  console.log(res.locals.index_page_data.business_data_fr)
-
-
+  // console.log("\n\n______________________\n\n (*)->: \n", res.locals.index_page_data)
 
   return res.render('blog-posting', { ...res.locals.index_page_data });
+
 });
+
+
+
+
+
+
+
+// HERE
+
+// Your route
+app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
+
+
+  return res.render('mention-legale', { ...res.locals.index_page_data });
+});
+
+
+
+
+
+
+// Your route
+app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) => {
+
+
+  return res.render('politique-de-confidentialite', { ...res.locals.index_page_data });
+});
+
 
 
 
@@ -610,49 +450,6 @@ app.get('/plan-du-site', middleware4.mid1, async (req, res, next) => {
   return res.render('plan-du-site', { ...res.locals.index_page_data });
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Your route
-app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
-
-
-  return res.render('mention-legale', { ...res.locals.index_page_data });
-});
-
-
-
-
-
-
-// Your route
-app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) => {
-
-
-  return res.render('politique-de-confidentialite', { ...res.locals.index_page_data });
-});
-
-
-
-
-
 
 
 

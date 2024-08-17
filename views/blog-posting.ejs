@@ -12,9 +12,9 @@
   <%- include('head/head-common-part1.ejs') %>
   
   <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
-
+  
   <%- include('head/css-loader/css.ejs') %>
-
+  
   <%- include('head/schema-loader/schema.ejs') %>
 </head>
 
@@ -30,8 +30,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
     <%- include('body/welcome-section/part1.ejs') %>
 
@@ -66,17 +66,17 @@
         <div id="blog-posting" class="col-12">
           <div>
             <div id="bar1">
-              <span class="category-template"><%= blogData.category.category_name %></span>
+              <span class="category-template"><%= blog_element.category.category_name %></span>
               <div id="dates">
                 <span id="date-published">
-                  Published: <%= new Date(blogData.datetime_published).toLocaleDateString('en-US', {
+                  Published: <%= new Date(blog_element.datetime_published).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'short',
                     day: 'numeric'
                   }) %>
                 </span>
                 <span id="date-edited">
-                  Edited: <%= new Date(blogData.datetime_edited).toLocaleDateString('en-US', {
+                  Edited: <%= new Date(blog_element.datetime_edited).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'short',
                     day: 'numeric'
@@ -86,7 +86,7 @@
             </div>
 
 
-            <div id="content-template"><%- blogData.html_content %></div>
+            <div id="content-template"><%- blog_element.html_content %></div>
           </div>
         </div>
       </div>

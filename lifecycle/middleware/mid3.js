@@ -5,7 +5,7 @@ async function mid1(req, res, next) {
 
   if(is_english) return next()
 
-  console.log("French mode is on")
+  console.log("French mode is on mid3")
 
 
   const business_data_fr = await db.business_data_fr.findOne({

@@ -13,6 +13,8 @@ async function mid1(req, res, next) {
 
 
 
+  console.log('req.params.category -> ', req.params.category)
+
   const category_en = await db.category_en.findOne({
     where: {
       slug: `${req.params.category}/en`,

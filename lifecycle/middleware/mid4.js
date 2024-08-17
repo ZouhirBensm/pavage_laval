@@ -3,16 +3,11 @@ const ejs = require('ejs');
 
 
 async function mid1(req, res, next) {
-
-
-  console.log(is_english, '\n\n')
+  // console.log('\n\n is_english -> ', is_english, ' \n\n')
 
   if(is_english) return next()
 
-  console.log("French mode is on")
-
-
-
+  console.log("\n\n French mode is on. 1 \n\n")
 
 
   const business_data_fr = await db.business_data_fr.findOne({
@@ -49,15 +44,13 @@ async function mid1(req, res, next) {
 
 
 
-  console.log('\n(0)->', res.locals.req_path)
-
-
   const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
     where: {
       page_url_identify: res.locals.req_path,
     },
     raw: true
   });
+
 
 
 
@@ -73,7 +66,7 @@ async function mid1(req, res, next) {
 
 
   let req_path = res.locals.req_path.replace('/service/', '');
-  console.log(req_path);
+  // console.log(req_path);
 
 
   const main_service_data_fr = await db.main_service_data_fr.findOne({
@@ -95,25 +88,17 @@ async function mid1(req, res, next) {
   
 
 
-  // console.log(nav_fr, welcome_section_fr, business_data_fr, all_data_per_page_fr)
-  // console.log(welcome_section_fr)
-
-
-
 
   res.locals.index_page_data = {
-    all_data_per_page: all_data_per_page_fr,
     business_data: business_data_fr,
     nav: nav_fr,
     welcome_section: welcome_section_fr,
     footer: footer_fr,
     // ...(main_service_data_fr ? { main_service_data: rendered_main_service_data_fr } : {}),
-    ...(rendered_web_page_content ? { main_service_data: rendered_web_page_content } : {})
+    ...(rendered_web_page_content ? { main_service_data: rendered_web_page_content } : {}),
+    ...(res.locals.blog_element ? { blog_element: res.locals.blog_element } : {}),
+    ...(all_data_per_page_fr ? { all_data_per_page: all_data_per_page_fr } : {})
   }
-
-
-
-  // console.log(res.locals.index_page_data)
 
 
 

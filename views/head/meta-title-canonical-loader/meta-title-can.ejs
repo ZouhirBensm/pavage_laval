@@ -80,11 +80,12 @@
 
 <% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
 
-  <title><%= blogData.title %></title>
-  <meta name="title" content="<%= blogData.title %>">
+  <title><%= blog_element.title %></title>
+  <meta name="title" content="<%= blog_element.title %>">
   <meta name="description"
-    content="<%= blogData.meta_description %>">
-  <link rel="canonical" href='/blog/<%= blogData.category.slug %>/blog-posting/<%= blogData.slug %>'>
+    content="<%= blog_element.meta_description %>">
+  <!-- <link rel="canonical" href='/blog/< %= blogData.category.slug %>/blog-posting/< %= blogData.slug %>'> -->
+  <link rel="canonical" href='<%= req_path %>'>
 
 
 
