@@ -24,8 +24,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
     <%- include('body/welcome-section/part1.ejs') %>
 
@@ -54,14 +54,14 @@
         <div class="col-12">
 
           <div>
-            <h2 class="category-template"><%= category_fr.category_name %></h2>
+            <h2 class="category-template"><%= category.category_name %></h2>
             <h3>Blog Postings</h3>
 
 
               <ul>
-                <% blog_elements_fr.forEach(function(blog) { %>
+                <% blog_elements.forEach(function(blog) { %>
                   <li>
-                    <a href="/blog/<%= category_fr.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                    <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
                       <%= blog.title %>
                     </a>
                   </li>

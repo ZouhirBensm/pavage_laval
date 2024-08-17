@@ -104,11 +104,12 @@
 
 <% } else if (req_path.startsWith('/blog')) { %>
 
-  <title><%= category_fr.category_name %></title>
-  <meta name="title" content="<%= category_fr.category_name %>">
+  <title><%= category.category_name %></title>
+  <meta name="title" content="<%= category.category_name %>">
   <meta name="description"
-    content="<%= category_fr.category_description %>">
-  <link rel="canonical" href='/blog/<%= category_fr.slug %>'>
+    content="<%= category.category_description %>">
+  <!-- <link rel="canonical" href='/blog/< %= category_fr.slug %>'> -->
+  <link rel="canonical" href='<%= req_path %>'>
     
 
 

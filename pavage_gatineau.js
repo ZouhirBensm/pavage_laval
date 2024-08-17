@@ -48,6 +48,8 @@ const middleware5 = require('./lifecycle/middleware/mid5')
 const middleware5_en = require('./lifecycle/middleware/mid5_en')
 const middleware6 = require('./lifecycle/middleware/mid6')
 const middleware6_en = require('./lifecycle/middleware/mid6_en')
+const middleware7 = require('./lifecycle/middleware/mid7')
+const middleware7_en = require('./lifecycle/middleware/mid7_en')
 
 
 
@@ -272,120 +274,132 @@ app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware
 
 
 
-
-app.get('/blog/:category', async (req, res, next) => {
-
-  const business_data_fr = await db.business_data_fr.findOne({
-    raw: true
-  });
-
-  if (!business_data_fr) {
-    const error = new Error("No business data found!")
-    return next(error)
-  }
+// app.get('/blog/:category', async (req, res, next) => {
 
 
-  const nav_fr = await db.nav_fr.findOne({
-    raw: true
-  });
+//   // 1
+//   const business_data_fr = await db.business_data_fr.findOne({
+//     raw: true
+//   });
 
-  if (!nav_fr) {
-    const error = new Error("No nav_fr found!")
-    return next(error)
-  }
-
-
-  const welcome_section_fr = await db.welcome_section_fr.findOne({
-    raw: true
-  });
-
-  if (!welcome_section_fr) {
-    const error = new Error("No welcome_section_fr found!")
-    return next(error)
-  }
+//   if (!business_data_fr) {
+//     const error = new Error("No business data found!")
+//     return next(error)
+//   }
 
 
-  const footer_fr = await db.footer_fr.findOne({
-    raw: true
-  });
+//   // 1
+//   const nav_fr = await db.nav_fr.findOne({
+//     raw: true
+//   });
 
-  if (!footer_fr) {
-    const error = new Error("No footer_fr found!")
-    return next(error)
-  }
-
-  category_fr = await db.category_fr.findOne({
-    where: {
-      slug: req.params.category,
-    },
-    raw: true,
-  });
-
-  try {
-  } catch (error) {
-    return next(error);
-  }
-
-
-  if (!category_fr) {
-    return res.status(404).send('Category not found');
-  }
+//   if (!nav_fr) {
+//     const error = new Error("No nav_fr found!")
+//     return next(error)
+//   }
 
 
 
-  const blog_elements_fr = await db.blog_element_fr.findAll({
-    where: {
-      category_id: category_fr.id,
-    },
-    attributes: ['slug', 'title'],
-    raw: true,
-  });
+//   // 1
+//   const welcome_section_fr = await db.welcome_section_fr.findOne({
+//     raw: true
+//   });
 
+//   if (!welcome_section_fr) {
+//     const error = new Error("No welcome_section_fr found!")
+//     return next(error)
+//   }
 
-  if (!blog_elements_fr) {
-    const error = new Error("No blog elements found!")
-    return next(error)
-  }
+// // 1
+//   const footer_fr = await db.footer_fr.findOne({
+//     raw: true
+//   });
 
-
-  
-  const category_page_fr = await db.category_page_fr.findOne({
-    raw: true,
-  });
-
-
-  if (!category_page_fr) {
-    const error = new Error("No category_page_fr found!")
-    return next(error)
-  }
+//   if (!footer_fr) {
+//     const error = new Error("No footer_fr found!")
+//     return next(error)
+//   }
 
 
 
-  res.locals.index_page_data = {}
-
-  res.locals.index_page_data.all_data_per_page_fr = {
-    title: category_fr.category_name,
-    under_h1: category_page_fr.under_h1,
-  }
 
 
-  res.locals.index_page_data = {
-    ...res.locals.index_page_data,
-    business_data_fr: business_data_fr,
-    nav_fr: nav_fr,
-    welcome_section_fr: welcome_section_fr,
-    footer_fr: footer_fr,
-    category_fr: category_fr,
-    blog_elements_fr: blog_elements_fr
-  }
+
+//   const category_fr = await db.category_fr.findOne({
+//     where: {
+//       slug: req.params.category,
+//     },
+//     raw: true,
+//   });
+
+//   if (!category_fr) {
+//     return res.status(404).send('Category not found');
+//   }
 
 
-  console.log(res.locals.index_page_data)
+//   const blog_elements_fr = await db.blog_element_fr.findAll({
+//     where: {
+//       category_id: category_fr.id,
+//     },
+//     attributes: ['slug', 'title'],
+//     raw: true,
+//   });
 
+//   if (!blog_elements_fr) {
+//     const error = new Error("No blog elements found!")
+//     return next(error)
+//   }
+
+//   const category_page_fr = await db.category_page_fr.findOne({
+//     raw: true,
+//   });
+
+//   if (!category_page_fr) {
+//     const error = new Error("No category_page_fr found!")
+//     return next(error)
+//   }
+
+
+
+//   res.locals.index_page_data = {}
+
+//   res.locals.index_page_data.all_data_per_page = {
+//     title: category_fr.category_name,
+//     under_h1: category_page_fr.under_h1,
+//     eq_lang_page: category_page_fr.eq_lang_page
+//   }
+
+
+//   res.locals.index_page_data = {
+//     ...res.locals.index_page_data,
+//     business_data: business_data_fr,
+//     nav: nav_fr,
+//     welcome_section: welcome_section_fr,
+//     footer: footer_fr,
+//     category: category_fr,
+//     blog_elements: blog_elements_fr
+//   }
+
+
+//   console.log("\n\n(*)->\n\n", res.locals.index_page_data)
+
+//   return res.render('categorie', { ...res.locals.index_page_data });
+// });
+
+
+
+
+
+
+
+
+app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4_en.mid1, middleware7.mid1, middleware7_en.mid1, async (req, res, next) => {
+
+  console.log("\n\n(*)->\n\n", res.locals.index_page_data)
+
+  // return res.end()
   return res.render('categorie', { ...res.locals.index_page_data });
 });
-
-
 
 
 

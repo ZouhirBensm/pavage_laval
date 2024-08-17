@@ -331,7 +331,7 @@ CREATE TABLE `category_en` (
 
 LOCK TABLES `category_en` WRITE;
 /*!40000 ALTER TABLE `category_en` DISABLE KEYS */;
-INSERT INTO `category_en` VALUES (1,'Category1 EN','category1_en','Category 1 description ...'),(2,'Category2 EN','category2_en','Category 2 description ...');
+INSERT INTO `category_en` VALUES (1,'Category1 EN','category1_en/en','Category 1 description ...'),(2,'Category2 EN','category2_en/en','Category 2 description ...');
 /*!40000 ALTER TABLE `category_en` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,6 +362,31 @@ INSERT INTO `category_fr` VALUES (1,'Category1 FR','category1_fr','Category 1 de
 UNLOCK TABLES;
 
 --
+-- Table structure for table `category_page_en`
+--
+
+DROP TABLE IF EXISTS `category_page_en`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `category_page_en` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `under_h1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `eq_lang_page` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category_page_en`
+--
+
+LOCK TABLES `category_page_en` WRITE;
+/*!40000 ALTER TABLE `category_page_en` DISABLE KEYS */;
+INSERT INTO `category_page_en` VALUES (1,'Residential and commercial Paving, Asphalt & Concrete in Gatineau','/blog');
+/*!40000 ALTER TABLE `category_page_en` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `category_page_fr`
 --
 
@@ -371,6 +396,7 @@ DROP TABLE IF EXISTS `category_page_fr`;
 CREATE TABLE `category_page_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `under_h1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `eq_lang_page` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -381,7 +407,7 @@ CREATE TABLE `category_page_fr` (
 
 LOCK TABLES `category_page_fr` WRITE;
 /*!40000 ALTER TABLE `category_page_fr` DISABLE KEYS */;
-INSERT INTO `category_page_fr` VALUES (1,'Pavage, Asphalte & Béton résidentiel et commercial à Gatineau');
+INSERT INTO `category_page_fr` VALUES (1,'Pavage, Asphalte & Béton résidentiel et commercial à Gatineau','/blog/en');
 /*!40000 ALTER TABLE `category_page_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1057,4 +1083,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-16 20:34:55
+-- Dump completed on 2024-08-16 21:17:07

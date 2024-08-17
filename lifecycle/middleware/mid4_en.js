@@ -8,7 +8,7 @@ async function mid1(req, res, next) {
 
   if(!is_english) return next()
 
-  console.log("English mode is on.\n\n")
+  console.log("English mode is on. 1\n\n")
 
 
   const business_data_en = await db.business_data_en.findOne({
@@ -40,7 +40,8 @@ async function mid1(req, res, next) {
     return next(error)
   }
 
-
+  // console.log('nav_en ->\n', nav_en, '\n\n')
+  // return next()
 
 
   const welcome_section_en = await db.welcome_section_en.findOne({
@@ -54,7 +55,7 @@ async function mid1(req, res, next) {
 
 
 
-  // console.log('\n(0)->', res.locals.req_path)
+  console.log('\n(0)->', res.locals.req_path)
 
 
   const all_data_per_page_en = await db.all_data_per_page_en.findOne({
@@ -122,7 +123,7 @@ async function mid1(req, res, next) {
   }
 
 
-  // console.log("\n\nres.locals.index_page_data\n\n___________\n\n", res.locals.index_page_data)
+  // console.log("\n\nres.locals.index_page_data\n\n___________\n\n", res.locals.index_page_data, '\n\n')
 
 
 
