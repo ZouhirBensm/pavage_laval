@@ -20,7 +20,7 @@ async function mid1(req, res, next) {
   });
 
   if (!category_en) {
-    const error = new Error("No category_fr found!")
+    const error = new Error("No category_en found!")
     return next(error)
   }
 

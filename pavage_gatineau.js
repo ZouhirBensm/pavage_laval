@@ -51,7 +51,6 @@ const middleware6_en = require('./lifecycle/middleware/mid6_en')
 
 
 
-
 app.set('view engine', 'ejs');
 app.set('etag', 'strong');
 
@@ -276,9 +275,6 @@ app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware
 
 app.get('/blog/:category', async (req, res, next) => {
 
-
-
-
   const business_data_fr = await db.business_data_fr.findOne({
     raw: true
   });
@@ -287,7 +283,6 @@ app.get('/blog/:category', async (req, res, next) => {
     const error = new Error("No business data found!")
     return next(error)
   }
-
 
 
   const nav_fr = await db.nav_fr.findOne({
@@ -300,8 +295,6 @@ app.get('/blog/:category', async (req, res, next) => {
   }
 
 
-
-
   const welcome_section_fr = await db.welcome_section_fr.findOne({
     raw: true
   });
@@ -310,8 +303,6 @@ app.get('/blog/:category', async (req, res, next) => {
     const error = new Error("No welcome_section_fr found!")
     return next(error)
   }
-
-
 
 
   const footer_fr = await db.footer_fr.findOne({
@@ -323,32 +314,28 @@ app.get('/blog/:category', async (req, res, next) => {
     return next(error)
   }
 
-
-
+  category_fr = await db.category_fr.findOne({
+    where: {
+      slug: req.params.category,
+    },
+    raw: true,
+  });
 
   try {
-    db_category_fr = await db.category_fr.findOne({
-      where: {
-        slug: req.params.category,
-      },
-      raw: true,
-    });
   } catch (error) {
     return next(error);
   }
 
 
-  if (!db_category_fr) {
+  if (!category_fr) {
     return res.status(404).send('Category not found');
   }
 
 
-  // console.log('\n(1)-> ', req.params.category, db_category_fr)
 
-  // Fetch the slugs from the blog_element_fr table with the same category_id
   const blog_elements_fr = await db.blog_element_fr.findAll({
     where: {
-      category_id: db_category_fr.id,
+      category_id: category_fr.id,
     },
     attributes: ['slug', 'title'],
     raw: true,
@@ -373,12 +360,11 @@ app.get('/blog/:category', async (req, res, next) => {
   }
 
 
-  // console.log('\n(2)-> ', blog_elements_fr)
 
   res.locals.index_page_data = {}
 
   res.locals.index_page_data.all_data_per_page_fr = {
-    title: db_category_fr.category_name,
+    title: category_fr.category_name,
     under_h1: category_page_fr.under_h1,
   }
 
@@ -389,12 +375,7 @@ app.get('/blog/:category', async (req, res, next) => {
     nav_fr: nav_fr,
     welcome_section_fr: welcome_section_fr,
     footer_fr: footer_fr,
-    category_fr: db_category_fr,
-
-    // category: db_category_fr.category_name,
-    // category_slug: db_category_fr.slug,
-
-    canonical: req.originalUrl,
+    category_fr: category_fr,
     blog_elements_fr: blog_elements_fr
   }
 
@@ -402,12 +383,23 @@ app.get('/blog/:category', async (req, res, next) => {
   console.log(res.locals.index_page_data)
 
   return res.render('categorie', { ...res.locals.index_page_data });
-  
-
-  
-
-
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
