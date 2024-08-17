@@ -46,6 +46,9 @@ const middleware4 = require('./lifecycle/middleware/mid4')
 const middleware4_en = require('./lifecycle/middleware/mid4_en')
 const middleware5 = require('./lifecycle/middleware/mid5')
 const middleware5_en = require('./lifecycle/middleware/mid5_en')
+const middleware6 = require('./lifecycle/middleware/mid6')
+const middleware6_en = require('./lifecycle/middleware/mid6_en')
+
 
 
 
@@ -90,6 +93,7 @@ require('./miscellaneous/db/db')
 // Controllers
 const get_catch_controller = require('./lifecycle/controller/get-catch-controller/cont1')
 const data_error_handler_controller = require('./lifecycle/controller/error-controller/cont1');
+const middleware = require('./lifecycle/middleware/mid6_en');
 
 
 
@@ -243,39 +247,16 @@ app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_se
 
 
 
-app.get('/blog', middleware4.mid1, async (req, res, next) => {
-
-  const categories = await db.category_fr.findAll({
-    raw: true
-  });
-
-  if (!categories) {
-    const error = new Error("No categories found!")
-    return next(error)
-  }
 
 
 
-  const blog_page_fr = await db.blog_page_fr.findOne({
-    raw: true
-  });
-
-  if (!blog_page_fr) {
-    const error = new Error("No blog_page_fr found!")
-    return next(error)
-  }
-  
-  
-
-  console.log({categories, blog_page_fr})
 
 
-  res.locals.index_page_data = {
-    ...res.locals.index_page_data,
-    categories,
-    blog_page_fr
-  }
+app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware6.mid1, middleware6_en.mid1, async (req, res, next) => {
 
+
+
+  // return res.end()
   return res.render('blog', { ...res.locals.index_page_data });
 
 });

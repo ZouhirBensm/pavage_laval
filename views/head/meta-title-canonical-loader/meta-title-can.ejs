@@ -89,13 +89,13 @@
 
 
 
-  <% } else if (req_path === '/blog') { %>
+  <% } else if (req_path === '/blog' || req_path === '/blog/en') { %>
 
-    <title><%= all_data_per_page_fr.title %></title>
-    <meta name="title" content="<%= all_data_per_page_fr.title %>">
+    <title><%= all_data_per_page.title %></title>
+    <meta name="title" content="<%= all_data_per_page.title %>">
     <meta name="description"
-      content="<%= all_data_per_page_fr.description %>">
-    <link rel="canonical" href='/blog'>
+      content="<%= all_data_per_page.description %>">
+    <link rel="canonical" href='<%= req_path %>'>
 
 
 

@@ -122,7 +122,7 @@ async function mid1(req, res, next) {
   }
 
 
-  console.log("\n\nres.locals.index_page_data\n\n___________\n\n", res.locals.index_page_data)
+  // console.log("\n\nres.locals.index_page_data\n\n___________\n\n", res.locals.index_page_data)
 
 
 
