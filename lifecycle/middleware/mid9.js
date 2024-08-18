@@ -130,7 +130,7 @@ async function mid1(req, res, next) {
   all_pages_fr = all_pages_fr.filter(item => !idsToRemove.includes(item.id));
 
   // console.log("Removed Items: ", removedItems);
-  console.log("\n\n all_pages_fr: \n\n", all_pages_fr);
+  // console.log("\n\n all_pages_fr: \n\n", all_pages_fr);
 
 
 

@@ -78,7 +78,7 @@ app.use((req, res, next) => {
   const req_path = req.path
   const req_url = req.url
 
-  // console.log(req_path, req_url)
+  console.log(req_path, req_url)
 
   res.locals.req_path = req_path
 
@@ -418,23 +418,10 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 
 
-
-
-
-app.get(['/plan-du-site', '/sitemap/en'], middleware4.mid1,  middleware4_en.mid1, middleware9.mid1, middleware9_en.mid1, async (req, res, next) => {
-
-
-
-
-  // console.log("\n\n________________________ \n\nres.locals.index_page_data -> \n\n", res.locals.index_page_data)
-
-
-
-  // return res.end()
-
-  return res.render('plan-du-site', { ...res.locals.index_page_data });
-
-});
+// app.get('/sitemap/sitemap', async (req, res, next) => {
+//   console.log("TTTT")
+//   return res.end()
+// })
 
 
 
@@ -444,15 +431,7 @@ app.get(['/plan-du-site', '/sitemap/en'], middleware4.mid1,  middleware4_en.mid1
 
 
 
-
-
-
-
-
-
-
-
-app.get('/sitemap/xml-sitemap', async (req, res, next) => {
+app.get('/sitemap/sitemap_xml', async (req, res, next) => {
   // Define the path to the XML file
   const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 
@@ -463,81 +442,84 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
   }
 
   const now = new Date();
-  console.log(now);
+  console.log('now -> ', now);
 
   let last_modified_1 = '2024-08-14T00:34:21.928Z';
   let last_modified_1_date = new Date(last_modified_1);
 
 
-  const urls = [
-    {
-      URL: '/',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/demande-de-devis-gratuit',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/organisation',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/a-propos',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    },
-    {
-      URL: '/plan-du-site',
-      lastmod: last_modified_1_date,
-      changefreq: "monthly",
-      priority: 1
-    }
-  ];
+  let urls = []
+
+  const discarded_object_ids = [8, 9, 10];
 
 
-
-  const main_services_data_fr = await db.main_service_data_fr.findAll({
-    attributes: ['slug', 'service_name', 'last_modified'],
+  // French pages
+  const all_data_per_page_fr = await db.all_data_per_page_fr.findAll({
     raw: true
   });
 
-
-
-  if (!main_services_data_fr) {
+  if (!all_data_per_page_fr) {
     const error = new Error("No service pages found!")
     return next(error)
   }
 
+  all_data_per_page_fr.forEach(all_data_per_page_fr => {
+    
+    if (discarded_object_ids.includes(all_data_per_page_fr.id)) {return;}
 
-
-
-  // console.log('\n\nservice_pages-> ', extra_service_pages_fr)
-
-  main_services_data_fr.forEach(main_service_data_fr => {
-
-    let url = `/service/${main_service_data_fr.slug}`;
-
-    // console.log(main_service_data_fr.last_modified)
-    let lastmod = new Date(main_service_data_fr.last_modified)
-
-
+    let lastmod = new Date(all_data_per_page_fr.last_modified)
+  
     urls.push({
-      URL: url,
+      URL: all_data_per_page_fr.page_url_identify,
       lastmod: lastmod,
       changefreq: "monthly",
       priority: 1
     });
-
-
   });
+
+
+
+
+
+  // English pages
+  const all_data_per_page_en = await db.all_data_per_page_en.findAll({
+    raw: true
+  });
+
+  if (!all_data_per_page_en) {
+    const error = new Error("No service pages found!")
+    return next(error)
+  }
+
+  all_data_per_page_en.forEach(all_data_per_page_en => {
+    
+    if (discarded_object_ids.includes(all_data_per_page_en.id)) {return;}
+
+    let lastmod = new Date(all_data_per_page_en.last_modified)
+  
+    urls.push({
+      URL: all_data_per_page_en.page_url_identify,
+      lastmod: lastmod,
+      changefreq: "monthly",
+      priority: 1
+    });
+  });
+
+
+
+  // console.log(urls)
+  // return res.end()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -548,18 +530,13 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
     raw: true
   });
 
-
-
   if (!extra_service_pages_fr) {
     const error = new Error("No service pages found!")
     return next(error)
   }
 
 
-  // console.log('\n\nservice_pages-> ', extra_service_pages_fr)
-
   extra_service_pages_fr.forEach(extra_service_page_fr => {
-
     let url = `/service/${extra_service_page_fr.slug}`;
 
     // console.log(extra_service_page_fr.last_modified)
@@ -572,9 +549,52 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
       changefreq: "monthly",
       priority: 1
     });
-
-
   });
+
+
+
+
+
+  const extra_service_pages_en = await db.extra_service_page_en.findAll({
+    attributes: ['slug', 'title', 'last_modified'],
+    raw: true
+  });
+
+  if (!extra_service_pages_en) {
+    const error = new Error("No service pages found!")
+    return next(error)
+  }
+
+
+  extra_service_pages_en.forEach(extra_service_page_en => {
+    let url = `/service/${extra_service_page_en.slug}`;
+
+    // console.log(extra_service_page_en.last_modified)
+    let lastmod = new Date(extra_service_page_en.last_modified)
+
+
+    urls.push({
+      URL: url,
+      lastmod: lastmod,
+      changefreq: "monthly",
+      priority: 1
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // console.log(urls)
+  // return res.end()
 
 
 
@@ -595,22 +615,62 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
     nest: true
   });
 
-
   if (!blog_elements_fr) {
     const error = new Error("No blog elements found!")
     return next(error)
   }
 
 
-  // console.log('\n\nblog_elements-> ', blog_elements_fr)
+  const blog_elements_en = await db.blog_element_en.findAll({
+    attributes: ['slug', 'title', 'datetime_edited'],
+    include: [
+      {
+        model: db.category_en,
+        as: 'category',
+        attributes: ['category_name', 'slug']
+      }
+    ],
+    raw: true,
+    nest: true
+  });
 
-  blog_elements_fr.forEach(blog_element_fr => {
-    // console.log(blog_element_fr);
+  if (!blog_elements_en) {
+    const error = new Error("No blog elements found!")
+    return next(error)
+  }
 
-    let url = `/blog/${blog_element_fr.category.slug}/blog-posting/${blog_element_fr.slug}`;
 
-    let datetime_edited = new Date(blog_element_fr.datetime_edited)
+  // console.log("blog_elements_en -> ", blog_elements_en)
 
+
+  // Remove '/en' from category.slug for each element in blog_elements_en
+  const blog_elements_en_updated = blog_elements_en.map(element => {
+    // Check if category.slug ends with '/en' and remove it
+    if (element.category.slug.endsWith('/en')) {
+      element.category.slug = element.category.slug.replace(/\/en$/, '');
+    }
+    return element;
+  });
+
+
+  // console.log("blog_elements_en_updated -> ", blog_elements_en_updated)
+  // return res.end()
+
+
+  const blog_elements = [...blog_elements_fr, ...blog_elements_en_updated]
+
+
+  // console.log("blog_elements -> ", blog_elements)
+  // return res.end()
+
+
+
+
+  blog_elements.forEach(blog_element => {
+
+    let url = `/blog/${blog_element.category.slug}/blog-posting/${blog_element.slug}`;
+
+    let datetime_edited = new Date(blog_element.datetime_edited)
 
     urls.push({
       URL: url,
@@ -622,7 +682,18 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
 
   });
 
+
+
+
+  
   // console.log(urls)
+  // return res.end()
+
+
+
+
+
+
 
   const xml = createSiteMap(urls);
 
@@ -631,7 +702,8 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
 
   // return res.render('sitemap');
   // return res.sendFile('sitemap.html', { root: 'public' });
-  return res.redirect(301, '/plan-du-site');
+  // return res.redirect(301, '/');
+  return res.end()
 });
 
 
@@ -641,6 +713,41 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get(['/plan-du-site', '/sitemap/en'], middleware4.mid1,  middleware4_en.mid1, middleware9.mid1, middleware9_en.mid1, async (req, res, next) => {
+
+
+
+
+  // console.log("\n\n________________________ \n\nres.locals.index_page_data -> \n\n", res.locals.index_page_data)
+
+
+
+  // return res.end()
+
+  return res.render('plan-du-site', { ...res.locals.index_page_data });
+
+});
 
 
 
