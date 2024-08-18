@@ -23,8 +23,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
     <%- include('body/welcome-section/part1.ejs') %>
 
@@ -53,36 +53,41 @@
       <div class="row">
         <div class="col-12">
           <div>
-            <h2><%= plan_du_site_page_fr.h2_1 %></h2>
-            <h3><%= plan_du_site_page_fr.h3_1 %></h3>
+            <h2><%= plan_du_site_page.h2_1 %></h2>
+            <h3><%= plan_du_site_page.h3_1 %></h3>
             
             <ul>
-              <li><a href="/">Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</a></li>
+              <!-- <li><a href="/">Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</a></li>
               <li><a href="/demande-de-devis-gratuit">Demande de devis gratuit</a></li>
               <li><a href="/organisation">Organisation</a></li>
               <li><a href="/a-propos">À propos</a></li>
-
-
               <li><a href="/tiroir1/mention-legale">Mention légale</a></li>
-              <li><a href="/tiroir1/politique-de-confidentialite">Politique de confidentialité</a></li>
+              <li><a href="/tiroir1/politique-de-confidentialite">Politique de confidentialité</a></li> -->
+
+              <% all_pages.forEach(function(page) { %>
+                <% if (page.id !== 8) { %> <!-- Skip Blog -->
+                  <li><a href="<%= page.page_url_identify %>"><%= page.title %></a></li>
+                <% } %>
+              <% }); %>
 
 
 
               <li>Service
                 <ul>
 
-                  <% main_service_data_fr.forEach(function(service) { %>
+                  <% main_service_data.forEach(function(service) { %>
                     <li><a href="/service/<%= service.slug %>"><%= service.service_name %></a></li>
                   <% }); %>
 
 
-                  <% extra_service_pages_fr.forEach(function(page) { %>
+                  <% extra_service_pages.forEach(function(page) { %>
                     <li><a href="/service/<%= page.slug %>"><%= page.title %></a></li>
                   <% }); %>
                 </ul>
               </li>
 
-              <li><a href="/blog">Blog</a>
+              <!-- <li><a href="/blog">Blog</a> -->
+              <li><a href="<%= all_pages[4].page_url_identify %>"><%= all_pages[4].title %></a>
 
                 <ul>
                   <% Object.keys(categories_and_associated_blogs).forEach(function(categoryName) { %>
@@ -99,10 +104,10 @@
 
 
               </li>
-              <li><a href="/plan-du-site"><%= plan_du_site_page_fr.page_title %></a></li>
+              <li><a href="<%= all_pages[7].page_url_identify %>"><%= all_pages[7].title %></a></li>
             </ul>
-            <h3><%= plan_du_site_page_fr.h3_2 %></h3>
-            <a href="/sitemap/sitemap.xml" target="_blank"><%= plan_du_site_page_fr.h3_2 %></a>
+            <h3><%= plan_du_site_page.h3_2 %></h3>
+            <a href="/sitemap/sitemap.xml" target="_blank"><%= plan_du_site_page.h3_2 %></a>
           </div>
         </div>
       </div>

@@ -31,6 +31,7 @@ var _nav_en = require("./nav_en");
 var _nav_fr = require("./nav_fr");
 var _organization_page_data_en = require("./organization_page_data_en");
 var _organization_page_data_fr = require("./organization_page_data_fr");
+var _plan_du_site_page_en = require("./plan_du_site_page_en");
 var _plan_du_site_page_fr = require("./plan_du_site_page_fr");
 var _portfolio_section_en = require("./portfolio_section_en");
 var _portfolio_section_fr = require("./portfolio_section_fr");
@@ -74,6 +75,7 @@ function initModels(sequelize) {
   var nav_fr = _nav_fr(sequelize, DataTypes);
   var organization_page_data_en = _organization_page_data_en(sequelize, DataTypes);
   var organization_page_data_fr = _organization_page_data_fr(sequelize, DataTypes);
+  var plan_du_site_page_en = _plan_du_site_page_en(sequelize, DataTypes);
   var plan_du_site_page_fr = _plan_du_site_page_fr(sequelize, DataTypes);
   var portfolio_section_en = _portfolio_section_en(sequelize, DataTypes);
   var portfolio_section_fr = _portfolio_section_fr(sequelize, DataTypes);
@@ -122,6 +124,7 @@ function initModels(sequelize) {
     nav_fr,
     organization_page_data_en,
     organization_page_data_fr,
+    plan_du_site_page_en,
     plan_du_site_page_fr,
     portfolio_section_en,
     portfolio_section_fr,

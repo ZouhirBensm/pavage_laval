@@ -9,6 +9,9 @@ async function mid1(req, res, next) {
   console.log("English mode is on. 1\n\n")
 
 
+
+
+
   const business_data_en = await db.business_data_en.findOne({
     raw: true
   });

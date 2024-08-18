@@ -10,6 +10,8 @@ async function mid1(req, res, next) {
   console.log("\n\n French mode is on. 1 \n\n")
 
 
+
+
   const business_data_fr = await db.business_data_fr.findOne({
     raw: true
   });
@@ -101,6 +103,8 @@ async function mid1(req, res, next) {
   }
 
 
+
+  // console.log('\n\nres.locals.index_page_data -> ', res.locals.index_page_data)
 
   return next()
 

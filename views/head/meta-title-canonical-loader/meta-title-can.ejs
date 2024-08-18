@@ -114,14 +114,15 @@
     
 
 
-<% } else if (req_path === '/plan-du-site') { %>
+<% } else if (req_path === '/plan-du-site' || req_path === '/sitemap/en') { %>
 
 
-  <title><%= plan_du_site_page_fr.title %></title>
-  <meta name="title" content="<%= plan_du_site_page_fr.title %>">
+
+  <title><%= plan_du_site_page.title %></title>
+  <meta name="title" content="<%= plan_du_site_page.title %>">
   <meta name="description"
-    content="<%= plan_du_site_page_fr.meta_description %>">
-  <link rel="canonical" href='/plan-du-site'>
+    content="<%= plan_du_site_page.meta_description %>">
+  <link rel="canonical" href='<%= req_path %>'>
   
   
 
