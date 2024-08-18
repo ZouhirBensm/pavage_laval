@@ -3,6 +3,7 @@
 
 
 <head>
+
   <%- include('head/setup-pre-variables.ejs') %>
   
   <!-- < %- include('head/load-backend-variables/variables.ejs') %> -->
@@ -15,7 +16,6 @@
 
   <meta name="googlebot" content="noindex">
   <meta name="robots" content="noindex">
-
 </head>
 
 
@@ -28,8 +28,8 @@
 
 
   <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section_fr.banner_img_path %>"
-    alt="<%= welcome_section_fr.banner_img_alt %>">
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
 
     <%- include('body/welcome-section/part1.ejs') %>
 
@@ -59,8 +59,12 @@
       <div class="row">
         <div class="col-12">
           
-          <div>
-            <h2 class="tm-text-orange">Mention Légale</h2>
+          <div class="tm-extra-service-description">
+
+
+            <%- legal_notice_page.html_content %>
+
+            <!-- <h2 class="tm-text-orange">Mention Légale</h2>
         
             <p>
                 <span>Clause de non-responsabilité du service de recommandation pour <strong>Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</strong>, <strong>Pavage Gatineau Earnanswers</strong>, et <strong>pavagegatineau.com</strong></span><br>
@@ -148,7 +152,9 @@
         
             <p class="mb-0">
                 Si vous avez des questions concernant ces Conditions, veuillez <a href='/' target='_blank'>nous contacter</a>.
-            </p>
+            </p> -->
+
+
         </div>
         
           

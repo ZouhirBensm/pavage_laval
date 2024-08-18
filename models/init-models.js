@@ -23,6 +23,8 @@ var _footer_en = require("./footer_en");
 var _footer_fr = require("./footer_fr");
 var _index_content_en = require("./index_content_en");
 var _index_content_fr = require("./index_content_fr");
+var _legal_notice_page_en = require("./legal_notice_page_en");
+var _legal_notice_page_fr = require("./legal_notice_page_fr");
 var _main_service_data_en = require("./main_service_data_en");
 var _main_service_data_fr = require("./main_service_data_fr");
 var _nav_en = require("./nav_en");
@@ -32,6 +34,8 @@ var _organization_page_data_fr = require("./organization_page_data_fr");
 var _plan_du_site_page_fr = require("./plan_du_site_page_fr");
 var _portfolio_section_en = require("./portfolio_section_en");
 var _portfolio_section_fr = require("./portfolio_section_fr");
+var _privacy_policy_page_en = require("./privacy_policy_page_en");
+var _privacy_policy_page_fr = require("./privacy_policy_page_fr");
 var _review_data_en = require("./review_data_en");
 var _review_data_fr = require("./review_data_fr");
 var _welcome_section_en = require("./welcome_section_en");
@@ -62,6 +66,8 @@ function initModels(sequelize) {
   var footer_fr = _footer_fr(sequelize, DataTypes);
   var index_content_en = _index_content_en(sequelize, DataTypes);
   var index_content_fr = _index_content_fr(sequelize, DataTypes);
+  var legal_notice_page_en = _legal_notice_page_en(sequelize, DataTypes);
+  var legal_notice_page_fr = _legal_notice_page_fr(sequelize, DataTypes);
   var main_service_data_en = _main_service_data_en(sequelize, DataTypes);
   var main_service_data_fr = _main_service_data_fr(sequelize, DataTypes);
   var nav_en = _nav_en(sequelize, DataTypes);
@@ -71,6 +77,8 @@ function initModels(sequelize) {
   var plan_du_site_page_fr = _plan_du_site_page_fr(sequelize, DataTypes);
   var portfolio_section_en = _portfolio_section_en(sequelize, DataTypes);
   var portfolio_section_fr = _portfolio_section_fr(sequelize, DataTypes);
+  var privacy_policy_page_en = _privacy_policy_page_en(sequelize, DataTypes);
+  var privacy_policy_page_fr = _privacy_policy_page_fr(sequelize, DataTypes);
   var review_data_en = _review_data_en(sequelize, DataTypes);
   var review_data_fr = _review_data_fr(sequelize, DataTypes);
   var welcome_section_en = _welcome_section_en(sequelize, DataTypes);
@@ -106,6 +114,8 @@ function initModels(sequelize) {
     footer_fr,
     index_content_en,
     index_content_fr,
+    legal_notice_page_en,
+    legal_notice_page_fr,
     main_service_data_en,
     main_service_data_fr,
     nav_en,
@@ -115,6 +125,8 @@ function initModels(sequelize) {
     plan_du_site_page_fr,
     portfolio_section_en,
     portfolio_section_fr,
+    privacy_policy_page_en,
+    privacy_policy_page_fr,
     review_data_en,
     review_data_fr,
     welcome_section_en,

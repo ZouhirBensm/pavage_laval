@@ -1,6 +1,7 @@
 // 1
 const express = require('express')
 const path = require('path');
+const ejs = require('ejs');
 
 const fs = require('fs');
 
@@ -293,11 +294,49 @@ app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware4.mid
 
 
 
-// HERE
 
-// Your route
-app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
 
+
+app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], middleware4.mid1, middleware4_en.mid1, async (req, res) => {
+
+
+  let legal_notice_page_fr, legal_notice_page_en
+
+
+  if(is_english) {
+    // english
+    legal_notice_page_en = await db.legal_notice_page_en.findOne({
+      raw: true
+    });
+  
+    if (!legal_notice_page_en) {
+      const error = new Error("No legal_notice_page_en found!")
+      return next(error)
+    }
+  
+  } else {
+    // french
+    legal_notice_page_fr = await db.legal_notice_page_fr.findOne({
+      raw: true
+    });
+  
+    if (!legal_notice_page_fr) {
+      const error = new Error("No legal_notice_page_fr found!")
+      return next(error)
+    }
+  }
+
+  const legal_notice_page = legal_notice_page_fr || legal_notice_page_en
+
+  console.log(legal_notice_page)
+
+
+  // return res.end()
+
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    legal_notice_page: legal_notice_page
+  }
 
   return res.render('mention-legale', { ...res.locals.index_page_data });
 });
@@ -305,11 +344,62 @@ app.get('/tiroir1/mention-legale', middleware4.mid1, (req, res) => {
 
 
 
+app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'], middleware4.mid1, middleware4_en.mid1, async (req, res) => {
 
 
-// Your route
-app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) => {
+  let privacy_policy_page_fr, privacy_policy_page_en, rendered_privacy_policy_page_en, rendered_privacy_policy_page_fr
 
+
+  if(is_english) {
+    // english
+    privacy_policy_page_en = await db.privacy_policy_page_en.findOne({
+      raw: true
+    });
+  
+    if (!privacy_policy_page_en) {
+      const error = new Error("No privacy_policy_page_en found!")
+      return next(error)
+    }
+
+    rendered_privacy_policy_page_en = ejs.render(privacy_policy_page_en.html_content, { 
+      business_data: res.locals.index_page_data.business_data
+    });
+
+  
+  } else {
+    // french
+    privacy_policy_page_fr = await db.privacy_policy_page_fr.findOne({
+      raw: true
+    });
+  
+    if (!privacy_policy_page_fr) {
+      const error = new Error("No privacy_policy_page_fr found!")
+      return next(error)
+    }
+
+    rendered_privacy_policy_page_fr = ejs.render(privacy_policy_page_fr.html_content, { 
+      business_data: res.locals.index_page_data.business_data
+    });
+
+  }
+
+  const privacy_policy_page = privacy_policy_page_fr || privacy_policy_page_en
+
+  const rendered_privacy_policy_page = rendered_privacy_policy_page_fr || rendered_privacy_policy_page_en
+
+
+
+  // return res.end()
+
+  res.locals.index_page_data = {
+    ...res.locals.index_page_data,
+    privacy_policy_page: {
+      ...privacy_policy_page,
+      rendered_privacy_policy_page
+    }
+  }
+
+  console.log(res.locals.index_page_data)
 
   return res.render('politique-de-confidentialite', { ...res.locals.index_page_data });
 });
@@ -330,7 +420,7 @@ app.get('/tiroir1/politique-de-confidentialite', middleware4.mid1, (req, res) =>
 
 
 
-
+// HERE
 app.get('/plan-du-site', middleware4.mid1, async (req, res, next) => {
 
 
@@ -450,6 +540,11 @@ app.get('/plan-du-site', middleware4.mid1, async (req, res, next) => {
   return res.render('plan-du-site', { ...res.locals.index_page_data });
 
 });
+
+
+
+
+
 
 
 
@@ -634,6 +729,13 @@ app.get('/sitemap/xml-sitemap', async (req, res, next) => {
   // return res.sendFile('sitemap.html', { root: 'public' });
   return res.redirect(301, '/plan-du-site');
 });
+
+
+
+
+
+
+
 
 
 
