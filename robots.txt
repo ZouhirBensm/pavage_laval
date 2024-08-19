@@ -8,4 +8,6 @@ User-agent: SemrushBot-SA
 Disallow: /
 
 User-agent: *
-Disallow: /img/blog*/ *.avif
+Disallow: /img/blog/
+Disallow: /*.avif$
+Disallow: /*.webp$
