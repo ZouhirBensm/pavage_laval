@@ -14,6 +14,7 @@ const blogPostingSchema = {
   "articleBody": stripHTML(blog_element.html_content),
   "datePublished": blog_element.datetime_published,
   "dateModified": blog_element.datetime_edited,
+  "inLanguage": is_english ? 'en' : 'fr',
   "author": {
     "@type": "Organization",
     "url": `${business_data.website_main_url}/organisation`

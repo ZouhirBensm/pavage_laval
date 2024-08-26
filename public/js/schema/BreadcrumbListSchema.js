@@ -63,7 +63,7 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
       "@type": "ListItem",
       "position": staticItems.length + index + 1,
       "name": page.title,
-      "item": `https://drywallkingston.com/service/${page.slug}`
+      "item": `https://pavagegatineau.com/service/${page.slug}`
     });
   });
 
@@ -75,7 +75,7 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
       "@type": "ListItem",
       "position": staticItems.length + servicePages.length + index + 1,
       "name": element.title,
-      "item": `https://drywallkingston.com/blog/${element.category.slug}/blog-posting/${element.slug}`
+      "item": `https://pavagegatineau.com/blog/${element.category.slug}/blog-posting/${element.slug}`
     });
   });
 

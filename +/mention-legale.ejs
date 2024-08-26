@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include('html/html-tag.ejs') %>
 
 
 <head>
@@ -10,12 +10,14 @@
   
   <%- include('head/head-common-part1.ejs') %>
   
-  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  <%- include('head/meta/meta-title-can.ejs') %>
   
   <%- include('head/css-loader/css.ejs') %>
 
   <meta name="googlebot" content="noindex">
   <meta name="robots" content="noindex">
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
 </head>
 
 

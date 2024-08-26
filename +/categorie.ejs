@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include('html/html-tag.ejs') %>
 
 
 <head>
+
   <%- include('head/setup-pre-variables.ejs') %>
   
   <%- include('head/load-backend-variables/variables.ejs') %>
   
   <%- include('head/head-common-part1.ejs') %>
   
-  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  <%- include('head/meta/meta-title-can.ejs') %>
   
   <%- include('head/css-loader/css.ejs') %>
 
-  <meta name="googlebot" content="noindex">
-  <meta name="robots" content="noindex">
-  
-
+  <%- include('head/meta/meta-lang-loader.ejs') %>
 </head>
 
 
@@ -49,35 +47,57 @@
 
 
 
+
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
 
-
           <div>
-            <h2>Blog</h2>
-            <h3><%= blog_page.h3_1 %></h3>
+            <h2 class="category-template"><%= category.category_name %></h2>
+            <h3>Blog Postings</h3>
 
-            <ul>
-              <% category.forEach(function(category) { %>
-                <li><a href="/blog/<%= category.slug %>"><%= category.category_name %></a></li>
-              <% }); %>
-            </ul>
-          </div>
 
+              <ul>
+
+                <% if (is_english) { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug.replace(/\/en$/, '') %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+                
+                <% } else { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+
+                <% } %>
+
+
+
+
+
+              </ul>
+            </div>
 
         </div>
       </div>
     </div>
-
   </section>
 
 
 
   <%- include('footer/footer.ejs') %>
-
 
 
 

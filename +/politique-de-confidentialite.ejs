@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include('html/html-tag.ejs') %>
 
 
 <head>
-
   <%- include('head/setup-pre-variables.ejs') %>
   
-  <%- include('head/load-backend-variables/variables.ejs') %>
+  <!-- < %- include('head/load-backend-variables/variables.ejs') %> -->
   
   <%- include('head/head-common-part1.ejs') %>
   
-  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
-
+  <%- include('head/meta/meta-title-can.ejs') %>
+  
   <%- include('head/css-loader/css.ejs') %>
 
+  <meta name="googlebot" content="noindex">
+  <meta name="robots" content="noindex">
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
 </head>
 
+
+
 <body>
-  <!-- HERE -->
 
 
   <%- include('body/nav.ejs') %>
 
 
-
-
-
   <!-- Welcome Section -->
-
   <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
     alt="<%= welcome_section.banner_img_alt %>">
 
@@ -49,17 +49,18 @@
 
 
 
+
+
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
 
-
-
-
-          <%- main_service_data %>
-
+        <div class="tm-extra-service-description">
+            <%- privacy_policy_page.rendered_privacy_policy_page %>
+        </div>
+        
 
 
 
@@ -70,9 +71,10 @@
   <!-- End portfolio section -->
 
 
+
+
+
   <%- include('footer/footer.ejs') %>
-
-
 
 
 

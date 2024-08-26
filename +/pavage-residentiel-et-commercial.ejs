@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include('html/html-tag.ejs') %>
 
 <head>
 
@@ -9,12 +9,18 @@
   
   <%- include('head/head-common-part1.ejs') %>
   
-  <%- include('head/meta-title-canonical-loader/meta-title-can.ejs') %>
+  <%- include('head/meta/meta-title-can.ejs') %>
   
   <%- include('head/css-loader/css.ejs') %>
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
 </head>
 
+
+
+
 <body>
+
 
   <%- include('body/nav.ejs') %>
 
@@ -44,26 +50,38 @@
 
 
 
-
-
   <!-- Portfolio section -->
   <section id="tmPortfolio">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
 
-          <div class="tm-extra-service-description">
-            <%- extra_service_page.html_content %>
-          </div>
 
-          </div>  
+
+          
+          <%- main_service_data %>
+
+          <!-- < %- main_service_data.web_page_content %> -->
+          <!-- < %- include('name-to-come1/name1.ejs') %> -->
+          
+
+          <!-- < %- ejs.render(main_service_data.web_page_content) %> -->
+
+
+
         </div>
       </div>
+    </div>
   </section>
+  <!-- End portfolio section -->
+
 
 
 
   <%- include('footer/footer.ejs') %>
+
+
+
 
 
 
