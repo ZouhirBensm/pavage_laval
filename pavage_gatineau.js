@@ -435,7 +435,7 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 
 
-app.get('/sitemap/sitemap_xml', async (req, res, next) => {
+app.get('/sitemap/sitemap-3', async (req, res, next) => {
   // Define the path to the XML file
   const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 
@@ -477,7 +477,9 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
       URL: all_data_per_page_fr.page_url_identify,
       lastmod: lastmod,
       changefreq: "monthly",
-      priority: 1
+      priority: 1,
+      alt: all_data_per_page_fr.eq_lang_page,
+      alt_lang: 'en'
     });
   });
 
@@ -505,7 +507,9 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
       URL: all_data_per_page_en.page_url_identify,
       lastmod: lastmod,
       changefreq: "monthly",
-      priority: 1
+      priority: 1,
+      alt: all_data_per_page_en.eq_lang_page,
+      alt_lang: 'fr'
     });
   });
 
@@ -530,7 +534,7 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
 
   const extra_service_pages_fr = await db.extra_service_page_fr.findAll({
-    attributes: ['slug', 'title', 'last_modified'],
+    attributes: ['slug', 'title', 'last_modified', 'eq_lang_page'],
     raw: true
   });
 
@@ -542,6 +546,7 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
   extra_service_pages_fr.forEach(extra_service_page_fr => {
     let url = `/service/${extra_service_page_fr.slug}`;
+    let alt = `/service/${extra_service_page_fr.eq_lang_page}`
 
     // console.log(extra_service_page_fr.last_modified)
     let lastmod = new Date(extra_service_page_fr.last_modified)
@@ -551,7 +556,9 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
       URL: url,
       lastmod: lastmod,
       changefreq: "monthly",
-      priority: 1
+      priority: 1,
+      alt: alt,
+      alt_lang: 'en'
     });
   });
 
@@ -560,7 +567,7 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
 
   const extra_service_pages_en = await db.extra_service_page_en.findAll({
-    attributes: ['slug', 'title', 'last_modified'],
+    attributes: ['slug', 'title', 'last_modified', 'eq_lang_page'],
     raw: true
   });
 
@@ -572,6 +579,7 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
   extra_service_pages_en.forEach(extra_service_page_en => {
     let url = `/service/${extra_service_page_en.slug}`;
+    let alt = `/service/${extra_service_page_en.eq_lang_page}`
 
     // console.log(extra_service_page_en.last_modified)
     let lastmod = new Date(extra_service_page_en.last_modified)
@@ -581,7 +589,9 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
       URL: url,
       lastmod: lastmod,
       changefreq: "monthly",
-      priority: 1
+      priority: 1,
+      alt: alt,
+      alt_lang: 'fr'
     });
   });
 
@@ -690,7 +700,7 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
 
   
-  // console.log(urls)
+  console.log(urls)
   // return res.end()
 
 
@@ -699,7 +709,9 @@ app.get('/sitemap/sitemap_xml', async (req, res, next) => {
 
 
 
-  const xml = createSiteMap(urls);
+  const xml = createSiteMap(urls, res.locals.protocoled_domain);
+
+  console.log(xml)
 
   fs.writeFileSync(xmlFilePath, xml, 'utf-8');
   console.log('New sitemap.xml file generated');

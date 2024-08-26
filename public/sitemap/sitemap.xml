@@ -1,205 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
 <loc>https://pavagegatineau.com/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/demande-de-devis-gratuit</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/request-a-free-quote/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/organisation</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/organization/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/a-propos</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/about/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/pavage-residentiel-et-commercial-a-gatineau</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/residential-and-commercial-paving-in-gatineau/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/revetement-maintenance-en-asphalte-gatineau</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/asphalt-maintenance-coating-gatineau/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/travaux-en-beton-residentiel-et-commercial-a-gatineau</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/residential-and-commercial-concrete-works-in-gatineau/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/plan-du-site</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/sitemap/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/request-a-free-quote/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/demande-de-devis-gratuit"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/organization/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/organisation"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/about/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/a-propos"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/residential-and-commercial-paving-in-gatineau/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/pavage-residentiel-et-commercial-a-gatineau"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/asphalt-maintenance-coating-gatineau/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/revetement-maintenance-en-asphalte-gatineau"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/residential-and-commercial-concrete-works-in-gatineau/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/travaux-en-beton-residentiel-et-commercial-a-gatineau"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/sitemap/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/plan-du-site"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/pave-uni-a-gatineau</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/plain-paving-stone-in-gatineau/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/pavage-autobloquant-a-gatineau</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/interlocking-paving-in-gatineau/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/reparation-de-fissures</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/crack-repair/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/scellant-sous-pression</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/pressure-sealant/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/trottoirs-et-bordures-de-beton</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/concrete-sidewalks-and-curbs/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/murets-et-murs-de-soutenement</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/low-walls-and-retaining-walls/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/installation-de-certains-drains</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/installation-of-certain-drains/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/location-de-camion-et-pepine-avec-operateur</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/truck-and-truck-rental-with-operator/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/location-de-fardiers</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://pavagegatineau.com/service/rental-of-flatbeds/en"/>
 <lastmod>2024-08-14T00:34:21.928Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/plain-paving-stone-in-gatineau/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/pave-uni-a-gatineau"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/interlocking-paving-in-gatineau/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/pavage-autobloquant-a-gatineau"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/crack-repair/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/reparation-de-fissures"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/pressure-sealant/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/scellant-sous-pression"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/concrete-sidewalks-and-curbs/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/trottoirs-et-bordures-de-beton"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/low-walls-and-retaining-walls/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/murets-et-murs-de-soutenement"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/installation-of-certain-drains/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/installation-de-certains-drains"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/truck-and-truck-rental-with-operator/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/location-de-camion-et-pepine-avec-operateur"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://pavagegatineau.com/service/rental-of-flatbeds/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://pavagegatineau.com/service/location-de-fardiers"/>
 <lastmod>2024-08-15T14:23:29.760Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
