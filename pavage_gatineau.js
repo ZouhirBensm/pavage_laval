@@ -87,6 +87,10 @@ app.use((req, res, next) => {
   res.locals.fullUrl = fullUrl
 
 
+  res.locals.domain = process.env['DOMAIN']
+  res.locals.protocoled_domain = `https://${res.locals.domain}`
+
+
   return next()
 });
 
