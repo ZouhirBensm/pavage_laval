@@ -18,16 +18,16 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
 
   // Static breadcrumb items
   let staticItems = [
-    { name: "##", item: "https://pavagegatineau.com/" },
-    { name: "Request Free Quote", item: "https://pavagegatineau.com/demande-de-devis-gratuit" },
-    { name: "Organisation", item: "https://pavagegatineau.com/organisation" },
-    { name: "À propos", item: "https://pavagegatineau.com/a-propos" },
-    { name: "Plan du site", item: "https://pavagegatineau.com/plan-du-site" },
-    { name: "Avertissement légal", item: "https://pavagegatineau.com/tiroir1/avertissement-legal" },
-    { name: "Politique de confidentialité", item: "https://pavagegatineau.com/tiroir1/politique-de-confidentialite" },
-    // { name: "Service name 1", item: "https://pavagegatineau.com/service/service1" },
-    // { name: "Service name 2", item: "https://pavagegatineau.com/service/service2" },
-    // { name: "Service name 3", item: "https://pavagegatineau.com/service/service3" }
+    { name: "##", item: "https://pavage-asphalte-laval-montreal.ca /" },
+    { name: "Request Free Quote", item: "https://pavage-asphalte-laval-montreal.ca /demande-de-devis-gratuit" },
+    { name: "Organisation", item: "https://pavage-asphalte-laval-montreal.ca /organisation" },
+    { name: "À propos", item: "https://pavage-asphalte-laval-montreal.ca /a-propos" },
+    { name: "Plan du site", item: "https://pavage-asphalte-laval-montreal.ca /plan-du-site" },
+    { name: "Avertissement légal", item: "https://pavage-asphalte-laval-montreal.ca /tiroir1/avertissement-legal" },
+    { name: "Politique de confidentialité", item: "https://pavage-asphalte-laval-montreal.ca /tiroir1/politique-de-confidentialite" },
+    // { name: "Service name 1", item: "https://pavage-asphalte-laval-montreal.ca /service/service1" },
+    // { name: "Service name 2", item: "https://pavage-asphalte-laval-montreal.ca /service/service2" },
+    // { name: "Service name 3", item: "https://pavage-asphalte-laval-montreal.ca /service/service3" }
   ];
 
   // Generate service breadcrumb items from service data
@@ -63,7 +63,7 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
       "@type": "ListItem",
       "position": staticItems.length + index + 1,
       "name": page.title,
-      "item": `https://pavagegatineau.com/service/${page.slug}`
+      "item": `https://pavage-asphalte-laval-montreal.ca /service/${page.slug}`
     });
   });
 
@@ -75,7 +75,7 @@ function generateBreadcrumbListSchema(blogElements, servicePages) {
       "@type": "ListItem",
       "position": staticItems.length + servicePages.length + index + 1,
       "name": element.title,
-      "item": `https://pavagegatineau.com/blog/${element.category.slug}/blog-posting/${element.slug}`
+      "item": `https://pavage-asphalte-laval-montreal.ca /blog/${element.category.slug}/blog-posting/${element.slug}`
     });
   });
 

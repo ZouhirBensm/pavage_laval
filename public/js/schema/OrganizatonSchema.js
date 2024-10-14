@@ -41,7 +41,7 @@ const organizationSchema = {
     "@type": "Person",
     "name": "Mahdi Furry",
     "jobTitle": "Founder & CEO"
-    // "image": "https://pavagegatineau.com/img/john_doe.jpg",
+    // "image": "https://pavage-asphalte-laval-montreal.ca /img/john_doe.jpg",
     // "sameAs": "https://www.linkedin.com/in/johndoe"
   },
   // "employee": [
@@ -49,14 +49,14 @@ const organizationSchema = {
   //     "@type": "Person",
   //     "name": "Jane Smith",
   //     "jobTitle": "Chief Operating Officer"
-  //     // "image": "https://pavagegatineau.com/img/jane_smith.jpg",
+  //     // "image": "https://pavage-asphalte-laval-montreal.ca /img/jane_smith.jpg",
   //     // "sameAs": "https://www.linkedin.com/in/janesmith"
   //   },
   //   {
   //     "@type": "Person",
   //     "name": "Mike Johnson",
   //     "jobTitle": "Chief Marketing Officer"
-  //     // "image": "https://pavagegatineau.com/img/mike_johnson.jpg",
+  //     // "image": "https://pavage-asphalte-laval-montreal.ca /img/mike_johnson.jpg",
   //     // "sameAs": "https://www.linkedin.com/in/mikejohnson"
   //   }
   // ],
