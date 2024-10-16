@@ -128,6 +128,9 @@ goneUrls.forEach(url => {
 
 
 
+app.get('*', async (req, res) => {
+  return res.status(503).render('site-is-being-built');
+});
 
 
 
@@ -142,10 +145,11 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
 
   // return res.end()
 
-  // return res.render('index', { ...res.locals.index_page_data });
-  return res.status(503).render('site-is-being-built');
+  return res.render('index', { ...res.locals.index_page_data });
   // return res.render(viewName, { ...res.locals.index_page_data });
 });
+
+
 
 
 
