@@ -127,9 +127,14 @@ goneUrls.forEach(url => {
 
 
 
+app.get('*', async (req, res, next) => {
 
-app.get('*', async (req, res) => {
-  return res.status(503).render('site-is-being-built');
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(503).render('site-is-being-built');
+  }
+
+  // Continue to the next middleware or route handler
+  next();
 });
 
 
