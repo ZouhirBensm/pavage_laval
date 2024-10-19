@@ -295,6 +295,10 @@ app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4
 
 
 
+
+
+
+
 app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware4.mid1, middleware4_en.mid1, middleware8.mid1,  async (req, res, next) => {
 
 

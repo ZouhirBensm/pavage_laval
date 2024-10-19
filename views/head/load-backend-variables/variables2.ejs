@@ -1,0 +1,24 @@
+<script>
+  console.group('Path: / or /en');
+  var business_data = <%- JSON.stringify(typeof business_data !== 'undefined' ? business_data : {}) %>;
+  var review_data = <%- JSON.stringify(typeof review_data !== 'undefined' ? review_data : {}) %>;
+  var main_service_data = <%- JSON.stringify(typeof main_service_data !== 'undefined' ? main_service_data : {}) %>;
+  var blog_elements = <%- JSON.stringify(typeof blog_elements !== 'undefined' ? blog_elements : {}) %>;
+  var extra_service_pages = <%- JSON.stringify(typeof extra_service_pages !== 'undefined' ? extra_service_pages : {}) %>;
+  console.log('Business Data:', business_data);
+  console.log('Review Data:', review_data);
+  console.log('Main Service Data:', main_service_data);
+  console.log('Blog Elements:', blog_elements);
+  console.log('Extra Service Pages:', extra_service_pages);
+  console.groupEnd();
+
+  console.group('Path: /a-propos or /about/en');
+  var all_data_per_page_title = <%- JSON.stringify(typeof all_data_per_page !== 'undefined' && all_data_per_page?.title ? all_data_per_page.title : '') %>;
+  console.log('All Data Per Page Title:', all_data_per_page_title);
+  console.groupEnd();
+
+  console.group('Path: /^\\/blog\\/[^\\/]+\\/blog-posting\\/[^\\/]+$/');
+  var blog_element = <%- JSON.stringify(typeof blog_element !== 'undefined' ? blog_element : {}) %>;
+  console.log('Blog Element:', blog_element);
+  console.groupEnd();
+</script>

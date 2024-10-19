@@ -100,7 +100,7 @@ script3.type = 'application/ld+json';
 const breadcrumbListSchema = generateBreadcrumbListSchema(blog_elements, extra_service_pages);
 
 
-console.log("\n(1)->\n", breadcrumbListSchema, "\n\n");
+// console.log("\n(1)->\n", breadcrumbListSchema, "\n\n");
 // console.log("\n(2)->\n",JSON.stringify(breadcrumbListSchema, null, 2), "\n\n");
 
 
