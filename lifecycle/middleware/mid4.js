@@ -89,6 +89,14 @@ async function mid1(req, res, next) {
   }
   
 
+  if (all_data_per_page_fr) {
+
+    let rendered_title_meta_canonical = undefined
+
+    rendered_title_meta_canonical = ejs.render(all_data_per_page_fr.title_meta_canonical, { title: all_data_per_page_fr.title, description: all_data_per_page_fr.description, req_path: res.locals.req_path});
+  
+    all_data_per_page_fr.rendered_title_meta_canonical = rendered_title_meta_canonical
+  }
 
 
   res.locals.index_page_data = {

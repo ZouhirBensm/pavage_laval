@@ -1,3 +1,5 @@
+const ejs = require('ejs');
+
 async function mid1(req, res, next) {
 
 
@@ -120,6 +122,16 @@ async function mid1(req, res, next) {
 
   // console.log(nav_en, welcome_section_en, business_data_en, all_data_per_page_en)
   console.log(demande_de_devis_gratuit_en)
+
+
+
+
+  let rendered_title_meta_canonical = undefined
+
+  rendered_title_meta_canonical = ejs.render(all_data_per_page_en.title_meta_canonical, { title: all_data_per_page_en.title, description: all_data_per_page_en.description, req_path: res.locals.req_path});
+
+  all_data_per_page_en.rendered_title_meta_canonical = rendered_title_meta_canonical
+  
 
 
 

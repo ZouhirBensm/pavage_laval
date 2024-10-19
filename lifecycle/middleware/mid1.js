@@ -1,3 +1,5 @@
+const ejs = require('ejs');
+
 async function mid1(req, res, next) {
 
 
@@ -195,6 +197,16 @@ async function mid1(req, res, next) {
 
 
 
+  let rendered_title_meta_canonical = undefined
+
+  rendered_title_meta_canonical = ejs.render(all_data_per_page_fr.title_meta_canonical, { title: all_data_per_page_fr.title, description: all_data_per_page_fr.description, req_path: res.locals.req_path});
+
+  all_data_per_page_fr.rendered_title_meta_canonical = rendered_title_meta_canonical
+
+
+
+
+  console.log('rendered_title_meta_canonical ->', all_data_per_page_fr.rendered_title_meta_canonical)
 
   res.locals.index_page_data = {
     blog_elements: blog_elements_fr,
@@ -214,7 +226,7 @@ async function mid1(req, res, next) {
 
 
 
-  console.log(res.locals.index_page_data)
+  // console.log(res.locals.index_page_data)
 
   return next()
 }

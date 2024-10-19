@@ -1,7 +1,7 @@
 const aboutWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": `${all_data_per_page.title}`,
+  "name": `${all_data_per_page_title}`,
   "url": `${business_data.website_main_url}/a-propos`,
   "mainEntity": {
     "@type": "Organization",

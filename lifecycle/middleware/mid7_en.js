@@ -52,11 +52,24 @@ async function mid1(req, res, next) {
 
 
 
-  res.locals.index_page_data.all_data_per_page = {
+  let all_data_per_page = {
     title: category_en.category_name,
     under_h1: category_page_en.under_h1,
     eq_lang_page: category_page_en.eq_lang_page
   }
+
+  let rendered_title_meta_canonical = undefined
+
+  rendered_title_meta_canonical = ejs.render(category_en.title_meta_canonical, { category_name: category_en.category_name, category_description: category_en.category_description, req_path: res.locals.req_path});
+
+  all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
+
+
+
+  
+  res.locals.index_page_data.all_data_per_page = all_data_per_page
+
+
 
 
   res.locals.index_page_data = {

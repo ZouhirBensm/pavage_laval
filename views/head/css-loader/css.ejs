@@ -7,88 +7,16 @@
 
 
 
-<% if (req_path === '/' || req_path === '/en') { %>
-
-  <link rel="stylesheet" href="/css/portfolio-section.css" />
-  <link rel="stylesheet" href="/css/review-section.css" />
-  <link rel="stylesheet" href="/css/faq-style.css" />
-
-<% } else if (req_path === '/demande-de-devis-gratuit' || req_path === '/request-a-free-quote/en') { %>
-
-  <link rel="stylesheet" href="/css/demande-de-devis-gratuit.css" />
-
-
-<% } else if (req_path === '/organisation' || req_path === '/organization/en') { %>
-
-  <link rel="stylesheet" href="/css/organization.css" />
-
-
-
-<% } else if (req_path === '/a-propos' || req_path === '/about/en') { %>
-
-
-
-
-
-<% } else if (req_path === '/service/pavage-residentiel-et-commercial-a-gatineau' || req_path === '/service/residential-and-commercial-paving-in-gatineau/en') { %>
-
-  <link rel="stylesheet" href="/css/pavage-residentiel-et-commercial.css" />
-
-
-
-<% } else if (req_path === '/service/revetement-maintenance-en-asphalte-gatineau' || req_path === '/service/asphalt-maintenance-coating-gatineau/en') { %>
-
-  <link rel="stylesheet" href="/css/revetement-en-asphalte.css" />
-
-
-
-
-<% } else if (req_path === '/service/travaux-en-beton-residentiel-et-commercial-a-gatineau' || req_path === '/service/residential-and-commercial-concrete-works-in-gatineau/en') { %>
-
-  <link rel="stylesheet" href="/css/travaux-en-beton-residentiel-et-commercial.css" />
-
-
-<% } else if (req_path.startsWith('/service')) { %>
-
-  <link rel="stylesheet" href="/css/page-de-services-supplementaires-seo.css" />
-
-
-
-
-<% } else if (/^\/blog\/[^\/]+\/blog-posting\/[^\/]+$/.test(req_path)) { %>
-
-  <link rel="stylesheet" href="/css/blog-posting.css" />
-
-
-
-
-<% } else if (req_path === '/blog') { %>
-
-
-  
-<% } else if (req_path.startsWith('/blog')) { %>
-
-
-
-
-<% } else if (req_path === '/plan-du-site' || req_path === '/sitemap/en') { %>
-
-
-
-
-<% } else if (req_path === '/tiroir1/mention-legale' || req_path === '/drawer1/legal-notice/en') { %>
-
-  <link rel="stylesheet" href="/css/mention-legale.css" />
-
-
-<% } else if (req_path === '/tiroir1/politique-de-confidentialite' || req_path === '/drawer1/privacy-policy/en') { %>
-
-  <link rel="stylesheet" href="/css/mention-legale.css" />
-
-
-<% } else { %>
-
-  <!-- <p>Status is unknown.</p> -->
-
+<% if (all_data_per_page.css_link) { %>
+  <%- all_data_per_page.css_link %>
 <% } %>
 
+
+
+
+<!-- < % if (req_path === '/a-propos' || req_path === '/about/en') { %>
+< % } else if (req_path === '/blog') { %>
+< % } else if (req_path.startsWith('/blog')) { %>
+< % } else if (req_path === '/plan-du-site' || req_path === '/sitemap/en') { %>
+< % } else { %>
+< % } %> -->

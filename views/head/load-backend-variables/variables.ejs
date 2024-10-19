@@ -60,10 +60,19 @@
 <% } else if (req_path === '/a-propos' || req_path === '/about/en') { %>
 
 
-  <script>
-    var all_data_per_page = <%- JSON.stringify(all_data_per_page) %>;
-    var business_data = <%- JSON.stringify(business_data) %>;
+  <%
+  // console.log(all_data_per_page)
+  // console.log(business_data)
+  %>
 
+  <script>
+
+
+    var all_data_per_page_title = <%- JSON.stringify(all_data_per_page.title) %>;
+    console.log(all_data_per_page_title)
+
+    var business_data = <%- JSON.stringify(business_data) %>;
+    console.log(business_data)
 
     // var nav_fr = < %- JSON.stringify(nav_fr) %>;
     // var welcome_section_fr = < %- JSON.stringify(welcome_section_fr) %>;
