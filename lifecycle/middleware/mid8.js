@@ -1,4 +1,5 @@
 const ejs = require('ejs');
+const blog_element_en = require('../../models/blog_element_en');
 
 async function mid1(req, res, next) {
 
@@ -18,11 +19,40 @@ async function mid1(req, res, next) {
     schema_script: schema_script
   }
 
+
+
+
   let rendered_title_meta_canonical = undefined
 
   rendered_title_meta_canonical = ejs.render(res.locals.blog_element.title_meta_canonical, { title: res.locals.blog_element.title, description: res.locals.blog_element.meta_description, req_path: res.locals.req_path});
 
   all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
+
+
+
+
+
+
+
+
+  let rendered_front_end_script_needed_to_serve_variables
+
+  // const { front_end_script_needed_to_serve_variables, ...blog_element_passed_to_front_end } = 
+  // res.locals.blog_element;
+  
+  const { front_end_script_needed_to_serve_variables: _, ...blog_element_passed_to_front_end } = 
+  res.locals.blog_element;
+
+  rendered_front_end_script_needed_to_serve_variables = ejs.render(res.locals.blog_element.front_end_script_needed_to_serve_variables, { business_data: res.locals.index_page_data.business_data, blog_element : blog_element_passed_to_front_end });
+
+  all_data_per_page.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+
+
+
+
+
+
+
 
 
   res.locals.index_page_data.all_data_per_page = all_data_per_page

@@ -292,6 +292,16 @@ async function mid1_en(req, res, next) {
   
 
 
+  let rendered_front_end_script_needed_to_serve_variables
+
+  rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_en.front_end_script_needed_to_serve_variables, { business_data: business_data_en, review_data: review_data_en, main_service_data: main_service_data_en, blog_elements: blog_elements_en, extra_service_pages: extra_service_pages_en });
+
+  all_data_per_page_en.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+
+
+
+
+
 
   res.locals.index_page_data = {
     blog_elements: blog_elements_en,

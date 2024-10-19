@@ -106,7 +106,19 @@ async function mid1(req, res, next) {
   all_data_per_page_fr.rendered_title_meta_canonical = rendered_title_meta_canonical
 
 
-  console.log('\n\nrendered_title_meta_canonical ->\n\n', all_data_per_page_fr.rendered_title_meta_canonical)
+  // console.log('\n\nrendered_title_meta_canonical ->\n\n', all_data_per_page_fr.rendered_title_meta_canonical)
+
+
+
+
+  let rendered_front_end_script_needed_to_serve_variables
+
+  rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_fr.front_end_script_needed_to_serve_variables, { business_data: business_data_fr, all_data_per_page: all_data_per_page_fr });
+
+  all_data_per_page_fr.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+
+
+
 
   res.locals.index_page_data = {
     all_data_per_page: all_data_per_page_fr,
