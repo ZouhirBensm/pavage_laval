@@ -24,3 +24,28 @@ nav#top, footer {
   justify-content: center;
   align-items: center; */
 }
+
+
+
+div#body {
+  padding: 80px;
+  margin: 8px;
+}
+
+@media (max-width: 1232px) {
+    div#body {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  div#body {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 390px) {
+  div#body {
+    padding: 40px 20px 10px;
+  }
+}
