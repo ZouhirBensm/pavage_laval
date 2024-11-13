@@ -75,6 +75,7 @@ body > footer > div > nav#bottom {
   align-items: center;
   overflow: hidden;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 body > footer > div  > *{
