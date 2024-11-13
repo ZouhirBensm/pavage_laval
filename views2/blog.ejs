@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<%- include('html/html-tag.ejs') %>
+
+
+<head>
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+  <meta name="googlebot" content="noindex">
+  <meta name="robots" content="noindex">
+  
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
+
+
+  <%- include('head/alt-lang-page-setter/alt-lang-page.ejs') %>
+</head>
+
+
+
+<body>
+
+  <%- include('body/nav.ejs') %>
+
+
+  <!-- Welcome Section -->
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+
+
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+
+          <div>
+            <h2>Blog</h2>
+            <h3><%= blog_page.h3_1 %></h3>
+
+            <ul>
+              <% category.forEach(function(category) { %>
+                <li><a href="/blog/<%= category.slug %>"><%= category.category_name %></a></li>
+              <% }); %>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

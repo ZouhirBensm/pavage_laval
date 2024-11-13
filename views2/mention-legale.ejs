@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<%- include('html/html-tag.ejs') %>
+
+
+<head>
+
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <!-- < %- include('head/load-backend-variables/variables.ejs') %> -->
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+  <meta name="googlebot" content="noindex">
+  <meta name="robots" content="noindex">
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
+
+  <%- include('head/alt-lang-page-setter/alt-lang-page.ejs') %>
+</head>
+
+
+
+
+<body>
+
+
+  <%- include('body/nav.ejs') %>
+
+
+  <!-- Welcome Section -->
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+
+
+
+
+
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          
+          <div class="tm-extra-service-description">
+
+
+            <%- legal_notice_page.html_content %>
+
+            <!-- <h2 class="tm-text-orange">Mention Légale</h2>
+        
+            <p>
+                <span>Clause de non-responsabilité du service de recommandation pour <strong>Pavage, l'asphalte et le béton résidentiel et commercial à Laval</strong>, <strong>Pavage Laval Earnanswers</strong>, et <strong>pavage-asphalte-laval-montreal.ca </strong></span><br>
+                Le site web <a href='/' target='_blank'>pavage-asphalte-laval-montreal.ca </a> est un service de recommandation qui met en relation les utilisateurs avec des entrepreneurs professionnels en pavage, asphalte et béton au Québec, Canada. Nous nous efforçons de fournir des informations précises et à jour concernant les services et entrepreneurs disponibles. Cependant, nous ne garantissons pas la qualité, la fiabilité ou la performance des services fournis par les entrepreneurs recommandés.
+            </p>
+        
+            <h3><strong>Limitation de Responsabilité</strong></h3>
+        
+            <p>
+                En utilisant ce site web et les services de recommandation offerts, vous acceptez que Pavage Laval et ses propriétaires, opérateurs, affiliés et employés ne sont pas responsables des dommages, pertes ou responsabilités qui peuvent découler de l'utilisation des services fournis par les entrepreneurs recommandés. Cela inclut, mais ne se limite pas, à tout dommage direct, indirect, incident, consécutif ou punitif.
+            </p>
+        
+            <h3><strong>Absence de Garantie</strong></h3>
+        
+            <p>
+                Pavage Laval ne fait aucune représentation ou garantie d'aucune sorte, expresse ou implicite, concernant l'exactitude, l'exhaustivité ou l'adéquation des informations fournies sur ce site web. Toutes les informations sont fournies "en l'état" sans aucune garantie de quelque nature que ce soit.
+            </p>
+        
+            <h3><strong>Entrepreneurs Indépendants</strong></h3>
+        
+            <p>
+                Les entrepreneurs recommandés par Pavage Laval sont des entreprises indépendantes et ne sont pas des employés, agents ou représentants de Pavage Laval. Nous ne supervisons pas, ne contrôlons pas et n'avons aucune autorité sur le travail effectué par ces entrepreneurs. Il est de la responsabilité de l'utilisateur de mener ses propres vérifications et de vérifier les références, licences et assurances de tout entrepreneur qu'il choisit d'embaucher.
+            </p>
+        
+            <h3><strong>Juridiction</strong></h3>
+        
+            <p>
+                Cette clause de non-responsabilité est régie par les lois du Québec, Canada. En utilisant ce site web, vous acceptez de vous soumettre à la juridiction exclusive des tribunaux situés au Québec pour la résolution de tout litige découlant de ou lié à votre utilisation de ce site web ou des services de recommandation fournis.
+            </p>
+        
+            <h3><strong>Déclaration Supplémentaire</strong></h3>
+        
+            <p>
+                Aux fins de cette clause de non-responsabilité, toute référence à "Pavage Laval" fait également référence à "Pavage Laval Earnanswers", et "pavage-asphalte-laval-montreal.ca ."
+            </p>
+        
+            <p>
+                Si vous avez des questions ou des préoccupations concernant cette clause de non-responsabilité, veuillez <a href='/' target='_blank'>nous contacter</a>.
+            </p>
+        
+            <h2 class="tm-text-orange">Conditions d'Utilisation ("Conditions")</h2>
+        
+            <p>Dernière mise à jour : 13 Aout 2024</p>
+            <p>
+                Veuillez lire attentivement ces Conditions d'Utilisation ("Conditions", "Conditions d'Utilisation") avant d'utiliser le site web https://www.pavage-asphalte-laval-montreal.ca / (le "Service") exploité par Pavage Laval ("nous", "notre" ou "nos").
+            </p>
+            <p>
+                Votre accès et utilisation du Service sont conditionnés à votre acceptation et au respect de ces Conditions. Ces Conditions s'appliquent à tous les visiteurs, utilisateurs et autres personnes qui accèdent ou utilisent le Service.
+            </p>
+            <p>
+                En accédant ou en utilisant le Service, vous acceptez d'être lié par ces Conditions. Si vous n'êtes pas d'accord avec une partie des conditions, vous ne pouvez pas accéder au Service.
+            </p>
+        
+            <h3><strong>Liens Vers D'autres Sites Web</strong></h3>
+        
+            <p>
+                Notre Service peut contenir des liens vers des sites web ou des services tiers qui ne sont pas détenus ou contrôlés par Pavage Laval.
+            </p>
+            <p>
+                Pavage Laval n'a aucun contrôle sur, et n'assume aucune responsabilité pour, le contenu, les politiques de confidentialité ou les pratiques de tout site web ou service tiers. Vous reconnaissez et acceptez en outre que Pavage Laval ne sera pas responsable, directement ou indirectement, de tout dommage ou perte causé ou prétendument causé par ou en relation avec l'utilisation ou la confiance accordée à un tel contenu, biens ou services disponibles sur ou via de tels sites web ou services.
+            </p>
+            <p>
+                Nous vous conseillons vivement de lire les termes et conditions et les politiques de confidentialité de tout site web ou service tiers que vous visitez.
+            </p>
+        
+            <h3><strong>Droit Applicable</strong></h3>
+        
+            <p>
+                Ces Conditions sont régies et interprétées conformément aux lois du Québec, Canada, sans tenir compte de ses dispositions en matière de conflit de lois.
+            </p>
+            <p>
+                Notre incapacité à appliquer un droit ou une disposition de ces Conditions ne sera pas considérée comme une renonciation à ces droits. Si une disposition de ces Conditions est jugée invalide ou inapplicable par un tribunal, les autres dispositions de ces Conditions resteront en vigueur. Ces Conditions constituent l'intégralité de l'accord entre nous concernant notre Service, et remplacent et annulent tout accord précédent que nous aurions pu avoir entre nous concernant le Service.
+            </p>
+        
+            <h3><strong>Modifications</strong></h3>
+        
+            <p>
+                Nous nous réservons le droit, à notre seule discrétion, de modifier ou de remplacer ces Conditions à tout moment. Si une révision est importante, nous essaierons de fournir un préavis d'au moins 30 jours avant que les nouvelles conditions n'entrent en vigueur. Ce qui constitue une modification importante sera déterminé à notre seule discrétion.
+            </p>
+            <p>
+                En continuant d'accéder ou d'utiliser notre Service après l'entrée en vigueur de ces révisions, vous acceptez d'être lié par les conditions révisées. Si vous n'êtes pas d'accord avec les nouvelles conditions, veuillez cesser d'utiliser le Service.
+            </p>
+        
+            <h3><strong>Contactez-nous</strong></h3>
+        
+            <p class="mb-0">
+                Si vous avez des questions concernant ces Conditions, veuillez <a href='/' target='_blank'>nous contacter</a>.
+            </p> -->
+
+
+        </div>
+        
+          
+          
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End portfolio section -->
+
+
+
+
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+</body>
+
+
+
+
+
+</html>

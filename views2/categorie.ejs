@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- cant place alt lang page -->
+<%- include('html/html-tag.ejs') %>
+
+
+<head>
+
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <%- include('head/meta/meta-title-can.ejs') %>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+  <%- include('head/meta/meta-lang-loader.ejs') %>
+</head>
+
+
+
+<body>
+
+  <%- include('body/nav.ejs') %>
+
+
+  <!-- Welcome Section -->
+  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+    alt="<%= welcome_section.banner_img_alt %>">
+
+    <%- include('body/welcome-section/part1.ejs') %>
+
+    <div class="tm-bg-black-transparent tm-welcome-container">
+      <div class="container-fluid">
+
+
+        <div class="row h-100">
+
+          <%- include('body/welcome-section/part2.ejs') %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome section -->
+
+
+
+
+
+  <!-- Portfolio section -->
+  <section id="tmPortfolio">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+          <div>
+            <h2 class="category-template"><%= category.category_name %></h2>
+            <h3>Blog Postings</h3>
+
+
+              <ul>
+
+                <% if (is_english) { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug.replace(/\/en$/, '') %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+                
+                <% } else { %>
+
+                  <% blog_elements.forEach(function(blog) { %>
+                    <li>
+                      <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                        <%= blog.title %>
+                      </a>
+                    </li>
+                  <% }); %>
+
+                <% } %>
+
+
+
+
+
+              </ul>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+
+</body>
+
+
+
+
+
+</html>

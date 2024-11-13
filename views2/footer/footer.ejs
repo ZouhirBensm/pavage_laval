@@ -1,0 +1,110 @@
+
+
+<footer>
+  <div>
+    <div id="social-media">
+      <a target="_blank" rel="noopener nofollow" href="#social1">
+        <img style="height: 44px; width: 44px;" src="/img/icons/youtube_white.svg" alt="<%= footer.youtube_alt %>">
+      </a>
+
+      <a target="_blank" rel="noopener nofollow" href="#social2">
+        <img style="height: 44px; width: 44px;" src="/img/icons/twitter_white.svg" alt="<%= footer.twitter_alt %>">
+      </a>
+
+      <a target="_blank" rel="noopener nofollow" href="#social3">
+        <img style="height: 44px; width: 44px;" src="/img/icons/pinterest_white.svg" alt="<%= footer.pinterest_alt %>">
+      </a>
+      <a target="_blank" href="#social4">
+        <img style="height: 44px; width: 44px;" src="/img/icons/quora_white.svg" alt="<%= footer.quora_alt %>">
+      </a>
+
+      <a target="_blank" rel="noopener nofollow" href="mailto:<%= business_data.email %>">
+        <img style="height: 44px; width: 44px;" src="/img/icons/email_white.svg" alt="<%= footer.email_alt %>">
+      </a>
+
+    </div>
+
+
+    <nav id="bottom">
+
+      <a href="<%= footer.sitemap_path %>"><%= footer.sitemap %></a>
+      <a href="<%= footer.blog_path %>"><%= footer.blog %></a>
+      <a href="<%= footer.legal_disclaimer_path %>"><%= footer.legal_disclaimer %></a>
+      <a href="<%= footer.privacy_policy_path %>"><%= footer.privacy_policy %></a>
+      <a href="tel:<%= business_data.telephone2 %>"><%= business_data.telephone %></a>
+
+    </nav>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+<div>
+  <div>
+
+    <p class="text-center tm-copyright-text">
+      Copyright © 2024
+      | <%= footer.powered %> <a target="_blank" href="https://earnanswers.com">Earnanswers</a>
+
+      <a href="<%= footer.legal_disclaimer_path %>">
+        <img src="/img/abc1.png" alt="Logo" class="responsive-img" style="width: auto; max-width: 100%;">
+      </a>
+
+    </p>
+
+
+
+
+  </div>
+</div>
+
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/parallax.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  function detectMsBrowser() {
+    using_ms_browser =
+      navigator.appName == "Microsoft Internet Explorer" ||
+      (navigator.appName == "Netscape" &&
+        navigator.appVersion.indexOf("Edge") > -1) ||
+      (navigator.appName == "Netscape" &&
+        navigator.appVersion.indexOf("Trident") > -1);
+
+    if (using_ms_browser == true) {
+      alert(
+        "Please use Chrome or Firefox for the best browsing experience!"
+      );
+    }
+  }
+  function setBrandMarginTop() {
+    var bottomContainerHeight = $(".tm-welcome-container").height();
+
+    $(".tm-brand-container-outer").css({
+      "margin-top": -bottomContainerHeight + "px"
+    });
+  }
+
+  $(function () {
+    setBrandMarginTop();
+    detectMsBrowser();
+
+    // Handle window resize event
+    $(window).resize(function () {
+      setBrandMarginTop();
+    });
+  });
+</script>
