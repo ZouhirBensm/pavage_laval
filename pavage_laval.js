@@ -15,6 +15,9 @@ const createSiteMap = require('./miscellaneous/utils/custom-sitemap')
 const Compression = require('./miscellaneous/services/compression/compression-middleware')
 
 
+const logDataInColoredStructure = require('./miscellaneous/utils/log-data-structure')
+
+
 
 
 const dialect = 'mysql'
@@ -150,9 +153,15 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
 
   // return res.end()
 
+  // console.log("\n\nDATA: res.locals.index_page_data ->\n\n", res.locals.index_page_data)
+  logDataInColoredStructure(res.locals.index_page_data);
+
+  // return res.end()
+
   return res.render('index', { ...res.locals.index_page_data });
   // return res.render(viewName, { ...res.locals.index_page_data });
 });
+
 
 
 

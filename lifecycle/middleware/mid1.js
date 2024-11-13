@@ -214,7 +214,7 @@ async function mid1(req, res, next) {
 
 
 
-  console.log('rendered_title_meta_canonical ->', all_data_per_page_fr.rendered_title_meta_canonical)
+  // console.log('rendered_title_meta_canonical ->', all_data_per_page_fr.rendered_title_meta_canonical)
 
   res.locals.index_page_data = {
     blog_elements: blog_elements_fr,
