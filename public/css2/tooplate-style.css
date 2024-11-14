@@ -34,7 +34,8 @@ textarea {
 }
 
 a {
-	color: #FF0;
+	/* color: #FF0; */
+  color: #5b5bb2;
   text-decoration: none;
 }
 
