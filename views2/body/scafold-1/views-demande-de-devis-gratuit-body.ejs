@@ -1,0 +1,84 @@
+
+<!-- Welcome Section -->
+
+<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
+  alt="<%= welcome_section.banner_img_alt %>">
+
+
+  <%- include('../welcome-section/part1.ejs') %>
+
+
+
+
+  <div class="tm-bg-black-transparent tm-welcome-container">
+
+    <div class="container-fluid">
+      <div class="row h-100">
+
+        <%- include('../welcome-section/part2.ejs') %>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Welcome section -->
+
+
+
+
+
+
+<!-- Portfolio section -->
+<section id="tmPortfolio">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-12">
+
+        <h2>
+          <a href='/' target='_blank'><%= demande_de_devis_gratuit.h2_1 %></a>
+        </h2>
+
+
+
+
+        <!-- Using browser capabilities -->
+        <form id="tmContactForm" class="tm-bg-white-transparent">
+          <div class="form-group">
+            <input type="text" id="contact_name" name="contact_name"
+              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="<%= demande_de_devis_gratuit.placeholder_name %>" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="contact_email" name="contact_email"
+              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" id="contact_phone" name="contact_phone"
+              class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Telephone"
+              pattern="^\+?1?\d{10,15}$" required />
+            <div class="side-note-form">(<%= demande_de_devis_gratuit.valid_format %> 9991234444, +19991234444)</span>
+
+            </div>
+            <div class="form-group">
+              <textarea rows="4" id="contact_message" name="contact_message"
+                class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                placeholder="<%= demande_de_devis_gratuit.placeholder_message %>"
+                required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn tm-btn-submit rounded-0">
+                <%= demande_de_devis_gratuit.button %>
+              </button>
+            </div>
+        </form>
+
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+<!-- End portfolio section -->

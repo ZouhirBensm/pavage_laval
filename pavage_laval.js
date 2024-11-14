@@ -182,6 +182,10 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
 app.get(['/demande-de-devis-gratuit', '/request-a-free-quote/en'], middleware2.mid1, middleware2_en.mid1, async (req, res) => {
 
   // return res.end()
+
+  logDataInColoredStructure(res.locals.index_page_data);
+
+
   return res.render('demande-de-devis-gratuit', { ...res.locals.index_page_data });
 });
 
@@ -366,7 +370,7 @@ app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], middleware4.mid
 
   const legal_notice_page = legal_notice_page_fr || legal_notice_page_en
 
-  console.log(legal_notice_page)
+  // console.log(legal_notice_page)
 
 
   // return res.end()
@@ -375,6 +379,10 @@ app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], middleware4.mid
     ...res.locals.index_page_data,
     legal_notice_page: legal_notice_page
   }
+
+  
+
+  logDataInColoredStructure(res.locals.index_page_data);
 
   return res.render('mention-legale', { ...res.locals.index_page_data });
 });

@@ -25,6 +25,10 @@ nav#top, footer {
   align-items: center; */
 }
 
+body > nav + * {
+  flex-grow: 1;
+}
+
 
 
 div#body {
