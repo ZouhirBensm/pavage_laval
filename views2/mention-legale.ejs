@@ -31,20 +31,24 @@
   <%- include('body/nav.ejs') %>
 
 
+  <main id="body">
+
     
-  <!-- <h1>Hello</h1> -->
+    <!-- <h1>Hello</h1> -->
 
-  <!-- site 1 -->
-  <!-- < %- include('body/scafold-1/views-mention-legale.ejs') %> -->
+    <!-- site 1 -->
+    <!-- < %- include('body/scafold-1/views-mention-legale.ejs') %> -->
   
+    <div id="page-content">
+      <div class="padding1">
+          <%- legal_notice_page.html_content %>
+      </div>
+    </div>
+    
+    <%- include('body2/brochure.ejs') %>
 
-  <!-- site 2 -->
-  <!-- < %- include('body2/div#body.ejs') %> -->
 
-
-
-  <!-- site 2 test-->
-  <%- include('body2/div#body-test2.ejs') %>
+  </main>
 
 
 

@@ -71,6 +71,18 @@ async function mid1(req, res, next) {
   }
 
 
+  const contact_form_data_en = await db.demande_de_devis_gratuit_en.findOne({
+    raw: true
+    // attributes: ['slug', 'title'],
+  });
+
+
+  if (!contact_form_data_en) {
+    const error = new Error("No all_data_per_page_fr found!")
+    return next(error)
+  }
+
+
   // console.log('all_data_per_page_en ->\n', all_data_per_page_en, '\n\n')
   // return next()
 
@@ -139,7 +151,8 @@ async function mid1(req, res, next) {
     welcome_section: welcome_section_en,
     footer: footer_en,
     ...(organization_page_data_en ? { organization_page_data: organization_page_data_en } : {}),
-    ...(about_page_en ? { about_page: about_page_en } : {})
+    ...(about_page_en ? { about_page: about_page_en } : {}),
+    contact_form_data: contact_form_data_en
   }
 
 

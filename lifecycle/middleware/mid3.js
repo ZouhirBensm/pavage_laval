@@ -60,6 +60,17 @@ async function mid1(req, res, next) {
     return next(error)
   }
 
+  const contact_form_data_fr = await db.demande_de_devis_gratuit_fr.findOne({
+    raw: true
+    // attributes: ['slug', 'title'],
+  });
+
+
+  if (!contact_form_data_fr) {
+    const error = new Error("No all_data_per_page_fr found!")
+    return next(error)
+  }
+
 
   const footer_fr = await db.footer_fr.findOne({
     raw: true
@@ -127,7 +138,8 @@ async function mid1(req, res, next) {
     welcome_section: welcome_section_fr,
     footer: footer_fr,
     ...(organization_page_data_fr ? { organization_page_data: organization_page_data_fr } : {}),
-    ...(about_page_fr ? { about_page: about_page_fr } : {})
+    ...(about_page_fr ? { about_page: about_page_fr } : {}),
+    contact_form_data: contact_form_data_fr
   };
 
 

@@ -51,6 +51,18 @@ async function mid1(req, res, next) {
   });
 
 
+  const contact_form_data_en = await db.demande_de_devis_gratuit_en.findOne({
+    raw: true
+    // attributes: ['slug', 'title'],
+  });
+
+
+  if (!contact_form_data_en) {
+    const error = new Error("No all_data_per_page_fr found!")
+    return next(error)
+  }
+
+
 
   const footer_en = await db.footer_en.findOne({
     raw: true
@@ -105,7 +117,8 @@ async function mid1(req, res, next) {
     // ...(main_service_data_en ? { main_service_data: main_service_data_en } : {}),
     ...(rendered_web_page_content ? { main_service_data: rendered_web_page_content } : {}),
     ...(res.locals.blog_element ? { blog_element: res.locals.blog_element } : {}),
-    ...(all_data_per_page_en ? { all_data_per_page: all_data_per_page_en } : {})
+    ...(all_data_per_page_en ? { all_data_per_page: all_data_per_page_en } : {}),
+    contact_form_data: contact_form_data_en
   }
 
 
