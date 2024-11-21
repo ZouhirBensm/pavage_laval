@@ -68,7 +68,8 @@ nav#top>a:visited:active {
 }
 
 nav#top>a:hover {
-  color: orange;
+  /* color: orange; */
+  color: #7777ab;
 }
 
 

@@ -241,9 +241,18 @@ span.tm-brand-name {
 }
 
 .tm-portfolio-description {
-  width: calc(100% - 330px);
-  padding: 20px 45px;
+  width: calc(100% - 500px);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+  padding-right: 20px;
 }
+
+/* .tm-portfolio-description:has(.img.main) {
+  width: calc(100% - 420px);
+  padding: 20px 25px 20px 60px;
+} */
+
 
 .tm-extra-service-description {
   padding: 20px 45px;
@@ -419,7 +428,7 @@ p {
   } */
 }
 
-@media (max-width: 730px) {
+@media (max-width: 1200px) {
   .tm-portfolio-item {
     flex-direction: column;
   }

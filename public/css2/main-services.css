@@ -1,0 +1,58 @@
+div.tm-portfolio-item > img.main {
+  width: 420px;
+  height: 650px;
+  margin: unset;
+  /* border-radius: 20px; */
+  box-shadow:
+  0px 5.1px 1.9px -18px rgba(0, 0, 0, 0.19),
+  0px 41px 15px -18px rgba(0, 0, 0, 0.38)
+}
+
+div.tm-portfolio-item > img {
+  width: 500px;
+  height: 300px;
+  margin: unset;
+  /* border-radius: 20px; */
+  box-shadow:
+  0px 5.1px 1.9px -18px rgba(0, 0, 0, 0.19),
+  0px 41px 15px -18px rgba(0, 0, 0, 0.38)
+}
+
+/* Apply reverse order for odd tm-portfolio-item */
+.tm-portfolio-item:nth-child(odd) img {
+  order: 2; /* Image appears second for odd items */
+}
+
+.tm-portfolio-item:nth-child(odd) .tm-portfolio-description {
+  order: 1; /* Description appears first for odd items */
+  padding-left: 20px;
+  padding-right: 100px;
+}
+
+
+
+@media (max-width: 1200px) {
+  div.tm-portfolio-item > img.main {
+    width: 50%;
+    /* height: 320px; */
+    height: 650px;
+  }
+
+  div.col-12.spacing > div.tm-portfolio-item > img {
+    margin: 30px auto;
+    order: 1;
+  }
+
+  div.col-12.spacing > div.tm-portfolio-item > div.tm-portfolio-description {
+    order: 2;
+  }
+}
+
+
+.tm-portfolio-item {
+  color: white;
+}
+
+.tm-portfolio-description > h2 {
+  color: #7777ab;
+}

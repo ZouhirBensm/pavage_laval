@@ -70,3 +70,26 @@ div.side-note-form {
   font-weight: 400;
   line-height: 1.5;
 }
+
+
+.tm-portfolio-description:has(.img.main) {
+  width: calc(100% - 420px);
+  padding: 20px 25px 20px 60px;
+}
+
+
+div[data-desktop-seq-no="6"]:has(iframe) {
+  overflow: hidden;
+}
+
+@media (max-width: 820px) {
+  div.tm-portfolio-item > img.main {
+    width: 80%;
+  }
+
+  div.col-12.spacing > div.tm-portfolio-item > img {
+    width: 90%;
+  }
+
+
+}

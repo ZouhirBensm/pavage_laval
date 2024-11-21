@@ -35,7 +35,7 @@ textarea {
 
 a {
 	/* color: #FF0; */
-  color: #5b5bb2;
+  color: #7777ab;
   text-decoration: none;
 }
 
@@ -320,7 +320,8 @@ textarea {
 }
 
 .tm-footer a:hover {
-  color: #996666;
+  /* color: #996666; */
+  color: #7777ab;
 }
 
 .tm-footer p {

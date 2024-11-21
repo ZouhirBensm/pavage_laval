@@ -31,5 +31,5 @@ function sendEmail(event) {
 
 
 const form = document.getElementById("tmContactForm");
-console.log(form, contact_form_data)
+console.log(form)
 form.addEventListener("submit", sendEmail);

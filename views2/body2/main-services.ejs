@@ -3,34 +3,15 @@
 
   <% main_service_data.forEach((service, i)=> { %>
 
-
-
     <div class="tm-portfolio-item">
 
-      <!-- <img src="< %= service.service_image_path %>" alt="< %= service.service_image_description %>"> -->
-       
-      <div class="tm-portfolio-name text-white tm-bg-green"
-        aria-label="<%= service.service_image_description %>">
-
-        <img src="<%= service.service_image_path %>"
-          alt="<%= service.service_image_description %>"
-          style="display:none;">
-
-      </div>
-
-      <style>
-        /* Select the first occurrence of the matched div */
-        .tm-portfolio-item:nth-of-type(<%= i+1 %>) .tm-portfolio-name {
-          background-image: url('..<%= service.service_image_path %>');
-        }
-      </style>
-
+      <img class="main" src="<%= service.service_image_path %>" alt="<%= service.service_image_description %>">
 
       <div class="tm-portfolio-description">
-        <h2 class="tm-text-black">
+        <h2>
           <%= service.service_name %>
             <a class="tm-title-small" href="/service/<%= service.slug %>">
-              <%= portfolio_section.op1 %>
+              <u><%= portfolio_section.op1 %></u>
             </a>
         </h2>
         <p class="mb-0">
@@ -46,26 +27,13 @@
 
 
 
-
   <%
   const more_service_img_alt = "A close-up view of a driveway with a combination of asphalt and interlocking stone pavers, showing a clean transition between the two materials and bordered by a stone curb."
   %>
 
   <div class="tm-portfolio-item">
-    <div class="tm-portfolio-name text-white tm-bg-blue"
-      aria-label="<%= more_service_img_alt %>">
-      <img src="/img/more_services1.webp"
-        alt="<%= more_service_img_alt %>" style="display:none;">
-    </div>
 
-
-    <style>
-      .tm-portfolio-item:nth-of-type(4) .tm-portfolio-name {
-        background-image: url('../img/more_services1.webp');
-      }
-    </style>
-
-
+    <img src="/img/more_services1.webp" alt="<%= more_service_img_alt %>">
 
     <div class="tm-portfolio-description">
       <h2 class="tm-text-black">
@@ -76,17 +44,19 @@
       </h2>
       
       <p class="mb-0">
-      <div>
-        <ul>
-          <% extra_service_pages.forEach(function(service) { %>
-            <li><a href="/service/<%= service.slug %>"><%= service.title %></a></li>
-          <% }); %>
-        </ul>
+        <div>
+          <ul>
+            <% extra_service_pages.forEach(function(service) { %>
+              <li><a href="/service/<%= service.slug %>"><%= service.title %></a></li>
+            <% }); %>
+          </ul>
 
 
-      </div>
+        </div>
       </p>
+
     </div>
+    
   </div>
 
 
@@ -94,31 +64,15 @@
 
   <% index_content.forEach((content, i)=> { %>
 
+    
+    
     <div class="tm-portfolio-item">
-      <div class="tm-portfolio-name text-white tm-bg-purple"
-        aria-label="<%= content.img_alt %>">
-        <img src="<%= content.img_path %>"
-          alt="<%= content.img_alt %>"
-          style="display:none;">
-      </div>
-
-
-      <style>
-        .tm-portfolio-item:nth-of-type(<%= i+5 %>) .tm-portfolio-name {
-          background-image: url('..<%= content.img_path %>');
-        }
-      </style>
-
-
-
+      <img src="<%= content.img_path %>" alt="<%= content.img_alt %>">
 
       <div class="tm-portfolio-description">
         <h2 class="tm-text-black">
           <%= content.title %>
-          <!-- <a class="tm-title-small" href="/service/drywall-industry-overview">More details</a> -->
         </h2>
-
-
 
         <p class="mb-0">
           <h3><%= content.sub_title %></h3>
