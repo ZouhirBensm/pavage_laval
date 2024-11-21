@@ -31,25 +31,25 @@ body > nav + * {
 
 
 
-main#body {
+div.spacing {
   padding: 80px;
   margin: 8px;
 }
 
 @media (max-width: 1232px) {
-    main#body {
+    div.spacing {
     padding: 60px;
   }
 }
 
 @media (max-width: 520px) {
-  main#body {
+  div.spacing {
     padding: 50px;
   }
 }
 
 @media (max-width: 390px) {
-  main#body {
+  div.spacing {
     padding: 40px 20px 10px;
   }
 }
@@ -58,4 +58,15 @@ main#body {
 
 div[itemtype="https://schema.org/Organization"] > a {
   white-space: pre-line;
+  color: white;
+}
+
+
+
+div.side-note-form {
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.5;
 }

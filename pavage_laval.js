@@ -149,6 +149,9 @@ app.get('*', async (req, res, next) => {
 
 
 
+
+
+
 app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
 
 
@@ -166,6 +169,9 @@ app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res)
   return res.render('index', { ...res.locals.index_page_data });
   // return res.render(viewName, { ...res.locals.index_page_data });
 });
+
+
+
 
 
 
