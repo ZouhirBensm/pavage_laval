@@ -77,7 +77,7 @@ async function mid1(req, res, next) {
   }
 
 
-  console.log('\n\n(**) ->\n\n', res.locals.index_page_data)
+  // console.log('\n\n(**) ->\n\n', res.locals.index_page_data)
 
 
 
