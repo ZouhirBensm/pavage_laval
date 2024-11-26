@@ -135,22 +135,3 @@ const middleware = {
 
 
 module.exports = middleware
-
-
-
-// async function pull_reviews_from_DB(number) {
-  
-//   const reviews = await db.review_data_en.findAll({
-//     raw: true
-//   });
-  
-//   if (!reviews) {
-//     console.log('pull reviews from DB', number)
-
-//     const error = new Error("No review data found!")
-//     return error
-//   }
-
-//   return reviews
-  
-// }
