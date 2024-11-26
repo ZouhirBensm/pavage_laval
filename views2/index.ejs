@@ -45,42 +45,7 @@
     <%- include('body2/main-services.ejs') %>
 
 
-    <div id="container">
-
-      <% review_data.forEach(function(review) { %>
-        
-        <div class="review-item">
-  
-          <p>
-            <%= review.review_body %>
-          </p>
-  
-          <p class="mb-0">
-            <%= review.name %>
-          </p>
-  
-  
-          <div class="star-rating">
-            <div class="stars-<%= Math.floor(review.rating_value) %>">
-              <% for(let i = 1; i <= 5; i++) { %>
-                <span class="star <%= i <= Math.floor(review.rating_value) ? 'filled' : (i === Math.ceil(review.rating_value) && review.rating_value % 1 !== 0 ? 'half-filled' : '') %>">★</span>
-              <% } %>
-            </div>
-          </div>
-
-          <div class="svg-wrapper"></div>
-          <div class="svg-wrapper2"></div>
-
-        </div>
-  
-      <% }); %>
-
-    </div>
-
-
-
-
-
+    <%- include('body2/reviews.ejs') %>
 
   </main>
 
