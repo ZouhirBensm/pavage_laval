@@ -111,19 +111,32 @@ async function mid1_en(req, res, next) {
   // return next()
 
 
-
-  const review_data_en = await db.review_data_en.findAll({
-    raw: true
-  });
-
-  if (!review_data_en) {
-    const error = new Error("No review data found!")
-    return next(error)
-  }
+  // PULL REVIEWS FROM API
+  let review_data_en = res.locals.reviews.map((review, index) => ({
+    id: index + 1,  // Assign a unique ID (starting from 1)
+    name: review.author_name,  // Use author's name as 'name'
+    rating_value: review.rating,  // Map the rating
+    review_body: review.text,  // Use the review's text
+  }));
 
 
 
-  // console.log('review_data_en ->\n', review_data_en, '\n\n')
+  // PULL REVIEWS FROM DB
+  // const review_data_en = await db.review_data_en.findAll({
+  //   raw: true
+  // });
+
+  // if (!review_data_en) {
+  //   const error = new Error("No review data found!")
+  //   return next(error)
+  // }
+
+  review_data_en = review_data_en.slice(0, 6);
+
+  
+
+
+  console.log('review_data_en ->\n', review_data_en, '\n\n')
 
 
   // return next()

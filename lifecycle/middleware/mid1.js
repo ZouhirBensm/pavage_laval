@@ -86,15 +86,32 @@ async function mid1(req, res, next) {
   // console.log(main_service_data_fr)
 
 
-  const review_data_fr = await db.review_data_fr.findAll({
-    // attributes: ['slug', 'title'],
-    raw: true
-  });
 
-  if (!review_data_fr) {
-    const error = new Error("No review data found!")
-    return next(error)
-  }
+  // PULL REVIEWS FROM API
+  let review_data_fr = res.locals.reviews.map((review, index) => ({
+    id: index + 1,  // Assign a unique ID (starting from 1)
+    name: review.author_name,  // Use author's name as 'name'
+    rating_value: review.rating,  // Map the rating
+    review_body: review.text,  // Use the review's text
+  }));
+
+
+
+  // PULL REVIEWS FROM DB
+  // const review_data_fr = await db.review_data_fr.findAll({
+  //   raw: true
+  // });
+
+  // if (!review_data_fr) {
+  //   const error = new Error("No review data found!")
+  //   return next(error)
+  // }
+
+  review_data_fr = review_data_fr.slice(0, 6);
+
+  
+
+  // console.log('review_data_fr ->\n', review_data_fr, '\n\n')
 
 
 

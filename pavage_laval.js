@@ -40,6 +40,7 @@ app.use(Compression);
 
 
 
+
 const middleware0 = require('./lifecycle/middleware/mid0')
 const middleware1 = require('./lifecycle/middleware/mid1')
 const middleware1_en = require('./lifecycle/middleware/mid1_en')
@@ -58,6 +59,7 @@ const middleware7_en = require('./lifecycle/middleware/mid7_en')
 const middleware8 = require('./lifecycle/middleware/mid8')
 const middleware9 = require('./lifecycle/middleware/mid9')
 const middleware9_en = require('./lifecycle/middleware/mid9_en')
+const middleware10 = require('./lifecycle/middleware/mid10')
 
 
 
@@ -152,7 +154,7 @@ app.get('*', async (req, res, next) => {
 
 
 
-app.get(['/', '/en'], middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
+app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
 
 
   // return res.end()
