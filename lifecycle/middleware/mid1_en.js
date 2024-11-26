@@ -1,5 +1,9 @@
 const ejs = require('ejs');
 
+const { translateReviews } = require('../../miscellaneous/services/translator')
+
+
+
 async function mid1_en(req, res, next) {
   
   console.log(is_english, '\n\n')
@@ -101,45 +105,61 @@ async function mid1_en(req, res, next) {
     return next(error)
   }
 
-
-
-
-
   // console.log('main_service_data_en ->\n', main_service_data_en, '\n\n')
 
 
   // return next()
 
 
-  // PULL REVIEWS FROM API
-  let review_data_en = res.locals.reviews.map((review, index) => ({
-    id: index + 1,  // Assign a unique ID (starting from 1)
-    name: review.author_name,  // Use author's name as 'name'
-    rating_value: review.rating,  // Map the rating
-    review_body: review.text,  // Use the review's text
-  }));
 
-
-
-  // PULL REVIEWS FROM DB
-  // const review_data_en = await db.review_data_en.findAll({
-  //   raw: true
-  // });
-
-  // if (!review_data_en) {
-  //   const error = new Error("No review data found!")
-  //   return next(error)
-  // }
-
-  review_data_en = review_data_en.slice(0, 6);
 
   
 
 
-  console.log('review_data_en ->\n', review_data_en, '\n\n')
+
+  console.log(res.locals.reviews)
 
 
-  // return next()
+
+  let review_data_en = res.locals.reviews.map((review, index) => ({
+    id: index + 1,
+    name: review.author_name,
+    rating_value: review.rating,
+    review_body: review.text,
+  }));
+
+  // TO TEST TRANSLATION FUNCTIONALITY
+  // review_data_en.push({
+  //   id: review_data_en.length + 1,
+  //   name: 'Jean-Pierre D.',
+  //   rating_value: 5,
+  //   review_body: 'Excellente expérience, je recommande vivement!',
+  // });
+
+
+
+  try {
+    review_data_en = await translateReviews(review_data_en, 'en')
+  } catch (error) {
+
+    review_data_en = await db.review_data_en.findAll({
+      raw: true
+    });
+
+    if (!review_data_en) {
+      const error = new Error("No review data found!")
+      return next(error)
+    }
+  }
+
+
+  review_data_en = review_data_en.slice(0, 6);
+
+
+
+
+
+
 
 
 

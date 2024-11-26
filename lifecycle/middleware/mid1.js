@@ -1,4 +1,9 @@
 const ejs = require('ejs');
+// const franc = require('franc-min');
+// const franc = require('franc');
+
+
+const { translateReviews } = require('../../miscellaneous/services/translator')
 
 async function mid1(req, res, next) {
 
@@ -97,6 +102,34 @@ async function mid1(req, res, next) {
 
 
 
+  // console.log('review_data_fr ->1\n', review_data_fr, '\n\n')
+
+
+  try {
+    review_data_fr = await translateReviews(review_data_fr, 'fr')
+  } catch (error) {
+    // console.log("BAAM", error)
+    // return res.end()
+
+    review_data_fr = await db.review_data_fr.findAll({
+      raw: true
+    });
+
+    if (!review_data_fr) {
+      const error = new Error("No review data found!")
+      return next(error)
+    }
+  }
+
+  // console.log('review_data_fr ->2\n', review_data_fr, '\n\n')
+
+  review_data_fr = review_data_fr.slice(0, 6);
+
+
+
+  // console.log('review_data_fr ->3\n', review_data_fr, '\n\n')
+
+
   // PULL REVIEWS FROM DB
   // const review_data_fr = await db.review_data_fr.findAll({
   //   raw: true
@@ -107,12 +140,8 @@ async function mid1(req, res, next) {
   //   return next(error)
   // }
 
-  review_data_fr = review_data_fr.slice(0, 6);
 
-  
-
-  // console.log('review_data_fr ->\n', review_data_fr, '\n\n')
-
+  console.log('review_data_fr ->\n', review_data_fr, '\n\n')
 
 
   const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({

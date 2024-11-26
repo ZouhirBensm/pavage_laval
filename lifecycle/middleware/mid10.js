@@ -3,10 +3,11 @@ const axios = require('axios');
 const path = require('path');
 const app = express();
 
-const GOOGLE_API_KEY = 'AIzaSyChTNeL3CC4QMrB6gNJp5sU5ohP6lrhn6s';  // Replace with your actual Google API key
-const PLACE_ID = 'ChIJj69jiLcDzkwR34mlyqXv-CQ';              // Replace with your actual Google Places Place ID
+// PLACE ID FROM
+// https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder#maps_places_placeid_finder-javascript
 
-
+const GOOGLE_API_KEY_PLACES_API = process.env['GOOGLE_API_KEY_PLACES_API']
+const GMB_PLACE_ID = process.env['GMB_PLACE_ID']
 
 
 
@@ -14,12 +15,18 @@ const PLACE_ID = 'ChIJj69jiLcDzkwR34mlyqXv-CQ';              // Replace with you
 
 async function mid1(req, res, next) {
 
+  // console.log(GOOGLE_API_KEY_PLACES_API, GMB_PLACE_ID, typeof GOOGLE_API_KEY_PLACES_API, typeof GMB_PLACE_ID)
+  // console.log(GOOGLE_API_KEY, PLACE_ID, typeof GOOGLE_API_KEY, typeof PLACE_ID)
+
+  // console.log(GOOGLE_API_KEY_PLACES_API == GOOGLE_API_KEY)
+  // console.log(GMB_PLACE_ID == PLACE_ID)
+
   try {
     // Make a request to the Google Places API to fetch reviews
     const response = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
       params: {
-        place_id: PLACE_ID,       // Replace with your Google Place ID
-        key: GOOGLE_API_KEY      // Replace with your API key
+        place_id: GMB_PLACE_ID,       // Replace with your Google Place ID
+        key: GOOGLE_API_KEY_PLACES_API      // Replace with your API key
       }
     });
 
@@ -36,6 +43,7 @@ async function mid1(req, res, next) {
   }
 
 
+  // return res.end()
   return next()
 }
 
@@ -49,6 +57,14 @@ const middleware = {
 
 
 module.exports = middleware
+
+
+
+
+
+
+
+
 
 
 
