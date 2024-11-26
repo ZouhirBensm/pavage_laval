@@ -20,6 +20,7 @@ async function mid1(req, res, next) {
   console.log('is_english', is_english)
 
   const translation_lang = is_english ? 'en' : 'fr';
+  const review_data = is_english ? db.review_data_en : db.review_data_fr;
 
   // console.log(GOOGLE_API_KEY_PLACES_API, GMB_PLACE_ID, typeof GOOGLE_API_KEY_PLACES_API, typeof GMB_PLACE_ID)
   // console.log(GOOGLE_API_KEY, PLACE_ID, typeof GOOGLE_API_KEY, typeof PLACE_ID)
@@ -39,7 +40,7 @@ async function mid1(req, res, next) {
   } catch (err) {
 
     console.log('1')
-    res.locals.reviews = await db.review_data_en.findAll({
+    res.locals.reviews = await review_data.findAll({
       raw: true
     });
   
@@ -64,7 +65,7 @@ async function mid1(req, res, next) {
 
     console.log('3')
     // TODO template the DB data pull
-    res.locals.reviews = await db.review_data_en.findAll({
+    res.locals.reviews = await review_data.findAll({
       raw: true
     });
   
@@ -90,21 +91,15 @@ async function mid1(req, res, next) {
 
 
 
-  // TO TEST TRANSLATION FUNCTIONALITY
-  // review_data_en.push({
-  //   id: review_data_en.length + 1,
-  //   name: 'Jean-Pierre D.',
-  //   rating_value: 5,
-  //   review_body: 'Excellente expérience, je recommande vivement!',
-  // });
 
 
   try {
     res.locals.reviews = await translateReviews(res.locals.reviews, translation_lang)
+
   } catch (error) {
   
-    console.log('5')
-    res.locals.reviews = await db.review_data_en.findAll({
+    console.log('5', error)
+    res.locals.reviews = await review_data.findAll({
       raw: true
     });
   
@@ -117,6 +112,9 @@ async function mid1(req, res, next) {
   
   
   res.locals.reviews = res.locals.reviews.slice(0, 6);
+
+  // TODO save reviews if discrepency between new reviews and DB res.locals.reviews
+  // check res.locals.reviews VS await db.review_data_en.findAll({raw: true});, if nothing changed then continue else overwrite the entries in the db.review_data with res.locals.reviews
 
 
 
