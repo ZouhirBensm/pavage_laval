@@ -29,7 +29,6 @@ async function translateReviews(review_data, targetLanguage) {
         review.review_body = translated.text; // Overwrite with the translated text
       } catch (error) {
         throw error
-        console.error('Error during translation:', error);
       }
     }
   }

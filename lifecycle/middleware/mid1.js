@@ -92,56 +92,7 @@ async function mid1(req, res, next) {
 
 
 
-  // PULL REVIEWS FROM API
-  let review_data_fr = res.locals.reviews.map((review, index) => ({
-    id: index + 1,  // Assign a unique ID (starting from 1)
-    name: review.author_name,  // Use author's name as 'name'
-    rating_value: review.rating,  // Map the rating
-    review_body: review.text,  // Use the review's text
-  }));
-
-
-
-  // console.log('review_data_fr ->1\n', review_data_fr, '\n\n')
-
-
-  try {
-    review_data_fr = await translateReviews(review_data_fr, 'fr')
-  } catch (error) {
-    // console.log("BAAM", error)
-    // return res.end()
-
-    review_data_fr = await db.review_data_fr.findAll({
-      raw: true
-    });
-
-    if (!review_data_fr) {
-      const error = new Error("No review data found!")
-      return next(error)
-    }
-  }
-
-  // console.log('review_data_fr ->2\n', review_data_fr, '\n\n')
-
-  review_data_fr = review_data_fr.slice(0, 6);
-
-
-
-  // console.log('review_data_fr ->3\n', review_data_fr, '\n\n')
-
-
-  // PULL REVIEWS FROM DB
-  // const review_data_fr = await db.review_data_fr.findAll({
-  //   raw: true
-  // });
-
-  // if (!review_data_fr) {
-  //   const error = new Error("No review data found!")
-  //   return next(error)
-  // }
-
-
-  console.log('review_data_fr ->\n', review_data_fr, '\n\n')
+  let review_data_fr = res.locals.reviews
 
 
   const all_data_per_page_fr = await db.all_data_per_page_fr.findOne({

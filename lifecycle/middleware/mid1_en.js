@@ -113,47 +113,14 @@ async function mid1_en(req, res, next) {
 
 
 
-  
 
 
 
-  console.log(res.locals.reviews)
+
+  // console.log(res.locals.reviews)
 
 
-
-  let review_data_en = res.locals.reviews.map((review, index) => ({
-    id: index + 1,
-    name: review.author_name,
-    rating_value: review.rating,
-    review_body: review.text,
-  }));
-
-  // TO TEST TRANSLATION FUNCTIONALITY
-  // review_data_en.push({
-  //   id: review_data_en.length + 1,
-  //   name: 'Jean-Pierre D.',
-  //   rating_value: 5,
-  //   review_body: 'Excellente expérience, je recommande vivement!',
-  // });
-
-
-
-  try {
-    review_data_en = await translateReviews(review_data_en, 'en')
-  } catch (error) {
-
-    review_data_en = await db.review_data_en.findAll({
-      raw: true
-    });
-
-    if (!review_data_en) {
-      const error = new Error("No review data found!")
-      return next(error)
-    }
-  }
-
-
-  review_data_en = review_data_en.slice(0, 6);
+  let review_data_en = res.locals.reviews
 
 
 
