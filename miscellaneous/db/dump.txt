@@ -1144,7 +1144,7 @@ CREATE TABLE `review_data_fr` (
   `rating_value` double DEFAULT NULL,
   `review_body` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1153,7 +1153,7 @@ CREATE TABLE `review_data_fr` (
 
 LOCK TABLES `review_data_fr` WRITE;
 /*!40000 ALTER TABLE `review_data_fr` DISABLE KEYS */;
-INSERT INTO `review_data_fr` VALUES (1,'Jean-Pierre D.',5,'Excellent service du début à la fin! L\'équipe a pavé notre allée en un temps record, tout en maintenant une qualité irréprochable.'),(2,'Mélanie L.',5,'J\'ai fait appel à cette entreprise pour refaire l\'asphalte de mon entrée de garage. Non seulement le travail a été réalisé à la perfection, mais l\'équipe était également très professionnelle et respectueuse des délais. Le résultat est impeccable et l\'entrée a un superbe aspect neuf. Merci beaucoup!'),(3,'Louis M.',5,'Je suis extrêmement satisfait du travail effectué sur notre terrasse en béton. L\'équipe a su respecter notre budget tout en fournissant un résultat qui dépasse nos attentes. La finition est superbe et les délais ont été parfaitement respectés. Je n\'hésiterai pas à les recommander à mon entourage.');
+INSERT INTO `review_data_fr` VALUES (1,'Zona _G',5,'J\'ai récemment embauché Pavage & Asphalt Gat.  pour un projet de pavage chez moi, et je ne pourrais pas être plus satisfait des résultats. De la première consultation jusqu\'aux touches finales, leur équipe a été professionnelle et à l\'écoute de mes besoins. La qualité du travail était exceptionnelle : mon allée est fantastique et durable. Ils ont réalisé le travail dans les délais et dans les limites du budget, ce que j\'ai vraiment apprécié. J\'ai également remarqué qu\'ils prenaient des précautions supplémentaires pour s\'assurer que le chantier était propre une fois les travaux terminés. Je recommande vivement à tous ceux qui recherchent des services de pavage fiables et de qualité !'),(2,'Stephen',5,'Pavage, Asphalte et Béton Gatineau ont fait un travail incroyable sur mon entrée. L\'équipe était professionnelle, ponctuelle et soucieuse du détail. L\'asphalte est de grande qualité et la finition est parfaite. Ils ont réalisé les travaux dans les délais et dans les limites du budget. Je les recommande vivement pour tout travail de pavage ou de bétonnage !'),(3,'Muthu',5,'C\'était fantastique de travailler avec Pavage, Asphalte et Béton Gatineau. Ils sont arrivés à temps, ont travaillé efficacement et ont livré une excellente qualité. L\'asphalte qu\'ils ont utilisé pour mon allée était durable et donnait une finition lisse et propre. L’ensemble du processus s’est déroulé sans problème du début à la fin, et ils ont respecté le budget et le calendrier initiaux. Leur souci du détail était impressionnant et l’équipe s’est montrée amicale et professionnelle tout au long du projet. Je les recommanderais volontiers à toute personne ayant besoin de services d\'allée ou de pavage.'),(4,'karl grand',5,'Récemment, j\'ai utilisé Pavage et Asphalte Gatineau Earnanswers pour le pavage d\'entrée et j\'ai été satisfait des résultats. Le personnel de base a fait preuve de professionnalisme, de compétence et d\'efficacité. L\'asphalte utilisé était bon et la surface semblait lisse. J\'ai également été impressionné par l\'attention portée aux détails et la propreté de la zone de travail. J\'appuie fortement Pavage et Asphalte Gatineau Earnanswers pour des services de pavage de qualité et expérimentés à Gatineau.'),(5,'Alvino Lima',5,'Pavage et Asphalte a livré un pavage d\'entrée de premier ordre. L\'équipe était compétente, efficace et accordait une grande attention aux détails. L\'asphalte était de haute qualité, ce qui a permis d\'obtenir une finition lisse et le site est resté propre. Je recommande fortement leurs services à Gatineau pour un pavage fiable et professionnel.');
 /*!40000 ALTER TABLE `review_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1226,4 +1226,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-26 14:27:02
+-- Dump completed on 2024-11-27 11:16:39
