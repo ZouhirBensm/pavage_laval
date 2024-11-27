@@ -1,7 +1,7 @@
 
 async function saveNewReviewsIfNeeded(newReviews, db_review_data, review_data) {
   try {
-    newReviews = newReviews.slice(0, 6);
+    newReviews = newReviews.slice(0, 5);
 
     const currentReviews = review_data
 

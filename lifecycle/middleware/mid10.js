@@ -36,6 +36,8 @@ async function mid1(req, res, next) {
 
 
 
+
+
   try {
     console.log('3')
     var response = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
@@ -49,15 +51,21 @@ async function mid1(req, res, next) {
     console.log('4')
     res.locals.reviews = review_data
   }
-
-
+  
+  
   console.log('5')
   // Check if reviews exist in the response
   const reviews = response.data.result.reviews || [];
-
+  
   // console.log('\n\nreviews: ', reviews)
-
+  
+  
   res.locals.reviews = reviews
+
+  
+  // if (review_data.length != 5) {
+
+  // }
 
 
 
@@ -96,7 +104,7 @@ async function mid1(req, res, next) {
   }
   
   
-  res.locals.reviews = res.locals.reviews.slice(0, 6);
+  res.locals.reviews = res.locals.reviews.slice(0, 5);
 
 
   console.log('11')
