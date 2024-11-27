@@ -1,7 +1,7 @@
 
 async function saveNewReviewsIfNeeded(newReviews, db_review_data, review_data) {
   try {
-    newReviews = newReviews.slice(0, 5);
+    // newReviews = newReviews.slice(0, 5);
 
     const currentReviews = review_data
 
@@ -29,6 +29,27 @@ async function saveNewReviewsIfNeeded(newReviews, db_review_data, review_data) {
     } else {
       console.log('No new or modified reviews to add or update.');
     }
+
+
+
+
+      if (review_data.length > 5) {
+        const reviewsToDelete = review_data.slice(5);
+        const idsToDelete = reviewsToDelete.map((review) => review.id);
+  
+        await db_review_data.destroy({
+          where: {
+            id: idsToDelete,
+          },
+        });
+  
+        console.log(`Deleted ${idsToDelete.length} reviews, keeping only the first 5.`);
+      }
+
+
+
+
+
   } catch (error) {
     console.error('Error saving reviews:', error);
   }

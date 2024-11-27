@@ -38,34 +38,54 @@ async function mid1(req, res, next) {
 
 
 
-  try {
-    console.log('3')
-    var response = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
-      params: {
-        place_id: GMB_PLACE_ID,
-        key: GOOGLE_API_KEY_PLACES_API
-      }
-    });
+  
+  // IDENTIFIES IF DATA IN DB FROM THE API OR NOT, AS THE API RETURNS 5 ELEMENTS, IF 5 ARE IN THE DB THE REVIEWS ARE FRESH, ELSE WE CAN EXECUTE THE CODE BELOW TO PULL IN THE REVIEWS FROM GMB!
+  if (review_data.length != 5) {
+    
+    try {
+      console.log('3')
+      var response = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
+        params: {
+          place_id: GMB_PLACE_ID,
+          key: GOOGLE_API_KEY_PLACES_API
+        }
+      });
+  
+    } catch (err) {
+      console.log('4')
+      res.locals.reviews = review_data
+    }
+    
+    
+    console.log('5')
+    // Check if reviews exist in the response
+    const reviews = response.data.result.reviews || [];
+    
+    // console.log('\n\nreviews: ', reviews)
+    
+    
+    res.locals.reviews = reviews
 
-  } catch (err) {
-    console.log('4')
-    res.locals.reviews = review_data
+    console.log('7')
+
+    res.locals.reviews = res.locals.reviews.map((review, index) => ({
+      id: index + 1,
+      name: review.author_name,
+      rating_value: review.rating,
+      review_body: review.text,
+    }));
+
+    try {
+      console.log('8')
+      res.locals.reviews = await translateReviews(res.locals.reviews, translation_lang)
+    } catch (error) {
+      // console.log('10')
+      console.log('10', error)
+      res.locals.reviews = review_data
+    }
+
+    await saveNewReviewsIfNeeded(res.locals.reviews, db_review_data, review_data);
   }
-  
-  
-  console.log('5')
-  // Check if reviews exist in the response
-  const reviews = response.data.result.reviews || [];
-  
-  // console.log('\n\nreviews: ', reviews)
-  
-  
-  res.locals.reviews = reviews
-
-  
-  // if (review_data.length != 5) {
-
-  // }
 
 
 
@@ -77,32 +97,6 @@ async function mid1(req, res, next) {
 
   // console.log(res.locals.reviews)
 
-
-
-  console.log('7')
-
-  res.locals.reviews = res.locals.reviews.map((review, index) => ({
-    id: index + 1,
-    name: review.author_name,
-    rating_value: review.rating,
-    review_body: review.text,
-  }));
-
-
-
-
-
-
-
-  try {
-    console.log('8')
-    res.locals.reviews = await translateReviews(res.locals.reviews, translation_lang)
-  } catch (error) {
-    console.log('10')
-    // console.log('5', error)
-    res.locals.reviews = review_data
-  }
-  
   
   res.locals.reviews = res.locals.reviews.slice(0, 5);
 
@@ -112,7 +106,7 @@ async function mid1(req, res, next) {
 
 
 
-  await saveNewReviewsIfNeeded(res.locals.reviews, db_review_data, review_data);
+  
 
 
 
