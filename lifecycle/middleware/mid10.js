@@ -16,7 +16,7 @@ const GMB_PLACE_ID = process.env['GMB_PLACE_ID']
 
 async function mid1(req, res, next) {
 
-  console.log('is_english', is_english)
+  // console.log('is_english', is_english)
 
   const translation_lang = is_english ? 'en' : 'fr';
   const db_review_data = is_english ? db.review_data_en : db.review_data_fr;
@@ -25,10 +25,10 @@ async function mid1(req, res, next) {
   const review_data = await db_review_data.findAll({
     raw: true
   });
-  console.log('1')
+  // console.log('1')
 
   if (!review_data) {
-    console.log('2')
+    // console.log('2')
     const error = new Error("No review data found!")
     return next(error)
   }
@@ -43,7 +43,7 @@ async function mid1(req, res, next) {
   if (review_data.length != 5) {
     
     try {
-      console.log('3')
+      // console.log('3')
       var response = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
         params: {
           place_id: GMB_PLACE_ID,
@@ -52,12 +52,12 @@ async function mid1(req, res, next) {
       });
   
     } catch (err) {
-      console.log('4')
+      // console.log('4')
       res.locals.reviews = review_data
     }
     
     
-    console.log('5')
+    // console.log('5')
     // Check if reviews exist in the response
     const reviews = response.data.result.reviews || [];
     
@@ -66,7 +66,7 @@ async function mid1(req, res, next) {
     
     res.locals.reviews = reviews
 
-    console.log('7')
+    // console.log('7')
 
     res.locals.reviews = res.locals.reviews.map((review, index) => ({
       id: index + 1,
@@ -76,11 +76,10 @@ async function mid1(req, res, next) {
     }));
 
     try {
-      console.log('8')
+      // console.log('8')
       res.locals.reviews = await translateReviews(res.locals.reviews, translation_lang)
     } catch (error) {
-      // console.log('10')
-      console.log('10', error)
+      // console.log('10', error)
       res.locals.reviews = review_data
     }
 
@@ -90,7 +89,7 @@ async function mid1(req, res, next) {
 
 
   if (!res.locals.reviews) {
-    console.log('6')
+    // console.log('6')
     res.locals.reviews = review_data
   }
 
@@ -101,7 +100,7 @@ async function mid1(req, res, next) {
   res.locals.reviews = res.locals.reviews.slice(0, 5);
 
 
-  console.log('11')
+  // console.log('11')
   // return res.end()
 
 

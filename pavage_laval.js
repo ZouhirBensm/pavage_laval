@@ -167,7 +167,7 @@ app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_e
 
 
 
-  // logDataInColoredStructure(res.locals.index_page_data);
+  logDataInColoredStructure(res.locals.index_page_data);
 
   // return res.end()
   return res.render('index', { ...res.locals.index_page_data });

@@ -4,7 +4,7 @@ const { translate } = require('@vitalets/google-translate-api');
 
 async function translateReviews(review_data, targetLanguage) {
 
-  console.log("9")
+  // console.log("9")
 
   const { franc } = await import('franc-min');
 
