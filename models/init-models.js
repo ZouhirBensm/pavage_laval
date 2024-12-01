@@ -17,6 +17,8 @@ var _demande_de_devis_gratuit_en = require("./demande_de_devis_gratuit_en");
 var _demande_de_devis_gratuit_fr = require("./demande_de_devis_gratuit_fr");
 var _extra_service_page_en = require("./extra_service_page_en");
 var _extra_service_page_fr = require("./extra_service_page_fr");
+var _faq_content_en = require("./faq_content_en");
+var _faq_content_fr = require("./faq_content_fr");
 var _faq_en = require("./faq_en");
 var _faq_fr = require("./faq_fr");
 var _footer_en = require("./footer_en");
@@ -61,6 +63,8 @@ function initModels(sequelize) {
   var demande_de_devis_gratuit_fr = _demande_de_devis_gratuit_fr(sequelize, DataTypes);
   var extra_service_page_en = _extra_service_page_en(sequelize, DataTypes);
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
+  var faq_content_en = _faq_content_en(sequelize, DataTypes);
+  var faq_content_fr = _faq_content_fr(sequelize, DataTypes);
   var faq_en = _faq_en(sequelize, DataTypes);
   var faq_fr = _faq_fr(sequelize, DataTypes);
   var footer_en = _footer_en(sequelize, DataTypes);
@@ -110,6 +114,8 @@ function initModels(sequelize) {
     demande_de_devis_gratuit_fr,
     extra_service_page_en,
     extra_service_page_fr,
+    faq_content_en,
+    faq_content_fr,
     faq_en,
     faq_fr,
     footer_en,

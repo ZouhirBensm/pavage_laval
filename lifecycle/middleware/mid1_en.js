@@ -258,6 +258,17 @@ async function mid1_en(req, res, next) {
   // return next()
 
 
+  const faq_content_en = await db.faq_content_en.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!faq_content_en) {
+    const error = new Error("No footer_fr found!")
+    return next(error)
+  }
+
+
 
 
   const footer_en = await db.footer_en.findOne({
@@ -327,7 +338,8 @@ async function mid1_en(req, res, next) {
     index_content: index_content_en,
     faq: faq_en,
     footer: footer_en,
-    contact_form_data: contact_form_data_en
+    contact_form_data: contact_form_data_en,
+    faq_content: faq_content_en
   }
 
 

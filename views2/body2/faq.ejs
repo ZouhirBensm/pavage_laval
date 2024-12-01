@@ -1,0 +1,22 @@
+<div id="faq-element" class="tm-bg-dark">
+
+  <div>
+    <div itemscope itemtype="https://schema.org/FAQPage">
+      
+      <h2>FAQ</h2>
+
+      <p><%= faq_content.faq_begin %></p>
+
+      <% faq.forEach(function(faq) { %>
+        <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+          <summary itemprop="name"><%= faq.id %>. <%= faq.question %></summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text"><%- faq.answer %></span>
+          </div>
+        </details>
+      <% }); %>
+
+    </div>
+  </div>
+
+</div>

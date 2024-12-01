@@ -64,10 +64,10 @@ div[itemtype="https://schema.org/Organization"] > a {
 
 
 div.side-note-form {
-  height: calc(1.5em + .75rem + 2px);
+  /* height: calc(1.5em + .75rem + 2px); */
   padding: .375rem .75rem;
-  font-size: .9rem;
-  font-weight: 400;
+  font-size: .8rem;
+  font-weight: bold;
   line-height: 1.5;
 }
 

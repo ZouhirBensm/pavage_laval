@@ -170,6 +170,20 @@ async function mid1(req, res, next) {
 
 
 
+  const faq_content_fr = await db.faq_content_fr.findOne({
+    // attributes: ['slug', 'title'],
+    raw: true
+  });
+
+  if (!faq_content_fr) {
+    const error = new Error("No footer_fr found!")
+    return next(error)
+  }
+
+
+
+
+
   const faq_fr = await db.faq_fr.findAll({
     // attributes: ['slug', 'title'],
     raw: true
@@ -240,7 +254,8 @@ async function mid1(req, res, next) {
     index_content: index_content_fr,
     faq: faq_fr,
     footer: footer_fr,
-    contact_form_data: contact_form_data_fr
+    contact_form_data: contact_form_data_fr,
+    faq_content: faq_content_fr
   }
 
 
