@@ -53,7 +53,7 @@ div[itemprop="acceptedAnswer"] {
 
 
 
-div#faq-element p {
+div#faq-element > div > div > p {
   background-color: #fff;
   border: 2px solid #ccc;
   border-radius: 4px;
