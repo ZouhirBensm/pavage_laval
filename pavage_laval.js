@@ -235,10 +235,13 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 
 
 
-app.get(['/service/pavage-residentiel-et-commercial-a-gatineau', '/service/residential-and-commercial-paving-in-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
+app.get(['/service/services-de-pavage-a-laval', '/service/paving-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
   // return res.end()
-  return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });
+  
+  // return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });
+
+  return res.render('services-de-pavage-a-laval', { ...res.locals.index_page_data });
 
 });
 
