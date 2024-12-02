@@ -1,0 +1,16 @@
+<div id="page-content">
+  <div class="padding1">
+
+    <div>
+      <h2>Blog</h2>
+      <h3><%= blog_page.h3_1 %></h3>
+
+      <ul>
+        <% category.forEach(function(category) { %>
+          <li><a href="/blog/<%= category.slug %>"><%= category.category_name %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+
+  </div>
+</div>

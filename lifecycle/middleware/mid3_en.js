@@ -135,11 +135,15 @@ async function mid1(req, res, next) {
   // console.log('rendered_title_meta_canonical ->\n\n', all_data_per_page_en.rendered_title_meta_canonical)
 
 
-  let rendered_front_end_script_needed_to_serve_variables
+  if (all_data_per_page_en?.front_end_script_needed_to_serve_variables) {
+    let rendered_front_end_script_needed_to_serve_variables
+  
+    rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_en.front_end_script_needed_to_serve_variables, { business_data: business_data_en, all_data_per_page: all_data_per_page_en });
+  
+    all_data_per_page_en.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+  }
 
-  rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_en.front_end_script_needed_to_serve_variables, { business_data: business_data_en, all_data_per_page: all_data_per_page_en });
 
-  all_data_per_page_en.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
 
 
   

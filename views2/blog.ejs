@@ -25,58 +25,27 @@
 
 
 
-<body>
+
+<body class="tm-bg-dark">
+
 
   <%- include('body/nav.ejs') %>
 
 
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
+  <main id="body">
 
-    <%- include('body/welcome-section/part1.ejs') %>
+    
+    <!-- <h1>Hello</h1> -->
 
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
+    <!-- site 1 -->
+    <!-- < %- include('body/scafold-1/views-mention-legale.ejs') %> -->
 
-
-        <div class="row h-100">
-
-          <%- include('body/welcome-section/part2.ejs') %>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Welcome section -->
+    <%- include('body2/blog.ejs') %>
+    
+    <%- include('body2/brochure.ejs') %>
 
 
-
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-
-
-          <div>
-            <h2>Blog</h2>
-            <h3><%= blog_page.h3_1 %></h3>
-
-            <ul>
-              <% category.forEach(function(category) { %>
-                <li><a href="/blog/<%= category.slug %>"><%= category.category_name %></a></li>
-              <% }); %>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-
-  </section>
+  </main>
 
 
 
@@ -84,8 +53,8 @@
 
 
 
-
 </body>
+
 
 
 

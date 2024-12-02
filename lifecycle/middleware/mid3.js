@@ -87,6 +87,8 @@ async function mid1(req, res, next) {
     raw: true
   });
 
+
+
   const about_page_fr = await db.about_page_fr.findOne({
     raw: true
   });
@@ -124,9 +126,16 @@ async function mid1(req, res, next) {
 
   let rendered_front_end_script_needed_to_serve_variables
 
-  rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_fr.front_end_script_needed_to_serve_variables, { business_data: business_data_fr, all_data_per_page: all_data_per_page_fr });
+  console.log("\n\nall_data_per_page_fr", all_data_per_page_fr, "\n\n")
 
-  all_data_per_page_fr.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+  
+  if (all_data_per_page_fr?.front_end_script_needed_to_serve_variables) {
+    rendered_front_end_script_needed_to_serve_variables = ejs.render(all_data_per_page_fr.front_end_script_needed_to_serve_variables, { business_data: business_data_fr, all_data_per_page: all_data_per_page_fr });
+  
+    console.log("\n\nrendered_front_end_script_needed_to_serve_variables:", rendered_front_end_script_needed_to_serve_variables, "\n\n")
+  
+    all_data_per_page_fr.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+  }
 
 
 

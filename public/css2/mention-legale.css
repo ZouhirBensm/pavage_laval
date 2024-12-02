@@ -9,3 +9,14 @@
 div.padding1 {
   padding: 67px 63px;
 }
+
+div.padding1 a{
+  color: white;
+  text-decoration: underline;
+}
+
+div.padding1 a:hover{
+  color: #7070c8;
+  font-weight: bold;
+}
+

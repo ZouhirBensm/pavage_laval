@@ -21,59 +21,26 @@
 </head>
 
 
-<body>
+<body class="tm-bg-dark">
 
 
   <%- include('body/nav.ejs') %>
 
 
+  <main id="body">
+
+    
+    <!-- <h1>Hello</h1> -->
+
+    <!-- site 1 -->
+    <!-- < %- include('body/scafold-1/views-a-propos.ejs') %> -->
+
+    <%- include('body2/a-propos.ejs') %>
+    
+    <%- include('body2/brochure.ejs') %>
 
 
-    <!-- Welcome Section -->
-
-    <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-      alt="<%= welcome_section.banner_img_alt %>">
-
-      <%- include('body/welcome-section/part1.ejs') %>
-
-      <div class="tm-bg-black-transparent tm-welcome-container">
-        <div class="container-fluid">
-
-
-          <div class="row h-100">
-
-            <%- include('body/welcome-section/part2.ejs') %>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Welcome section -->
-
-
-
-
-
-
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-
-          <div class="tm-extra-service-description">
-            <%- about_page.page_content %>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- End portfolio section -->
+  </main>
 
 
   <%- include('footer/footer.ejs') %>
