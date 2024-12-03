@@ -253,10 +253,10 @@ app.get(['/service/services-de-pavage-a-laval', '/service/paving-services-in-lav
 
 
 
-app.get(['/service/revetement-maintenance-en-asphalte-gatineau', '/service/asphalt-maintenance-coating-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
+app.get(['/service/services-asphalte-a-laval', '/service/asphalt-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
   // return res.end()
-  return res.render('revetement-en-asphalte', { ...res.locals.index_page_data });
+  return res.render('services-asphalte-a-laval', { ...res.locals.index_page_data });
 
 });
 
@@ -267,10 +267,10 @@ app.get(['/service/revetement-maintenance-en-asphalte-gatineau', '/service/aspha
 
 
 
-app.get(['/service/travaux-en-beton-residentiel-et-commercial-a-gatineau', '/service/residential-and-commercial-concrete-works-in-gatineau/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
+app.get(['/service/services-de-pave-uni-a-laval', '/service/interlocking-paving-stones-pavers-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
   // return res.end()
-  return res.render('travaux-en-beton-residentiel-et-commercial', { ...res.locals.index_page_data });
+  return res.render('services-de-pave-uni-a-laval', { ...res.locals.index_page_data });
 
 });
 
