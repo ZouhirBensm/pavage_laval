@@ -2,7 +2,6 @@
 <%- include('html/html-tag.ejs') %>
 
 <head>
-
   <%- include('head/setup-pre-variables.ejs') %>
   
   <%- include('head/load-backend-variables/variables.ejs') %>
@@ -20,77 +19,43 @@
 
 
 
-
-<body>
+<body class="tm-bg-dark">
 
 
   <%- include('body/nav.ejs') %>
 
 
+  <main id="body">
 
-  <!-- Welcome Section -->
+    <!-- < %- include('body/scafold-1/views-services-de-pavage-a-laval.ejs') %> -->
 
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
-
-    <%- include('body/welcome-section/part1.ejs') %>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
-
-
-        <div class="row h-100">
-
-          <%- include('body/welcome-section/part2.ejs') %>
-
-        </div>
+    <div id="page-content">
+      <div class="padding1">
+        <%- main_service_data %>
       </div>
     </div>
-  </section>
-  <!-- End Welcome section -->
+
+
+    <%- include('body2/brochure.ejs') %>
 
 
 
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-
-
-
-          
-          <%- main_service_data %>
-
-          <!-- < %- main_service_data.web_page_content %> -->
-          <!-- < %- include('name-to-come1/name1.ejs') %> -->
-          
-
-          <!-- < %- ejs.render(main_service_data.web_page_content) %> -->
-
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End portfolio section -->
-
-
+  </main>
 
 
   <%- include('footer/footer.ejs') %>
 
 
 
-
-
-
 </body>
 
 
-
-
-
 </html>
+
+
+
+
+
+<!-- alt="< %= alt_img1 %>"
+alt="< %= alt_img2 %>"
+alt="< %= alt_img3 %>" -->
