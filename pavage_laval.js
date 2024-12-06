@@ -60,6 +60,7 @@ const middleware8 = require('./lifecycle/middleware/mid8')
 const middleware9 = require('./lifecycle/middleware/mid9')
 const middleware9_en = require('./lifecycle/middleware/mid9_en')
 const middleware10 = require('./lifecycle/middleware/mid10')
+const middleware11 = require('./lifecycle/middleware/mid11')
 
 
 
@@ -135,18 +136,45 @@ goneUrls.forEach(url => {
 });
 
 
+// TODO refactor branch,
+// Explanation: middleware11.mid1 identifies if a main service page was requested, if so it sets req.matchedEndpoint and goes to the next middleware that matches the request (ie '*' in this case) through the next('route') command. That latter middleware will render the proper page else will go as normal for other requests
 
-
-app.get('*', async (req, res, next) => {
+middleware11.mid1
+app.get('*', middleware11.mid1, async (req, res, next) => {
 
   if (process.env.NODE_ENV === 'production') {
     return res.status(503).render('site-is-being-built');
   }
 
-  // Continue to the next middleware or route handler
-  next();
+
+  return next();
 });
 
+
+
+
+
+app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
+
+
+  console.log("here")
+  console.log("req.matchedEndpoint", req.matchedEndpoint)
+  
+  if (req.matchedEndpoint) {
+
+    console.log("here")
+    // Handle the special logic for matched slugs
+    // e.g., fetch additional data for this path
+    // res.json({ message: `Special handler for ${req.matchedEndpoint}` });
+
+    return res.render(req.matchedEndpoint.page_to_render, { ...res.locals.index_page_data });
+  } else {
+    // Continue to the next middleware or route handler
+    return next();
+  }
+
+  // return next();
+});
 
 
 
@@ -227,36 +255,6 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
   return res.render('a-propos', { ...res.locals.index_page_data });
 });
 
-
-
-
-
-
-app.get(['/service/services-de-pavage-a-laval', '/service/paving-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
-
-  // return res.end()
-  
-  // return res.render('pavage-residentiel-et-commercial', { ...res.locals.index_page_data });
-
-  return res.render('services-de-pavage-a-laval', { ...res.locals.index_page_data });
-
-});
-
-
-app.get(['/service/services-asphalte-a-laval', '/service/asphalt-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
-
-  // return res.end()
-  return res.render('services-asphalte-a-laval', { ...res.locals.index_page_data });
-
-});
-
-
-app.get(['/service/services-de-pave-uni-a-laval', '/service/interlocking-paving-stones-pavers-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
-
-  // return res.end()
-  return res.render('services-de-pave-uni-a-laval', { ...res.locals.index_page_data });
-
-});
 
 
 
