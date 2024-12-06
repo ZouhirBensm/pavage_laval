@@ -232,9 +232,6 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 
 
 
-
-
-
 app.get(['/service/services-de-pavage-a-laval', '/service/paving-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
   // return res.end()
@@ -246,25 +243,12 @@ app.get(['/service/services-de-pavage-a-laval', '/service/paving-services-in-lav
 });
 
 
-
-
-
-
-
-
-
 app.get(['/service/services-asphalte-a-laval', '/service/asphalt-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {
 
   // return res.end()
   return res.render('services-asphalte-a-laval', { ...res.locals.index_page_data });
 
 });
-
-
-
-
-
-
 
 
 app.get(['/service/services-de-pave-uni-a-laval', '/service/interlocking-paving-stones-pavers-services-in-laval/en'], middleware4.mid1, middleware4_en.mid1, (req, res) => {

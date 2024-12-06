@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.39, for macos13.6 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for macos13.7 (x86_64)
 --
 -- Host: localhost    Database: pavage_laval
 -- ------------------------------------------------------
@@ -1274,4 +1274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-03 11:09:35
+-- Dump completed on 2024-12-06  7:43:18
