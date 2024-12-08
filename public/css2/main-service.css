@@ -1,6 +1,10 @@
 /* TODO style the main service page as needed here, test rendering with http://localhost:3006/service/paving-services-in-laval/en, then generate needed content for main service pages */
 
-img {
-  /* width: 100%; */
+div.padding1 > div img {
+  width: 100%;
+  margin: 20px 0;
+}
 
+div.padding1 > div:first-of-type img {
+  margin-top: 40px;
 }
