@@ -142,9 +142,9 @@ goneUrls.forEach(url => {
 middleware11.mid1
 app.get('*', middleware11.mid1, async (req, res, next) => {
 
-  if (process.env.NODE_ENV === 'production') {
-    return res.status(503).render('site-is-being-built');
-  }
+  // if (process.env.NODE_ENV === 'production') {
+  //   return res.status(503).render('site-is-being-built');
+  // }
 
 
   return next();
@@ -489,6 +489,14 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 
 app.get('/sitemap/sitemap-3', async (req, res, next) => {
+
+
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+
+
+
   // Define the path to the XML file
   const xmlFilePath = path.join(__dirname, 'public', 'sitemap', 'sitemap.xml');
 

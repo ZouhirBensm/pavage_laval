@@ -3,7 +3,20 @@ const blog_element_en = require('../../models/blog_element_en');
 
 async function mid1(req, res, next) {
 
-  const css_link = '<link rel="stylesheet" href="/css/blog-posting.css" />'
+  // const css_link = '<link rel="stylesheet" href="/css/blog-posting.css" />'
+
+
+
+
+  // TODO need to pull this data from database ideally #001
+  // css edits for page_de_services_supplementaires_seo.ejs page
+  const css_link = 
+    '<link rel="stylesheet" href="/css2/mention-legale.css" />' + 
+    '<link rel="stylesheet" href="/css2/layout.css" />' +
+    '<link rel="stylesheet" href="/css/blog-posting.css" />'
+
+
+
   const schema_script = '<script src="/js/schema/BlogPostingSchema.js"></script>'
 
 
