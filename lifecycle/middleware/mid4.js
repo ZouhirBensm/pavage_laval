@@ -54,6 +54,10 @@ async function mid1(req, res, next) {
   });
 
 
+
+  console.log('\n\nall_data_per_page_fr:+++++\n\n', all_data_per_page_fr)
+
+
   const contact_form_data_fr = await db.demande_de_devis_gratuit_fr.findOne({
     raw: true
     // attributes: ['slug', 'title'],
