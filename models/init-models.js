@@ -7,6 +7,8 @@ var _blog_element_en = require("./blog_element_en");
 var _blog_element_fr = require("./blog_element_fr");
 var _blog_page_en = require("./blog_page_en");
 var _blog_page_fr = require("./blog_page_fr");
+var _blog_posting_content_en = require("./blog_posting_content_en");
+var _blog_posting_content_fr = require("./blog_posting_content_fr");
 var _business_data_en = require("./business_data_en");
 var _business_data_fr = require("./business_data_fr");
 var _category_en = require("./category_en");
@@ -15,6 +17,8 @@ var _category_page_en = require("./category_page_en");
 var _category_page_fr = require("./category_page_fr");
 var _demande_de_devis_gratuit_en = require("./demande_de_devis_gratuit_en");
 var _demande_de_devis_gratuit_fr = require("./demande_de_devis_gratuit_fr");
+var _extra_service_content_en = require("./extra_service_content_en");
+var _extra_service_content_fr = require("./extra_service_content_fr");
 var _extra_service_page_en = require("./extra_service_page_en");
 var _extra_service_page_fr = require("./extra_service_page_fr");
 var _faq_content_en = require("./faq_content_en");
@@ -53,6 +57,8 @@ function initModels(sequelize) {
   var blog_element_fr = _blog_element_fr(sequelize, DataTypes);
   var blog_page_en = _blog_page_en(sequelize, DataTypes);
   var blog_page_fr = _blog_page_fr(sequelize, DataTypes);
+  var blog_posting_content_en = _blog_posting_content_en(sequelize, DataTypes);
+  var blog_posting_content_fr = _blog_posting_content_fr(sequelize, DataTypes);
   var business_data_en = _business_data_en(sequelize, DataTypes);
   var business_data_fr = _business_data_fr(sequelize, DataTypes);
   var category_en = _category_en(sequelize, DataTypes);
@@ -61,6 +67,8 @@ function initModels(sequelize) {
   var category_page_fr = _category_page_fr(sequelize, DataTypes);
   var demande_de_devis_gratuit_en = _demande_de_devis_gratuit_en(sequelize, DataTypes);
   var demande_de_devis_gratuit_fr = _demande_de_devis_gratuit_fr(sequelize, DataTypes);
+  var extra_service_content_en = _extra_service_content_en(sequelize, DataTypes);
+  var extra_service_content_fr = _extra_service_content_fr(sequelize, DataTypes);
   var extra_service_page_en = _extra_service_page_en(sequelize, DataTypes);
   var extra_service_page_fr = _extra_service_page_fr(sequelize, DataTypes);
   var faq_content_en = _faq_content_en(sequelize, DataTypes);
@@ -104,6 +112,8 @@ function initModels(sequelize) {
     blog_element_fr,
     blog_page_en,
     blog_page_fr,
+    blog_posting_content_en,
+    blog_posting_content_fr,
     business_data_en,
     business_data_fr,
     category_en,
@@ -112,6 +122,8 @@ function initModels(sequelize) {
     category_page_fr,
     demande_de_devis_gratuit_en,
     demande_de_devis_gratuit_fr,
+    extra_service_content_en,
+    extra_service_content_fr,
     extra_service_page_en,
     extra_service_page_fr,
     faq_content_en,

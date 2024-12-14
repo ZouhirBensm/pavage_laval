@@ -252,6 +252,58 @@ INSERT INTO `blog_page_fr` VALUES (1,'Catégories');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `blog_posting_content_en`
+--
+
+DROP TABLE IF EXISTS `blog_posting_content_en`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `blog_posting_content_en` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
+  `schema_script` text COLLATE utf8mb4_unicode_ci,
+  `eq_lang_page` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blog_posting_content_en`
+--
+
+LOCK TABLES `blog_posting_content_en` WRITE;
+/*!40000 ALTER TABLE `blog_posting_content_en` DISABLE KEYS */;
+INSERT INTO `blog_posting_content_en` VALUES (1,'<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />\n<link rel=\"stylesheet\" href=\"/css/blog-posting.css\" />','<script src=\"/js/schema/BlogPostingSchema.js\"></script>','/blog');
+/*!40000 ALTER TABLE `blog_posting_content_en` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `blog_posting_content_fr`
+--
+
+DROP TABLE IF EXISTS `blog_posting_content_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `blog_posting_content_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
+  `schema_script` text COLLATE utf8mb4_unicode_ci,
+  `eq_lang_page` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blog_posting_content_fr`
+--
+
+LOCK TABLES `blog_posting_content_fr` WRITE;
+/*!40000 ALTER TABLE `blog_posting_content_fr` DISABLE KEYS */;
+INSERT INTO `blog_posting_content_fr` VALUES (1,'<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />\n<link rel=\"stylesheet\" href=\"/css/blog-posting.css\" />','<script src=\"/js/schema/BlogPostingSchema.js\"></script>','/blog/en');
+/*!40000 ALTER TABLE `blog_posting_content_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `business_data_en`
 --
 
@@ -392,6 +444,7 @@ CREATE TABLE `category_page_en` (
   `id` int NOT NULL AUTO_INCREMENT,
   `under_h1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eq_lang_page` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -402,7 +455,7 @@ CREATE TABLE `category_page_en` (
 
 LOCK TABLES `category_page_en` WRITE;
 /*!40000 ALTER TABLE `category_page_en` DISABLE KEYS */;
-INSERT INTO `category_page_en` VALUES (1,'Residential and commercial Paving, Asphalt & Concrete in Gatineau','/blog');
+INSERT INTO `category_page_en` VALUES (1,'Paving Laval Asphalt Laval Earnanswers','/blog','<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />');
 /*!40000 ALTER TABLE `category_page_en` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -417,6 +470,7 @@ CREATE TABLE `category_page_fr` (
   `id` int NOT NULL AUTO_INCREMENT,
   `under_h1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eq_lang_page` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -427,7 +481,7 @@ CREATE TABLE `category_page_fr` (
 
 LOCK TABLES `category_page_fr` WRITE;
 /*!40000 ALTER TABLE `category_page_fr` DISABLE KEYS */;
-INSERT INTO `category_page_fr` VALUES (1,'Pavage, Asphalte & Béton résidentiel et commercial à Gatineau','/blog/en');
+INSERT INTO `category_page_fr` VALUES (1,'Pavage Laval Asphalte Laval Earnanswers','/blog/en','<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />');
 /*!40000 ALTER TABLE `category_page_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -485,6 +539,58 @@ LOCK TABLES `demande_de_devis_gratuit_fr` WRITE;
 /*!40000 ALTER TABLE `demande_de_devis_gratuit_fr` DISABLE KEYS */;
 INSERT INTO `demande_de_devis_gratuit_fr` VALUES (1,'Nom','formats valides :','Le message est ici. Veuillez fournir des détails sur ce qui doit être fait et nous vous répondrons dans les plus brefs délais.','Envoyer','Contactez-nous');
 /*!40000 ALTER TABLE `demande_de_devis_gratuit_fr` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `extra_service_content_en`
+--
+
+DROP TABLE IF EXISTS `extra_service_content_en`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `extra_service_content_en` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
+  `brochure_text1` text COLLATE utf8mb4_unicode_ci,
+  `brochure_text2` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `extra_service_content_en`
+--
+
+LOCK TABLES `extra_service_content_en` WRITE;
+/*!40000 ALTER TABLE `extra_service_content_en` DISABLE KEYS */;
+INSERT INTO `extra_service_content_en` VALUES (1,'<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />','<p>We offer paving services in Laval, Quebec, specializing in asphalt for residential and commercial projects.</p>','<header><h2>Pavaging Laval Asphalt Laval Earnanswers</h2></header><p>If you\'re looking for quality paving near you, our team of Laval paving experts guarantees long-lasting results. We also serve the Montreal region and surrounding areas. Contact us for a quick quote on your asphalt needs in Laval and nearby locations.</p>');
+/*!40000 ALTER TABLE `extra_service_content_en` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `extra_service_content_fr`
+--
+
+DROP TABLE IF EXISTS `extra_service_content_fr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `extra_service_content_fr` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `css_link` text COLLATE utf8mb4_unicode_ci,
+  `brochure_text1` text COLLATE utf8mb4_unicode_ci,
+  `brochure_text2` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `extra_service_content_fr`
+--
+
+LOCK TABLES `extra_service_content_fr` WRITE;
+/*!40000 ALTER TABLE `extra_service_content_fr` DISABLE KEYS */;
+INSERT INTO `extra_service_content_fr` VALUES (1,'<link rel=\"stylesheet\" href=\"/css2/mention-legale.css\" />\n<link rel=\"stylesheet\" href=\"/css2/layout.css\" />','<p>Nous offrons des services de pavage à Laval, Québec, spécialisés dans l\'asphalte pour des projets résidentiels et commerciaux.</p>','<header><h2>Pavage Laval Asphalte Laval Earnanswers</h2></header>\n<p>Si vous recherchez un pavage de qualité près de chez vous, notre équipe d\'experts en pavage Laval vous garantit des résultats durables. Nous servons également la région de Montréal et ses environs. Contactez-nous pour un devis rapide sur vos besoins en asphalte à Laval et dans les environs.</p>');
+/*!40000 ALTER TABLE `extra_service_content_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1282,4 +1388,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-13 19:23:33
+-- Dump completed on 2024-12-13 20:06:31

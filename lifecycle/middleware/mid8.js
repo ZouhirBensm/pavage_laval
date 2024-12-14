@@ -1,25 +1,19 @@
 const ejs = require('ejs');
-const blog_element_en = require('../../models/blog_element_en');
 
 async function mid1(req, res, next) {
 
   // const css_link = '<link rel="stylesheet" href="/css/blog-posting.css" />'
 
+  let blog_posting_content = is_english ? db.blog_posting_content_en : db.blog_posting_content_fr
 
+  blog_posting_content = await blog_posting_content.findOne({
+    raw: true
+  });
 
-
-  // TODO need to pull this data from database ideally #001
-  // css edits for page_de_services_supplementaires_seo.ejs page
-  const css_link = 
-    '<link rel="stylesheet" href="/css2/mention-legale.css" />' + 
-    '<link rel="stylesheet" href="/css2/layout.css" />' +
-    '<link rel="stylesheet" href="/css/blog-posting.css" />'
-
-
-
-  const schema_script = '<script src="/js/schema/BlogPostingSchema.js"></script>'
-
-
+  if (!blog_posting_content) {
+    const error = new Error("No blog_posting_content found!")
+    return next(error)
+  }
 
 
 
@@ -27,9 +21,9 @@ async function mid1(req, res, next) {
   all_data_per_page = {
     title: res.locals.blog_element.title,
     under_h1: res.locals.blog_element.under_h1,
-    eq_lang_page: is_english ? '/blog' : '/blog/en',
-    css_link: css_link,
-    schema_script: schema_script
+    eq_lang_page: blog_posting_content.eq_lang_page, // is_english ? '/blog' : '/blog/en',
+    css_link: blog_posting_content.css_link,
+    schema_script: blog_posting_content.schema_script
   }
 
 

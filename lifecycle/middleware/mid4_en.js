@@ -93,7 +93,6 @@ async function mid1(req, res, next) {
   if (main_service_data_en) {
     // console.log(typeof main_service_data_en.web_page_content);
 
-    // TODO #002
     rendered_web_page_content = ejs.render(main_service_data_en.web_page_content, { alt_img1: main_service_data_en.alt_img1, alt_img2: main_service_data_en.alt_img2, alt_img3: main_service_data_en.alt_img3, img1_path: main_service_data_en.img1_path, img2_path: main_service_data_en.img2_path, img3_path: main_service_data_en.img3_path });
   }
 

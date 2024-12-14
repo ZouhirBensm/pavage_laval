@@ -48,17 +48,15 @@ async function mid1(req, res, next) {
   let eq_lang_page =  '/service/' + db_extra_service_page_fr.eq_lang_page
 
 
-  // const css_link = '<link rel="stylesheet" href="/css/page-de-services-supplementaires-seo.css" />'
-  
-  // TODO need to pull this data from database ideally #001
-  // css edits for page_de_services_supplementaires_seo.ejs page
-  const css_link = 
-    '<link rel="stylesheet" href="/css2/mention-legale.css" />' + 
-    '<link rel="stylesheet" href="/css2/layout.css" />';
+  const extra_service_content = await db.extra_service_content_fr.findOne({
+    raw: true
+  });
 
-  // brochure text add ons (brochure_text1 and brochure_text2) for page_de_services_supplementaires_seo.ejs page
-  const brochure_text1 = '<p>We offer paving services in Laval, Quebec, specializing in asphalt for residential and commercial projects.</p>'
-  const brochure_text2 = "<header><h2>Pavaging Laval Asphalt Laval Earnanswers</h2></header><p>If you're looking for quality paving near you, our team of Laval paving experts guarantees long-lasting results. We also serve the Montreal region and surrounding areas. Contact us for a quick quote on your asphalt needs in Laval and nearby locations.</p>"
+  if (!extra_service_content) {
+    const error = new Error("No extra_service_content found!")
+    return next(error)
+  }
+
 
 
   let rendered_title_meta_canonical = undefined
@@ -75,9 +73,9 @@ async function mid1(req, res, next) {
     title: db_extra_service_page_fr.title,
     under_h1: db_extra_service_page_fr.under_h1,
     eq_lang_page: eq_lang_page,
-    css_link: css_link,
-    brochure_text1: brochure_text1,
-    brochure_text2: brochure_text2,
+    css_link: extra_service_content.css_link,
+    brochure_text1: extra_service_content.brochure_text1,
+    brochure_text2: extra_service_content.brochure_text2,
     ...all_data_per_page
   }
 

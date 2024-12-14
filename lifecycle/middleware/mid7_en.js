@@ -49,19 +49,11 @@ async function mid1(req, res, next) {
     return next(error)
   }
 
-
-  // TODO need to pull this data from database ideally
-  // css edits for '/blog/:category', '/blog/:category/en' categories.ejs page
-  const css_link = 
-  '<link rel="stylesheet" href="/css2/mention-legale.css" />' + 
-  '<link rel="stylesheet" href="/css2/layout.css" />';
-
-
   let all_data_per_page = {
     title: category_en.category_name,
     under_h1: category_page_en.under_h1,
     eq_lang_page: category_page_en.eq_lang_page,
-    css_link: css_link
+    css_link: category_page_en.css_link
   }
 
   let rendered_title_meta_canonical = undefined
