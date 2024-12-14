@@ -19,115 +19,36 @@
 
 
 
-<body>
+<body class="tm-bg-dark">
 
 
   <%- include('body/nav.ejs') %>
 
 
+  <main id="body">
 
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
+    
+    <!-- <h1>Hello</h1> -->
 
-    <%- include('body/welcome-section/part1.ejs') %>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
+    <!-- site 1 -->
+    <!-- < %- include('body/scafold-1/views-plan-du-site.ejs') %> -->
 
 
-        <div class="row h-100">
+    <%- include('body2/plan-du-site.ejs') %>
 
-          <%- include('body/welcome-section/part2.ejs') %>
 
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Welcome section -->
+    <%- include('body2/brochure.ejs') %>
+
+
+  </main>
 
 
 
 
 
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div>
-            <h2><%= plan_du_site_page.h2_1 %></h2>
-            <h3><%= plan_du_site_page.h3_1 %></h3>
-            
-            <ul>
-              <!-- <li><a href="/">Pavage, l'asphalte et le béton résidentiel et commercial à Gatineau</a></li>
-              <li><a href="/demande-de-devis-gratuit">Demande de devis gratuit</a></li>
-              <li><a href="/organisation">Organisation</a></li>
-              <li><a href="/a-propos">À propos</a></li>
-              <li><a href="/tiroir1/mention-legale">Mention légale</a></li>
-              <li><a href="/tiroir1/politique-de-confidentialite">Politique de confidentialité</a></li> -->
-
-              <% all_pages.forEach(function(page) { %>
-                <% if (page.id !== 8) { %> <!-- Skip Blog -->
-                  <li><a href="<%= page.page_url_identify %>"><%= page.title %></a></li>
-                <% } %>
-              <% }); %>
-
-
-
-              <li>Service
-                <ul>
-
-                  <% main_service_data.forEach(function(service) { %>
-                    <li><a href="/service/<%= service.slug %>"><%= service.service_name %></a></li>
-                  <% }); %>
-
-
-                  <% extra_service_pages.forEach(function(page) { %>
-                    <li><a href="/service/<%= page.slug %>"><%= page.title %></a></li>
-                  <% }); %>
-                </ul>
-              </li>
-
-              <!-- <li><a href="/blog">Blog</a> -->
-              <li><a href="<%= all_pages[4].page_url_identify %>"><%= all_pages[4].title %></a>
-
-                <ul>
-                  <% Object.keys(categories_and_associated_blogs).forEach(function(categoryName) { %>
-                    <li><%= categoryName %>
-                      <ul>
-                        <% categories_and_associated_blogs[categoryName].blogs.forEach(function(blog) { %>
-                          <li><a href="/blog/<%= categories_and_associated_blogs[categoryName].categorySlug %>/blog-posting/<%= blog.slug %>"><%= blog.title %></a></li>
-                        <% }); %>
-                      </ul>
-                    </li>
-                  <% }); %>
-                </ul>
-
-
-
-              </li>
-              <li><a href="<%= all_pages[7].page_url_identify %>"><%= all_pages[7].title %></a></li>
-            </ul>
-            <h3><%= plan_du_site_page.h3_2 %></h3>
-            <ul>
-              <li><a href="/sitemap/sitemap-3" target="_blank">Update Sitemap</a></li>
-
-              <li><a href="/sitemap/sitemap.xml" target="_blank"><%= plan_du_site_page.h3_2 %></a></li>
-            </ul>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <%- include('footer/footer.ejs') %>
-
-
-
 
 
 

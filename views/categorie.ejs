@@ -20,82 +20,74 @@
 
 
 
-<body>
+
+
+
+<body class="tm-bg-dark">
+
 
   <%- include('body/nav.ejs') %>
 
 
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
-
-    <%- include('body/welcome-section/part1.ejs') %>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
+  <main id="body">
 
 
-        <div class="row h-100">
 
-          <%- include('body/welcome-section/part2.ejs') %>
+    <!-- < %- include('body/scafold-1/views-categories.ejs') %> -->
 
+
+
+    <div id="page-content">
+      <div class="padding1">
+
+        <div>
+          <h2 class="category-template"><%= category.category_name %></h2>
+          <h3>Blog Postings</h3>
+
+
+            <ul>
+
+              <% if (is_english) { %>
+
+                <% blog_elements.forEach(function(blog) { %>
+                  <li>
+                    <a href="/blog/<%= category.slug.replace(/\/en$/, '') %>/blog-posting/<%= blog.slug %>" class="category-link">
+                      <%= blog.title %>
+                    </a>
+                  </li>
+                <% }); %>
+              
+              <% } else { %>
+
+                <% blog_elements.forEach(function(blog) { %>
+                  <li>
+                    <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
+                      <%= blog.title %>
+                    </a>
+                  </li>
+                <% }); %>
+
+              <% } %>
+
+
+
+
+
+            </ul>
         </div>
+
       </div>
     </div>
-  </section>
-  <!-- End Welcome section -->
 
 
 
 
 
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-
-          <div>
-            <h2 class="category-template"><%= category.category_name %></h2>
-            <h3>Blog Postings</h3>
-
-
-              <ul>
-
-                <% if (is_english) { %>
-
-                  <% blog_elements.forEach(function(blog) { %>
-                    <li>
-                      <a href="/blog/<%= category.slug.replace(/\/en$/, '') %>/blog-posting/<%= blog.slug %>" class="category-link">
-                        <%= blog.title %>
-                      </a>
-                    </li>
-                  <% }); %>
-                
-                <% } else { %>
-
-                  <% blog_elements.forEach(function(blog) { %>
-                    <li>
-                      <a href="/blog/<%= category.slug %>/blog-posting/<%= blog.slug %>" class="category-link">
-                        <%= blog.title %>
-                      </a>
-                    </li>
-                  <% }); %>
-
-                <% } %>
+    <%- include('body2/brochure.ejs') %>
 
 
 
-
-
-              </ul>
-            </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </main>
 
 
   <%- include('footer/footer.ejs') %>
@@ -103,7 +95,6 @@
 
 
 </body>
-
 
 
 

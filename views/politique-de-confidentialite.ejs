@@ -22,62 +22,33 @@
 </head>
 
 
-
-<body>
+<body class="tm-bg-dark">
 
 
   <%- include('body/nav.ejs') %>
 
 
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
+  <main id="body">
 
-    <%- include('body/welcome-section/part1.ejs') %>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
-
-
-        <div class="row h-100">
-
-          <%- include('body/welcome-section/part2.ejs') %>
-
-        </div>
+  
+    <div id="page-content">
+      <div class="padding1">
+          <%- privacy_policy_page.rendered_privacy_policy_page %>
       </div>
     </div>
-  </section>
-  <!-- End Welcome section -->
+    
+    <%- include('body2/brochure.ejs') %>
 
 
+  </main>
 
 
-
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-
-        <div class="tm-extra-service-description">
-            <%- privacy_policy_page.rendered_privacy_policy_page %>
-        </div>
-        
-
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End portfolio section -->
 
 
 
 
 
   <%- include('footer/footer.ejs') %>
-
 
 
 

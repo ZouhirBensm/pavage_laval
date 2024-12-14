@@ -4,102 +4,93 @@
 
 
 
-<head>
-  
-  <%- include('head/setup-pre-variables.ejs') %>
-  
-  <%- include('head/load-backend-variables/variables.ejs') %>
-  
-  <%- include('head/head-common-part1.ejs') %>
-  
-  <%- include('head/meta/meta-title-can.ejs') %>
-  
-  <%- include('head/css-loader/css.ejs') %>
-  
-  <%- include('head/schema-loader/schema.ejs') %>
+  <head>
 
-  <%- include('head/meta/meta-lang-loader.ejs') %>
-</head>
+    <%- include('head/setup-pre-variables.ejs') %>
 
+    <%- include('head/load-backend-variables/variables.ejs') %>
 
+    <%- include('head/head-common-part1.ejs') %>
+
+    <%- include('head/meta/meta-title-can.ejs') %>
+
+    <%- include('head/css-loader/css.ejs') %>
+
+    <%- include('head/schema-loader/schema.ejs') %>
+
+    <%- include('head/meta/meta-lang-loader.ejs') %>
+  </head>
 
 
 
-
-<body>
-
-  <%- include('body/nav.ejs') %>
+  <body class="tm-bg-dark">
 
 
-
-  <!-- Welcome Section -->
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="<%= welcome_section.banner_img_path %>"
-    alt="<%= welcome_section.banner_img_alt %>">
-
-    <%- include('body/welcome-section/part1.ejs') %>
-
-    <div class="tm-bg-black-transparent tm-welcome-container">
-      <div class="container-fluid">
-
-
-        <div class="row h-100">
-
-          <%- include('body/welcome-section/part2.ejs') %>
-
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Welcome section -->
+    <%- include('body/nav.ejs') %>
 
 
 
 
 
+      <main id="body">
+
+
+        <!-- < %- include('body/scafold-1/views-blog-posting.ejs') %> -->
 
 
 
 
 
+        <div id="page-content">
+          <div class="padding1">
 
-  <!-- Portfolio section -->
-  <section id="tmPortfolio">
-    <div class="container-fluid">
-      <div class="row">
-        <div id="blog-posting" class="col-12">
-          <div>
-            <div id="bar1">
-              <span class="category-template"><%= blog_element.category.category_name %></span>
-              <div id="dates">
-                <span id="date-published">
-                  Published: <%= new Date(blog_element.datetime_published).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                  }) %>
-                </span>
-                <span id="date-edited">
-                  Edited: <%= new Date(blog_element.datetime_edited).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                  }) %>
-                </span>
+
+            <div id="blog-posting" class="col-12">
+              <div>
+                <div id="bar1">
+                  <span class="category-template">
+                    <%= blog_element.category.category_name %>
+                  </span>
+                  <div id="dates">
+                    <span id="date-published">
+                      Published: <%= new Date(blog_element.datetime_published).toLocaleDateString('en-US', {
+                        year: 'numeric' , month: 'short' , day: 'numeric' }) %>
+                    </span>
+                    <span id="date-edited">
+                        Edited: 
+                        <span>
+                        <%= new Date(blog_element.datetime_edited).toLocaleDateString('en-US', { year: 'numeric' ,
+                        month: 'short' , day: 'numeric' }) %>
+                        </span>
+                    </span>
+                  </div>
+                </div>
+
+
+                <div id="content-template" class="tm-extra-service-description"><%- blog_element.html_content %></div>
               </div>
             </div>
 
 
-            <div id="content-template" class="tm-extra-service-description"><%- blog_element.html_content %></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
 
-  <%- include('footer/footer.ejs') %>
+
+        <%- include('body2/brochure.ejs') %>
+
+
+
+      </main>
+
+
+      <%- include('footer/footer.ejs') %>
+
+
 
   </body>
 
 
-</html>
+
+
+  </html>

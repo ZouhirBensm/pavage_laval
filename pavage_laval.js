@@ -67,7 +67,7 @@ const middleware11 = require('./lifecycle/middleware/mid11')
 
 // Original site uses default ejs page views on views folder. Comment this to use default website from views folder.
 // If you want the new site ejs pages, use folder views2. Uncomment the code below to do so.
-app.set('views', path.join(__dirname, 'views2'));
+// app.set('views', path.join(__dirname, 'views2'));
 
 app.set('view engine', 'ejs');
 app.set('etag', 'strong');
