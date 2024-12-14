@@ -101,7 +101,7 @@ async function mid1(req, res, next) {
 
     // console.log(typeof main_service_data_fr.web_page_content);
 
-    rendered_web_page_content = ejs.render(main_service_data_fr.web_page_content, { alt_img1: main_service_data_fr.alt_img1, alt_img2: main_service_data_fr.alt_img2, alt_img3: main_service_data_fr.alt_img3});
+    rendered_web_page_content = ejs.render(main_service_data_fr.web_page_content, { alt_img1: main_service_data_fr.alt_img1, alt_img2: main_service_data_fr.alt_img2, alt_img3: main_service_data_fr.alt_img3, img1_path: main_service_data_fr.img1_path, img2_path: main_service_data_fr.img2_path, img3_path: main_service_data_fr.img3_path});
   }
   
 
