@@ -10,7 +10,8 @@ const { saveNewReviewsIfNeeded } = require('../../miscellaneous/services/save-re
 const GOOGLE_API_KEY_PLACES_API = process.env['GOOGLE_API_KEY_PLACES_API']
 const GMB_PLACE_ID = process.env['GMB_PLACE_ID']
 
-
+// GMB_PLACE_ID=ChIJj69jiLcDzkwR34mlyqXv-CQ
+// GMB_PLACE_ID=EjUxNTQwIFJ1ZSBkZXMgUGF0cmlvdGVzICMxMiwgTGF2YWwsIFFDIEg3TCAyTjYsIENhbmFkYSIeGhwKFgoUChIJDeCopMImyUwRWD1O5kKBjhgSAjEy
 
 
 

@@ -1,6 +1,6 @@
 const ejs = require('ejs');
 
-const { translateReviews } = require('../../miscellaneous/services/translator')
+// const { translateReviews } = require('../../miscellaneous/services/translator')
 
 
 
