@@ -1,4 +1,3 @@
-/* TODO file to be deleted or replaced with /Users/Zouhir/Desktop/Desktop2/Rank_and_rent/pavage laval/website/pavage_laval_v4/public/purgecss/templatemo-style.css */
 html {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
@@ -13,164 +12,12 @@ body {
   overflow-x: hidden;
 }
 
-
-
-a,
-button {
-  transition: all 0.3s ease;
+.tm-portfolio-description a {
+  font-size: 1.3rem;
 }
 
 a:hover {
-  text-decoration: none;
-}
-
-
-
-.container-fluid {
-  max-width: 1200px;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-
-
-.tm-bg-black-transparent {
-  background-color: rgba(0, 0, 0, 0.631);
-}
-
-.tm-bg-blue-transparent {
-  background-color: rgba(0, 104, 214, 0.471);
-}
-
-
-
-
-.tm-bg-darker-blue-transparent {
-  background-color: rgba(0, 83, 172, 0.616);
-}
-
-
-
-.tm-bg-white-transparent {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.tm-bg-green {
-  background-color: #98cb00;
-}
-
-.tm-bg-orange {
-  background-color: #cc6733;
-}
-
-.tm-bg-blue {
-  background-color: #3398cc;
-}
-
-.tm-bg-dark-gray {
-  background-color: #676767;
-}
-
-
-
-
-#tmWelcome {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.tm-brand-container-outer {
-  margin-top: -400px;
-}
-
-.tm-brand-container-inner {
-  max-width: 580px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.tm-brand-container {
-  padding: 75px 110px;
-  letter-spacing: 1.2px;
-  background-image: url('../img/pav.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-  border-radius: 15px;
-}
-
-
-
-h1.tm-brand-name.long-title {
-  font-size: 2.2rem;
-}
-
-span.tm-brand-name {
-  font-size: 2.2rem;
-}
-
-.tm-brand-description {
-  font-size: 1.4rem;
-}
-
-.parallax-window {
-  min-height: 1100px;
-  background: transparent;
-}
-
-#tmContact {
-  min-height: 1197px;
-}
-
-.tm-welcome-container {
-  background-image: url('../img/svg/wave_footer.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-
-  min-height: 400px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-}
-
-.tm-welcome-title {
-  margin-bottom: 40px;
-}
-
-.tm-welcome-left {
-  letter-spacing: 1.5px;
-  padding-right: 30px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  font-weight: 700;
-}
-
-.tm-welcome-left-col {
-  display: flex;
-  align-items: center;
-}
-
-.tm-welcome-right {
-  color: white;
-  background-color: #986665;
-  padding: 150px 43px 150px;
-  height: 100%;
-}
-
-
-
-#tmPortfolio {
-  padding-top: 80px;
-  background: white; 
-  padding-bottom: 80px;
+  color: black;
 }
 
 .tm-portfolio-item {
@@ -179,15 +26,6 @@ span.tm-brand-name {
   margin-bottom: 80px;
 }
 
-.tm-portfolio-name {
-  width: 330px;
-  height: 220px;
-  font-size: 2rem;
-  padding: 70px 95px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
 
 .tm-portfolio-description {
   width: calc(100% - 500px);
@@ -197,155 +35,30 @@ span.tm-brand-name {
   padding-right: 20px;
 }
 
-.tm-extra-service-description {
-  padding: 20px 45px;
-}
 
-.tm-portfolio-description h3 {
-  margin-bottom: 20px;
-}
-
-.tm-text-green {
-  color: #98cb00;
-}
-
-.tm-text-orange {
-  color: #cc6733;
-}
-
-.tm-text-light-orange {
-  color: orange;
-}
-
-.tm-text-blue {
-  color: #007bff;
-  letter-spacing: 1px;
-}
-
-.tm-text-orange {
-  color: orange;
-  letter-spacing: 1px;
-}
-
-a {
-  color: orange;
-}
-
-a:hover {
-  color: black;
-}
-
-.tm-text-black {
-  color: black;
-  letter-spacing: 1px;
-}
-
-.tm-text-dark-gray {
-  color: #676767;
-}
-
-.tm-title-small {
-  font-size: 1.3rem;
-}
-
-p {
-  line-height: 1.8;
-}
-
-
-#tmContact {
-  padding-top: 95px;
-}
-
-.tm-contact-item {
-  width: 33.3334%;
-  max-width: 345px;
-  height: auto;
-  min-height: 420px;
-  margin-right: 35px;
-  background-color: white;
-  padding: 54px 34px 44px;
-}
-
-.tm-contact-item > p:nth-of-type(2) {
-  letter-spacing: 2px;
-}
-
-.tm-contact-item:last-child {
-  margin-right: 0;
-}
-
-.tm-contact-items-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 130px;
-}
-
-.tm-copyright-text {
-  color: black;
-  letter-spacing: 1px;
-  background-color: white;
-  margin: 0;
-  padding: 30px 0;
-}
-
-.tm-link {
-  color: #676767;
-}
-
-
-
-@media (max-width: 991px) {
-  .tm-contact-items-container {
-    flex-direction: column;
-  }
-
-  .tm-contact-item {
-    width: auto;
-    max-width: 680px;
-    min-height: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-  }
-
-  .tm-contact-item:last-child {
-    margin-right: auto;
-    margin-bottom: 0;
-  }
-}
 
 @media (max-width: 1200px) {
   .tm-portfolio-item {
     flex-direction: column;
   }
 
-  .tm-portfolio-name {
-    justify-content: center;
-  }
-
-  .tm-portfolio-name,
   .tm-portfolio-description {
     width: 100%;
-  }
-
-  .tm-portfolio-description {
     padding: 20px 30px;
   }
 }
 
-@media (max-width: 572px) {
-  .tm-brand-container {
-    padding: 45px;
-  }
-}
 
-@media (max-width: 443px) {
-  .tm-brand-name {
-    font-size: 1.5rem;
+@keyframes bookacall_red {
+  0% {
+    color: #ffa500
   }
 
-  .tm-brand-container {
-    padding: 25px;
+  50% {
+    color: white;
+  }
+
+  100% {
+    color: orange;
   }
 }
