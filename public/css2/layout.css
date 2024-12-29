@@ -1,28 +1,20 @@
-
-/* Ensure full height of the viewport */
 html, body {
   height: 100%;
   margin: 0;
 }
 
-/* Flex container for body with column direction */
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/* The nav and footer don't grow or shrink */
 nav#top, footer {
   flex: 0 0 auto;
 }
 
-/* The #body div takes up the remaining space */
 #body {
   flex-grow: 1;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 body > nav + * {
@@ -64,7 +56,6 @@ div[itemtype="https://schema.org/Organization"] > a {
 
 
 div.side-note-form {
-  /* height: calc(1.5em + .75rem + 2px); */
   padding: .375rem .75rem;
   font-size: .8rem;
   font-weight: bold;

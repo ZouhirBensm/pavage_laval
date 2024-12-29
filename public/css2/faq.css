@@ -1,7 +1,5 @@
 #faq-element {
-  /* font-family: 'Georgia', serif; */
   padding: 40px;
-  /* background-color: #f1f1f1; */
 }
 
 #faq-element h2 {
@@ -31,14 +29,12 @@ summary {
 }
 
 summary:hover {
-  /* background-color: #d0d0d0; */
   background-color: #7777ab;
   color: white;
 }
 
 details[open] summary {
   background-color: #7777ab;
-  /* background-color: #d0d0d0; */
   font-weight: bold;
   color: white;
 }
@@ -60,7 +56,6 @@ div#faq-element > div > div > p {
   margin-bottom: 10px;
   overflow: hidden;
   padding: 15px;
-
   color: #333;
   font-size: 1.1em;
   line-height: 1.6;

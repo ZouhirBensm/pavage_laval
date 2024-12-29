@@ -3,12 +3,10 @@ div.tm-welcome-left a {
 }
 
 div.tm-welcome-left a:nth-of-type(2) {
-  /* color: inherit; */
   text-decoration: underline;
 }
 
 h2.tm-welcome-title {
-  /* color: #0065d2; */
   color: white;
 }
 
@@ -17,25 +15,8 @@ span.tm-welcome-title {
   font-size: 2rem;
   line-height: 1.2;
   display: block;
-  /* margin-bottom: 40px; */
-  /* font-weight: 500; */
-  /* margin-top: 0; */
-  /* box-sizing: border-box; */
 }
 
-/* @keyframes bookacall_blue {
-  0% {
-    color: #007bff;;
-  }
-
-  50% {
-    color: white;
-  }
-
-  100% {
-    color: #007bff;;
-  }
-} */
 
 @keyframes bookacall_red {
   0% {
@@ -51,31 +32,14 @@ span.tm-welcome-title {
   }
 }
 
-/* @keyframes bookacall_black {
-  0% {
-    color: #6b6b6b;
-  }
-
-  50% {
-    color: #007bff;
-  }
-
-  100% {
-    color: #6b6b6b;;
-  }
-} */
 
 section#tmWelcome .animated-text.blue {
   animation: bookacall_red 2.5s infinite;
 }
 
-/* section#tmWelcome .animated-text.black {
-  animation: bookacall_black 2.5s infinite;
-} */
 
 
 
-/* Address text under the home page banner  */
 div.tm-welcome-left-col a {
   white-space: pre-line;
   display: block;
@@ -83,12 +47,12 @@ div.tm-welcome-left-col a {
 
 
 
-/* Placing the map address image under the home page banner 500 by 500 px */
+
 div.tm-welcome-right {
-  background-image: url('../img/map1_op.avif'); /* Replace with the actual image path */
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-image: url('../img/map1_op.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100%; /* Ensures the div occupies the full height of its container */
+  height: 100%;
 }

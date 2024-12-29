@@ -1,47 +1,19 @@
-/**
-
-Mini Profile Template
-
-https://templatemo.com/tm-530-mini-profile
-
-
-Color Codes
-------------
-brown: #986665;
-green: #98cb00;
-orange: #cc6733;
-blue: #3398cc;
-dark-gray: #676767;
-light-gray: #999999;
-text-gray: #6b6b6b;
-
-*/
-
+/* TODO file to be deleted or replaced with /Users/Zouhir/Desktop/Desktop2/Rank_and_rent/pavage laval/website/pavage_laval_v4/public/purgecss/templatemo-style.css */
 html {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
-
-/* body > * {
-  background-color: #3398cc;
-} */
-
 body {
-  /* font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 400; */
-
-  /* font-family: "Freeman", sans-serif; */
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   letter-spacing: .5px;
-
-
   color: #6b6b6b;
   overflow-x: hidden;
 }
+
+
 
 a,
 button {
@@ -51,6 +23,8 @@ button {
 a:hover {
   text-decoration: none;
 }
+
+
 
 .container-fluid {
   max-width: 1200px;
@@ -67,7 +41,6 @@ h3 {
 }
 
 .tm-bg-blue-transparent {
-  /* background-color: rgba(0, 0, 0, 0.5); */
   background-color: rgba(0, 104, 214, 0.471);
 }
 
@@ -100,9 +73,9 @@ h3 {
   background-color: #676767;
 }
 
-/*
-  Welcome section
-*/
+
+
+
 #tmWelcome {
   position: relative;
   display: flex;
@@ -122,30 +95,14 @@ h3 {
 .tm-brand-container {
   padding: 75px 110px;
   letter-spacing: 1.2px;
-
-
-  /* background-image: url('../img/svg/wave_footer.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-
   background-image: url('../img/pav.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% auto;
-
   border-radius: 15px;
-  /* background-color: rgba(255, 255, 255, 0.5); */
-  /* background-blend-mode: multiply; */
 }
 
-/* .tm-brand-name {
-  font-size: 3.8rem;
-} */
 
-.tm-brand-name {
-  font-size: 2.2rem;
-}
 
 h1.tm-brand-name.long-title {
   font-size: 2.2rem;
@@ -204,24 +161,16 @@ span.tm-brand-name {
 .tm-welcome-right {
   color: white;
   background-color: #986665;
-  /* padding: 80px 43px 70px; */
   padding: 150px 43px 150px;
   height: 100%;
 }
 
 
-/*
-  Portfolio section
-*/
 
 #tmPortfolio {
   padding-top: 80px;
-  /* Here@ */
   background: white; 
-  
   padding-bottom: 80px;
-  /* padding-bottom: 80px; */
-
 }
 
 .tm-portfolio-item {
@@ -247,12 +196,6 @@ span.tm-brand-name {
   padding-left: 100px;
   padding-right: 20px;
 }
-
-/* .tm-portfolio-description:has(.img.main) {
-  width: calc(100% - 420px);
-  padding: 20px 25px 20px 60px;
-} */
-
 
 .tm-extra-service-description {
   padding: 20px 45px;
@@ -309,9 +252,6 @@ p {
   line-height: 1.8;
 }
 
-/*
-  Contact section
-*/
 
 #tmContact {
   padding-top: 95px;
@@ -341,53 +281,9 @@ p {
   margin-bottom: 130px;
 }
 
-/* .tm-contact-item-icon {
-  margin-bottom: 45px;
-  width: 100%;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-
-/* #tmContactForm {
-  width: 100%;
-  padding: 45px 45px 30px;
-  margin-bottom: 95px;
-} */
-/* max-width: 680px; */
-
-/* .form-group {
-  max-width: 355px;
-} */
-
-/* .form-control {
-  background: transparent;
-  border-color: #999999;
-  padding: 15px 10px;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-} */
-
-/* .tm-btn-submit {
-  background-color: #999999;
-  padding: 12px 30px;
-  font-size: 1.2rem;
-} */
-
-/* .tm-btn-submit:focus,
-.tm-btn-submit:hover {
-  background-color: #676767;
-} */
-
 .tm-copyright-text {
-  /* Here@ deleted */
-  /* margin: 30px 0; */
   color: black;
   letter-spacing: 1px;
-
-  /* Here@ added */
   background-color: white;
   margin: 0;
   padding: 30px 0;
@@ -397,11 +293,7 @@ p {
   color: #676767;
 }
 
-/* @media (max-width: 1054px) {
-  .tm-contact-item-icon {
-    margin-bottom: 15px;
-  }
-} */
+
 
 @media (max-width: 991px) {
   .tm-contact-items-container {
@@ -421,11 +313,6 @@ p {
     margin-right: auto;
     margin-bottom: 0;
   }
-
-  /* #tmContactForm {
-    margin-left: auto;
-    margin-right: auto;
-  } */
 }
 
 @media (max-width: 1200px) {

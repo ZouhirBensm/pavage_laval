@@ -1,9 +1,3 @@
-/* body>footer>div>div#social-media>a[href='#social1']>img:hover {
-  content: url('../img/icons/youtube_orange.svg');
-} */
-
-
-
 body>footer>div>div#social-media>a>img {
   height: 44px; 
   width: 44px;
@@ -39,26 +33,9 @@ body>footer>div>div#social-media>a>img {
 
 body > footer {
   padding: 20px 0;
-
-  /* background-image: url('../img/svg/wave_footer.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
-
   border-radius: 0 0 10px 10px;
-
-
   border-top: 2px solid #fdfdfd;
-
-  /* background-color: rgb(85, 164, 255); */
-
-
-  /* background-color: #c0c0c0; */
   background-color: rgb(12, 12, 12);
-
-
-  /* font-size: var(--font-size-footer); */
-  /* background-color: #76bd9fbd; */
 }
 
 body > footer > div > div#social-media {
@@ -95,7 +72,6 @@ body > footer nav#bottom > a{
   width: fit-content;
   letter-spacing: 2.0px;
   padding: 0.5rem 0;
-  /* line-height: 2rem; */
 }
 
 body > footer nav#bottom > a:link {

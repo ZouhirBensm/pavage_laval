@@ -1,12 +1,3 @@
-div#tmContact div.tm-contact-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  border-radius: 10px;
-}
-
 .svg-wrapper {
   position: absolute;
   top: 10px;
@@ -26,9 +17,6 @@ div#tmContact div.tm-contact-item {
   background: url('../img/svg/google.svg') no-repeat center center;
   background-size: contain;
 }
-
-
-
 
 .star-rating {
   font-size: 2em;

@@ -5,30 +5,9 @@ nav#top {
   flex-direction: row;
   align-items: center;
   border-radius: 10px 10px 0 0;
-  /* background-color: #4773ba; */
-  /* background-color: rgba(0, 0, 0, 0.5); */
-
-  /* Here@ */
-  /* background-color: rgb(0, 123, 255, 0.7); */
-  /* background-color: rgb(85, 164, 255); */
-  /* background-color: rgb(77, 77, 77); */
-
   border-bottom: 2px solid #fdfdfd;
   background-color: #303030;
-
-  /* background-image: url('../img/svg/wave_nav.svg');
-  background-repeat: repeat;
-  background-position: center; 
-  background-size: cover; */
-
-  /* background-image: url('../img/pav2.jpg');
-  background-repeat: repeat-x;
-  background-position: center top;
-  background-size: auto 100%; */
 }
-
-
-
 
 nav#top>* {
   white-space: nowrap;
@@ -48,9 +27,6 @@ nav#top>*:not(:first-of-type)>img {
   height: 30px;
 }
 
-nav#top>a:not(:first-of-type)>img:hover {
-  /* content: url('/img/icons/second_red.svg'); */
-}
 
 nav#top>a:link {
   color: white;
@@ -68,7 +44,6 @@ nav#top>a:visited:active {
 }
 
 nav#top>a:hover {
-  /* color: orange; */
   color: #7777ab;
 }
 

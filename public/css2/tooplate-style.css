@@ -14,8 +14,6 @@ Dark Gray Text:     #666666
 Light Gray Text:    #999999
 Footer Gray Text:   #cccccc
 
-site 2 style
-
 */
 
 body {
@@ -34,7 +32,6 @@ textarea {
 }
 
 a {
-	/* color: #FF0; */
   color: #7777ab;
   text-decoration: none;
 }
@@ -69,9 +66,7 @@ p {
 }
 
 
-/* http://w3bits.com/css-masonry/ */
 .masonry {
-  /* Masonry container */
   -webkit-column-count: 2;
   column-count: 2;
   -webkit-column-gap: 0;
@@ -79,7 +74,6 @@ p {
 }
 
 .item {
-  /* Masonry bricks or child elements */
   display: inline-block;
   margin: 0;
   width: 100%;
@@ -320,7 +314,6 @@ textarea {
 }
 
 .tm-footer a:hover {
-  /* color: #996666; */
   color: #7777ab;
 }
 
@@ -328,15 +321,9 @@ textarea {
   font-size: 16px;
 }
 
-@media (max-width: 1232px) {
-  /* body {
-    padding: 60px;
-  } */
-}
 
 @media (max-width: 1199px) {
   .masonry {
-    /* Masonry container */
     -webkit-column-count: 1;
     column-count: 1;
   }
@@ -363,10 +350,6 @@ textarea {
 }
 
 @media (max-width: 520px) {
-  /* body {
-    padding: 50px;
-  } */
-
   .tm-block-pad {
     padding: 45px;
   }
@@ -396,10 +379,6 @@ textarea {
 }
 
 @media (max-width: 390px) {
-  /* body {
-    padding: 40px 20px 10px;
-  } */
-
   .tm-form-section-tag-inner {
     left: 25px;
     right: -25px;
