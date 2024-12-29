@@ -1,36 +1,40 @@
-body>footer>div>div#social-media>a[href='#social1']>img:hover {
+/* body>footer>div>div#social-media>a[href='#social1']>img:hover {
   content: url('../img/icons/youtube_orange.svg');
+} */
+
+
+
+body>footer>div>div#social-media>a>img {
+  height: 44px; 
+  width: 44px;
 }
 
-body>footer>div>div#social-media>a[href='#social2']>img:hover {
+
+
+.social-link.twitter:hover img {
   content: url('../img/icons/twitter_orange.svg');
 }
 
-body>footer>div>div#social-media>a[href='#social3']>img:hover {
+.social-link.pinterest:hover img {
   content: url('../img/icons/pinterest_orange.svg');
 }
 
-body>footer>div>div#social-media>a[href='#social4']>img:hover {
-  content: url('../img/icons/quora_orange.svg');
+.social-link.facebook:hover img {
+  content: url('../img/icons/facebook_orange.svg');
 }
 
-/* mailto:admin@earnanswers.com */
-body>footer>div>div#social-media>a[href='#social5']>img:hover {
+.social-link.linkedin:hover img {
+  content: url('../img/icons/linkedin_orange.svg');
+}
+
+.social-link.instagram:hover img {
+  content: url('../img/icons/instagram_orange.svg');
+}
+
+.social-link.email:hover img {
   content: url('../img/icons/email_orange.svg');
 }
 
-body>footer>div>div#social-media>a[href='#social6']>img:hover {
-  content: url('../img/icons/reddit_red.svg');
-}
-
-
-body>footer>div>div#social-media>a[href='#social6']>img:hover {
-  content: url('../img/icons/reddit_red.svg');
-}
-
-body>footer>div>div#social-media>a[href='mailto:pavagelaval@outlook.com']>img:hover {
-  content: url('../img/icons/email_orange.svg');
-}
 
 
 body > footer {
