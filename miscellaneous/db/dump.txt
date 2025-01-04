@@ -1280,7 +1280,7 @@ CREATE TABLE `review_data_en` (
   `rating_value` double DEFAULT NULL,
   `review_body` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1289,7 +1289,7 @@ CREATE TABLE `review_data_en` (
 
 LOCK TABLES `review_data_en` WRITE;
 /*!40000 ALTER TABLE `review_data_en` DISABLE KEYS */;
-INSERT INTO `review_data_en` VALUES (1,'Muthu',5,'Pavage, Asphalte et Béton Gatineau was fantastic to work with. They arrived on time, worked efficiently, and delivered excellent quality. The asphalt they used for my driveway was durable and gave a smooth, clean finish. The entire process went smoothly from start to finish, and they stuck to the original budget and timeline. Their attention to detail was impressive, and the team was friendly and professional throughout the project. I would gladly recommend them to anyone needing driveway or paving services.'),(2,'Zona _G',5,'I recently hired Pavage & Asphalt Gat.  for a paving project at my home, and I couldn\'t be more satisfied with the results. From the initial consultation to the final touches, their team was professional and attentive to my needs. The quality of the work was exceptional—my driveway looks fantastic and feels durable. They completed the job on time and within budget, which I really appreciated. I also noticed that they took extra care to ensure the site was clean after the work was finished. I highly recommend for anyone looking for reliable and high-quality paving services!'),(3,'Alvino Lima',5,'Pavage et Asphalte  delivered top-notch driveway paving. The team was skilled, efficient, and paid close attention to detail. The asphalt was high-quality, resulting in a smooth finish, and the site was left clean. I highly recommend their services in Gatineau for reliable and professional paving.'),(4,'Stephen',5,'Pavage, Asphalte et Béton Gatineau did an amazing job on my driveway. The team was professional, punctual, and detail-oriented. The asphalt is high-quality, and the finish is perfect. They completed the job on time and within budget. I highly recommend them for any paving or concrete work!'),(5,'karl grand',5,'Recently I used Pavage et Asphalte Gatineau Earnanswers for driveway paving and was pleased with the results. The core staff demonstrated professionalism, competence, and efficiency. The asphalt utilized was good, and the surface appeared smooth. I was also impressed by the attention to detail and cleanliness of the work area. I strongly endorse Pavage et Asphalte Gatineau Earnanswers for quality and experienced paving services in Gatineau.');
+INSERT INTO `review_data_en` VALUES (1,'Michel Kelley',5,'I really appreciate it because it offers high quality, fast and efficient paving services, with excellent value for money and clear communication.'),(2,'Billy James',5,'I am very satisfied to have called on Pavage Asphalte Laval for the paving of my driveway in Montreal! The quality of the asphalt work is excellent and my driveway is superb. I highly recommend their services!'),(3,'deep kaur',5,'I had a great experience with Pavage Asphalte Laval in Montreal! Their team was professional, efficient, and completed the job on time. The quality of the asphalt work was top-notch, and my driveway looks fantastic. Highly recommend their services!');
 /*!40000 ALTER TABLE `review_data_en` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1306,7 +1306,7 @@ CREATE TABLE `review_data_fr` (
   `rating_value` double DEFAULT NULL,
   `review_body` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1315,7 +1315,7 @@ CREATE TABLE `review_data_fr` (
 
 LOCK TABLES `review_data_fr` WRITE;
 /*!40000 ALTER TABLE `review_data_fr` DISABLE KEYS */;
-INSERT INTO `review_data_fr` VALUES (1,'Muthu',5,'C\'était fantastique de travailler avec Pavage, Asphalte et Béton Gatineau. Ils sont arrivés à temps, ont travaillé efficacement et ont livré une excellente qualité. L\'asphalte qu\'ils ont utilisé pour mon allée était durable et donnait une finition lisse et propre. L’ensemble du processus s’est déroulé sans problème du début à la fin, et ils ont respecté le budget et le calendrier initiaux. Leur souci du détail était impressionnant et l’équipe s’est montrée amicale et professionnelle tout au long du projet. Je les recommanderais volontiers à toute personne ayant besoin de services d\'allée ou de pavage.'),(2,'Zona _G',5,'J\'ai récemment embauché Pavage & Asphalt Gat.  pour un projet de pavage chez moi, et je ne pourrais pas être plus satisfait des résultats. De la première consultation jusqu\'aux touches finales, leur équipe a été professionnelle et à l\'écoute de mes besoins. La qualité du travail était exceptionnelle : mon allée est fantastique et durable. Ils ont réalisé le travail dans les délais et dans les limites du budget, ce que j\'ai vraiment apprécié. J\'ai également remarqué qu\'ils prenaient des précautions supplémentaires pour s\'assurer que le chantier était propre une fois les travaux terminés. Je recommande vivement à tous ceux qui recherchent des services de pavage fiables et de qualité !'),(3,'Alvino Lima',5,'Pavage et Asphalte a livré un pavage d\'entrée de premier ordre. L\'équipe était compétente, efficace et accordait une grande attention aux détails. L\'asphalte était de haute qualité, ce qui a permis d\'obtenir une finition lisse et le site est resté propre. Je recommande fortement leurs services à Gatineau pour un pavage fiable et professionnel.'),(4,'Stephen',5,'Pavage, Asphalte et Béton Gatineau ont fait un travail incroyable sur mon entrée. L\'équipe était professionnelle, ponctuelle et soucieuse du détail. L\'asphalte est de grande qualité et la finition est parfaite. Ils ont réalisé les travaux dans les délais et dans les limites du budget. Je les recommande vivement pour tout travail de pavage ou de bétonnage !'),(5,'karl grand',5,'Récemment, j\'ai utilisé Pavage et Asphalte Gatineau Earnanswers pour le pavage d\'entrée et j\'ai été satisfait des résultats. Le personnel de base a fait preuve de professionnalisme, de compétence et d\'efficacité. L\'asphalte utilisé était bon et la surface semblait lisse. J\'ai également été impressionné par l\'attention portée aux détails et la propreté de la zone de travail. J\'appuie fortement Pavage et Asphalte Gatineau Earnanswers pour des services de pavage de qualité et expérimentés à Gatineau.');
+INSERT INTO `review_data_fr` VALUES (1,'Michel Kelley',5,'J\'apprécie vraiment car il offre des services de pavage de haute qualité, rapides et efficaces, avec un excellent rapport qualité-prix et une communication claire.'),(2,'Billy James',5,'Je suis très satisfait d’avoir fait appel à Pavage Asphalte Laval pour le pavage de mon entrée de cour à Montréal! La qualité du travail d’asphalte est excellente et mon allée est superbe. Je recommande fortement leurs services !'),(3,'deep kaur',5,'J\'ai eu une excellente expérience avec Pavage Asphalte Laval à Montréal! Leur équipe était professionnelle, efficace et a terminé le travail à temps. La qualité des travaux d\'asphaltage était de premier ordre et mon entrée de garage est fantastique. Je recommande vivement leurs services!');
 /*!40000 ALTER TABLE `review_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1388,4 +1388,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-29  9:55:39
+-- Dump completed on 2025-01-04 15:51:57

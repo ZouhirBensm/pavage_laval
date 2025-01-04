@@ -62,7 +62,7 @@ async function mid1(req, res, next) {
     // Check if reviews exist in the response
     const reviews = response.data.result.reviews || [];
     
-    // console.log('\n\nreviews: ', reviews)
+    console.log('\n\nreviews: ', reviews)
     
     
     res.locals.reviews = reviews
