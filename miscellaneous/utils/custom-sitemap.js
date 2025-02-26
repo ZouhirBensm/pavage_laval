@@ -29,5 +29,3 @@ function createSiteMap(urls, protocoled_domain) {
 
 
 module.exports = createSiteMap
-
-
