@@ -16,15 +16,20 @@ async function mid1(req, res, next) {
   }
 
 
-
+  let brochure_text1 = is_english ? "<p>We offer paving services in Laval, Quebec, specializing in asphalt for residential and commercial projects. <a href='mailto:pavage-asphalte-laval-montreal@outlook.com'>pavage-asphalte-laval-montreal@outlook.com</a></p>" : "<p>Nous offrons des services de pavage à Laval, Québec, spécialisés dans l'asphalte pour des projets résidentiels et commerciaux. <a href='mailto:pavage-asphalte-laval-montreal@outlook.com'>pavage-asphalte-laval-montreal@outlook.com</a></p>"
+  
+  let brochure_text2 = is_english ? "<header><h2>Pavaging Laval Asphalt Laval Earnanswers</h2></header><p>If you're looking for quality paving near you, our team of Laval paving experts guarantees long-lasting results. We also serve the Montreal region and surrounding areas. Contact us for a quick quote on your asphalt needs in Laval and nearby locations.</p>" : "<header><h2>Pavage Laval Asphalte Laval Earnanswers</h2></header><p>Si vous recherchez un pavage de qualité près de chez vous, notre équipe d'experts en pavage Laval vous garantit des résultats durables. Nous servons également la région de Montréal et ses environs. Contactez-nous pour un devis rapide sur vos besoins en asphalte à Laval et dans les environs.</p>",
 
   all_data_per_page = {
     title: res.locals.blog_element.title,
     under_h1: res.locals.blog_element.under_h1,
     eq_lang_page: blog_posting_content.eq_lang_page, // is_english ? '/blog' : '/blog/en',
     css_link: blog_posting_content.css_link,
-    schema_script: blog_posting_content.schema_script
+    schema_script: blog_posting_content.schema_script,
+    brochure_text1: brochure_text1,
+    brochure_text2: brochure_text2
   }
+
 
 
 

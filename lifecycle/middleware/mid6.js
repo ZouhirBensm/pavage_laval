@@ -38,7 +38,7 @@ async function mid1(req, res, next) {
   
   
 
-  console.log({category_fr, blog_page_fr})
+  // console.log({category_fr, blog_page_fr})
 
 
   res.locals.index_page_data = {

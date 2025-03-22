@@ -71,7 +71,7 @@ async function mid1(req, res, next) {
 
 
 
-  console.log(res.locals.blog_element)
+  // console.log(res.locals.blog_element)
 
 
 
