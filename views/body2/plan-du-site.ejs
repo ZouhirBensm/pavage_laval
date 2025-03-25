@@ -35,7 +35,9 @@
             <li><%= categoryName %>
               <ul>
                 <% categories_and_associated_blogs[categoryName].blogs.forEach(function(blog) { %>
+
                   <li><a href="/blog/<%= categories_and_associated_blogs[categoryName].categorySlug %>/blog-posting/<%= blog.slug %>"><%= blog.title %></a></li>
+
                 <% }); %>
               </ul>
             </li>
