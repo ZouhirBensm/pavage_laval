@@ -45,6 +45,13 @@ div.tm-portfolio-item > img {
 }
 
 
+@media (max-width: 500px) {
+  .tm-portfolio-item:nth-child(odd) .tm-portfolio-description {
+    padding-right: unset;
+  }
+}
+
+
 .tm-portfolio-item {
   color: white;
 }
