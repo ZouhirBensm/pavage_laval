@@ -170,6 +170,7 @@ div#pav3 {
   background-image: url("../img2/pav.jpg");
   background-position: center;
   background-size: 100% auto;
+  /* background-repeat: no-repeat; */
 }
 
 
