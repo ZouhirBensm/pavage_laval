@@ -327,6 +327,8 @@ CREATE TABLE `business_data_en` (
   `telephone2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `calendly_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_page_published_date` date DEFAULT NULL,
+  `home_page_updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -337,7 +339,7 @@ CREATE TABLE `business_data_en` (
 
 LOCK TABLES `business_data_en` WRITE;
 /*!40000 ALTER TABLE `business_data_en` DISABLE KEYS */;
-INSERT INTO `business_data_en` VALUES (1,'https://pavage-asphalte-laval-montreal.ca','Pavage Laval Asphalte Laval Earnanswers','Paving and Asphalt Services','Paving and asphalt repair services for driveways, parking lots and roads near Laval, Montréal, Québec.','1540 Rue des Patriotes #12','Laval','QC','H7L 2N6','Canada','+1 (438) 476 6508',45.446837910569435,-75.81363654716525,'4384766508','pavage-asphalte-laval-montreal@outlook.com','https://calendly.com/pavage-asphalte-laval-montreal/call');
+INSERT INTO `business_data_en` VALUES (1,'https://pavage-asphalte-laval-montreal.ca','Pavage Laval Asphalte Laval Earnanswers','Paving and Asphalt Services','Paving and asphalt repair services for driveways, parking lots and roads near Laval, Montréal, Québec.','1540 Rue des Patriotes #12','Laval','QC','H7L 2N6','Canada','+1 (438) 476 6508',45.446837910569435,-75.81363654716525,'4384766508','pavage-asphalte-laval-montreal@outlook.com','https://calendly.com/pavage-asphalte-laval-montreal/call','2024-08-18','2025-02-26');
 /*!40000 ALTER TABLE `business_data_en` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,6 +367,8 @@ CREATE TABLE `business_data_fr` (
   `telephone2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `calendly_link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_page_published_date` date DEFAULT NULL,
+  `home_page_updated_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -375,7 +379,7 @@ CREATE TABLE `business_data_fr` (
 
 LOCK TABLES `business_data_fr` WRITE;
 /*!40000 ALTER TABLE `business_data_fr` DISABLE KEYS */;
-INSERT INTO `business_data_fr` VALUES (1,'https://pavage-asphalte-laval-montreal.ca','Pavage Laval Asphalte Laval Earnanswers','Services de Pavage et d\'Asphalte','Services de pavage et réparation d\'asphalte pour allées, stationnements et routes à Laval, Montréal, Québec.','1540 Rue des Patriotes #12','Laval','QC','H7L 2N6','Canada','+1 (438) 476 6508',45.446837910569435,-75.81363654716525,'4384766508','pavage-asphalte-laval-montreal@outlook.com','https://calendly.com/pavage-asphalte-laval-montreal/call');
+INSERT INTO `business_data_fr` VALUES (1,'https://pavage-asphalte-laval-montreal.ca','Pavage Laval Asphalte Laval Earnanswers','Services de Pavage et d\'Asphalte','Services de pavage et réparation d\'asphalte pour allées, stationnements et routes à Laval, Montréal, Québec.','1540 Rue des Patriotes #12','Laval','QC','H7L 2N6','Canada','+1 (438) 476 6508',45.446837910569435,-75.81363654716525,'4384766508','pavage-asphalte-laval-montreal@outlook.com','https://calendly.com/pavage-asphalte-laval-montreal/call','2024-08-18','2025-02-26');
 /*!40000 ALTER TABLE `business_data_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1388,4 +1392,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-15  9:34:00
+-- Dump completed on 2025-08-21 12:20:13
