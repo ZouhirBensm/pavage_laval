@@ -55,7 +55,7 @@ async function mid1(req, res, next) {
 
 
 
-  console.log('\n\nall_data_per_page_fr:\n\n', all_data_per_page_fr)
+  // console.log('\n\nall_data_per_page_fr:\n\n', all_data_per_page_fr)
 
 
   const contact_form_data_fr = await db.demande_de_devis_gratuit_fr.findOne({
@@ -84,7 +84,7 @@ async function mid1(req, res, next) {
 
 
   let req_path = res.locals.req_path.replace('/service/', '');
-  // console.log(req_path);
+  console.log(req_path);
 
 
   const main_service_data_fr = await db.main_service_data_fr.findOne({
@@ -130,6 +130,11 @@ async function mid1(req, res, next) {
 
 
   // console.log('\n\nres.locals.index_page_data -> ', res.locals.index_page_data)
+  console.log('\n\nall_data_per_page -> ', res.locals.index_page_data.all_data_per_page)
+  // console.log('\n\nmain_service_data_fr -> ', main_service_data_fr)
+
+  const { service_description, web_page_content, ...loggableData } = main_service_data_fr ?? {};
+  console.log('\n\nmain_service_data_fr -> ', loggableData);
 
   return next()
 
@@ -147,3 +152,4 @@ const middleware = {
 
 
 module.exports = middleware
+

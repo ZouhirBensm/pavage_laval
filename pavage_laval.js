@@ -153,16 +153,16 @@ app.get('*', middleware11.mid1, async (req, res, next) => {
 
 
 
-
+// TODO why is this running twice on certain queries for example: http://localhost:3006/service/services-asphalte-a-laval. Debug to see if running twice? (middleware4.mid1, middleware4_en.mid1). If it's running twice, fix on master branch then merge to current branch working on at the moment.
 app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
 
 
-  console.log("here")
-  console.log("req.matchedEndpoint", req.matchedEndpoint)
+  // console.log("\n\nHere: app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {")
+  // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - req.matchedEndpoint", req.matchedEndpoint)
   
   if (req.matchedEndpoint) {
 
-    console.log("here")
+    // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - HERE123")
     // Handle the special logic for matched slugs
     // e.g., fetch additional data for this path
     // res.json({ message: `Special handler for ${req.matchedEndpoint}` });
@@ -265,7 +265,7 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_services_supplementaires_seo/en'], middleware4.mid1, middleware4_en.mid1, middleware5.mid1, middleware5_en.mid1, async (req, res, next) => {
 
 
-  logDataInColoredStructure(res.locals.index_page_data);
+  // logDataInColoredStructure(res.locals.index_page_data);
 
   return res.render('page_de_services_supplementaires_seo', { ...res.locals.index_page_data });
 });

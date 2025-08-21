@@ -18,17 +18,17 @@ async function mid1(req, res, next) {
     ];
 
 
-    console.log(allEndpointData, req.path)
+    // console.log('\n\nmiddleware11.mid1 - allEndpointData, req.path', allEndpointData, req.path)
     // Check if the request path matches any of the slugs
     const matchedEndpoint = allEndpointData.find(endpointData => req.path.includes(endpointData.slug));
 
-    console.log('matchedEndpoint', matchedEndpoint)
+    // console.log('\n\nmiddleware11.mid1 - matchedEndpoint', matchedEndpoint)
 
     if (matchedEndpoint) {
       // If a match is found, forward the request to a special controller
       // You can store matchedEndpoint in req so it's accessible to the controller
       req.matchedEndpoint = matchedEndpoint;  
-      console.log('matchedEndpoint2', matchedEndpoint)
+      // console.log('\n\nmiddleware11.mid1 - matchedEndpoint2', matchedEndpoint2)
       return next('route');  // Skip to the next route that matches the controller
     } else {
       // If no match, just continue with the regular flow
