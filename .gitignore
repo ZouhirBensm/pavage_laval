@@ -4,4 +4,4 @@ notes
 models
 /public/sitemap/sitemap.xml
 scripts
-format.html
+/views/format.html
