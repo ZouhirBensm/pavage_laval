@@ -58,4 +58,5 @@ div.tm-portfolio-item > img {
 
 .tm-portfolio-description > h2 {
   color: #7777ab;
+  display: inline;
 }

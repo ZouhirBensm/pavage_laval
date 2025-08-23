@@ -240,6 +240,16 @@ async function mid1_en(req, res, next) {
 
 
 
+  const areas_section_en = await db.areas_section_en.findAll({
+    raw: true
+  });
+
+  if (!areas_section_en) {
+    const error = new Error("No faq_en found!")
+    return next(error)
+  }
+
+
 
 
   const faq_en = await db.faq_en.findAll({
@@ -339,6 +349,7 @@ async function mid1_en(req, res, next) {
     faq: faq_en,
     footer: footer_en,
     contact_form_data: contact_form_data_en,
+    areas_section: areas_section_en,
     faq_content: faq_content_en
   }
 

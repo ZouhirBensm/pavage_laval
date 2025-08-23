@@ -170,6 +170,17 @@ async function mid1(req, res, next) {
 
 
 
+
+  const areas_section_fr = await db.areas_section_fr.findAll({
+    raw: true
+  });
+
+  if (!areas_section_fr) {
+    const error = new Error("No faq_fr found!")
+    return next(error)
+  }
+
+
   const faq_content_fr = await db.faq_content_fr.findOne({
     // attributes: ['slug', 'title'],
     raw: true
@@ -255,6 +266,7 @@ async function mid1(req, res, next) {
     faq: faq_fr,
     footer: footer_fr,
     contact_form_data: contact_form_data_fr,
+    areas_section: areas_section_fr,
     faq_content: faq_content_fr
   }
 

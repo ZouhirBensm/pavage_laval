@@ -3,6 +3,8 @@ var _about_page_en = require("./about_page_en");
 var _about_page_fr = require("./about_page_fr");
 var _all_data_per_page_en = require("./all_data_per_page_en");
 var _all_data_per_page_fr = require("./all_data_per_page_fr");
+var _areas_section_en = require("./areas_section_en");
+var _areas_section_fr = require("./areas_section_fr");
 var _blog_element_en = require("./blog_element_en");
 var _blog_element_fr = require("./blog_element_fr");
 var _blog_page_en = require("./blog_page_en");
@@ -53,6 +55,8 @@ function initModels(sequelize) {
   var about_page_fr = _about_page_fr(sequelize, DataTypes);
   var all_data_per_page_en = _all_data_per_page_en(sequelize, DataTypes);
   var all_data_per_page_fr = _all_data_per_page_fr(sequelize, DataTypes);
+  var areas_section_en = _areas_section_en(sequelize, DataTypes);
+  var areas_section_fr = _areas_section_fr(sequelize, DataTypes);
   var blog_element_en = _blog_element_en(sequelize, DataTypes);
   var blog_element_fr = _blog_element_fr(sequelize, DataTypes);
   var blog_page_en = _blog_page_en(sequelize, DataTypes);
@@ -108,6 +112,8 @@ function initModels(sequelize) {
     about_page_fr,
     all_data_per_page_en,
     all_data_per_page_fr,
+    areas_section_en,
+    areas_section_fr,
     blog_element_en,
     blog_element_fr,
     blog_page_en,
