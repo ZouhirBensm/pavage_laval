@@ -119,9 +119,62 @@ const middleware = require('./lifecycle/middleware/mid6_en');
 
 
 
+
+
+
+
+// Redirect mappings for old URLs to new URLs
+const redirect_map = {
+  '/service/services-asphalte-a-laval': '/service/asphalte-laval',
+  '/service/scellement-de-fissures-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/scellement-et-application-de-scellant-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-de-fissures': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-et-reparation-des-fissures-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-des-fissures-de-voie-entree-en-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/scellement-et-entretien-de-voieentree-en-asphalte': '/service/scellant-asphalte-laval',
+  '/service/pavage-asphalte-residentiel-et-commercial': '/service/pavage-commercial-laval',
+  '/service/services-asphalte-commercial': '/service/pavage-commercial-laval',
+  '/service/pavage-asphalte-commercial': '/service/pavage-commercial-laval',
+  '/service/service-de-reparation-asphalte-a-laval': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-nids-de-poule': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-patchs-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-joints-expansion-en-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-par-infrarouge': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-en-caoutchouc': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-en-patch-froid': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-fissures': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-et-reparation-des-fissures-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-des-fissures-de-voie-entree-en-asphalte': '/service/scellement-fissure-asphalte-laval',
+  '/service/reparation-de-nids-de-poule': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-patchs-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/reparation-de-joints-expansion-en-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-par-infrarouge': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-en-caoutchouc': '/service/reparation-asphalte-montreal',
+  '/service/reparation-asphalte-en-patch-froid': '/service/reparation-asphalte-montreal',
+  '/service/service-de-reparation-asphalte-a-laval': '/service/reparation-asphalte-montreal',
+};
+
+
+
+
+
+
+
+
+
+// Implement 301 redirects for the mapped URLs
+Object.keys(redirect_map).forEach(old_url => {
+  app.get(old_url, (req, res) => {
+    res.status(301).redirect(redirect_map[old_url]);
+  });
+});
+
+
+
 // For SEO Keep until google identifies that the pages are gone
 const goneUrls = [
-  "/some/url/path"
+  '/service/services-de-pave-uni-a-laval',
+  '/service/interlocking-paving-stones-pavers-services-in-laval/en',
 ];
 
 
