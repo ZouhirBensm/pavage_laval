@@ -36,7 +36,7 @@ async function mid1(req, res, next) {
   }
 
 
-  // console.log('\n\n(1)\n\n', db_extra_service_page_fr)
+  console.log('\n\n(1)\n\n', db_extra_service_page_fr)
 
 
   if (!db_extra_service_page_fr) {
