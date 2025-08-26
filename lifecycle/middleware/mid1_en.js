@@ -16,7 +16,7 @@ async function mid1_en(req, res, next) {
 
 
   const now = new Date();
-  console.log('\n\n', now);
+  // console.log('\n\n', now);
 
 
 

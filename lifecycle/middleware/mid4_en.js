@@ -6,7 +6,7 @@ async function mid1(req, res, next) {
 
   if(!is_english) return next()
 
-  console.log("English mode is on. 1\n\n")
+  // console.log("English mode is on. 1\n\n")
 
 
 
@@ -76,7 +76,7 @@ async function mid1(req, res, next) {
 
   
   let req_path = res.locals.req_path.replace('/service/', '');
-  console.log(req_path);
+  // console.log(req_path);
 
 
   const main_service_data_en = await db.main_service_data_en.findOne({

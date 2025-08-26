@@ -37,7 +37,7 @@ const { ENVIRONMENT, SIGNAL } = require('./miscellaneous/const/env')
 const app = express()
 
 app.use(Compression);
-
+// app.use(express.static(path.join(__dirname, 'public')));
 
 
 
@@ -78,7 +78,9 @@ app.use(express.static('public'));
 
 
 app.use((req, res, next) => {
-
+  console.log('\n\n\n__________________________________\n')
+  console.log('new request!\n\n')
+  console.log('(1)')
   global.is_english = req.path.endsWith('/en');
 
 
@@ -88,8 +90,10 @@ app.use((req, res, next) => {
 
   const req_path = req.path
   const req_url = req.url
-
+  
+  console.log('\n\nreq_path, req_url:\n')
   console.log(req_path, req_url)
+  console.log('\n\n')
 
   res.locals.req_path = req_path
 
@@ -194,6 +198,8 @@ goneUrls.forEach(url => {
 
 app.get('*', middleware11.mid1, async (req, res, next) => {
 
+
+  console.log('(2)')
   // if (process.env.NODE_ENV === 'production') {
   //   return res.status(503).render('site-is-being-built');
   // }
@@ -207,7 +213,7 @@ app.get('*', middleware11.mid1, async (req, res, next) => {
 
 // TODO why is this running twice on certain queries for example: http://localhost:3006/service/services-asphalte-a-laval. Debug to see if running twice? (middleware4.mid1, middleware4_en.mid1). If it's running twice, fix on master branch then merge to current branch working on at the moment.
 app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
-
+  console.log('(3)')
 
   // console.log("\n\nHere: app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {")
   // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - req.matchedEndpoint", req.matchedEndpoint)
