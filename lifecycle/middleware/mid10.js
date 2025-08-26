@@ -36,7 +36,7 @@ async function mid1(req, res, next) {
   }
 
 
-  console.log(review_data)
+  // console.log(review_data)
 
 
 

@@ -6,17 +6,17 @@ const ejs = require('ejs');
 
 async function mid1_en(req, res, next) {
   
-  console.log(is_english, '\n\n')
+  // console.log(is_english, '\n\n')
 
   if(!is_english) return next()
 
-  console.log("English mode is on.\n\n")
+  // console.log("English mode is on.\n\n")
 
 
 
 
   const now = new Date();
-  console.log(now);
+  console.log('\n\n', now);
 
 
 

@@ -1,4 +1,7 @@
 async function mid1(req, res, next) {
+
+  console.log("\nIs this running????????????????\n")
+
   try {
     // Query the database to get all slugs (both English and French)
     const main_service_data_en = await db.main_service_data_en.findAll({

@@ -192,7 +192,6 @@ goneUrls.forEach(url => {
 // TODO refactor branch,
 // Explanation: middleware11.mid1 identifies if a main service page was requested, if so it sets req.matchedEndpoint and goes to the next middleware that matches the request (ie '*' in this case) through the next('route') command. That latter middleware will render the proper page else will go as normal for other requests
 
-middleware11.mid1
 app.get('*', middleware11.mid1, async (req, res, next) => {
 
   // if (process.env.NODE_ENV === 'production') {
@@ -248,7 +247,7 @@ app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_e
 
 
 
-  logDataInColoredStructure(res.locals.index_page_data);
+  // logDataInColoredStructure(res.locals.index_page_data);
 
   // return res.end()
   return res.render('index', { ...res.locals.index_page_data });

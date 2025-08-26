@@ -8,15 +8,15 @@ const { translateReviews } = require('../../miscellaneous/services/translator')
 async function mid1(req, res, next) {
 
 
-  console.log(is_english, '\n\n')
+  // console.log(is_english, '\n\n')
 
   if(is_english) return next()
 
-  console.log("French mode is on mid1")
+  // console.log("French mode is on mid1")
 
 
   const now = new Date();
-  console.log(now);
+  console.log('\n\n', now);
 
   
   // const req_path = req.path
