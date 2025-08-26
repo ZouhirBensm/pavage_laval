@@ -95,10 +95,12 @@ app.use((req, res, next) => {
   console.log(req_path, req_url)
   console.log('\n\n')
 
-  res.locals.req_path = req_path
-
-
+  
+  
   const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
+
+  res.locals.req_path = req_path
   res.locals.fullUrl = fullUrl
 
 
@@ -196,24 +198,12 @@ goneUrls.forEach(url => {
 // TODO refactor branch,
 // Explanation: middleware11.mid1 identifies if a main service page was requested, if so it sets req.matchedEndpoint and goes to the next middleware that matches the request (ie '*' in this case) through the next('route') command. That latter middleware will render the proper page else will go as normal for other requests
 
-app.get('*', middleware11.mid1, async (req, res, next) => {
-
-
-  console.log('(2)')
-  // if (process.env.NODE_ENV === 'production') {
-  //   return res.status(503).render('site-is-being-built');
-  // }
-
-
-  return next();
-});
+app.get('*', middleware11.mid1)
 
 
 
-
-// TODO why is this running twice on certain queries for example: http://localhost:3006/service/services-asphalte-a-laval. Debug to see if running twice? (middleware4.mid1, middleware4_en.mid1). If it's running twice, fix on master branch then merge to current branch working on at the moment.
 app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
-  console.log('(3)')
+  console.log('(2)')
 
   // console.log("\n\nHere: app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {")
   // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - req.matchedEndpoint", req.matchedEndpoint)
@@ -320,7 +310,7 @@ app.get(['/a-propos', '/about/en'], middleware3.mid1, middleware3_en.mid1, (req,
 
 
 
-app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_services_supplementaires_seo/en'], middleware4.mid1, middleware4_en.mid1, middleware5.mid1, middleware5_en.mid1, async (req, res, next) => {
+app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_services_supplementaires_seo/en'], middleware5.mid1, middleware5_en.mid1, async (req, res, next) => {
 
 
   // logDataInColoredStructure(res.locals.index_page_data);
@@ -339,7 +329,7 @@ app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_se
 
 
 
-app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware6.mid1, middleware6_en.mid1, async (req, res, next) => {
+app.get(['/blog', '/blog/en'],  middleware6.mid1, middleware6_en.mid1, async (req, res, next) => {
 
 
 
@@ -355,7 +345,7 @@ app.get(['/blog', '/blog/en'], middleware4.mid1, middleware4_en.mid1, middleware
 
 
 
-app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4_en.mid1, middleware7.mid1, middleware7_en.mid1, async (req, res, next) => {
+app.get(['/blog/:category', '/blog/:category/en'], middleware7.mid1, middleware7_en.mid1, async (req, res, next) => {
 
   console.log("\n\n(*)->\n\n", res.locals.index_page_data)
 
@@ -371,7 +361,7 @@ app.get(['/blog/:category', '/blog/:category/en'], middleware4.mid1, middleware4
 
 
 
-app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware4.mid1, middleware4_en.mid1, middleware8.mid1,  async (req, res, next) => {
+app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware8.mid1,  async (req, res, next) => {
 
 
   console.log("\n\n______________________\n\n (*)->: \n", res.locals.index_page_data)
@@ -392,8 +382,8 @@ app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware4.mid
 
 
 
-
-app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], middleware4.mid1, middleware4_en.mid1, async (req, res) => {
+// middleware4.mid1, middleware4_en.mid1
+app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], async (req, res) => {
 
 
   let legal_notice_page_fr, legal_notice_page_en
@@ -449,7 +439,7 @@ app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], middleware4.mid
 
 
 
-app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'], middleware4.mid1, middleware4_en.mid1, async (req, res) => {
+app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'], async (req, res) => {
 
 
   let privacy_policy_page_fr, privacy_policy_page_en, rendered_privacy_policy_page_en, rendered_privacy_policy_page_fr
@@ -869,7 +859,7 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
 
 
 
-app.get(['/plan-du-site', '/sitemap/en'], middleware4.mid1,  middleware4_en.mid1, middleware9.mid1, middleware9_en.mid1, async (req, res, next) => {
+app.get(['/plan-du-site', '/sitemap/en'], middleware9.mid1, middleware9_en.mid1, async (req, res, next) => {
 
 
 

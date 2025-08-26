@@ -32,9 +32,9 @@ async function mid1(req, res, next) {
       // You can store matchedEndpoint in req so it's accessible to the controller
       req.matchedEndpoint = matchedEndpoint;  
       // console.log('\n\nmiddleware11.mid1 - matchedEndpoint2', matchedEndpoint2)
-      return next('route');  // Skip to the next route that matches the controller
+      return next('route');  // Skip to the next route for this flow. i.e. goes to (3)
     } else {
-      // If no match, just continue with the regular flow
+      // If no match, just continue with the regular flow (2)
       return next();
     }
 
