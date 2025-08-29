@@ -232,7 +232,7 @@ async function mid1_en(req, res, next) {
 
 
 
-  // console.log('index_content_en ->\n', index_content_en, '\n\n')
+  console.log('index_content_en ->\n', index_content_en, '\n\n')
 
 
   // return next()

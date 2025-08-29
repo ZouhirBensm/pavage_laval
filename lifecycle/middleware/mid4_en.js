@@ -97,8 +97,16 @@ async function mid1(req, res, next) {
   }
 
 
+  console.log('\n\n')
 
+  const { service_description, web_page_content, ...loggableData } = main_service_data_en ?? {};
+  console.log('\n\nmain_service_data_en -> ', loggableData);
+
+  
+  
+  
   if (all_data_per_page_en) {
+    console.log('\n\nall_data_per_page_en -> ', all_data_per_page_en);
 
     let rendered_title_meta_canonical = undefined
 
