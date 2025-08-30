@@ -23,6 +23,7 @@ span.category-template {
 
 .container-fluid {
   max-width: 1200px;
+  padding: 10px 20px;
 }
 
 
@@ -31,6 +32,14 @@ span.category-template {
   padding-top: 80px;
   /* background: white; */
   color: white;
+}
+
+.background-purple {
+  /* max-width: 1200px;
+  font-family: 'Arial', sans-serif;
+  margin: 88px auto; */
+  background-color: #9999cc;
+  /* color: white; */
 }
 
 
@@ -66,6 +75,12 @@ div#dates {
   div#content-template img {
     width: 90%;
     height: auto;
+  }
+
+
+  .container-fluid {
+    max-width: 1200px;
+    padding: 5px 10px;
   }
 
 
