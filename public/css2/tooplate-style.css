@@ -48,6 +48,10 @@ button {
   cursor: pointer;
 }
 
+div#content-template a {
+  color: #7777ab
+}
+
 h2 {
   margin-top: 0;
 }

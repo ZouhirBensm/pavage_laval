@@ -9,6 +9,11 @@ body {
   height: 100vh;
 }
 
+body a,
+body button {
+  color: #7777ab
+}
+
 nav#top, footer {
   flex: 0 0 auto;
 }
