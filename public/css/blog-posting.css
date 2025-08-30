@@ -25,6 +25,12 @@ span.category-template {
 .container-fluid {
   max-width: 1200px;
   padding: 10px 20px;
+  color: white;
+}
+
+
+.container-fluid a {
+  color: #4d4dbc !important;
 }
 
 
@@ -36,10 +42,12 @@ section.blog-posting a {
   color: black;
 }
 
+
+
 #tmPortfolio {
   padding-top: 80px;
   /* background: white; */
-  color: white;
+  /* color: white; */
 }
 
 .background-purple {

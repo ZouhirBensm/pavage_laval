@@ -62,3 +62,13 @@ a:hover {
     color: orange;
   }
 }
+
+#page-content {
+  color: white;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+
+
