@@ -19,6 +19,7 @@ span.category-template {
     min-width: unset;
     overflow: unset;
     text-overflow: unset;
+    text-align: unset;
 }
 
 .container-fluid {
@@ -27,6 +28,13 @@ span.category-template {
 }
 
 
+div#content-template {
+    text-align: justify;
+}
+
+section.blog-posting a {
+  color: black;
+}
 
 #tmPortfolio {
   padding-top: 80px;
@@ -86,11 +94,12 @@ div#dates {
 
 
   span.category-template {
-    flex: 0 1 47%;
-    max-width: 47%;
+    flex: 0 1 40%;
+    max-width: 40%;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center;
   }
 }
 
