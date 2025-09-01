@@ -1,5 +1,8 @@
+<!-- TODO figure out the keywords of other brands that would help to rank highter -->
 <div style="display: none;">
-  <p><strong>pavage asphalte verdun</strong></p>
-  <p><strong>pavage bernier</strong></p>
-  <p><strong>enduit pour asphalte techniseal</strong></p>
+  <% locals.index_page_data.hidden_section[0].keywords.forEach(keyword => { %>
+    <p><strong><%= keyword %></strong></p>
+  <% }) %>
 </div>
+
+<!-- TODO Needs own dedicated css files, also template the areas in own DB list with dedicated own pages as posibility or optional -->

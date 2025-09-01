@@ -245,7 +245,16 @@ async function mid1_en(req, res, next) {
   });
 
   if (!areas_section_en) {
-    const error = new Error("No faq_en found!")
+    const error = new Error("No areas_section_en found!")
+    return next(error)
+  }
+
+  const hidden_section_en = await db.hidden_section_en.findAll({
+    raw: true
+  });
+
+  if (!hidden_section_en) {
+    const error = new Error("No hidden_section_en found!")
     return next(error)
   }
 
@@ -266,6 +275,7 @@ async function mid1_en(req, res, next) {
 
 
   // return next()
+
 
 
   const faq_content_en = await db.faq_content_en.findOne({
@@ -350,6 +360,7 @@ async function mid1_en(req, res, next) {
     footer: footer_en,
     contact_form_data: contact_form_data_en,
     areas_section: areas_section_en,
+    hidden_section: hidden_section_en,
     faq_content: faq_content_en
   }
 

@@ -29,6 +29,8 @@ var _faq_en = require("./faq_en");
 var _faq_fr = require("./faq_fr");
 var _footer_en = require("./footer_en");
 var _footer_fr = require("./footer_fr");
+var _hidden_section_en = require("./hidden_section_en");
+var _hidden_section_fr = require("./hidden_section_fr");
 var _index_content_en = require("./index_content_en");
 var _index_content_fr = require("./index_content_fr");
 var _legal_notice_page_en = require("./legal_notice_page_en");
@@ -81,6 +83,8 @@ function initModels(sequelize) {
   var faq_fr = _faq_fr(sequelize, DataTypes);
   var footer_en = _footer_en(sequelize, DataTypes);
   var footer_fr = _footer_fr(sequelize, DataTypes);
+  var hidden_section_en = _hidden_section_en(sequelize, DataTypes);
+  var hidden_section_fr = _hidden_section_fr(sequelize, DataTypes);
   var index_content_en = _index_content_en(sequelize, DataTypes);
   var index_content_fr = _index_content_fr(sequelize, DataTypes);
   var legal_notice_page_en = _legal_notice_page_en(sequelize, DataTypes);
@@ -138,6 +142,8 @@ function initModels(sequelize) {
     faq_fr,
     footer_en,
     footer_fr,
+    hidden_section_en,
+    hidden_section_fr,
     index_content_en,
     index_content_fr,
     legal_notice_page_en,
