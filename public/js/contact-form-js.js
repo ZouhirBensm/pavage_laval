@@ -1,8 +1,11 @@
 function sendEmail(event) {
 
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault();
 
-  const site_rentee_email = 'pavagelaval@outlook.com'
+  const site_rentee_email = 'info@asphaltesolution.com'
+  let site_rentee_second_optional_email = undefined;
+  // site_rentee_second_optional_email = 'pavage-asphalte-laval-montreal@outlook.com';
+  const second_email = 'earnanswers@outlook.com';
 
   // Get form data
   var name = document.getElementById('contact_name').value;
@@ -14,9 +17,15 @@ function sendEmail(event) {
   console.log(name, email)
   // console.log(phone, message)
 
+  // Build the recipient list
+  let recipientList = site_rentee_email + ',' + second_email;
+  if (site_rentee_second_optional_email) {
+    recipientList += ',' + site_rentee_second_optional_email;
+  }
+
   // Construct the mailto link
-  var mailtoLink = 'mailto:' + site_rentee_email +
-    '?subject=' + encodeURIComponent('Free Quote Request') +
+  var mailtoLink = 'mailto:' + recipientList +
+    '?subject=' + encodeURIComponent('Pavage Asphalte Laval Montreal: Quote Request') +
     '&body=' + encodeURIComponent(
       'Name/Nom: ' + name + '\n' +
       'Phone/Numéro: ' + phone + '\n' +
