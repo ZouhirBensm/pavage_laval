@@ -4,7 +4,7 @@ function sendEmail(event) {
 
   const site_rentee_email = 'info@asphaltesolution.com'
   let site_rentee_second_optional_email = undefined;
-  // site_rentee_second_optional_email = 'pavage-asphalte-laval-montreal@outlook.com';
+  site_rentee_second_optional_email = 'pavage-asphalte-laval-montreal@outlook.com';
   const second_email = 'earnanswers@outlook.com';
 
   // Get form data
