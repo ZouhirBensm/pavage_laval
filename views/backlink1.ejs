@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('head/head-common-part1.ejs') %>
+  
+  <title><%= locals.title %></title>
+  <meta name="title" content="<%= locals.title %>">
+  <meta name="description" content="<%= locals.description %>">
+  <link rel="canonical" href='<%= locals.req_path %>'>
+  
+  <%- include('head/css-loader/css.ejs') %>
+
+  <meta http-equiv="content-language" content="en">
+</head>
+
+
+<body class="tm-bg-dark">
+
+
+  <%- include('body2/nav.ejs') %>
+
+
+  <main id="body">
+
+    <%- include('body2/backlink1.ejs') %>
+    
+    <%- include('body2/brochure.ejs') %>
+    
+
+  </main>
+
+
+  <%- include('footer/footer.ejs') %>
+
+
+</body>
+
+
+
+
+
+</html>

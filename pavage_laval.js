@@ -64,7 +64,7 @@ const middleware11 = require('./lifecycle/middleware/mid11')
 
 
 
-// ***
+
 const middleware12 = require('./lifecycle/middleware/backlink-middleware/mid1')
 
 
@@ -96,13 +96,13 @@ app.use((req, res, next) => {
 
   const req_path = req.path
   const req_url = req.url
-  
+
   console.log('\n\nreq_path, req_url:\n')
   console.log(req_path, req_url)
   console.log('\n\n')
 
-  
-  
+
+
   const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
 
 
@@ -128,7 +128,7 @@ const get_catch_controller = require('./lifecycle/controller/get-catch-controlle
 const data_error_handler_controller = require('./lifecycle/controller/error-controller/cont1');
 
 
-// ***
+
 const backlink_controller = require('./lifecycle/controller/backlink-controller/cont1')
 
 
@@ -169,50 +169,50 @@ const redirect_map = {
   '/service/reparation-asphalte-en-patch-froid': '/service/reparation-asphalte-montreal',
   '/service/service-de-reparation-asphalte-a-laval': '/service/reparation-asphalte-montreal',
 
-  '/service/residential-asphalt-driveway-installation/en' : '/servicedriveway-paving-montreal/en',
-  '/service/paving-services-in-laval/en' : '/service/paving-laval/en',
-  '/service/asphalt-services-in-laval/en' : '/service/asphalt-repair-montreal/en',
+  '/service/residential-asphalt-driveway-installation/en': '/servicedriveway-paving-montreal/en',
+  '/service/paving-services-in-laval/en': '/service/paving-laval/en',
+  '/service/asphalt-services-in-laval/en': '/service/asphalt-repair-montreal/en',
 
-  '/service/construction-et-installation-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-construction-installation/en' : '/service/asphalt-repair-montreal/en',
-  '/service/installation-asphalte-a-chaud' : '/service/asphalte-laval',
-  '/service/hot-mix-asphalt-installation/en' : '/service/asphalt-repair-montreal/en',
-  '/service/pavage-residentiel' : '/service/services-de-pavage-a-laval',
-  '/service/residential-paving/en' : '/service/paving-laval/en',
-  '/service/construction-de-routes-en-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-road-construction/en' : '/service/asphalt-repair-montreal/en',
-  '/service/installation-de-voie-entree-en-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-driveway-installation/en' : '/service/driveway-paving-montreal/en',
-  '/service/services-entretien-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-maintenance-services/en' : '/service/asphalt-repair-montreal/en',
-  '/service/reasphaltage' : '/service/asphalte-laval',
-  '/service/asphalt-resurfacing/en' : '/service/asphalt-repair-montreal/en',
-  '/service/recouvrement-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-overlay/en' : '/service/asphalt-repair-montreal/en',
-  '/service/rajeunissement-de-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-rejuvenation/en' : '/service/asphalt-repair-montreal/en',
-  '/service/solutions-de-drainage-en-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-drainage-solutions/en' : '/service/asphalt-repair-montreal/en',
-  '/service/restauration-de-surfaces-en-asphalte' : '/service/reparation-asphalte-montreal',
-  '/service/asphalt-surface-restoration/en' : '/service/asphalt-repair-montreal/en',
-  '/service/reasphaltage-et-refection-asphalte' : '/service/reparation-asphalte-montreal',
-  '/service/asphalt-resurfacing-reconditioning/en' : '/service/asphalt-repair-montreal/en',
-  '/service/reasphaltage-des-parkings' : '/service/reparation-asphalte-montreal',
-  '/service/asphalt-parking-lot-resurfacing/en' : '/service/asphalt-repair-montreal/en',
-  '/service/pavage-industriel-asphalte' : '/service/services-de-pavage-a-laval	',
-  '/service/industrial-asphalt-paving/en' : '/service/paving-laval/en',
-  '/service/construction-et-entretien-de-routes-en-asphalte' : '/service/reparation-asphalte-montreal',
-  '/service/roadway-asphalt-construction-maintenance/en' : '/service/asphalt-repair-montreal/en',
-  '/service/installation-de-voie-entree-residentielle-en-asphalte' : '/service/asphalte-laval',
-  '/service/driveway-paving-montreal/en' : '/service/driveway-paving-montreal/en',
-  '/service/restauration-et-rajeunissement-de-voie-entree-en-asphalte' : '/service/asphalte-laval',
-  '/service/driveway-asphalt-restoration-rejuvenation/en' : '/service/driveway-paving-montreal/en',
-  '/service/installation-asphalte-recycle' : '/service/asphalte-laval',
-  '/service/recycled-asphalt-installation/en' : '/service/asphalt-repair-montreal/en',
-  '/service/solutions-asphalte-durables' : '/service/asphalte-laval',
-  '/service/sustainable-asphalt-solutions/en' : '/service/asphalt-repair-montreal/en',
-  '/service/personnalisation-de-voie-entree-en-asphalte' : '/service/asphalte-laval',
-  '/service/asphalt-driveway-customization/en' : '/service/driveway-paving-montreal/en',
+  '/service/construction-et-installation-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-construction-installation/en': '/service/asphalt-repair-montreal/en',
+  '/service/installation-asphalte-a-chaud': '/service/asphalte-laval',
+  '/service/hot-mix-asphalt-installation/en': '/service/asphalt-repair-montreal/en',
+  '/service/pavage-residentiel': '/service/services-de-pavage-a-laval',
+  '/service/residential-paving/en': '/service/paving-laval/en',
+  '/service/construction-de-routes-en-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-road-construction/en': '/service/asphalt-repair-montreal/en',
+  '/service/installation-de-voie-entree-en-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-driveway-installation/en': '/service/driveway-paving-montreal/en',
+  '/service/services-entretien-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-maintenance-services/en': '/service/asphalt-repair-montreal/en',
+  '/service/reasphaltage': '/service/asphalte-laval',
+  '/service/asphalt-resurfacing/en': '/service/asphalt-repair-montreal/en',
+  '/service/recouvrement-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-overlay/en': '/service/asphalt-repair-montreal/en',
+  '/service/rajeunissement-de-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-rejuvenation/en': '/service/asphalt-repair-montreal/en',
+  '/service/solutions-de-drainage-en-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-drainage-solutions/en': '/service/asphalt-repair-montreal/en',
+  '/service/restauration-de-surfaces-en-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/asphalt-surface-restoration/en': '/service/asphalt-repair-montreal/en',
+  '/service/reasphaltage-et-refection-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/asphalt-resurfacing-reconditioning/en': '/service/asphalt-repair-montreal/en',
+  '/service/reasphaltage-des-parkings': '/service/reparation-asphalte-montreal',
+  '/service/asphalt-parking-lot-resurfacing/en': '/service/asphalt-repair-montreal/en',
+  '/service/pavage-industriel-asphalte': '/service/services-de-pavage-a-laval	',
+  '/service/industrial-asphalt-paving/en': '/service/paving-laval/en',
+  '/service/construction-et-entretien-de-routes-en-asphalte': '/service/reparation-asphalte-montreal',
+  '/service/roadway-asphalt-construction-maintenance/en': '/service/asphalt-repair-montreal/en',
+  '/service/installation-de-voie-entree-residentielle-en-asphalte': '/service/asphalte-laval',
+  '/service/driveway-paving-montreal/en': '/service/driveway-paving-montreal/en',
+  '/service/restauration-et-rajeunissement-de-voie-entree-en-asphalte': '/service/asphalte-laval',
+  '/service/driveway-asphalt-restoration-rejuvenation/en': '/service/driveway-paving-montreal/en',
+  '/service/installation-asphalte-recycle': '/service/asphalte-laval',
+  '/service/recycled-asphalt-installation/en': '/service/asphalt-repair-montreal/en',
+  '/service/solutions-asphalte-durables': '/service/asphalte-laval',
+  '/service/sustainable-asphalt-solutions/en': '/service/asphalt-repair-montreal/en',
+  '/service/personnalisation-de-voie-entree-en-asphalte': '/service/asphalte-laval',
+  '/service/asphalt-driveway-customization/en': '/service/driveway-paving-montreal/en',
 };
 
 
@@ -280,7 +280,7 @@ app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
 
   // console.log("\n\nHere: app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {")
   // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - req.matchedEndpoint", req.matchedEndpoint)
-  
+
   if (req.matchedEndpoint) {
 
     // console.log("\n\napp.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => { - HERE123")
@@ -303,7 +303,7 @@ app.get('*', middleware4.mid1, middleware4_en.mid1, async (req, res, next) => {
 
 
 
-app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
+app.get(['/', '/en'], middleware10.mid1, middleware1.mid1, middleware1_en.mid1_en, async (req, res) => {
 
 
   // return res.end()
@@ -316,7 +316,7 @@ app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_e
 
 
 
-  // logDataInColoredStructure(res.locals.index_page_data);
+  logDataInColoredStructure(res.locals.index_page_data);
 
   // return res.end()
   return res.render('index', { ...res.locals.index_page_data });
@@ -325,14 +325,6 @@ app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_e
 
 
 
-
-
-
-// ***
-app.get('/backlink/1', 
-middleware12.mid1,
-backlink_controller.cont1
-)
 
 
 
@@ -410,7 +402,7 @@ app.get(['/service/:page_de_services_supplementaires_seo', '/service/:page_de_se
 
 
 
-app.get(['/blog', '/blog/en'],  middleware6.mid1, middleware6_en.mid1, async (req, res, next) => {
+app.get(['/blog', '/blog/en'], middleware6.mid1, middleware6_en.mid1, async (req, res, next) => {
 
 
 
@@ -442,7 +434,7 @@ app.get(['/blog/:category', '/blog/:category/en'], middleware7.mid1, middleware7
 
 
 
-app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware8.mid1,  async (req, res, next) => {
+app.get('/blog/:category/blog-posting/:title', middleware0.mid1, middleware8.mid1, async (req, res, next) => {
 
 
   console.log("\n\n______________________\n\n (*)->: \n", res.locals.index_page_data)
@@ -470,23 +462,23 @@ app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], async (req, res
   let legal_notice_page_fr, legal_notice_page_en
 
 
-  if(is_english) {
+  if (is_english) {
     // english
     legal_notice_page_en = await db.legal_notice_page_en.findOne({
       raw: true
     });
-  
+
     if (!legal_notice_page_en) {
       const error = new Error("No legal_notice_page_en found!")
       return next(error)
     }
-  
+
   } else {
     // french
     legal_notice_page_fr = await db.legal_notice_page_fr.findOne({
       raw: true
     });
-  
+
     if (!legal_notice_page_fr) {
       const error = new Error("No legal_notice_page_fr found!")
       return next(error)
@@ -505,7 +497,7 @@ app.get(['/tiroir1/mention-legale', '/drawer1/legal-notice/en'], async (req, res
     legal_notice_page: legal_notice_page
   }
 
-  
+
 
   logDataInColoredStructure(res.locals.index_page_data);
 
@@ -526,34 +518,34 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
   let privacy_policy_page_fr, privacy_policy_page_en, rendered_privacy_policy_page_en, rendered_privacy_policy_page_fr
 
 
-  if(is_english) {
+  if (is_english) {
     // english
     privacy_policy_page_en = await db.privacy_policy_page_en.findOne({
       raw: true
     });
-  
+
     if (!privacy_policy_page_en) {
       const error = new Error("No privacy_policy_page_en found!")
       return next(error)
     }
 
-    rendered_privacy_policy_page_en = ejs.render(privacy_policy_page_en.html_content, { 
+    rendered_privacy_policy_page_en = ejs.render(privacy_policy_page_en.html_content, {
       business_data: res.locals.index_page_data.business_data
     });
 
-  
+
   } else {
     // french
     privacy_policy_page_fr = await db.privacy_policy_page_fr.findOne({
       raw: true
     });
-  
+
     if (!privacy_policy_page_fr) {
       const error = new Error("No privacy_policy_page_fr found!")
       return next(error)
     }
 
-    rendered_privacy_policy_page_fr = ejs.render(privacy_policy_page_fr.html_content, { 
+    rendered_privacy_policy_page_fr = ejs.render(privacy_policy_page_fr.html_content, {
       business_data: res.locals.index_page_data.business_data
     });
 
@@ -591,7 +583,51 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 
 
+app.get('/backlink/1',
+  middleware12.mid1,
+  backlink_controller.cont1,
+  async (req, res, next) => {
 
+
+
+    let all_data_per_page_en = await db.all_data_per_page_en.findOne({
+      where: {
+        page_url_identify: '/about/en',
+      },
+      raw: true
+    });
+
+    if (!all_data_per_page_en) {
+      const error = new Error("No all_data_per_page_en found!")
+      return next(error)
+    }
+
+    const all_data_per_page = {
+      ...all_data_per_page_en,
+      title: 'List of links for Google crawler 1',
+      description: 'All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes',
+      page_url_identify: '/backlink/1',
+      under_h1: 'Backlinks',
+      eq_lang_page: '/backlink/1',
+      last_modified: '2025-09-20T10:27:07.077Z',
+      // css_link: undefined,
+      // schema_script: undefined,
+      // title_meta_canonical: undefined,
+      // front_end_script_needed_to_serve_variables: undefined,
+      // brochure_text1: undefined,
+      // brochure_text2: undefined,
+      // rendered_title_meta_canonical: undefined,
+      // rendered_front_end_script_needed_to_serve_variables: undefined,
+    }
+
+
+    res.locals.index_page_data = {
+      ...res.locals.index_page_data,
+      all_data_per_page: all_data_per_page
+    }
+
+    return res.render('backlink1', { ...res.locals.index_page_data });
+  })
 
 
 
@@ -658,11 +694,11 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
   }
 
   all_data_per_page_fr.forEach(all_data_per_page_fr => {
-    
-    if (discarded_object_ids.includes(all_data_per_page_fr.id)) {return;}
+
+    if (discarded_object_ids.includes(all_data_per_page_fr.id)) { return; }
 
     let lastmod = new Date(all_data_per_page_fr.last_modified)
-  
+
     urls.push({
       URL: all_data_per_page_fr.page_url_identify,
       lastmod: lastmod,
@@ -688,11 +724,11 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
   }
 
   all_data_per_page_en.forEach(all_data_per_page_en => {
-    
-    if (discarded_object_ids.includes(all_data_per_page_en.id)) {return;}
+
+    if (discarded_object_ids.includes(all_data_per_page_en.id)) { return; }
 
     let lastmod = new Date(all_data_per_page_en.last_modified)
-  
+
     urls.push({
       URL: all_data_per_page_en.page_url_identify,
       lastmod: lastmod,
@@ -889,7 +925,7 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
 
 
 
-  
+
   console.log(urls)
   // return res.end()
 

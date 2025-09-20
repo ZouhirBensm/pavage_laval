@@ -1,9 +1,9 @@
 async function cont1(req, res, next) {
   try {
     // Set meta data for the page
-    res.locals.canonical = 'https://www.earnanswers.com/sub/backlink/1';
-    res.locals.meta_description = "All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes";
-    res.locals.html_title = "List of links for Google crawler 1";
+    // res.locals.canonical = 'https://www.earnanswers.com/sub/backlink/1';
+    res.locals.title = "List of links for Google crawler 1";
+    res.locals.description = "All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes";
     
     // Render the backlink1 template, passing urls from middleware
     // res.render('backlink1', {
@@ -12,7 +12,11 @@ async function cont1(req, res, next) {
     //   meta_description: res.locals.meta_description,
     //   html_title: res.locals.html_title
     // });
-    res.render('backlink1');
+
+
+
+  return next()
+
   } catch (error) {
     console.error('Error in controller:', error);
     return next(error);

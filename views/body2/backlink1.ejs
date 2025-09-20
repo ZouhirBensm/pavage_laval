@@ -1,0 +1,55 @@
+<div id="page-content">
+  <div class="padding1">
+
+
+    <% 
+    // console.log(locals.canonical)
+    // console.log(locals.meta_description)
+    // console.log(locals.html_title)
+    // console.log(locals.urls.slice(0, 5)); 
+    %>
+
+    <style>
+      div > ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        gap: 10px; /* Optional: Adds spacing between items */
+      }
+
+      div > ul > li {
+        flex: 1 1 calc(50% - 10px); /* Two columns on larger screens */
+        max-width: 45ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.9em;
+      }
+
+      /* Media query for small screens */
+      @media screen and (max-width: 600px) {
+        div > ul > li {
+          flex: 1 1 100%; /* Single column on small screens */
+          max-width: 100%; /* Ensure full width */
+        }
+      }
+    </style>
+
+      <div>
+        <h1>List of Backlinks</h1>
+        <ul>
+          <% urls.forEach(url => { %>
+            <li><a href="<%= url %>"><%= url %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+
+
+  </div>
+</div>
+
+
+
+
+<!-- <h1>about</h1> -->

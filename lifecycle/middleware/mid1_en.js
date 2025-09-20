@@ -5,6 +5,8 @@ const ejs = require('ejs');
 
 
 async function mid1_en(req, res, next) {
+
+  // TODO Nav, and Footer entries should be fetched on all requests, so better to displace the query onto a common middleware for all requests like middleware4
   
   // console.log(is_english, '\n\n')
 
