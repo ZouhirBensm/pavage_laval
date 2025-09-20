@@ -1230,6 +1230,9 @@ CREATE TABLE `plan_du_site_page_en` (
   `h3_1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `h3_2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eq_lang_page` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `li_1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `li_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `h3_3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1240,7 +1243,7 @@ CREATE TABLE `plan_du_site_page_en` (
 
 LOCK TABLES `plan_du_site_page_en` WRITE;
 /*!40000 ALTER TABLE `plan_du_site_page_en` DISABLE KEYS */;
-INSERT INTO `plan_du_site_page_en` VALUES (2,'Sitemap','Sitemap HTML','Sitemap XML','/plan-du-site');
+INSERT INTO `plan_du_site_page_en` VALUES (2,'Sitemap','Sitemap HTML','Sitemap XML','/plan-du-site','Update Sitemap','Backlink 1','Backlinks');
 /*!40000 ALTER TABLE `plan_du_site_page_en` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1257,6 +1260,9 @@ CREATE TABLE `plan_du_site_page_fr` (
   `h3_1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `h3_2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eq_lang_page` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `li_1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `li_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `h3_3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1267,7 +1273,7 @@ CREATE TABLE `plan_du_site_page_fr` (
 
 LOCK TABLES `plan_du_site_page_fr` WRITE;
 /*!40000 ALTER TABLE `plan_du_site_page_fr` DISABLE KEYS */;
-INSERT INTO `plan_du_site_page_fr` VALUES (1,'Plan du site','Plan du site HTML','Plan du site XML','/sitemap/en');
+INSERT INTO `plan_du_site_page_fr` VALUES (1,'Plan du site','Plan du site HTML','Plan du site XML','/sitemap/en','Mise à jour du plan du site','Backlink 1','Backlinks');
 /*!40000 ALTER TABLE `plan_du_site_page_fr` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1490,4 +1496,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-20 12:41:54
+-- Dump completed on 2025-09-20 13:00:43

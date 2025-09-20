@@ -679,7 +679,7 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
 
 
   let urls = []
-
+  
   const discarded_object_ids = [8, 9, 10];
 
 
@@ -923,6 +923,19 @@ app.get('/sitemap/sitemap-3', async (req, res, next) => {
   });
 
 
+
+
+
+  let last_modified_2 = '2025-09-20T10:27:07.077Z';
+  let last_modified_2_date = new Date(last_modified_2);
+
+
+  urls.push({
+    URL: '/backlink/1',
+    lastmod: last_modified_2_date,
+    changefreq: "monthly",
+    priority: 1,
+  });
 
 
 

@@ -30,22 +30,22 @@
 </url>
 <url>
 <loc>https://localhost:3006/service/services-de-pavage-a-laval</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/paving-services-in-laval/en"/>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/paving-laval/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/services-asphalte-a-laval</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-services-in-laval/en"/>
-<lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<loc>https://localhost:3006/service/asphalte-laval</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-repair-montreal/en"/>
+<lastmod>2025-08-21T13:44:53.886Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/services-de-pave-uni-a-laval</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/interlocking-paving-stones-pavers-services-in-laval/en"/>
-<lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<loc>https://localhost:3006/service/scellement-fissure-asphalte-laval</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-sealer-montreal/en"/>
+<lastmod>2025-08-22T10:02:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
@@ -53,6 +53,34 @@
 <loc>https://localhost:3006/plan-du-site</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/sitemap/en"/>
 <lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/pavage-asphalte-duvernay</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-paving-duvernay/en"/>
+<lastmod>2025-08-22T20:56:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/scellant-asphalte-laval</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-sealing-montreal/en"/>
+<lastmod>2025-08-23T09:07:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/pavage-commercial-laval</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/commercial-paving-laval/en"/>
+<lastmod>2025-08-23T10:20:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/reparation-asphalte-montreal</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-repair-montreal/en"/>
+<lastmod>2025-08-23T20:14:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
@@ -85,23 +113,23 @@
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/paving-services-in-laval/en</loc>
+<loc>https://localhost:3006/service/paving-laval/en</loc>
 <xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/services-de-pavage-a-laval"/>
-<lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<lastmod>2025-08-28T07:50:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/asphalt-services-in-laval/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/services-asphalte-a-laval"/>
-<lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<loc>https://localhost:3006/service/asphalt-repair-montreal/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/asphalte-laval"/>
+<lastmod>2025-08-29T09:08:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/interlocking-paving-stones-pavers-services-in-laval/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/services-de-pave-uni-a-laval"/>
-<lastmod>2024-08-18T16:34:53.886Z</lastmod>
+<loc>https://localhost:3006/service/driveway-paving-montreal/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installation-de-voie-entree-residentielle-en-asphalte"/>
+<lastmod>2025-08-26T07:19:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
@@ -113,317 +141,16 @@
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/installateurs-de-paves</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/paver-installers/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
+<loc>https://localhost:3006/service/asphalt-sealer-montreal/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellement-fissure-asphalte-laval"/>
+<lastmod>2025-08-27T11:23:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/service-de-reparation-asphalte-a-laval</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-repair-services-laval/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-de-fissures</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/crack-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-de-nids-de-poule</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/pothole-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-de-patchs-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-patch-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/scellement-de-fissures-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-crack-sealing/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-de-joints-expansion-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-expansion-joint-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/construction-et-installation-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-construction-installation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/installation-asphalte-a-chaud</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/hot-mix-asphalt-installation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/installation-de-voie-entree-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-driveway-installation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-residentiel</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/residential-paving/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-asphalte-residentiel-et-commercial</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/residential-commercial-asphalt-paving/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/construction-de-routes-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-road-construction/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-et-marquage-de-stationnement</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/parking-lot-paving-striping/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/fourniture-asphalte-et-de-melange-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-plant-mix-supply/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/services-entretien-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-maintenance-services/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reasphaltage</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-resurfacing/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/recouvrement-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-overlay/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/scellement-et-application-de-scellant-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-sealing-sealcoating/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/profilage-et-fraisage-de-surface</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/surface-profiling-milling/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/rajeunissement-de-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-rejuvenation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/peinture-et-marquage-de-lignes</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/line-painting-marking/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/solutions-de-drainage-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-drainage-solutions/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/restauration-de-surfaces-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-surface-restoration/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-asphalte-par-infrarouge</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/infrared-asphalt-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reasphaltage-et-refection-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-resurfacing-reconditioning/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-asphalte-en-caoutchouc</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/rubberized-asphalt-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-asphalte-en-patch-froid</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/cold-patch-asphalt-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-et-reparation-des-fissures-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-patching-fixing-cracks/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reasphaltage-des-parkings</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-parking-lot-resurfacing/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/marquage-et-peinture-des-parkings</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/parking-lot-striping-marking/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/services-asphalte-commercial</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/commercial-asphalt-services/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-asphalte-commercial</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/commercial-asphalt-paving/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-industriel-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/industrial-asphalt-paving/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/construction-et-entretien-de-routes-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/roadway-asphalt-construction-maintenance/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/installation-de-voie-entree-residentielle-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/residential-asphalt-driveway-installation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/reparation-des-fissures-de-voie-entree-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/driveway-asphalt-crack-repair/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/scellement-et-entretien-de-voieentree-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-driveway-sealing-maintenance/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/restauration-et-rajeunissement-de-voie-entree-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/driveway-asphalt-restoration-rejuvenation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalte-decoratif-et-estampe</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/decorative-stamped-asphalt/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/installation-asphalte-recycle</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/recycled-asphalt-installation/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalte-colore-pour-voies-entree-decoratives</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/colored-asphalt-decorative-driveways/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/solutions-asphalte-durables</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/sustainable-asphalt-solutions/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pavage-asphalte-ecologique</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/eco-friendly-asphalt-paving/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/personnalisation-de-voie-entree-en-asphalte</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/asphalt-driveway-customization/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
+<loc>https://localhost:3006/service/asphalt-sealing-montreal/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellant-asphalte-laval"/>
+<lastmod>2025-08-29T09:35:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
@@ -435,324 +162,16 @@
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/marquage-de-parking</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/parking-lot-striping/en"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
+<loc>https://localhost:3006/service/asphalte-commercial-montreal</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/commercial-asphalt-montreal/en"/>
+<lastmod>2025-08-24T10:41:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/paver-installers/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installateurs-de-paves"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-repair-services-laval/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/service-de-reparation-asphalte-a-laval"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/crack-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-de-fissures"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/pothole-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-de-nids-de-poule"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-patch-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-de-patchs-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-crack-sealing/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellement-de-fissures-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-expansion-joint-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-de-joints-expansion-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-construction-installation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/construction-et-installation-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/hot-mix-asphalt-installation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installation-asphalte-a-chaud"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-driveway-installation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installation-de-voie-entree-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/residential-paving/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-residentiel"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/residential-commercial-asphalt-paving/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-asphalte-residentiel-et-commercial"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-road-construction/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/construction-de-routes-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/parking-lot-paving-striping/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-et-marquage-de-stationnement"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-plant-mix-supply/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/fourniture-asphalte-et-de-melange-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-maintenance-services/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/services-entretien-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-resurfacing/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reasphaltage"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-overlay/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/recouvrement-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-sealing-sealcoating/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellement-et-application-de-scellant-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/surface-profiling-milling/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/profilage-et-fraisage-de-surface"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-rejuvenation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/rajeunissement-de-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/line-painting-marking/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/peinture-et-marquage-de-lignes"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-drainage-solutions/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/solutions-de-drainage-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-surface-restoration/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/restauration-de-surfaces-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/infrared-asphalt-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-asphalte-par-infrarouge"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-resurfacing-reconditioning/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reasphaltage-et-refection-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/rubberized-asphalt-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-asphalte-en-caoutchouc"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/cold-patch-asphalt-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-asphalte-en-patch-froid"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-patching-fixing-cracks/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-et-reparation-des-fissures-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-parking-lot-resurfacing/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reasphaltage-des-parkings"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/parking-lot-striping-marking/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/marquage-et-peinture-des-parkings"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/commercial-asphalt-services/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/services-asphalte-commercial"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/commercial-asphalt-paving/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-asphalte-commercial"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/industrial-asphalt-paving/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-industriel-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/roadway-asphalt-construction-maintenance/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/construction-et-entretien-de-routes-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/residential-asphalt-driveway-installation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installation-de-voie-entree-residentielle-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/driveway-asphalt-crack-repair/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/reparation-des-fissures-de-voie-entree-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-driveway-sealing-maintenance/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellement-et-entretien-de-voieentree-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/driveway-asphalt-restoration-rejuvenation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/restauration-et-rajeunissement-de-voie-entree-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/decorative-stamped-asphalt/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/asphalte-decoratif-et-estampe"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/recycled-asphalt-installation/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/installation-asphalte-recycle"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/colored-asphalt-decorative-driveways/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/asphalte-colore-pour-voies-entree-decoratives"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/sustainable-asphalt-solutions/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/solutions-asphalte-durables"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/eco-friendly-asphalt-paving/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/pavage-asphalte-ecologique"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://localhost:3006/service/asphalt-driveway-customization/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/personnalisation-de-voie-entree-en-asphalte"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
+<loc>https://localhost:3006/service/asphalte-commercial</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://localhost:3006/service/commercial-asphalt/en"/>
+<lastmod>2025-08-24T10:41:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
@@ -764,15 +183,29 @@
 <priority>1</priority>
 </url>
 <url>
-<loc>https://localhost:3006/service/parking-lot-striping/en</loc>
-<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/marquage-de-parking"/>
-<lastmod>2024-12-13T14:59:08.116Z</lastmod>
+<loc>https://localhost:3006/service/commercial-asphalt-montreal/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/asphalte-commercial-montreal"/>
+<lastmod>2025-08-24T11:29:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/commercial-asphalt/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/asphalte-commercial"/>
+<lastmod>2025-08-24T11:29:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://localhost:3006/service/asphalt-crack-sealing-laval/en</loc>
+<xhtml:link rel="alternate" hreflang="fr" href="https://localhost:3006/service/scellement-fissure-asphalte-laval"/>
+<lastmod>2025-08-29T10:11:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1</priority>
 </url>
 <url>
 <loc>https://localhost:3006/blog/pavage-et-aménagement-extérieur/blog-posting/comment-installer-de-lasphalte-recyclé</loc>
-<lastmod>2025-03-22T11:55:58.000Z</lastmod>
+<lastmod>2025-08-29T11:55:58.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
@@ -789,15 +222,51 @@
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://localhost:3006/blog/pavage-et-aménagement-extérieur/blog-posting/faut-il-arroser-lasphalte-neuf-Pourquoi-arroser-lasphalte</loc>
+<loc>https://localhost:3006/blog/pavage-et-aménagement-extérieur/blog-posting/faut-il-arroser-lasphalte-neuf-pourquoi-arroser-lasphalte</loc>
 <lastmod>2025-03-22T11:55:58.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://localhost:3006/blog/category1_en/blog-posting/blog1_en</loc>
-<lastmod>2024-08-15T14:23:29.000Z</lastmod>
+<loc>https://localhost:3006/blog/driveway-maintenance-and-sealing/blog-posting/how-long-driveway-sealer-takes-to-dry</loc>
+<lastmod>2025-03-25T21:23:12.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/blog/driveway-maintenance-and-sealing/blog-posting/how-long-driveway-sealer-last</loc>
+<lastmod>2025-03-25T21:23:12.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/blog/driveway-sealing-techniques/blog-posting/how-to-seal-a-driveway</loc>
+<lastmod>2025-03-25T21:23:12.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/blog/roof-maintenance-and-replacement/blog-posting/top-five-signs-to-replace-asphalt-shingle-roof</loc>
+<lastmod>2025-03-25T21:23:12.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/blog/road-construction-materials/blog-posting/concrete-vs-asphalt-roads-pros-and-cons</loc>
+<lastmod>2025-03-25T21:23:12.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/blog/links/blog-posting/links</loc>
+<lastmod>2025-05-06T21:23:12.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://localhost:3006/backlink/1</loc>
+<lastmod>2025-09-20T10:27:07.077Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
 </url>
 </urlset>
