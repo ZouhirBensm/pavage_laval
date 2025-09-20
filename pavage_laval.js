@@ -64,6 +64,12 @@ const middleware11 = require('./lifecycle/middleware/mid11')
 
 
 
+// ***
+const middleware12 = require('./lifecycle/middleware/backlink-middleware/mid1')
+
+
+
+
 
 // Original site uses default ejs page views on views folder. Comment this to use default website from views folder.
 // If you want the new site ejs pages, use folder views2. Uncomment the code below to do so.
@@ -120,7 +126,11 @@ require('./miscellaneous/db/db')
 // Controllers
 const get_catch_controller = require('./lifecycle/controller/get-catch-controller/cont1')
 const data_error_handler_controller = require('./lifecycle/controller/error-controller/cont1');
-const middleware = require('./lifecycle/middleware/mid6_en');
+
+
+// ***
+const backlink_controller = require('./lifecycle/controller/backlink-controller/cont1')
+
 
 
 
@@ -315,6 +325,14 @@ app.get(['/', '/en'], middleware10.mid1 ,middleware1.mid1, middleware1_en.mid1_e
 
 
 
+
+
+
+// ***
+app.get('/backlink/1', 
+middleware12.mid1,
+backlink_controller.cont1
+)
 
 
 

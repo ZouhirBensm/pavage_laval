@@ -5,3 +5,4 @@ models
 /public/sitemap/sitemap.xml
 scripts
 /views/format.html
+/ignore
