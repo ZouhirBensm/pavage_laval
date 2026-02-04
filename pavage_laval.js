@@ -635,9 +635,6 @@ app.get('/backlink/:n',
       return next()
     }
 
-    res.locals.title = "List of links for Google crawler 1";
-    res.locals.description = "All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes";
-
     let all_data_per_page_en = await db.all_data_per_page_en.findOne({
       where: {
         page_url_identify: '/about/en',
@@ -674,20 +671,21 @@ app.get('/backlink/:n',
     }
 
 
-    // let rendered_front_end_script_needed_to_serve_variables
+    let rendered_front_end_script_needed_to_serve_variables
   
-    // rendered_front_end_script_needed_to_serve_variables = ejs.render(res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables, {
-    //   business_data: res.locals.index_page_data.business_data,
-    //   all_data_per_page: res.locals.index_page_data.all_data_per_page
-    // });
+    rendered_front_end_script_needed_to_serve_variables = ejs.render(res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables, {
+      business_data: res.locals.index_page_data.business_data,
+      all_data_per_page: res.locals.index_page_data.all_data_per_page
+    });
   
     // res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+    res.locals.index_page_data.all_data_per_page.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
 
-    // let rendered_title_meta_canonical = undefined
+    let rendered_title_meta_canonical = undefined
 
-    // rendered_title_meta_canonical = ejs.render(all_data_per_page_en.title_meta_canonical, { title: res.locals.index_page_data.all_data_per_page.title, description: res.locals.index_page_data.all_data_per_page.description, req_path: res.locals.req_path });
+    rendered_title_meta_canonical = ejs.render(all_data_per_page_en.title_meta_canonical, { title: res.locals.index_page_data.all_data_per_page.title, description: res.locals.index_page_data.all_data_per_page.description, req_path: res.locals.req_path });
 
-    // res.locals.index_page_data.all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
+    res.locals.index_page_data.all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
 
     // rendered_brochure_text1 = ejs.render(res.locals.index_page_data.all_data_per_page.brochure_text1, { email: res.locals.index_page_data.business_data.email })
 

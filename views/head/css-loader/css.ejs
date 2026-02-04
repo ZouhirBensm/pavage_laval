@@ -9,18 +9,10 @@
 
 
 
-<!-- < % if (all_data_per_page.css_link) { %>
-  < %- all_data_per_page.css_link %>
-< % } %> -->
-
-<% if (typeof all_data_per_page !== 'undefined' && all_data_per_page.css_link) { %>
+<% if (all_data_per_page.css_link) { %>
   <%- all_data_per_page.css_link %>
 <% } %>
 
-
-<!-- < % if (req_path === '/a-propos' || req_path === '/about/en') { %>
-< % } else if (req_path === '/blog') { %>
-< % } else if (req_path.startsWith('/blog')) { %>
-< % } else if (req_path === '/plan-du-site' || req_path === '/sitemap/en') { %>
-< % } else { %>
+<!-- < % if (typeof all_data_per_page !== 'undefined' && all_data_per_page.css_link) { %>
+  < %- all_data_per_page.css_link %>
 < % } %> -->

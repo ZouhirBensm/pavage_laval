@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<%- include('html/html-tag.ejs') %>
 
 <head>
 
+  <%- include('head/setup-pre-variables.ejs') %>
+  
+  <%- include('head/load-backend-variables/variables.ejs') %>
+  
   <%- include('head/head-common-part1.ejs') %>
   
-  <title><%= locals.title %></title>
-  <meta name="title" content="<%= locals.title %>">
-  <meta name="description" content="<%= locals.description %>">
-  <link rel="canonical" href='<%= locals.req_path %>'>
+  <%- include('head/meta/meta-title-can.ejs') %>
   
   <%- include('head/css-loader/css.ejs') %>
+  
+  <%- include('head/schema-loader/schema.ejs') %>
 
-  <meta http-equiv="content-language" content="en">
+  <%- include('head/meta/meta-lang-loader.ejs') %>
+
+  <%- include('head/alt-lang-page-setter/alt-lang-page.ejs') %>
 </head>
-
 
 <body class="tm-bg-dark">
 
