@@ -129,10 +129,6 @@ const data_error_handler_controller = require('./lifecycle/controller/error-cont
 
 
 
-const backlink_controller = require('./lifecycle/controller/backlink-controller/cont1')
-
-
-
 
 
 
@@ -585,7 +581,6 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 // app.get('/backlink/1',
 //   middleware12.mid1,
-//   backlink_controller.cont1,
 //   async (req, res, next) => {
 
 
@@ -639,6 +634,9 @@ app.get('/backlink/:n',
     if (res.locals.error) {
       return next()
     }
+
+    res.locals.title = "List of links for Google crawler 1";
+    res.locals.description = "All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes";
 
     let all_data_per_page_en = await db.all_data_per_page_en.findOne({
       where: {
@@ -695,6 +693,7 @@ app.get('/backlink/:n',
 
     // res.locals.index_page_data.all_data_per_page.rendered_brochure_text1 = rendered_brochure_text1
 
+    console.log(res.locals.index_page_data)
     return res.render('backlink1', { ...res.locals.index_page_data });
   })
 
