@@ -37,7 +37,7 @@
     </style>
 
       <div>
-        <h1><%= index_page_data.all_data_per_page.title %></h1>
+        <h2><%= index_page_data.all_data_per_page.under_h1 %> <%= locals.n %></h2>
         <ul>
           <% urls.forEach(url => { %>
             <li><a href="<%= url %>"><%= url %></a></li>

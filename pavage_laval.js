@@ -590,6 +590,7 @@ app.get('/backlink/:n',
     }
 
     const n = req.params.n;
+    res.locals.n = n
 
     res.locals.index_page_data.all_data_per_page = all_data_per_page_fr
 
@@ -598,7 +599,7 @@ app.get('/backlink/:n',
       description: "Tous les liens vers des pages web qui contiennent elles-mêmes des liens vers l'un des sites que je contrôle (à des fins de crawl SEO / suivi par les robots)",
       title: `Liste des liens pour le crawler Google ${n}`,
       page_url_identify: `/backlink/${n}`,
-      under_h1: 'Backlinks',
+      under_h1: 'Liens entrants citations locales',
       eq_lang_page: `/backlink/${n}`,
       last_modified: '2026-02-02T23:01:22.513Z',
       // css_link: undefined,
@@ -609,6 +610,21 @@ app.get('/backlink/:n',
       // brochure_text2: undefined,
     }
 
+
+    let rendered_front_end_script_needed_to_serve_variables
+
+    rendered_front_end_script_needed_to_serve_variables = ejs.render(res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables, {
+      business_data: res.locals.index_page_data.business_data,
+      all_data_per_page: res.locals.index_page_data.all_data_per_page
+    });
+
+    res.locals.index_page_data.all_data_per_page.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
+
+    let rendered_title_meta_canonical = undefined
+
+    rendered_title_meta_canonical = ejs.render(all_data_per_page_fr.title_meta_canonical, { title: res.locals.index_page_data.all_data_per_page.title, description: res.locals.index_page_data.all_data_per_page.description, req_path: res.locals.req_path });
+
+    res.locals.index_page_data.all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
 
     console.log(res.locals.index_page_data)
     return res.render('backlink1', { ...res.locals.index_page_data });
