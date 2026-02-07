@@ -18,8 +18,6 @@ const Compression = require('./miscellaneous/services/compression/compression-mi
 const logDataInColoredStructure = require('./miscellaneous/utils/log-data-structure')
 
 
-
-
 const dialect = 'mysql'
 
 const sequelize = new Sequelize(process.env['DB_NAME'], process.env['DB_USERNAME'], process.env['DB_USERPASSWORD'], {
@@ -570,63 +568,6 @@ app.get(['/tiroir1/politique-de-confidentialite', '/drawer1/privacy-policy/en'],
 
 
 
-
-
-
-
-
-
-
-
-
-// app.get('/backlink/1',
-//   middleware12.mid1,
-//   async (req, res, next) => {
-
-
-
-//     let all_data_per_page_en = await db.all_data_per_page_en.findOne({
-//       where: {
-//         page_url_identify: '/about/en',
-//       },
-//       raw: true
-//     });
-
-//     if (!all_data_per_page_en) {
-//       const error = new Error("No all_data_per_page_en found!")
-//       return next(error)
-//     }
-
-//     const all_data_per_page = {
-//       ...all_data_per_page_en,
-//       title: 'List of links for Google crawler 1',
-//       description: 'All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes',
-//       page_url_identify: '/backlink/1',
-//       under_h1: 'Backlinks',
-//       eq_lang_page: '/backlink/1',
-//       last_modified: '2025-09-20T10:27:07.077Z',
-//       // css_link: undefined,
-//       // schema_script: undefined,
-//       // title_meta_canonical: undefined,
-//       // front_end_script_needed_to_serve_variables: undefined,
-//       // brochure_text1: undefined,
-//       // brochure_text2: undefined,
-//       // rendered_title_meta_canonical: undefined,
-//       // rendered_front_end_script_needed_to_serve_variables: undefined,
-//     }
-
-
-//     res.locals.index_page_data = {
-//       ...res.locals.index_page_data,
-//       all_data_per_page: all_data_per_page
-//     }
-
-//     return res.render('backlink1', { ...res.locals.index_page_data });
-//   })
-
-
-
-
 app.get('/backlink/:n',
   middleware12.mid1,
   async (req, res, next) => {
@@ -635,66 +576,42 @@ app.get('/backlink/:n',
       return next()
     }
 
-    let all_data_per_page_en = await db.all_data_per_page_en.findOne({
+    let all_data_per_page_fr = await db.all_data_per_page_fr.findOne({
       where: {
-        page_url_identify: '/about/en',
+        page_url_identify: '/a-propos',
       },
       raw: true
     });
 
-    if (!all_data_per_page_en) {
-      const error = new Error("No all_data_per_page_en found!")
+    if (!all_data_per_page_fr) {
+      const error = new Error("No all_data_per_page_fr found!")
       return next(error)
     }
 
     const n = req.params.n;
 
-    res.locals.is_english = true
-    res.locals.index_page_data.all_data_per_page = all_data_per_page_en
+    res.locals.index_page_data.all_data_per_page = all_data_per_page_fr
 
     res.locals.index_page_data.all_data_per_page = {
       ...res.locals.index_page_data.all_data_per_page,
-      description: 'All the links for webpages that contain themselves links to one of the site I control for SEO crawler purposes',
-      title: `List of links for Google crawler ${n}`,
+      description: "Tous les liens vers des pages web qui contiennent elles-mêmes des liens vers l'un des sites que je contrôle (à des fins de crawl SEO / suivi par les robots)",
+      title: `Liste des liens pour le crawler Google ${n}`,
       page_url_identify: `/backlink/${n}`,
       under_h1: 'Backlinks',
       eq_lang_page: `/backlink/${n}`,
       last_modified: '2026-02-02T23:01:22.513Z',
-      schema_script: undefined,
-      // front_end_script_needed_to_serve_variables: rendered_front_end_script_needed_to_serve_variables,
       // css_link: undefined,
+      schema_script: undefined,
       // title_meta_canonical: undefined,
+      // front_end_script_needed_to_serve_variables: rendered_front_end_script_needed_to_serve_variables,
       // brochure_text1: undefined,
       // brochure_text2: undefined,
-      // rendered_title_meta_canonical: undefined,
-      // rendered_front_end_script_needed_to_serve_variables: undefined,
     }
 
-
-    let rendered_front_end_script_needed_to_serve_variables
-  
-    rendered_front_end_script_needed_to_serve_variables = ejs.render(res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables, {
-      business_data: res.locals.index_page_data.business_data,
-      all_data_per_page: res.locals.index_page_data.all_data_per_page
-    });
-  
-    // res.locals.index_page_data.all_data_per_page.front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
-    res.locals.index_page_data.all_data_per_page.rendered_front_end_script_needed_to_serve_variables = rendered_front_end_script_needed_to_serve_variables
-
-    let rendered_title_meta_canonical = undefined
-
-    rendered_title_meta_canonical = ejs.render(all_data_per_page_en.title_meta_canonical, { title: res.locals.index_page_data.all_data_per_page.title, description: res.locals.index_page_data.all_data_per_page.description, req_path: res.locals.req_path });
-
-    res.locals.index_page_data.all_data_per_page.rendered_title_meta_canonical = rendered_title_meta_canonical
-
-    // rendered_brochure_text1 = ejs.render(res.locals.index_page_data.all_data_per_page.brochure_text1, { email: res.locals.index_page_data.business_data.email })
-
-    // res.locals.index_page_data.all_data_per_page.rendered_brochure_text1 = rendered_brochure_text1
 
     console.log(res.locals.index_page_data)
     return res.render('backlink1', { ...res.locals.index_page_data });
   })
-
 
 
 
