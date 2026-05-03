@@ -406,5 +406,5 @@ textarea {
 .CTA-callup {
   font-size: 2rem;
   font-weight: bold;
-  display: inline-block;
+  display: block;
 }
