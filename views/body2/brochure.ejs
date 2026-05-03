@@ -4,7 +4,8 @@
 
     <div id="pav3" class="item tm-bg-white tm-block tm-block-left" data-desktop-seq-no="1" data-mobile-seq-no="1">
       <p class="tm-hero-text">
-        <%= all_data_per_page.under_h1 %> <%= business_data.telephone %>
+        <%= all_data_per_page.under_h1 %>
+        <span class="CTA-callup"><%= business_data.telephone %></span>
       </p>
 
       <header class="tm-block-brand">
@@ -36,7 +37,7 @@
       <%- all_data_per_page.brochure_text1 %>
         <div class="tm-text-right">
           <!-- <a href="#" class="tm-btn tm-btn-small tm-btn-primary tm-mt">Read More</a> -->
-          <a href="tel:<%= business_data.telephone2 %>" class="tm-btn tm-btn-small tm-btn-primary tm-mt">
+          <a href="tel:<%= business_data.telephone2 %>" class="tm-btn tm-btn-small tm-btn-primary tm-mt CTA-callup">
             <%= business_data.telephone %>
           </a>
         </div>

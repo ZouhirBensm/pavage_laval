@@ -380,6 +380,7 @@ textarea {
 }
 
 @media (max-width: 417px) {
+
   .tm-block-left,
   .tm-block-left-2 {
     right: 0;
@@ -400,4 +401,10 @@ textarea {
     right: -25px;
     bottom: -25px;
   }
+}
+
+.CTA-callup {
+  font-size: 2rem;
+  font-weight: bold;
+  display: inline-block;
 }
