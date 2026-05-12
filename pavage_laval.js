@@ -661,44 +661,46 @@ app.get('/sitemap/sitemap-3', sitemap_controller.cont1);
 
 
 
-
-
-
-
-
-
-
-
-
-
 app.get(['/plan-du-site', '/sitemap/en'],
   middleware9.mid1,
   middleware9_en.mid1,
   async (req, res, next) => {
 
     let backlink_pages_urls = []
-    const backlinksDir = path.join(__dirname, './backlinks');
 
-    const files = fs.readdirSync(backlinksDir);
+    // Get the base path from environment variable
+    const backlinksBasePath = process.env['PATH_TO_BACKLINKS'];
+    // const backlinksBasePath = false
 
-    for (const file of files) {
-      const match = file.match(/^backlink(\d+)\.txt$/i);
-      if (!match) continue;
-
-      const number = match[1];
-
-      backlink_pages_urls.push(`/backlink/${number}`);
+    if (!backlinksBasePath) {
+      const errormessage = "Backlinks path configuration missing. PATH_TO_BACKLINKS environment variable is not set"
+      let error = new Error(errormessage)
+      error.message = errormessage
+      res.locals.error = error
+      return next();
     }
 
-    res.locals.backlink_pages_urls = backlink_pages_urls
-    // console.log("\n\n________________________ \n\nres.locals.index_page_data -> \n\n", res.locals.index_page_data)
-    // return res.end()
+    try {
+      // Read files from the configured backlinks directory
+      const files = fs.readdirSync(backlinksBasePath);
+
+      for (const file of files) {
+        const match = file.match(/^backlink(\d+)\.txt$/i);
+        if (!match) continue;
+
+        const number = match[1];
+        backlink_pages_urls.push(`/backlink/${number}`);
+      }
+
+      res.locals.backlink_pages_urls = backlink_pages_urls;
+    } catch (error) {
+      console.error('Error reading backlinks directory:', error);
+      // Continue with empty backlinks list if directory doesn't exist
+      res.locals.backlink_pages_urls = [];
+    }
 
     return res.render('plan-du-site', { ...res.locals.index_page_data });
   });
-
-
-
 
 
 
